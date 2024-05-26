@@ -1,0 +1,22 @@
+{
+  "name": "lires",
+  "version": "1.0.0",
+  "description": "Der Start von Kombi aus Rezepten und Einfaufsliste <br> Mal gucken obs was wird :D **** ### Rezept für Kaffee: #### Zutaten: * Kaffeebohnen oder Pulver * Wasser * ggfs. Milch #### Zubehör: eine Kaffeemaschine, French Press, Expressokanne oder sonstwas #### Vorgehen: Kaffeebohnen oder -pulver in die entsprechende Vorrichtung der Maschine geben. Wasser ebenfalls ins entsprechende Dings reinfüllen, ggfs. vorher einmal aufkochen. Entweder auf den Startknopf drücken, es aufkochen oder machen, was man halt so tut um Kaffee zu machen. Am Ende nach Belieben Milch (oder keine Milch) dazu. <br> Den Kaffee im Anschluss an derlole verfüttern, damit er nicht auf harten Entzug gesetzt wird. Süchte müssen gefördert werden, sonst besteht ein Gefahrenpotential. <br> _Bestes Rezept überhaupt :D_",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^8.4.0",
+    "nodemon": "^3.1.1"
+  }
+}
