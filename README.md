@@ -1,2 +1,2 @@
 # lires
-Der start von kombi aus Rezepten und einfaufsliste
+Der Start von kombi aus Rezepten und Einfaufsliste
