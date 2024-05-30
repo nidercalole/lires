@@ -1,31 +1,98 @@
 body{
     background-color: #6353ac;
     padding: 0;
-    margin: 0;
     font-family: Verdana;
+    color:#CAFFEE
 }
-.hdivleft{
+.filbut{
+    background-color: #473B7B;
+    border-radius: 5px;
+    border:#CAFFEE 2px;
+    padding: 2px;
+    width:6%;
+    margin:5px;
+    display: block;
+}
+.filbut:hover{
+    cursor: pointer;
+    box-shadow: 0 0 2px 1px rgba(99, 83, 172, 0.6);
+    background-color: rgba(99, 83, 172, 0.3);
+}
+/*.hdivleft{
     height:70%;
     justify-content: flex-start;
 }
 .hdivright{
     height:70%;
     justify-content: flex-end;
-}
+}*/
 .header{
+    margin-top: 0px;
     background-color: #473B7B;
-    display:block 50%;
+    display: block;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     flex-direction: row;
-    padding:10px;
-    border-bottom: #CAFFEE;
+    height: 10%;
 }
-.h1{
-    color: #CAFFEE;
+input, textarea {
+    caret-color: #CAFFEE;
+    cursor: text;
+}
+.logo{
+    width: 50px;
+    cursor:pointer;
+    margin: 5px;
+}
+.navLinks li {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    list-style:none;
+}
+.navLinks li{
+    display:inline;
+    padding: 0 20px;
+}
+.navLinks li a{
+    transition:all 0.3s ease 0s;
+}
+.navLinks li a:hover{
+    background-color: #078881;
+    cursor: pointer;
+}
+.navpic{
+    width: 5%;
+    cursor:pointer;
+    margin: 5px;
+    padding:2px;
+    background:none;
+    border: none;
+    border-radius: 5px;
+}
+.navpic:hover{
+    cursor: pointer;
+    box-shadow: 0 0 2px 1px rgba(99, 83, 172, 0.6);
+    background-color: rgba(99, 83, 172, 0.3);
+}
+.suchleiste{
+    background-color: #6353ac;
+    border: 1px solid #078881;
+    border-radius: 5px;
+    border-width: 2px;
+    font-size: medium;
+    font-weight:200;
+    -webkit-text-fill-color: #CAFFEE;
+}
+.suchleiste:focus{
+    background-color: rgba(99, 83, 172, 0.6);
+    outline: 1px ridge rgba(99, 83, 172, 0.9);
+    -webkit-text-fill-color: #CAFFEE;
 }
 usrnm{
     -webkit-text-fill-color: #CAFFEE; 
     font-weight: light;
-    align-self:center;
+    align-self:center; /*Inspektor: "align-self hat bei diesem Element keine Wirkung, weil das Element weder ein Flex- noch ein Grid-Element ist. Versuchen Sie, display:grid, display:flex, display:inline-grid oder display:inline-flex zum übergeordneten Element hinzuzufügen. "*/
     font-size:small;
 }
