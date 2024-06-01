@@ -6,7 +6,7 @@
     <nav>
         <ul class="navLinks">
             <li><a href="link"></a><img class="navpic" src="/img/cal.png" alt="Kochkalender"></li>
-            <li id="ListBut"><a href="link"></a><img class="navpic" src="/img/lists.png" alt="Listen"></li>
+            <li id="ListBut" onclick="listBut()"><a href="link"></a><img class="navpic" src="/img/lists.png" alt="Listen"></li>
             <li><a href="link"></a><usrnm>[Username hier]</usrnm></li>
             <li><a href="link"></a><img class="navpic" src="/img/bsppb.png" alt="beispielhaftes Profilbild"></li>
         </ul>
@@ -32,3 +32,17 @@
       </ul>
     </div>
   </div>
+  <script>
+    let ended = false; // will change to true after the animation finishes
+
+    ListBut.onclick = function() {
+      console.log('test')
+      listArea.addEventListener('transitionend', function() {
+        if (!ended) { // check to show the message only once
+          ended = true;
+        }
+      });
+
+      listArea.classList.add('growing');
+    }
+  </script>
