@@ -23,7 +23,7 @@
     <div>
       <h2 class="splRiTxt">Text SplitRight</h2>
       <hr class="hoLineSplitRight">
-      <ul>
+      <ul class="splRiListTxt">
         <li>Auch Text</li>
         <li>Hier</li>
         <li>Wieauchimmer</li>
@@ -32,17 +32,3 @@
       </ul>
     </div>
   </div>
-  <script>
-    let ended = false; // will change to true after the animation finishes
-
-    ListBut.onclick = function() {
-      console.log('test')
-      listArea.addEventListener('transitionend', function() {
-        if (!ended) { // check to show the message only once
-          ended = true;
-        }
-      });
-
-      listArea.classList.add('growing');
-    }
-  </script>

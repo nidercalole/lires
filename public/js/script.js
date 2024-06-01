@@ -1,17 +1,15 @@
 const abc = document.getElementById('test')
-/*
-let ended = false; // will change to true after the animation finishes
+document.addEventListener('DOMContentLoaded', (event) => {
+  let ended = false;
+  const ListBut = document.getElementById('ListBut');
+  const listArea = document.getElementById('listArea');
 
-    ListBut.onclick = function() {
-      console.log('test')
-      listArea.addEventListener('transitionend', function() {
-        if (!ended) { // check to show the message only once
-          ended = true;
-          alert('Done!');
-        }
-      });
-
-      listArea.classList.add('growing');
-    }
-*/
-
+  ListBut.onclick = function() {
+      if (ended) {
+          listArea.classList.remove('growing');
+      } else {
+          listArea.classList.add('growing');
+      }
+      ended = !ended; // ich weiß nicht, wie chatgpt das gemacht hat, aber es funktioniert hervorragend, also bleibt nun dieser code cF
+  } //vorallem funktioniert es aber jetzt sogar im richtigen dokument :D
+});

@@ -33,6 +33,7 @@ body{
     border: 1px solid #CAFFEE;
     margin-left:5%;
     width: 90%;
+    margin-top: 0;
 }
 input, textarea {
     caret-color: #CAFFEE;
@@ -87,9 +88,7 @@ input, textarea {
 }
 .suchleiste:focus{
     background-color: rgba(99, 83, 172, 0.6);
-    border-radius: 50px;
     outline: 1px ridge rgba(99, 83, 172, 0.9);
-    -webkit-text-fill-color: #CAFFEE;
 }
 .split {
     height:90%;
@@ -101,7 +100,7 @@ input, textarea {
 }
 .splitLeft {
     padding-left: 10px;
-  }
+}
 .splitRight {
   margin: 10px;
   border: none;
@@ -112,10 +111,43 @@ input, textarea {
   transition: all 3s;
 }
 .splitRight.growing{
-  width: 100%;
+  width: 98.6%;
+  margin-left: 0.7%;
+  margin-right: 0.7%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 3s;
+}
+.splRiListTxt{
+    margin-left: none;
+    margin-right: 5%;
+    margin-top: none;
+    margin-bottom: none;
 }
 .splRiTxt {
-  margin: 5%;
+  margin-left: 5%;
+  margin-top: none;
+  margin-bottom: none;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    padding: 0.25em 0.5em;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.25em;
+    white-space: nowrap;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 100%;
+    transition-property: visibility;
+    transition-delay: 0s;
+}  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    transition-delay: 0.3s;
 }
 usrnm{
     -webkit-text-fill-color: #CAFFEE; 
