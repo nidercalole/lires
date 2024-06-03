@@ -1,16 +1,29 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-  let ended = false;
-  const ListBut = document.getElementById('ListBut');
-  const listArea = document.getElementById('listArea');
+    //splitleft Growing
+    let ended = false;
+    const ListBut = document.getElementById('ListBut');
+    const listArea = document.getElementById('listArea');
 
-  ListBut.onclick = function() {
-      if (ended) {
-          listArea.classList.remove('growing');
-      } else {
-          listArea.classList.add('growing');
-      }
-      ended = !ended; // ich weiß nicht, wie chatgpt das gemacht hat, aber es funktioniert hervorragend, also bleibt nun dieser code cF
-  } //vorallem funktioniert es aber jetzt sogar im richtigen dokument :D
+     ListBut.onclick = function() {
+        if (ended) {
+            listArea.classList.remove('growing');
+        } else {
+            listArea.classList.add('growing');
+        }
+        ended = !ended; 
+     } 
+    //slider
+    const maxDauer = document.getElementById('maxDauer');
+    const maxMin = document.getElementById('maxMin');
+    maxMin.textContent = maxDauer.value;
+    maxDauer.addEventListener('change', function() {
+        maxMin.textContent = maxDauer.value;
+    });
+    //redirectHome
+    /*const logo = document.getElementById('logo');
+    logo.onclick = function() {
+        window.location.href = '/';
+    }*/
 });
 
 function filBut(){
@@ -21,3 +34,5 @@ function filBut(){
         filOptionPage.style.display = 'none';
     }
 }
+
+
