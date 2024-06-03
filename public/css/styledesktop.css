@@ -108,14 +108,14 @@ input, textarea {
   background-color: #078881;
   right: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transition: all 3s;
+  transition: all 1.5s;
 }
 .splitRight.growing{
   width: 98.6%;
   margin-left: 0.7%;
   margin-right: 0.7%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transition: all 3s;
+  transition: all 1.5s;
 }
 .splRiListTxt{
     margin-left: none;
