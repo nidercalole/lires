@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const maxDauer = document.getElementById('maxDauer');
     const maxMin = document.getElementById('maxMin');
     maxMin.textContent = maxDauer.value;
-    maxDauer.addEventListener('change', function() {
-        maxMin.textContent = maxDauer.value;
-    });
+    maxDauer.oninput = function() {
+        maxMin.textContent = this.value;
+    }
     //redirectHome
     /*const logo = document.getElementById('logo');
     logo.onclick = function() {

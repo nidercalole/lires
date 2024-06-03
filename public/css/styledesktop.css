@@ -273,6 +273,7 @@ input, textarea {
 usrnm{
     -webkit-text-fill-color: #CAFFEE; 
     font-weight: light;
-    align-self:center; /*Inspektor: "align-self hat bei diesem Element keine Wirkung, weil das Element weder ein Flex- noch ein Grid-Element ist. Versuchen Sie, display:grid, display:flex, display:inline-grid oder display:inline-flex zum übergeordneten Element hinzuzufügen. "*/
-    font-size:small;
+    position: relative;
+    top: -28px;
+    font-size: medium;
 }
