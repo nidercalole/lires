@@ -19,6 +19,48 @@ body{
     box-shadow: 0 0 2px 1px rgba(99, 83, 172, 0.6);
     background-color: rgba(99, 83, 172, 0.3);
 }
+.filDropdown{
+    background-color:#6353ac;
+    border:none;
+    color: #caffee;
+    padding:1%;
+    cursor:pointer;
+    border-radius: 5px
+}
+filHeader{
+    font-size:x-large;
+    font-weight: bold;
+    width: 100%;
+}
+.filOptionPage{
+    max-width: 45%;
+    display: none;
+    grid-template-areas:
+    'filheader filheader'
+    'art dauer'
+    'excl incl';
+    gap: 10px;
+    padding: 1.5%;
+    position:fixed;
+    top:15%;
+    left:15%;
+    border-radius:5px;
+    /*width:30%;*/
+    background-color: #078881;
+    z-index: 1000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*padding: 10px;*/
+}
+.filGridHeader { grid-area: filheader; }
+.filGridArtGericht { grid-area: art; }
+.filGridZubDauer { grid-area: dauer; }
+.filGridExclude { grid-area: excl; }
+.filGridInclude { grid-area: incl; }
+/*.filOptionItems{
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: medium;
+  text-align: left;
+}*/
 .header{
     background-color: #473B7B;
     display: flex;
@@ -100,8 +142,10 @@ input, textarea {
 }
 .splitLeft {
     padding-left: 10px;
+    /*float:left;*/
 }
 .splitRight {
+    /*float:left;*/
   margin: 10px;
   border: none;
   border-radius: 5px;
@@ -128,26 +172,101 @@ input, textarea {
   margin-top: none;
   margin-bottom: none;
 }
-.tooltip .tooltiptext {
+.tooltipCal {
+    position: relative;
+    display: inline-block;
+}
+.tooltipList {
+    position: relative;
+    display: inline-block;
+}
+.tooltipProfil {
+    position: relative;
+    display: inline-block;
+}
+.tooltipCal .tooltipCaltext {
     visibility: hidden;
-    padding: 0.25em 0.5em;
-    background-color: black;
-    color: #fff;
+    width:fit-content;
+    background-color: #CAFFEE;
+    color: #473B7B;
+    font-size:smaller;
     text-align: center;
-    border-radius: 0.25em;
-    white-space: nowrap;
-    
-    /* Position the tooltip */
+    border-radius: 5px;
+    padding: 2%;
     position: absolute;
-    z-index: 1;
-    top: 100%;
-    left: 100%;
-    transition-property: visibility;
-    transition-delay: 0s;
-}  
-.tooltip:hover .tooltiptext {
+    z-index: 999;
+    top: 150%;
+    left: 50%;
+    margin-left: -50px;
+}
+.tooltipList .tooltipListtext {
+    visibility: hidden;
+    width:fit-content;
+    background-color: #CAFFEE;
+    color: #473B7B;
+    font-size:smaller;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2%;
+    position: absolute;
+    z-index: 999;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+.tooltipProfil .tooltipProfiltext {
+    visibility: hidden;
+    width:fit-content;
+    background-color: #CAFFEE;
+    color: #473B7B;
+    font-size:smaller;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2%;
+    position: absolute;
+    z-index: 999;
+    top: 150%;
+    left: 50%;
+    margin-left: -35px;
+}
+.tooltipCal .tooltipCaltext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #CAFFEE transparent;
+}
+.tooltipList .tooltipListtext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #CAFFEE transparent;
+}
+.tooltipProfil .tooltipProfiltext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #CAFFEE transparent;
+}
+.tooltipCal:hover .tooltipCaltext {
     visibility: visible;
-    transition-delay: 0.3s;
+}
+.tooltipList:hover .tooltipListtext {
+    visibility: visible;
+}
+.tooltipProfil:hover .tooltipProfiltext {
+    visibility: visible;
 }
 usrnm{
     -webkit-text-fill-color: #CAFFEE; 
