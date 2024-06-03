@@ -75,9 +75,10 @@ filHeader{
     box-shadow: 0px/*versch. x*/ 8px/*versch. y unten*/ 8px/*?*/ 0px/*zoom*/ rgb(85, 71, 148);
 }
 .hoLineSplitRight{
+    margin-left: 20px;
+    margin-right: 20px;
     border: 1px solid #CAFFEE;
-    margin-left:5%;
-    width: 90%;
+
     margin-top: 0;
 }
 input, textarea {
@@ -140,7 +141,7 @@ input, textarea {
     outline: 1px ridge rgba(99, 83, 172, 0.9);
 }
 .split {
-    height:90%;
+    height:86%;
     width: 25%;
     position: fixed;
     z-index: 1;
@@ -168,14 +169,8 @@ input, textarea {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: all 1.5s;
 }
-.splRiListTxt{
-    margin-left: none;
-    margin-right: 5%;
-    margin-top: none;
-    margin-bottom: none;
-}
 .splRiTxt {
-  margin-left: 5%;
+  margin-left: 20px;
   margin-top: none;
   margin-bottom: none;
 }
