@@ -1,4 +1,4 @@
-const abc = document.getElementById('test')
+
 document.addEventListener('DOMContentLoaded', (event) => {
   let ended = false;
   const ListBut = document.getElementById('ListBut');
