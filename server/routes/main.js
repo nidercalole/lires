@@ -40,15 +40,27 @@ router.get('/addres', (req, res) => {
     res.render('addres', { title: 'Lires', usrnm: req.query.usrnm });
 });
 
-router.post('/register', (req, res) => {
+router.post('/register', async (req, res) => {
     const username = req.body.username;
     const permstring = req.body.permstring;
     const permstringPermision = 's4l4m4nderBrei'
     if(permstring === permstringPermision){
         console.log('Permission granted');
-        if(insertUsr({ usrnm: username })) {
-        res.redirect('/?usrnm=' + username);
+        try {
+            const existingUser =  await Usrnm.findOne({usrnm: username}).exec();
+            console.log('Existing user:', existingUser);
+            if(existingUser){
+                console.log('User already exists');
+                res.redirect('/login');
+            }else{
+                insertUsr({usrnm: username});
+                res.redirect('/verify/?usrnm=' + username);
+            }
+        }catch (err) {
+            console.error(err);
+            res.status(500).send('Fehler bei der Verarbeitung der Anfrage.');
         }
+        
     }else{
         console.log('Permission denied');
         res.redirect('/login');
@@ -57,4 +69,35 @@ router.post('/register', (req, res) => {
 
     res.redirect('/login');
 });
+
+router.get('/verify', async (req, res) => {
+    try {
+        const username = req.query.usrnm;
+        const query = {usrnm: username};
+        const existingUser = await Usrnm.findOne(query).exec();
+        const id = existingUser.usrid;
+        res.redirect('/?usrid=' + id + '&usrnm=' + username);
+    }catch (err) {
+        console.error(err);
+        res.status(500).send('Fehler bei der Verarbeitung der Anfrage.');
+    }
+});
+
+router.post('/anmld' , async (req, res) => {
+    try {
+        const username = req.body.username;
+        const query = {usrnm: username};
+        const existingUser = await Usrnm.findOne(query).exec();
+        if(!existingUser){
+            console.log('User not found');
+            res.redirect('/login');
+        }
+        const id = existingUser.usrid;
+        res.redirect('/?usrid=' + id + '&usrnm=' + username);
+    }catch (err) {
+        console.error(err);
+        res.status(500).send('Fehler bei der Verarbeitung der Anfrage.');
+    }
+});
+
 module.exports = router;
