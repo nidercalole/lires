@@ -1,4 +1,5 @@
 function redirectHome() {
-    window.location.href = '/';
+    const username = document.getElementById('usrnm').textContent
+    window.location.href = '/verify/?usrnm=' + username;
 }
 

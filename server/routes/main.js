@@ -26,7 +26,6 @@ router.get('/', async(req, res) => {
         try{
             const query = { usrid: req.query.usrid };
             const existingUser = await Usrnm.findOne(query).exec();
-            console.log('Existing user:', existingUser);
             if(existingUser){
                 const username = existingUser.usrnm;
                 return res.render('index', { title: 'Lires', usrnm: username });
@@ -57,7 +56,6 @@ router.post('/register', async (req, res) => {
         console.log('Permission granted');
         try {
             const existingUser = await Usrnm.findOne({ usrnm: username }).exec();
-            console.log('Existing user:', existingUser);
             if (existingUser) {
                 console.log('User already exists');
                 return res.redirect('/login');
@@ -81,7 +79,6 @@ router.get('/verify', async (req, res) => {
         const username = req.query.usrnm;
         const query = { usrnm: username };
         const existingUser = await Usrnm.findOne(query).exec();
-        console.log('Existing user:', existingUser);
         if (existingUser) {
             const id = existingUser.usrid;
             return res.redirect('/?usrid=' + id + '&usrnm=' + username);
