@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const butaddres = document.getElementById('addRec');
 
     butaddres.onclick = function() {
-        console.log('addres');
-        window.location.href = '/addres';
+        console.log('addrec');
+        window.location.href = '/addrec';
     }
 
     //Input beim Titel von Rezept (autom. Anpassen der Textfeldgröße) funktioniert nich
