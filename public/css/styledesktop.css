@@ -119,6 +119,15 @@ input, textarea {
     border: none;
     border-radius: 5px;
 }
+.navpic2{
+    height: 58px;
+    cursor:pointer;
+    margin: 5px;
+    padding:2px;
+    background:none;
+    border: none;
+    border-radius: 5px;
+}
 .navpic:hover{
     cursor: pointer;
     box-shadow: 0 0 2px 1px rgba(99, 83, 172, 0.6);
