@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
         ended = !ended; 
      } 
+     //growing input
+     const recTitle = document.getElementById('recTitle');
+     recTitle.addEventListener('input', function() {
+         const inputWidth = recTitle.scrollWidth; // Breite des Inhalts des Textfelds
+         recTitle.style.width = inputWidth + "px"; // Setzt die Breite des Textfelds auf die Breite des Inhalts
+     });
     //slider
     const maxDauer = document.getElementById('maxDauer');
     const maxMin = document.getElementById('maxMin');
@@ -32,11 +38,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     //Input beim Titel von Rezept (autom. Anpassen der Textfeldgröße) funktioniert nich
-    const recTitle = document.getElementById('recTitle')
-    recTitle.oninput = function() {
-        const inputWidth = input.scrollWidth; // Breite des Inhalts des Textfelds
-        recTitle.style.width = inputWidth + "px"; // Setzt die Breite des Textfelds auf die Breite des Inhalts
-    }
+
+    
 });
 
 function filBut(){
