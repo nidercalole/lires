@@ -22,13 +22,42 @@ body{
     box-shadow: 0 0 2px 1px rgba(99, 83, 172, 0.6);
     background-color: rgba(99, 83, 172, 0.3);
 }
+:root {
+    --select-border: #6353ac;
+    --select-arrow: var(--select-border);
+}
 .filDropdown{
-    background-color:#6353ac;
-    border:none;
-    color: #caffee;
-    padding:1%;
-    cursor:pointer;
-    border-radius: 5px
+    border-radius:5px;
+    width: 80%;
+    border: 2px solid var(--select-border);
+    padding: 1.5%;
+    font-size:medium;
+    color:#CAFFEE;
+    cursor: pointer;
+    background-color: #09aaa2;
+}
+.filDropdown:focus{
+    background-color: rgba(99, 83, 172, 0.6);
+    outline: 1px ridge rgba(99, 83, 172, 0.9);
+}
+.filGridInp{
+    width: 80%;
+    left: 120px;
+    background-color:#09aaa2;
+    border: 1px solid #6353ac;
+    border-radius: 5px;
+    margin-bottom:1.5%;
+    padding: 5px;
+    border-width: 2px;
+    font-size:medium;
+    -webkit-text-fill-color: #CAFFEE;
+}
+.filGridInp:focus{
+    background-color: rgba(99, 83, 172, 0.6);
+    outline: 1px ridge rgba(99, 83, 172, 0.9);
+}
+.filGridZubDauer{
+    width:80%;
 }
 filHeader{
     font-size:x-large;
@@ -132,6 +161,35 @@ input, textarea {
     cursor: pointer;
     box-shadow: 0 0 2px 1px rgba(99, 83, 172, 0.6);
     background-color: rgba(99, 83, 172, 0.3);
+}
+.sliderZubDauer{
+    cursor: pointer;
+    -webkit-appearance: none;
+    width: 80%;
+    height: 10%;
+    background: #09aaa2;
+    border-radius: 5px;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.sliderZubDauer:hover{
+    opacity: 1;
+}
+.sliderZubDauer::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12%;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+.sliderZubDauer::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
 }
 .suchleiste{
     position: absolute;
@@ -282,6 +340,7 @@ input, textarea {
 usrnm{
     -webkit-text-fill-color: #CAFFEE; 
     font-weight: light;
-    align-self:center; /*Inspektor: "align-self hat bei diesem Element keine Wirkung, weil das Element weder ein Flex- noch ein Grid-Element ist. Versuchen Sie, display:grid, display:flex, display:inline-grid oder display:inline-flex zum übergeordneten Element hinzuzufügen. "*/
-    font-size:small;
+    position: relative;
+    top: -28px;
+    font-size: medium;
 }

@@ -2,28 +2,29 @@
   <filHeader class="filGridHeader">Filter</filHeader>
   <div class="filGridArtGericht" id="artGericht"><h3>Art des Gerichts</h3>
     <select class="filDropdown">
-      <option value="all">Alles</option>
-      <option value="hptgrcht">Hauptgericht</option>
-      <option value="nchtsch">Nachtisch</option>
-      <option value="gbck">Gebäck</option>
-      <option value="fngrfd">Fingerfood</option>
-      <option value="suess">Süß</option>
-      <option value="slt">Salat</option>
+      <option class="filDdHover" value="all">Alles</option>
+      <option class="filDdHover" value="hptgrcht">Hauptgericht</option>
+      <option class="filDdHover" value="nchtsch">Nachtisch</option>
+      <option class="filDdHover" value="gbck">Gebäck</option>
+      <option class="filDdHover" value="fngrfd">Fingerfood</option>
+      <option class="filDdHover" value="suess">Süß</option>
+      <option class="filDdHover" value="slt">Salat</option>
     </select>
   </div>
   <div class="filGridZubDauer" id="zubDauer"><h3>Zubereitungsdauer</h3>
-    <input type="range" min="1" max="100" value="50" class="slider" id="maxDauer">
+    <input type="range" min="15" max="180" value="82.5" class="sliderZubDauer" id="maxDauer"> 
     <p>Dir werden Rezepte mit einer Zubereitungsdauer von maximal <span id="maxMin"></span> Minuten angezeigt.</p>
   </div>
-  <div class="filGridExclude" id=exclude><h3>Aus Suchergebnissen ausschließen</h3>
-    <p>Zutaten:<input><br>
-      Zubehör: <input><br>
-      Prozesse:<input></p>
+  <div id=exclude><h3>Aus Suchergebnissen ausschließen</h3>
+    <input class="filGridInp" placeholder="Zutaten">
+    <input class="filGridInp" placeholder="Zubehör">
+    <input class="filGridInp" placeholder="Prozesse">
   </div>
-  <div class="filGridInclude" id=include><h3>In Suchergebnisse inkludieren</h3>
-    <p>Zutaten:<input><br>
-      Prozesse:<input></p>
+  <div id=include><h3>In Suchergebnisse inkludieren</h3>
+    <input class="filGridInp" placeholder="Zutaten">
+    <input class="filGridInp" placeholder="Prozesse">
   </div>
+</div>
 </div>
 
 <div class="split splitLeft">
