@@ -118,7 +118,7 @@ input, textarea {
     position: absolute;
     left: 0;
     width: 80px;
-    cursor:pointer;
+    cursor: pointer;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -164,8 +164,7 @@ input, textarea {
 }
 .sliderZubDauer{
     cursor: pointer;
-    -webkit-appearance: none;
-    width: 80%;
+    width: 90%;
     height: 10%;
     background: #09aaa2;
     border-radius: 5px;
@@ -174,22 +173,12 @@ input, textarea {
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
-.sliderZubDauer:hover{
-    opacity: 1;
-}
-.sliderZubDauer::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12%;
-    height: 25px;
-    background: #04AA6D;
-    cursor: pointer;
-}
 .sliderZubDauer::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #04AA6D;
+    height: 110%;
+    background: #caffee;
     cursor: pointer;
+    width: 10%;
+    border: 2px solid rgba(99, 83, 172, 1);
 }
 .suchleiste{
     position: absolute;

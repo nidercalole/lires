@@ -34,5 +34,3 @@ function filBut(){
         filOptionPage.style.display = 'none';
     }
 }
-
-
