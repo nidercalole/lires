@@ -24,6 +24,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     logo.onclick = function() {
         window.location.href = '/';
     }*/
+    const butaddres = document.getElementById('addRec');
+
+    butaddres.onclick = function() {
+        console.log('addres');
+        window.location.href = '/addres';
+    }
 });
 
 function filBut(){
