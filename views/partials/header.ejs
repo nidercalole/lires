@@ -4,6 +4,16 @@
     <button id="filbut" class="filbut" onclick="filBut()">
         <img src = "/img/fil.png" alt="Filter" width="55px">
     </button>
+
+    <input type="text" id="recTitle" class="recTitle">
+    <div class="recHeadInpList">
+      <ul>
+        <li><input placeholder="Zubereitungsdauer in Minuten"></li>
+        <li><h3>Arbeitsaufwand: </h3>kaum<input type="range" min="1" max="5" value="2.5" id="aufwand">sehr hoch</li>
+      </ul>
+    </div>
+    <button class="recSave">Speichern</button>
+
     <nav>
       <ul class="navLinks">
         <li class="tooltipCal">
@@ -18,7 +28,7 @@
         </li>
         <li>
           <a href="link"></a>
-          <usrnm><%= usrnm %></usrnm>
+          <usrnm id="usrnm"><%= usrnm %></usrnm>
         </li>
         <li class="tooltipProfil">
           <a href="link"></a>

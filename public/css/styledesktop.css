@@ -179,6 +179,15 @@ input, textarea {
     box-shadow: 0 0 2px 1px rgba(99, 83, 172, 0.6);
     background-color: rgba(99, 83, 172, 0.3);
 }
+.recHeadInpList{
+    display:none;
+}
+.recSave{
+    display: none;
+}
+.recTitle{
+    display:none;
+}
 .sliderZubDauer{
     cursor: pointer;
     width: 90%;

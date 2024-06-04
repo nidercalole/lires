@@ -30,6 +30,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log('addres');
         window.location.href = '/addres';
     }
+
+    //Input beim Titel von Rezept (autom. Anpassen der Textfeldgröße) funktioniert nich
+    const recTitle = document.getElementById('recTitle')
+    recTitle.oninput = function() {
+        const inputWidth = input.scrollWidth; // Breite des Inhalts des Textfelds
+        recTitle.style.width = inputWidth + "px"; // Setzt die Breite des Textfelds auf die Breite des Inhalts
+    }
 });
 
 function filBut(){
