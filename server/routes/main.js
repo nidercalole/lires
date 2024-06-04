@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('index', { title: 'Lires', usrnm: 'Nicht eingeloggt' });
+    res.render('index', { title: 'Lires', usrnm: req.query.usrnm });
 });
 
 router.get('/login', (req, res) => {
