@@ -1,6 +1,34 @@
+.aufwRange{
+    cursor: pointer;
+    width: 70%;
+    height: 12%;
+    background: #6353ac;
+    border-radius: 5px;
+    outline: none;
+}
+.aufwRange::-moz-range-thumb {
+    height: 110%;
+    background: #caffee;
+    cursor: pointer;
+    width: 10%;
+}
 .filbut{
     display: none;
 }
+.headInpRow{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    margin: 0,
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+         -webkit-appearance: none;
+        }
+
 input, textarea {
     caret-color: #CAFFEE;
     cursor: text;
@@ -8,12 +36,15 @@ input, textarea {
 .navpic{
     display: none;
 }
+.noList{
+    list-style:none;
+}
 .recHeadInpList{
     align-items: center;
     display: flex;
-    list-style:none;
-    margin:8%;
-    background-color: #078881;
+    margin:0;
+    width: 30%;
+    padding: 0;
 }
 .recSave{
     display: block;
@@ -43,4 +74,19 @@ input, textarea {
 }
 .suchleiste{
     display: none;
+}
+.zubDauInp{
+    background-color: #6353ac;
+    border: none;
+    border-radius: 5px;
+    width: 12%;
+    height: 12%;
+    display: inline-flex;
+    color:#Caffee;
+    margin-left: 2%;
+}
+.zubDauInp:focus{
+    background-color: rgba(99, 83, 172, 0.6);
+    outline: 1px ridge rgba(99, 83, 172, 0.9);
+    border: 2px solid #078881;
 }
