@@ -165,13 +165,13 @@ input, textarea {
     margin-top: 0;
     margin-bottom: 0;
     grid-template-areas:
-    'miteinh miteinh miteinh miteinh mittags mittags'
-    'mitzut mitzut mitzut mitzut mittags mittags'
-    'mitzut mitzut mitzut mitzut mittags mittags'
-    'mitzut mitzut mitzut mitzut mitshoinf mitshoinf'
-    'mitzut mitzut mitzut mitzut mitshoinf mitshoinf'
-    'mitzut mitzut mitzut mitzut mitshoinf mitshoinf'
-    'mitchoose mitchoose mitchoose mitchoose mitshoinf mitshoinf';
+    'miteinh miteinh miteinh mitzut mitzut mitzut mitzut'
+    'mittags mittags mitshoinf mitzut mitzut mitzut mitzut'
+    'mittags mittags mitshoinf mitzut mitzut mitzut mitzut'
+    'mittags mittags mitshoinf mitzut mitzut mitzut mitzut'
+    'mittags mittags mitshoinf mitzut mitzut mitzut mitzut'
+    'mittags mittags mitshoinf mitzut mitzut mitzut mitzut'
+    'mitchoose mitchoose mitshoinf mitzut mitzut mitzut mitzut';
     gap: 10px;
     padding: 1.5%;
     background-color: none;
