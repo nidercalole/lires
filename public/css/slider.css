@@ -23,9 +23,39 @@
     height: 20px; /* Angepasst für bessere Sichtbarkeit */
     background: #caffee;
     cursor: pointer;
-    width: 20px; /* Angepasst für bessere Sichtbarkeit */
+    width: 12px; /* Angepasst für bessere Sichtbarkeit */
     border: 2px solid rgba(99, 83, 172, 1);
     border-radius: 5px;
 }
 
+/**/
+.aufwRange {
+    -webkit-appearance: none; /* Entfernt Standardstil in WebKit-basierten Browsern */
+    appearance: none;
+    cursor: pointer;
+    width: 25%;
+    height: 12%;
+    background: #6353ac;
+    border-radius: 5px;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
 
+.aufwRange::-webkit-slider-runnable-track {
+
+    cursor: pointer;
+    background: #6353ac;
+    border-radius: 5px;
+}
+.aufwRange::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Entfernt Standardstil in WebKit-basierten Browsern */
+    appearance: none;
+    height: 20px; /* Angepasst für bessere Sichtbarkeit */
+    background: #caffee;
+    cursor: pointer;
+    width: 12px; /* Angepasst für bessere Sichtbarkeit */
+    border: none;
+    border-radius: 5px;
+}
