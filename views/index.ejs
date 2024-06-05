@@ -13,7 +13,7 @@
     </select>
   </div>
   <div class="filGridZubDauer" id="zubDauer"><h3>Zubereitungsdauer</h3>
-    <input type="range" min="15" max="180" value="82.5" class="sliderZubDauer" id="maxDauer"> 
+    <input type="range" min="15" max="180" value="82.5" class="sliderZubDauer" id="maxDauer" oninput="maxDauerInput()"> 
     <p>Dir werden Rezepte mit einer Zubereitungsdauer von maximal <span id="maxMin"></span> Minuten angezeigt.</p>
   </div>
   <div id=exclude><h3>Aus Suchergebnissen ausschließen</h3>
@@ -48,6 +48,6 @@
     </div>
   </div>
 
-<button id="addRec" class="addRec">
+<button id="addRec" class="addRec" onclick="buttaddrec()">
     <img src = "/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
 </button>

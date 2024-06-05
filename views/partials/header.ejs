@@ -1,11 +1,11 @@
 <header class="header">
     <img class="logo" src="/img/oni.png" alt="Lires-Zwiebel" id="logo" onclick="redirectHome()">
     <input id="suchleiste" class="suchleiste">
-    <button id="filbut" class="filbut" onclick="filBut()">
+    <button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
         <img src = "/img/fil.png" alt="Filter" width="55px">
     </button>
 
-    <input type="text" id="recTitle" class="recTitle">
+    <input type="text" id="recTitle" class="recTitle" oninput="inputRecTitle()">
     <div class="recHeadInpList">
       <ul class="noList">
         <li class="headInpRow headInpRowOben">
@@ -30,7 +30,7 @@
           <img class="navpic" src="/img/cal.png" alt="Kochkalender">
           <span class="tooltipCaltext">Kochen planen</span>
         </li>
-        <li class="tooltipList" id="ListBut" onclick="listBut()">
+        <li class="tooltipList" id="ListBut" onclick="listButclick()">
           <a href="link"></a>
           <img class="navpic" src="/img/lists.png" alt="Listen">
           <span class="tooltipListtext">Zutaten in Einkaufslisten zusammenfassen</span>

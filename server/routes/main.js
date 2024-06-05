@@ -19,7 +19,6 @@ function insertUsr(data) {
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get('/', async(req, res) => {
-    console.log('Usrnm:', req.query.usrid);
     if(req.query.usrnm === undefined) {
         return res.redirect('/login');
     }else{
@@ -55,11 +54,9 @@ router.post('/register', async (req, res) => {
     const permstringPermision = 's4l4m4nderBrei';
 
     if (permstring === permstringPermision) {
-        console.log('Permission granted');
         try {
             const existingUser = await Usrnm.findOne({ usrnm: username }).exec();
             if (existingUser) {
-                console.log('User already exists');
                 return res.redirect('/login?message=Benutzername bereits vergeben.&islogin=false');
             } else {
                 await insertUsr({ usrnm: username });
@@ -70,7 +67,6 @@ router.post('/register', async (req, res) => {
             return res.status(500).send('Fehler bei der Verarbeitung der Anfrage.');
         }
     } else {
-        console.log('Permission denied');
         return res.redirect('/login?message=Keine Berechtigung.&islogin=false');
     }
 });
