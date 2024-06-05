@@ -40,11 +40,13 @@ router.get('/', async(req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    res.render('login', { title: 'Lires', usrnm: 'Nicht eingeloggt' });
+    islogin = req.query.islogin;
+    message = req.query.message;
+    res.render('login', { title: 'Lires', usrnm: 'Nicht eingeloggt', islogin: islogin, message: message});
 });
 
-router.get('/addrec', (req, res) => {
-    res.render('addrec', { title: 'Lires', usrnm: req.query.usrnm });
+router.get('/addres', (req, res) => {
+    res.render('addres', { title: 'Lires', usrnm: req.query.usrnm });
 });
 
 router.post('/register', async (req, res) => {
@@ -58,7 +60,7 @@ router.post('/register', async (req, res) => {
             const existingUser = await Usrnm.findOne({ usrnm: username }).exec();
             if (existingUser) {
                 console.log('User already exists');
-                return res.redirect('/login');
+                return res.redirect('/login?message=Benutzername bereits vergeben.&islogin=false');
             } else {
                 await insertUsr({ usrnm: username });
                 return res.redirect('/verify/?usrnm=' + username);
@@ -69,7 +71,7 @@ router.post('/register', async (req, res) => {
         }
     } else {
         console.log('Permission denied');
-        return res.redirect('/login');
+        return res.redirect('/login?message=Keine Berechtigung.&islogin=false');
     }
 });
 
@@ -100,7 +102,7 @@ router.post('/anmld', async (req, res) => {
         
         if (!existingUser) {
             console.log('User not found');
-            return res.redirect('/login');
+            return res.redirect('/login?message=Benutzer nicht gefunden.&islogin=true');
         }
         
         const id = existingUser.usrid;
