@@ -1,0 +1,31 @@
+.sliderZubDauer {
+    -webkit-appearance: none; /* Entfernt Standardstil in WebKit-basierten Browsern */
+    appearance: none;
+    cursor: pointer;
+    width: 90%;
+    height: 10%px; /* Angepasst für bessere Sichtbarkeit */
+    background: #09aaa2;
+    border-radius: 5px;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.sliderZubDauer::-webkit-slider-runnable-track {
+    height: 110%;
+    cursor: pointer;
+    background: #09aaa2;
+    border-radius: 5px;
+}
+.sliderZubDauer::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Entfernt Standardstil in WebKit-basierten Browsern */
+    appearance: none;
+    height: 20px; /* Angepasst für bessere Sichtbarkeit */
+    background: #caffee;
+    cursor: pointer;
+    width: 20px; /* Angepasst für bessere Sichtbarkeit */
+    border: 2px solid rgba(99, 83, 172, 1);
+    border-radius: 5px;
+}
+
+
