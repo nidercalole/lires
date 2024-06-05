@@ -1,27 +1,44 @@
 <link rel="stylesheet" href="/css/addresdesktop.css">
-<input>
-<div>
-    <div>
-        <p>Zutatenangabe für <input> <input>.</p>
+<textarea class="krzDesc" placeholder="Kurzbeschreibung (maximal 500 Zeichen)"></textarea>
+<div class="mittelfeldGrid">
+    <div class="mitGridEinheiten">
+        <p>Zutatenangabe für 
+            <input type="number" min="1" max="100" placeholder="Anzahl (bspw. '2')" class="anzEinhInp"> 
+            <input type="text" placeholder="Einheit (bspw. 'Portionen')" class="anzEinhInp">.
+        </p>
     </div>
-    <div>
-        <table>
+    <div class="mitGridZutaten">
+        <table class="beinhTable" id="table1">
             <tr>
-                <th>Zutat</th>
+                <th class="moreWidth">Zutat</th>
                 <th>Menge</th>
             </tr>
+            <tr>
+                <td><input id="tableInp1" class="tableInp" onkeydown="checkAndAddRow(event, 'table1')"></td>
+                <td><input class="tableInp" onkeydown="checkAndAddRow(event, 'table1')"></td>
+            </tr>
         </table>
-    </div>
-    <div>
+        <table class="beinhTable" id="table2">
+            <tr>
+                <th class="moreWidth">Zutat</th>
+                <th>Menge</th>
+            </tr>
+            <tr>
+                <td><input class="tableInp" onkeydown="checkAndAddRow(event, 'table2')"></td>
+                <td><input class="tableInp" onkeydown="checkAndAddRow(event, 'table2')"></td>
+            </tr>
+        </table>
+    </div>    
+    <div class="mitGridChoose">
         <button>Im Fließtext beschreiben</button>
         <button>Schrittweise beschreiben</button>
     </div>
-    <div>
+    <div class="mitGridTags">
         <h3>Art des Gerichts</h3>
         <input>
     </div>
-    <div>
+    <div class="mitGridShoInf">
         <input>
     </div>
 </div>
-<input>
+<textarea class="vorgehen" placeholder="Vorgehen"></textarea>
