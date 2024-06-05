@@ -1,3 +1,4 @@
+//Ich bin ein kaputtes js Dokument :( 
 var input = document.getElementById("tableInp1");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {

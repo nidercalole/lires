@@ -30,15 +30,23 @@
         </table>
     </div>    
     <div class="mitGridChoose">
-        <button>Im Fließtext beschreiben</button>
-        <button>Schrittweise beschreiben</button>
+        <button class="chooseBtn">Im Fließtext beschreiben</button>
+        <button class="chooseBtn">Schrittweise beschreiben</button>
     </div>
     <div class="mitGridTags">
-        <h3>Art des Gerichts</h3>
-        <input>
+        <h4>Art des Gerichts</h4>
+        <select class="tagDd" multiple>
+            <option value="hptgrcht">Hauptgericht</option>
+            <option value="nchtsch">Nachtisch</option>
+            <option value="gbck">Gebäck</option>
+            <option value="fngrfd">Fingerfood</option>
+            <option value="vrsps">Vorspeise</option>
+            <option value="suess">Süß</option>
+            <option value="slt">Salat</option>
+          </select>
     </div>
     <div class="mitGridShoInf">
-        <input>
+        <textarea class="shoInfInp" placeholder="Shortinfo"></textarea>
     </div>
 </div>
 <textarea class="vorgehen" placeholder="Vorgehen"></textarea>
