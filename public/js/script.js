@@ -1,7 +1,7 @@
 //growing list
 let ended = false;
 
- listButclick = function(){
+listButclick = function(){
     const listArea = document.getElementById('listArea');
 
     if (ended) {
@@ -13,7 +13,7 @@ let ended = false;
  };
 
 //inputRecTitle
- inputRecTitle = function(){
+inputRecTitle = function(){
     const recTitle = document.getElementById('recTitle');
     const inputWidth = recTitle.scrollWidth; 
     recTitle.style.width = inputWidth + "px"; 
