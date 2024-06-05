@@ -1,43 +1,48 @@
-<link rel="stylesheet" href="/css/addresdesktop.css">
-<textarea class="krzDesc" placeholder="Kurzbeschreibung (maximal 500 Zeichen)"></textarea>
+<link rel="stylesheet" href="/css/addresdesktop.css" />
+<textarea
+  class="krzDesc"
+  placeholder="Kurzbeschreibung (maximal 500 Zeichen)"
+></textarea>
 <div class="mittelfeldGrid">
-    <div class="mitGridEinheiten">
-        <p>Zutatenangabe für 
-            <input type="number" min="1" max="100" placeholder="Anzahl (bspw. '2')" class="anzEinhInp"> 
-            <input type="text" placeholder="Einheit (bspw. 'Portionen')" class="anzEinhInp">.
-        </p>
-    </div>
-    <div class="mitGridZutaten">
-        <table class="beinhTable" id="table1">
-            <tr>
-                <th class="moreWidth">Zutat</th>
-                <th>Menge</th>
-            </tr>
-            <tr id="backfisch">
-                <td><input id="tableInp11" class="tableInp" ></td>
-                <td><input id="tableInp12" class="tableInp"></td>
-            </tr>
-        </table>
-    </div>    
-    <div class="mitGridChoose">
-        <button class="chooseBtn">Im Fließtext beschreiben</button>
-        <button class="chooseBtn">Schrittweise beschreiben</button>
-    </div>
-    <div class="mitGridTags">
-        <h4>Art des Gerichts</h4>
-        <select class="tagDd" multiple>
-            <option value="hptgrcht">Hauptgericht</option>
-            <option value="nchtsch">Nachtisch</option>
-            <option value="gbck">Gebäck</option>
-            <option value="fngrfd">Fingerfood</option>
-            <option value="vrsps">Vorspeise</option>
-            <option value="suess">Süß</option>
-            <option value="slt">Salat</option>
-          </select>
-    </div>
-    <div class="mitGridShoInf">
-        <textarea class="shoInfInp" placeholder="Shortinfo"></textarea>
-    </div>
+  <div class="mitGridEinheiten">
+    <zutAn
+      >Zutatenangabe für
+      <input
+        type="number"
+        min="1"
+        max="100"
+        placeholder="Anzahl (bspw. '2')"
+        class="anzEinhInp"
+      />
+      <input
+        type="text"
+        placeholder="Einheit (bspw. 'Portionen')"
+        class="anzEinhInp"
+      />.
+    </zutAn>
+  </div>
+  <div class="mitGridZutaten">
+    <table class="beinhTable" id="table1">
+      <tr>
+        <th class="moreWidth">Zutat</th>
+        <th>Menge</th>
+      </tr>
+      <tr id="backfisch">
+        <td><input id="tableInp11" class="tableInp" /></td>
+        <td><input id="tableInp12" class="tableInp" /></td>
+      </tr>
+    </table>
+  </div>
+  <div class="mitGridChoose">
+    <button class="chooseBtn">Im Fließtext beschreiben</button>
+    <button class="chooseBtn">Schrittweise beschreiben</button>
+  </div>
+  <div class="mitGridTags">
+    <%- include('./partials/vieletags.ejs')%>
+  </div>
+  <div class="mitGridShoInf">
+    <textarea class="shoInfInp" placeholder="Shortinfo"></textarea>
+  </div>
 </div>
 <textarea class="vorgehen" placeholder="Vorgehen"></textarea>
 <script src="/js/addrec.js"></script>

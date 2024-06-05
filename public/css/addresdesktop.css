@@ -3,7 +3,7 @@
     border: none;
     border-radius: 5px;
     width: fit-content;
-    height: 12%;
+    height: 70%;
     display: inline-flex;
     color:#Caffee;
     font-size: medium;
@@ -62,15 +62,43 @@
 }
 /* top-right border-radius */
 .beinhTable tr:first-child th:last-child {
-    border-top-right-radius: 6px;
+    border-top-right-radius: 5px;
 }
 /* bottom-left border-radius */
 .beinhTable tr:last-child td:first-child {
-    border-bottom-left-radius: 6px;
+    border-bottom-left-radius: 5px;
 }
 /* bottom-right border-radius */
 .beinhTable tr:last-child td:last-child {
-    border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 5px;
+}
+.chckbxbx{
+    display: none;
+}
+.chckbxbx + label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #f0f0f0;
+    border: 2px solid #6353ac;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+.chckbxbx:checked + label {
+    background-color: #6353ac;
+}
+
+.chckbxbx:checked + label::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 .chooseBtn{
     background-color:rgba(71,59,123,0.3);
@@ -141,10 +169,15 @@ input, textarea {
     list-style:none;
 }
 .mitGridEinheiten { 
+    display: flex;
+    align-items: center;
     grid-area: miteinh;
     background-color: rgba(71,59,123,0.5);
-    padding-left: 5%;
+    padding-left: 2%;
     border-radius: 5px;
+    padding-bottom:0;
+    padding-top:0;
+    height:100%;
 }
 .mitGridZutaten {
     display: flex;
@@ -155,7 +188,13 @@ input, textarea {
     border-radius: 5px;
 }
 .mitGridChoose { grid-area: mitchoose; }
-.mitGridTags { grid-area: mittags; }
+.mitGridTags {
+    grid-area: mittags;
+    background-color: rgba(71,59,123,0.5);
+    border-radius:5px;
+    padding: 1%;
+    height:100%;
+}
 .mitGridShoInf { grid-area: mitshoinf; }
 .mittelfeldGrid{
     display:grid;
@@ -166,12 +205,8 @@ input, textarea {
     margin-bottom: 0;
     grid-template-areas:
     'miteinh miteinh miteinh mitzut mitzut mitzut mitzut'
-    'mittags mittags mitshoinf mitzut mitzut mitzut mitzut'
-    'mittags mittags mitshoinf mitzut mitzut mitzut mitzut'
-    'mittags mittags mitshoinf mitzut mitzut mitzut mitzut'
-    'mittags mittags mitshoinf mitzut mitzut mitzut mitzut'
-    'mittags mittags mitshoinf mitzut mitzut mitzut mitzut'
-    'mitchoose mitchoose mitshoinf mitzut mitzut mitzut mitzut';
+    'mittags mitshoinf mitshoinf mitzut mitzut mitzut mitzut'
+    'mitchoose mitshoinf mitshoinf mitzut mitzut mitzut mitzut';
     gap: 10px;
     padding: 1.5%;
     background-color: none;
@@ -307,4 +342,11 @@ slidZubDaTxt{
     background-color: rgba(99, 83, 172, 0.6);
     outline: 1px ridge rgba(99, 83, 172, 0.9);
     border: 2px solid #078881;
+}
+zutAn{
+    color:#caffee;
+    size:medium;
+    margin-left:0;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
