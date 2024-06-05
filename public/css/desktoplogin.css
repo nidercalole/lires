@@ -73,3 +73,7 @@
     font-size:medium;
     -webkit-text-fill-color: #CAFFEE;
 }
+.error{
+    color: red;
+    font-size: medium;
+}
