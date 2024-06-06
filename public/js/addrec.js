@@ -1,4 +1,3 @@
-
 //ich bin ganz :B
 
 let counter = 0;
@@ -9,8 +8,8 @@ function addTableRow() {
   var row = table.insertRow(-1);
   var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(1);
-  cell1.textContent = tableInp11
-  cell2.textContent = tableInp12
+  cell1.textContent = tableInp11;
+  cell2.textContent = tableInp12;
 
   cell1.id = "resing_" + counter;
   cell2.id = "resingamount_" + counter;
@@ -19,9 +18,17 @@ function addTableRow() {
 }
 
 var input = document.getElementById("backfisch");
-input.addEventListener("keypress", function(event) {
+input.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     addTableRow();
+  }
+});
+
+document.querySelector(".chooseBtn").addEventListener("click", function () {
+  if (this.textContent === "Im Fließtext beschreiben") {
+    this.textContent = "Schrittweise beschreiben";
+  } else {
+    this.textContent = "Im Fließtext beschreiben";
   }
 });

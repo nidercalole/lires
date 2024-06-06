@@ -1,49 +1,74 @@
 <header class="header">
-    <img class="logo" src="/img/oni.png" alt="Lires-Zwiebel" id="logo" onclick="redirectHome()">
-    <input id="suchleiste" class="suchleiste">
-    <button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
-        <img src = "/img/fil.png" alt="Filter" width="55px">
-    </button>
+  <img
+    class="logo"
+    src="/img/oni.png"
+    alt="Lires-Zwiebel"
+    id="logo"
+    onclick="redirectHome()"
+  />
+  <input id="suchleiste" class="suchleiste" />
+  <button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
+    <img src="/img/fil.png" alt="Filter" width="55px" />
+  </button>
 
-    <input type="text" id="recTitle" class="recTitle" oninput="inputRecTitle()" placeholder="Titel des Rezepts">
-    <div class="recHeadInpList">
-      <ul class="noList">
-        <li class="headInpRow headInpRowOben">
-          <h5>Zubereitungsdauer:</h5>
-          <input class="zubDauInp" type="number" min="1">
-          <slidZubDaTxt>Minuten</slidZubDaTxt>
-        </li>
-        <li class="headInpRow">
-          <h5>Arbeitsaufwand:</h5>
-          <slidZubDaTxt>gering</slidZubDaTxt>
-          <input class="aufwRange" type="range" min="1" max="5" value="2.5" id="aufwand">
-          <slidZubDaTxt>hoch</slidZubDaTxt>
-        </li>
-      </ul>
-    </div>
-    <button class="recSave">Speichern</button>
-
-    <nav>
-      <ul class="navLinks">
-        <li class="tooltipCal">
-          <a href="link"></a>
-          <img class="navpic" src="/img/cal.png" alt="Kochkalender">
-          <span class="tooltipCaltext">Kochen planen</span>
-        </li>
-        <li class="tooltipList" id="ListBut" onclick="listButclick()">
-          <a href="link"></a>
-          <img class="navpic" src="/img/lists.png" alt="Listen">
-          <span class="tooltipListtext">Zutaten in Einkaufslisten zusammenfassen</span>
-        </li>
-        <li>
-          <a href="link"></a>
-          <usrnm id="usrnm"><%= usrnm %></usrnm>
-        </li>
-        <li class="tooltipProfil">
-          <a href="link"></a>
-          <img class="navpic2" src="/img/bsppb.png" alt="beispielhaftes Profilbild">
-          <span class="tooltipProfiltext">Zum Profil</span>
-        </li>
+  <input
+    type="text"
+    id="recTitle"
+    class="recTitle"
+    oninput="inputRecTitle()"
+    placeholder="Titel des Rezepts"
+  />
+  <div class="recHeadInpList">
+    <ul class="noList">
+      <li class="headInpRow headInpRowOben">
+        <h5>Zubereitungsdauer:</h5>
+        <input class="zubDauInp" type="number" min="1" />
+        <slidZubDaTxt>Minuten</slidZubDaTxt>
+      </li>
+      <li class="headInpRow">
+        <h5>Arbeitsaufwand:</h5>
+        <slidZubDaTxt>gering</slidZubDaTxt>
+        <input
+          class="aufwRange"
+          type="range"
+          min="1"
+          max="5"
+          value="2.5"
+          id="aufwand"
+        />
+        <slidZubDaTxt>hoch</slidZubDaTxt>
+      </li>
     </ul>
-    </nav>
+  </div>
+  <button class="recSave">Speichern</button>
+
+  <nav>
+    <ul class="navLinks">
+      <li class="tooltipCal">
+        <a href="link"></a>
+        <img class="navpic" src="/img/cal.png" alt="Kochkalender" />
+        <span class="tooltipCaltext">Kochen planen</span>
+      </li>
+      <li class="tooltipList" id="ListBut" onclick="listButclick()">
+        <a href="link"></a>
+        <img class="navpic" src="/img/lists.png" alt="Listen" />
+        <span class="tooltipListtext"
+          >Zutaten in Einkaufslisten zusammenfassen</span
+        >
+      </li>
+      <li>
+        <a href="link"></a>
+        <usrnm id="usrnm"><%= usrnm %></usrnm>
+      </li>
+      <li class="tooltipProfil">
+        <a href="link"></a>
+        <img
+          class="navpic2"
+          src="/img/bsppb.png"
+          alt="beispielhaftes Profilbild"
+        />
+        <span class="tooltipProfiltext">Zum Profil</span>
+      </li>
+    </ul>
+  </nav>
 </header>
