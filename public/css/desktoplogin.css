@@ -12,27 +12,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0;
     margin-top: 3%;
 }
 .filOptionPagelogin{
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
-    width: 50%;
+    height:fit-content;
+    width: 70%;
     display: block;
     padding: 1.5%;
     justify-content: center;
     align-items: center;
     border-radius:5px;
-    background-color: #078881;
+    background-color: #09aaa2;
     z-index: 1000;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.filOptionPageloginBottom{
+    margin-top:2%;
 }
 .submitloginreg{
     flex-direction: column;
     display: flex;
     align-self: flex-end;
-    background-color:#09aaa2;
+    background-color: #6353ac;
     border: 1px solid #6353ac;
     border-radius: 5px;
     border-width: 2px;
@@ -40,6 +44,11 @@
     -webkit-text-fill-color: #CAFFEE;
     padding: 5px;
     margin-bottom:1.5%;
+    cursor: pointer;
+}
+.submitloginreg:hover{
+    background-color: rgba(99,83,172,0.6);
+    outline: 1px ridge rgba(99,83,172,0.9);
 }
 .formlogin{
     display: flex;
@@ -74,6 +83,29 @@
     -webkit-text-fill-color: #CAFFEE;
 }
 .error{
-    color: red;
+    color: #caffee;
     font-size: medium;
+    background-color: #ff4a1c;
+    width:fit-content;
+    border-radius:5px;
+    border: 2px solid #991f00;
+    padding: 4px;
+    z-index:1001;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.center {
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* Verschiebt das Element, um es exakt zu zentrieren */
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    color: #caffee;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.hddn{
+    display: none;
 }
