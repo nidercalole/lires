@@ -32,3 +32,12 @@ document.querySelector(".chooseBtn").addEventListener("click", function () {
     this.textContent = "Im Fließtext beschreiben";
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', (event) =>{
+  const krzDesc = document.getElementById('krzDesc');
+  const charCount = document.getElementById('charCount');
+  krzDesc.addEventListener('input', () => {
+    charCount.textContent = `${krzDesc.value.lenght}/500`
+  });
+}); //Und weil ich auch doofes Javascript bin, funktionier ich au nich :(

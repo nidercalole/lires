@@ -166,11 +166,19 @@ textarea {
   font-family: Verdana, sans-serif;
   font-size: small;
   resize: none;
+  box-sizing: border-box;
 }
 .krzDesc:focus {
   background-color: rgba(71, 59, 123, 0.6);
   border: 2px solid rgba(7, 136, 129, 1);
   outline: 1px ridge rgba(71, 59, 123, 0.6);
+}
+.charCount{
+  text-align: right;
+  font-size:small;
+  margin-left:0.5%;
+  margin-right:0.5%;
+  color:#caffee
 }
 .navpic {
   display: none;
