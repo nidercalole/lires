@@ -69,6 +69,10 @@
     font-size:medium;
     -webkit-text-fill-color: #CAFFEE;
 }
+.inputusrnm:focus{
+    background-color: rgba(99, 83, 172, 0.2);
+    outline: 2px ridge rgba(99, 83, 172, 0.3);
+}
 .inputsreg{
     display: flex;
     flex: 2;
@@ -81,6 +85,10 @@
     border-width: 2px;
     font-size:medium;
     -webkit-text-fill-color: #CAFFEE;
+}
+.inputsreg:focus{
+    background-color: rgba(99, 83, 172, 0.2);
+    outline: 2px ridge rgba(99, 83, 172, 0.3);
 }
 .error{
     color: #caffee;
@@ -105,7 +113,4 @@
     border-radius: 5px;
     text-align: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-.hddn{
-    display: none;
 }
