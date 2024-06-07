@@ -55,7 +55,7 @@ let lblcounter = 0;
 function addlabl() {
   const shoInfInp = document.getElementById("shoInfInp").value;
   const lbls = document.getElementById("lbls");
-  lbls.class = "lbls";
+  lbls.className = "lbls";
   let lbl = document.createElement("p");
   lbl.textContent = shoInfInp;
   lbl.id = "lbl_" + lblcounter;
