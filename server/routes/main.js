@@ -109,4 +109,8 @@ router.get('/recipe', (req, res) => {
    res.render('recipe', { title: 'Lires', usrnm: req.query.usrnm });
 });
 
+router.get('/profile', (req, res) => {
+    res.render('profile', { title: 'Lires', usrnm: req.query.usrnm });
+});
+
 module.exports = router;

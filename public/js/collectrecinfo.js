@@ -3,6 +3,12 @@ function extval(str){return document.getElementById(str).value;}
 function exttxt(str){return document.getElementById(str).textContent;}
 
 function collectAndSend(){
+    /*
+    const recTitle = extval("recTitle");
+    const aufwRange = extval("aufwRange");
+    const zubDauInp = extval("zubDauInp");
+    const krzDesc = extval("krzDesc");
+    */
     const chooseBtn = exttxt("chooseBtn");
     const ingtabl = document.getElementById("table1").rows.length;
     const lbls = document.getElementById("lbls").getElementsByTagName('*').length;
@@ -33,8 +39,4 @@ function collectAndSend(){
         const lbl = exttxt("lbl_" + i);
         labels.push(lbl);
     }
-    const recTitle = extval("recTitle");
-    const aufwRange = extval("aufwRange");
-    const zubDauInp = extval("zubDauInp");
-    const krzDesc = extval("krzDesc");
 };

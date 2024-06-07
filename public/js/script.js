@@ -42,6 +42,8 @@ maxDauerInput = function(){
     maxMin.textContent = maxDauer.value;
 };
 
-
-
-
+//redirect to profile
+function redirectProfil(){
+    const username = document.getElementById('usrnm').textContent
+    window.location.href = '/profile/?usrnm=' + username;
+}
