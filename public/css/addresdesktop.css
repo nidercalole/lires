@@ -216,11 +216,10 @@ textarea {
   font-size: small;
   margin-left: 0.5%;
   margin-right: 1.5%;
-  margin-top: 50px;
+  top: 105px;
   color: #caffee;
   position: absolute;
   z-index: 1;
-  top: 11%;
   right: 0;
 }
 
