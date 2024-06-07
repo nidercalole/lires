@@ -32,10 +32,16 @@ input.addEventListener("keypress", function (event) {
 
 function chooseBtn(){
   const btn = document.getElementById('chooseBtn');
+  const stepwise = document.getElementById('stepwise');
+  const explanation = document.getElementById('explanation');
   if (btn.textContent === "Im Fließtext beschreiben") {
     btn.textContent = "Schrittweise beschreiben";
+    stepwise.classList.remove('hidden');
+    explanation.classList.add('hidden');
   } else {
     btn.textContent = "Im Fließtext beschreiben";
+    stepwise.classList.add('hidden');
+    explanation.classList.remove('hidden');
   }
 }
 
@@ -43,4 +49,36 @@ function countChars(){
   const krzDesc = document.getElementById('krzDesc');
   const charCount = document.getElementById('charCount');
   charCount.textContent = `${zaehleZeichen(krzDesc.value)}/500`
+}
+//label
+let lblcounter = 0;
+function addlabl() {
+  const shoInfInp = document.getElementById("shoInfInp").value;
+  const lbls = document.getElementById("lbls");
+  let lbl = document.createElement("p");
+  lbl.textContent = shoInfInp;
+  lbl.id = "lbl_" + lblcounter;
+  lbl.classList.add("lbl");
+  lbls.appendChild(lbl);
+  lblcounter++;
+
+  document.getElementById("shoInfInp").value = "";
+}
+
+const shoInfInp = document.getElementById('shoInfInp');
+shoInfInp.addEventListener('keypress', function(event){
+  if (event.key === "Enter") {
+    event.preventDefault();
+    addlabl();
+  }
+});
+
+let stepid = 2;
+function addstepp() {
+  const steps = document.getElementById("stepwise");
+  let step = document.createElement("textarea");
+  step.id = "step_" + stepid;
+  step.classList.add("stepvorgehen");
+  steps.appendChild(step);
+  stepid++;
 }

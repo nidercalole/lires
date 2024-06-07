@@ -19,11 +19,13 @@
             max="100"
             placeholder="Anzahl (bspw. '2')"
             class="anzEinhInp"
+            id="anzEinhInp"
           />
           <input
             type="text"
             placeholder="Einheit (bspw. 'Portionen')"
             class="anzEinhInp"
+            id="anzEinhInp"
           />.
         </zutAn>
       </div>
@@ -32,7 +34,11 @@
         <input
           class="shoInfInp"
           placeholder="Labels (bspw. Backtemperatur)"
+          id="shoInfInp"
         />
+        <div class="lbls" id="lbls">
+
+        </div>
       </div>
     </div>
   </div>
@@ -54,5 +60,9 @@
 <div class="mitGridChoose">
   <button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Im Fließtext beschreiben</button>
 </div>
-<textarea class="vorgehen" placeholder="Vorgehen"></textarea>
+<textarea class="vorgehen" placeholder="Vorgehen" id="explanation"></textarea>
+<div id="stepwise" class="stepwise hidden">
+  <textarea class="stepvorgehen" placeholder="Schritt 1" id="step1"></textarea>
+  <button class="stepaddbtn" id="stepaddbtn" onclick="addstepp()">Neuer Schritt</button>
+</div>
 <script src="/js/addrec.js"></script>
