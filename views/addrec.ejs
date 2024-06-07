@@ -3,43 +3,52 @@
   class="krzDesc"
   placeholder="Kurzbeschreibung (maximal 500 Zeichen)"
 ></textarea>
-<div class="mittelfeldGrid">
-  <div class="mitGridEinheiten">
-    <zutAn
-      >Zutatenangabe für
-      <input
-        type="number"
-        min="1"
-        max="100"
-        placeholder="Anzahl (bspw. '2')"
-        class="anzEinhInp"
-      />
-      <input
-        type="text"
-        placeholder="Einheit (bspw. 'Portionen')"
-        class="anzEinhInp"
-      />.
-    </zutAn>
+<div class="row">
+  <div class="addRecSplitLeft">
+    <div class="mittelfeldGrid">
+      <div class="mitGridEinheiten">
+        <zutAn
+          >Zutatenangabe für
+          <input
+            type="number"
+            min="1"
+            max="100"
+            placeholder="Anzahl (bspw. '2')"
+            class="anzEinhInp"
+          />
+          <input
+            type="text"
+            placeholder="Einheit (bspw. 'Portionen')"
+            class="anzEinhInp"
+          />.
+        </zutAn>
+      </div>
+      <div class="mitGridTags"><%- include('./partials/vieletags.ejs')%></div>
+      <div class="mitGridShoInf">
+        <input
+          class="shoInfInp"
+          placeholder="Shortinfo (bspw. Backtemperatur)"
+        />
+      </div>
+    </div>
   </div>
-  <div class="mitGridZutaten">
-    <table class="beinhTable" id="table1">
-      <tr>
-        <th class="moreWidth">Zutat</th>
-        <th>Menge</th>
-      </tr>
-      <tr id="backfisch">
-        <td><input id="tableInp11" class="tableInp" /></td>
-        <td><input id="tableInp12" class="tableInp" /></td>
-      </tr>
-    </table>
+  <div class="addRecSplitRight">
+    <div class="mitGridZutaten">
+      <table class="beinhTable" id="table1">
+        <tr>
+          <th class="moreWidth">Zutat</th>
+          <th>Menge</th>
+        </tr>
+        <tr id="backfisch">
+          <td><textarea id="tableInp11" class="tableInp"></textarea></td>
+          <td><textarea id="tableInp12" class="tableInp"></textarea></td>
+        </tr>
+      </table>
+    </div>
   </div>
-  <div class="mitGridChoose">
-    <button class="chooseBtn">Im Fließtext beschreiben</button>
-  </div>
-  <div class="mitGridTags"><%- include('./partials/vieletags.ejs')%></div>
-  <div class="mitGridShoInf">
-    <textarea class="shoInfInp" placeholder="Shortinfo"></textarea>
-  </div>
+</div>
+<div class="mitGridChoose">
+  <button class="chooseBtn">Im Fließtext beschreiben</button>
 </div>
 <textarea class="vorgehen" placeholder="Vorgehen"></textarea>
 <script src="/js/addrec.js"></script>

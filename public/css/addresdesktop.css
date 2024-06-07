@@ -42,7 +42,7 @@
   padding: 2px;
 }
 .beinhTable tr:nth-child(even) {
-  background-color: rgba(71, 59, 123, 1);
+  background-color: rgba(71, 59, 123, 0.9);
   border-radius: 5px;
 }
 .beinhTable tr:hover {
@@ -107,17 +107,17 @@ chckbx{
   transform: rotate(45deg);
 }
 .chooseBtn {
-  background-color: rgba(71, 59, 123, 0.3);
+  margin-left: 0.5%;
+  background-color: rgba(71, 59, 123, 0.5);
   color: #caffee;
   border: none;
   border-radius: 5px;
   padding: 10px;
   display:flex;
-  align-self: flex-end;
   margin-top: 1%;
 }
 .chooseBtn:hover {
-  background-color: rgba(71, 59, 123, 0.6);
+  background-color: rgba(71, 59, 123, 0.75);
   outline: 2px solid rgba(7, 136, 129, 1);
 }
 .filbut {
@@ -159,7 +159,7 @@ textarea {
   color: #caffee;
   border: none;
   border-radius: 5px;
-  background-color: rgba(71, 59, 123, 0.3);
+  background-color: rgba(71, 59, 123, 0.5);
   margin-left: 0.5%;
   margin-right: 0.5%;
   height: 50px;
@@ -199,7 +199,6 @@ textarea {
   margin:0;
 }
 .mitGridZutaten {
-  grid-area: mitzut;
   display: flex;
   flex-direction: row;
   background-color: transparent;
@@ -222,20 +221,30 @@ textarea {
 .mittelfeldGrid {
   display: grid;
   max-width: 98.5%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin:0;
   grid-template-areas:
-    "miteinh miteinh miteinh mitzut mitzut mitzut mitzut"
-    "mittags mitshoinf mitshoinf mitzut mitzut mitzut mitzut"
-    "mitchoose mitshoinf mitshoinf mitzut mitzut mitzut mitzut";
+    "miteinh miteinh miteinh"
+    "mittags mitshoinf mitshoinf"
+    "mittags mitshoinf mitshoinf";
   gap: 10px;
-  padding: 1.5%;
+  padding: 0;
   background-color: none;
+  margin-bottom:1%;
 }
 .moreWidth {
     width: 85%;
+}
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: #caffee;
+  opacity: 0.75;
+  font-family: Verdana, sans-serif;
+  font-size:small;
+}
+::placeholder {
+  color: #caffee;
+  opacity: 0.75;
+  font-family: Verdana, sans-serif;
+  font-size:small;
 }
 .recHeadInpList {
   display: flex;
@@ -280,16 +289,20 @@ textarea {
   outline: 1px ridge rgba(99, 83, 172, 0.9);
   border: 2px solid #078881;
 }
+.row{
+  display:flex;
+  flex-direction: row;
+}
 .shoInfInp {
   width: 100%;
   color: #caffee;
   border: none;
   border-radius: 5px;
-  height: 100%;
+  height: medium;
   font-family: Verdana, sans-serif;
   font-size: small;
   resize: none;
-  background-color: rgba(71, 59, 123, 0.6);
+  background-color: rgba(71, 59, 123, 0.5);
 }
 .shoInfInp:focus {
   background-color: rgba(71, 59, 123, 0.3);
@@ -304,13 +317,32 @@ slidZubDaTxt {
 .suchleiste {
   display: none;
 }
+.addRecSplitLeft{
+  width:59%;
+  float:left;
+  margin-top: 0.5%;
+  margin-left:1%;
+  border-radius: 5px;
+  right: 0;
+}
+.addRecSplitRight {
+  width:39%;
+  float:right;
+  margin-top: 0.5%;
+  margin-right:1%;
+  border-radius: 5px;
+  right: 0;
+}
 .tableInp {
   margin-left: 0;
   box-sizing: border-box;
   background-color: transparent;
+  height:100%;
+  width:100%;
   border: none;
   color: #caffee;
   font-family: Verdana, sans-serif;
+  resize:none;
 }
 .tableInp:focus {
   border: none;
@@ -343,7 +375,7 @@ slidZubDaTxt {
   font-family: Verdana, sans-serif;
   font-size: small;
   resize: none;
-  background-color: rgba(71, 59, 123, 0.3);
+  background-color: rgba(71, 59, 123, 0.5);
 }
 .vorgehen:focus {
   background-color: rgba(71, 59, 123, 0.6);
