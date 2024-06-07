@@ -517,3 +517,7 @@ zutAn {
 .hidden{
   display: none;
 }
+.extrachckbxalign{
+  display: flex;
+  margin-top: 2px;
+}
