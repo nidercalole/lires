@@ -2,7 +2,7 @@
   background-color: #6353ac;
   border: none;
   border-radius: 5px;
-  width: 20%;
+  width: 25%;
   height: 70%;
   display: inline-flex;
   color: #caffee;
@@ -178,7 +178,9 @@ textarea {
   font-size:small;
   margin-left:0.5%;
   margin-right:0.5%;
-  color:#caffee
+  color:#caffee;
+  position:absolute;
+  align-items:irgendwo;
 }
 .navpic {
   display: none;
