@@ -44,10 +44,6 @@ router.get('/login', (req, res) => {
     res.render('login', { title: 'Lires', usrnm: 'Nicht eingeloggt', islogin: islogin, message: message});
 });
 
-router.get('/addrec', (req, res) => {
-    res.render('addrec', { title: 'Lires', usrnm: req.query.usrnm });
-});
-
 router.post('/register', async (req, res) => {
     const username = req.body.username;
     const permstring = req.body.permstring;
