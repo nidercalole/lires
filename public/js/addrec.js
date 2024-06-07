@@ -82,6 +82,7 @@ function addstepp() {
   const steps = document.getElementById("stepwise");
   let step = document.createElement("textarea");
   step.id = "step_" + stepid;
+  step.placeholder = "Schritt " + stepid;
   step.classList.add("stepvorgehen");
   steps.appendChild(step);
   stepid++;
