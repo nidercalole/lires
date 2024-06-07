@@ -2,7 +2,7 @@
   background-color: #6353ac;
   border: none;
   border-radius: 5px;
-  width: fit-content;
+  width: 20%;
   height: 70%;
   display: inline-flex;
   color: #caffee;
@@ -398,6 +398,7 @@ slidZubDaTxt {
   border: 2px solid #078881;
 }
 zutAn {
+  width: 100%;
   color: #caffee;
   size: medium;
   margin-left: 0;
