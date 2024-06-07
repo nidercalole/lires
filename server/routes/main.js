@@ -105,4 +105,8 @@ router.post('/anmld', async (req, res) => {
     }
 });
 
+router.get('/recipe', (req, res) => {
+   res.render('recipe', { title: 'Lires', usrnm: req.query.usrnm });
+});
+
 module.exports = router;
