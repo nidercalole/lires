@@ -15,6 +15,8 @@ function addTableRow() {
   cell2.id = "resingamount_" + counter;
 
   counter++;
+  document.getElementById("tableInp11").value = "";
+  document.getElementById("tableInp12").value = "";
 }
 
 var input = document.getElementById("backfisch");
