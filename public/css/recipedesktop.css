@@ -1,0 +1,17 @@
+.body{
+    padding-left:0.5%;
+    padding-right:0.5%;
+    padding-top:0.5%;
+}
+.frstLine{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+}
+recName{
+    -webkit-text-fill-color: #CAFFEE; 
+    font-weight: bold;
+    position: relative;
+    font-size: xx-large;
+}
