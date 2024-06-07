@@ -1,4 +1,7 @@
 //ich bin ganz :B
+function zaehleZeichen(string) {
+  return string.length;
+}
 
 let counter = 0;
 function addTableRow() {
@@ -27,19 +30,17 @@ input.addEventListener("keypress", function (event) {
   }
 });
 
-document.querySelector(".chooseBtn").addEventListener("click", function () {
-  if (this.textContent === "Im Fließtext beschreiben") {
-    this.textContent = "Schrittweise beschreiben";
+function chooseBtn(){
+  const btn = document.getElementById('chooseBtn');
+  if (btn.textContent === "Im Fließtext beschreiben") {
+    btn.textContent = "Schrittweise beschreiben";
   } else {
-    this.textContent = "Im Fließtext beschreiben";
+    btn.textContent = "Im Fließtext beschreiben";
   }
-});
+}
 
-
-document.addEventListener('DOMContentLoaded', (event) =>{
+function countChars(){
   const krzDesc = document.getElementById('krzDesc');
   const charCount = document.getElementById('charCount');
-  krzDesc.addEventListener('input', () => {
-    charCount.textContent = `${krzDesc.value.lenght}/500`
-  });
-}); //Und weil ich auch doofes Javascript bin, funktionier ich au nich :(
+  charCount.textContent = `${zaehleZeichen(krzDesc.value)}/500`
+}

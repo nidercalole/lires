@@ -1,8 +1,12 @@
 <link rel="stylesheet" href="/css/addresdesktop.css" />
 <textarea
+  id="krzDesc"
   class="krzDesc"
   placeholder="Kurzbeschreibung (maximal 500 Zeichen)"
+  maxlength="500"
+  oninput="countChars()"
 ></textarea>
+<p id="charCount"></p>
 <div class="row">
   <div class="addRecSplitLeft">
     <div class="mittelfeldGrid">
@@ -48,7 +52,7 @@
   </div>
 </div>
 <div class="mitGridChoose">
-  <button class="chooseBtn">Im Fließtext beschreiben</button>
+  <button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Im Fließtext beschreiben</button>
 </div>
 <textarea class="vorgehen" placeholder="Vorgehen"></textarea>
 <script src="/js/addrec.js"></script>
