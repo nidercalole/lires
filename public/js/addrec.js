@@ -33,13 +33,16 @@ input.addEventListener("keypress", function (event) {
 function chooseBtn(){
   const btn = document.getElementById('chooseBtn');
   const stepwise = document.getElementById('stepwise');
+  const stepaddbtn = document.getElementById('stepaddbtn')
   const explanation = document.getElementById('explanation');
   if (btn.textContent === "Im Fließtext beschreiben") {
     btn.textContent = "Schrittweise beschreiben";
+    stepaddbtn.classList.remove('hidden');
     stepwise.classList.remove('hidden');
     explanation.classList.add('hidden');
   } else {
     btn.textContent = "Im Fließtext beschreiben";
+    stepaddbtn.classList.add('hidden')
     stepwise.classList.add('hidden');
     explanation.classList.remove('hidden');
   }

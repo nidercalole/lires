@@ -126,14 +126,13 @@ chckbx {
 }
 
 .chooseBtn {
+  border:#473B7B solid 2px;
   margin-left: 0.5%;
   background-color: rgba(71, 59, 123, 0.5);
   color: #caffee;
-  border: none;
   border-radius: 5px;
   padding: 10px;
   display: flex;
-  margin-top: 1%;
 }
 
 .chooseBtn:hover {
@@ -186,6 +185,7 @@ textarea {
   color: #caffee;
   border: none;
   border-radius: 5px;
+  border:#473B7B solid 2px;
   background-color: rgba(71, 59, 123, 0.5);
   margin-left: 0.5%;
   margin-right: 0.5%;
@@ -200,6 +200,15 @@ textarea {
   background-color: rgba(71, 59, 123, 0.6);
   border: 2px solid rgba(7, 136, 129, 1);
   outline: 1px ridge rgba(71, 59, 123, 0.6);
+}
+.lbls{
+  background-color: rgba(71, 59, 123, 0.5);
+  border:#473B7B solid 2px;
+  border-radius: 5px;
+  color:#caffee;
+  font-size: small;
+  margin-top: 2%;
+  padding: 2px;
 }
 
 .charCount {
@@ -223,6 +232,7 @@ textarea {
 }
 
 .mitGridEinheiten {
+  border:#473B7B solid 2px;
   display: flex;
   align-items: center;
   grid-area: miteinh;
@@ -243,10 +253,15 @@ textarea {
 }
 
 .mitGridChoose {
+
   grid-area: mitchoose;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .mitGridTags {
+  border:#473B7B solid 2px;
   grid-area: mittags;
   column-count: 2;
   background-color: rgba(71, 59, 123, 0.5);
@@ -266,7 +281,8 @@ textarea {
   grid-template-areas:
     "miteinh miteinh miteinh"
     "mittags mitshoinf mitshoinf"
-    "mittags mitshoinf mitshoinf";
+    "mittags mitshoinf mitshoinf"
+    "mitchoose mitshoinf mitshoinf";
   gap: 10px;
   padding: 0;
   background-color: none;
@@ -317,9 +333,6 @@ textarea {
 
 .recTitle {
   display: block;
-  /*min-width: 10%;
-    width: auto;
-    max-width:50%;*/
   width: 30%;
   position: absolute;
   left: 120px;
@@ -346,9 +359,9 @@ textarea {
 }
 
 .shoInfInp {
+  border:#473B7B solid 2px;
   width: 100%;
   color: #caffee;
-  border: none;
   border-radius: 5px;
   height: medium;
   font-family: Verdana, sans-serif;
@@ -372,7 +385,37 @@ slidZubDaTxt {
 .suchleiste {
   display: none;
 }
-
+.stepaddbtn{
+  background-color: rgba(71, 59, 123, 0.5);
+  border-radius: 5px;
+  border:#473B7B 2px solid;
+  color: #caffee;
+  margin-left: 1%;
+  height:130%;
+  padding: 0.3%;
+}
+.stepaddbtn:hover {
+  background-color: rgba(71, 59, 123, 0.75);
+  outline: 2px solid rgba(7, 136, 129, 1);
+}
+.stepvorgehen{
+  width:98.5%;
+  margin-left:0.5%;
+  margin-right:0.5%;
+  margin-top: 0.5%;
+  resize:none;
+  background-color: rgba(71, 59, 123, 0.5);
+  border-radius: 5px;
+  border:#473B7B 2px solid;
+  color: #caffee;
+  font-family: Verdana, sans-serif;
+  font-size: small;
+}
+.stepvorgehen:focus {
+  background-color: rgba(71, 59, 123, 0.6);
+  border: 2px solid rgba(7, 136, 129, 1);
+  outline: 1px ridge rgba(71, 59, 123, 0.6);
+}
 .addRecSplitLeft {
   width: 59%;
   float: left;
@@ -425,10 +468,10 @@ slidZubDaTxt {
 }
 
 .vorgehen {
+  border:#473B7B solid 2px;
   width: 98.5%;
   margin-top: 0.5%;
   color: #caffee;
-  border: none;
   border-radius: 5px;
   background-color: transparent;
   margin-left: 0.5%;
