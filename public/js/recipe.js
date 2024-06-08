@@ -10,8 +10,8 @@ function updatelist(){
     let list = gebId('fixTable');
     list.innerHTML = `
     <tr>
-        <td class="moreWidth">Zutaten</td>
-        <td>Menge</td>
+        <td class="moreWidth bold">Zutaten</td>
+        <td class="bold">Menge</td>
     </tr>
     `;
     recData.ingredients.forEach(ing => {
