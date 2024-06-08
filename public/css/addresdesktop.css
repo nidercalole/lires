@@ -444,6 +444,7 @@ slidZubDaTxt {
   color: #caffee;
   font-family: Verdana, sans-serif;
   resize: none;
+  padding: 4px;
 }
 
 .tableInp:focus {

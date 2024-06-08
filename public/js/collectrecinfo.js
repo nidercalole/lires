@@ -83,8 +83,9 @@ function collectAndSend(){
     }
     for (let i = 0; i < ingtabl-2; i++) {
         const ing = exttxt("resing_" + i);
-        const ingamount = exttxt("resingamount_" + i);
-        ingredients.push({ing, ingamount});
+        const ingamount = parseInt(exttxt("resingamount_" + i));
+        const ingunit = exttxt("resingunit_" + i);
+        ingredients.push({ing, ingamount, ingunit});
     }
     for (let i = 0; i < lbls; i++) {
         const lbl = exttxt("lbl_" + i);
