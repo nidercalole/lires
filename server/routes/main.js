@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
+const useragent = require('express-useragent');
 const Usrnm = require('../models/usrnm');
 
 function insertUsr(data) {
@@ -19,6 +20,9 @@ function insertUsr(data) {
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get('/', async(req, res) => {
+    if(req.useragent.isMobile) {
+        return res.redirect('/mobile');
+    }
     if(req.query.usrnm === undefined) {
         return res.redirect('/login');
     }else{

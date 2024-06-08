@@ -18,11 +18,11 @@ const recSchema = new mongoose.Schema({
         default: []
     },
     expense:{
-        type: int,
+        type: Number,
         required: true
     },
     duration:{
-        type: int,
+        type: Number,
         required: true
     },
     description:{

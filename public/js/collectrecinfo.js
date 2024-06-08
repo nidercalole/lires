@@ -2,13 +2,58 @@ function extck(str){return document.getElementById(str).checked;}
 function extval(str){return document.getElementById(str).value;}
 function exttxt(str){return document.getElementById(str).textContent;}
 
+function sendData(
+    titel, 
+    usrnm,
+    aufwand, 
+    zubereitungsdauer, 
+    kurzbeschreibung, 
+    labels, 
+    ingredients, 
+    directions, 
+    coutfor, 
+    kindodish
+){
+    if(usrnm === null){
+        window.location.href = "/login";
+        return;
+    }else if(titel === "" || usrnm === ""){
+        alert("Bitte füllen Sie den Titel des Rezepts aus.");
+        return;
+    }else if(zubereitungsdauer === ""){
+        alert("Bitte füllen Sie die Zubereitungsdauer des Rezepts aus.");
+        return;
+    }
+    fetch('/addrec/add', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            recname: titel,
+            user: usrnm,
+            expense: aufwand,
+            duration: zubereitungsdauer,
+            description: kurzbeschreibung,
+            countfor: coutfor,
+            kindodish: kindodish,
+            labels: labels,
+            ingredients: ingredients,
+            directions: directions
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        window.location.href = "/";
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
 function collectAndSend(){
-    /*
-    const recTitle = extval("recTitle");
-    const aufwRange = extval("aufwRange");
-    const zubDauInp = extval("zubDauInp");
-    const krzDesc = extval("krzDesc");
-    */
+    const usrnm = new URLSearchParams(window.location.search).get("usrnm");
     const chooseBtn = exttxt("chooseBtn");
     const ingtabl = document.getElementById("table1").rows.length;
     const lbls = document.getElementById("lbls").getElementsByTagName('*').length;
@@ -39,4 +84,16 @@ function collectAndSend(){
         const lbl = exttxt("lbl_" + i);
         labels.push(lbl);
     }
+    sendData(
+        extval("recTitle"),
+        usrnm,
+        extval("aufwRange"),
+        extval("zubDauInp"),
+        extval("krzDesc"),
+        labels,
+        ingredients,
+        directions,
+        coutfor,
+        kindodish
+    );
 };
