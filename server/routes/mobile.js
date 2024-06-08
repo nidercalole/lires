@@ -12,4 +12,8 @@ router.get('/', (req, res) => {
     res.render('mobile/index', { title: 'Lires', usrnm: req.query.usrnm });
 });
 
+router.get('/lists', (req, res) => {
+    res.render('mobile/lists', { title: 'Lires', usrnm: req.query.usrnm});
+  });
+  
 module.exports = router;

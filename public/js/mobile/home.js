@@ -26,16 +26,17 @@ swipeArea.addEventListener('touchend', (event) => {
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
         // Horizontaler Wisch
         if (deltaX > 0) {
-            alert('Von links nach rechts gewischt');
+            console.log('Von links nach rechts gewischt');
         } else {
-            alert('Von rechts nach links gewischt');
+            console.log('Von rechts nach links gewischt');
+            window.location.href='/mobile/lists'
         }
     } else {
         // Vertikaler Wisch
         if (deltaY > 0) {
-            alert('Von oben nach unten gewischt');
+            console.log('Von oben nach unten gewischt');
         } else {
-            alert('Von unten nach oben gewischt');
+            console.log('Von unten nach oben gewischt');
         }
     }
 });

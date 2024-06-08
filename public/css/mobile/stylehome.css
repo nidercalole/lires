@@ -3,14 +3,16 @@ input, textarea {
     cursor: text;
 }
 .leftDiv{
-    padding:5px;
-    background-color:blue;
+    background-color:none;
+    padding:0;
     display:block;
     box-sizing: border-box;
+    z-index: -1;
 }
 .swipeArea{
     height:600px;
     width: 100%;
-    background-color:red;
     z-index:100;
+    background-color: orange;
+    z-index: 1;
 }
