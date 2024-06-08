@@ -1,0 +1,16 @@
+input, textarea {
+    caret-color: #CAFFEE;
+    cursor: text;
+}
+.leftDiv{
+    padding:5px;
+    background-color:blue;
+    display:block;
+    box-sizing: border-box;
+}
+.swipeArea{
+    height:600px;
+    width: 100%;
+    background-color:red;
+    z-index:100;
+}

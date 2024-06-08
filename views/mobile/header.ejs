@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/css/mobile/header.css" />
+<header class="header">
+    <img class="logo" src="/img/oni.png" alt="Lires-Zwiebel" id="logo" onclick="redirectHome()" />
+    <input id="suchleiste" class="suchleiste" />
+    <button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
+        <img src="/img/fil.png" alt="Filter" width="30px" />
+    </button>
+
+    <input type="text" id="recTitle" class="recTitle" oninput="inputRecTitle()" placeholder="Titel des Rezepts" />
+    <button class="recSave">Speichern</button>
+
+    <usrnm id="usrnm">
+        <%= usrnm %>
+    </usrnm>
+</header>
