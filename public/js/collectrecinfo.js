@@ -23,6 +23,12 @@ function sendData(
     }else if(zubereitungsdauer === ""){
         alert("Bitte füllen Sie die Zubereitungsdauer des Rezepts aus.");
         return;
+    }else if(ingredients.length < 2){
+        alert("Bitte fügen Sie mindestens zwei Zutat hinzu.");
+        return;
+    }else if(directions[1] === ""||directions[1] === undefined){
+        alert("Bitte fügen Sie mindestens eine Zubereitungshinweis hinzu.");
+        return;
     }
     fetch('/addrec/add', {
         method: 'POST',
@@ -45,7 +51,7 @@ function sendData(
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        window.location.href = "/";
+        window.location.href = "/verify/?usrnm=" + usrnm;
     })
     .catch((error) => {
         console.error('Error:', error);

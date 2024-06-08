@@ -3,6 +3,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const useragent = require('express-useragent');
 const Usrnm = require('../models/usrnm');
+const Rec = require('../models/rec');
 
 function insertUsr(data) {
     const usrnm = new Usrnm(data);
@@ -109,8 +110,17 @@ router.post('/anmld', async (req, res) => {
     }
 });
 
-router.get('/recipe', (req, res) => {
-   res.render('recipe', { title: 'Lires', usrnm: req.query.usrnm });
+router.get('/recipe', async (req, res) => {
+    var rec 
+    const recid = req.query.recid;
+    try {
+        const query = { recid: recid };
+        rec = await Rec.findOne(query).exec();
+    } catch (err) {
+        console.error(err);
+        return res.status(500).send('Fehler bei der Verarbeitung der Anfrage.');
+    }
+    res.render('recipe', { title: 'Lires', usrnm: req.query.usrnm, rec: JSON.stringify(rec)});
 });
 
 router.get('/profile', (req, res) => {
