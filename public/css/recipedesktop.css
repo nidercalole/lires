@@ -1,17 +1,171 @@
-.body{
-    padding-left:0.5%;
-    padding-right:0.5%;
-    padding-top:0.5%;
+.body {
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    padding-top: 0.5%;
 }
-.frstLine{
-    display:flex;
-    flex-direction:row;
+
+.frstLine {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-recName{
-    -webkit-text-fill-color: #CAFFEE; 
-    font-weight: bold;
+
+recName {
+    -webkit-text-fill-color: #CAFFEE;
     position: relative;
     font-size: xx-large;
+    margin-bottom: 0;
+}
+
+usr {
+    color: #CAFFEE;
+    position: relative;
+    font-size: medium;
+    margin-bottom: 0;
+}
+
+.scndLine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.scndLinTxt {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.marginRight {
+    margin-right: 3%;
+}
+
+.stars {
+    width: 170px;
+    margin-left: 1%;
+}
+
+.hr {
+    color: #CAFFEE;
+    border: 0.5px solid #caffee;
+    border-radius: 5px;
+}
+
+.deskleft {
+    width: 40%;
+    float: left;
+    border-radius: 5px;
+    right: 0;
+}
+
+.deskright {
+    width: 60%;
+    float: right;
+    border-radius: 5px;
+    right: 0;
+}
+
+.menge {
+    font-size: medium;
+}
+
+.mengeInp {
+    background-color: rgba(71, 59, 123, 0.5);
+    border-radius: 5px;
+    border: #473B7B 2px solid;
+    color: #caffee;
+    width: 8%;
+    font-size: mediuM;
+}
+
+.mengeInp:focus {
+    background-color: rgba(71, 59, 123, 0.75);
+    outline: 2px solid rgba(7, 136, 129, 1);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.fixTable {
+    margin-left: 2px;
+    margin-right: 2px;
+    width: 95%;
+    border-radius: 5px;
+    border: solid 2px #473B7B;
+    background-color: rgba(71, 59, 123, 0.5);
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+}
+
+.fixTable td {
+    border: 2px solid #473B7B;
+    padding: 2px;
+}
+
+.fixTable tr:nth-child(even) {
+    background-color: rgba(71, 59, 123, 0.9);
+    border-radius: 5px;
+}
+
+.last-row-left {
+    border-bottom-left-radius: 5px;
+}
+
+.last-row-right {
+    border-bottom-right-radius: 5px;
+}
+
+.fixTable tr:first-child th:first-child {
+    border-top-left-radius: 5px;
+}
+
+.fixTable tr:first-child th:last-child {
+    border-top-right-radius: 5px;
+}
+
+.moreWidth {
+    width: 85%;
+}
+
+.addRecToList {
+    position: absolute;
+    bottom: 2%;
+    background-color: transparent;
+    border-radius: 100%;
+    border: #CAFFEE 2px;
+    padding: 0;
+    width: 55px;
+    height: 55px;
+    margin: 1%;
+    display: block;
+    z-index: 1001;
+}
+
+.addRecToList:hover {
+    cursor: pointer;
+    box-shadow: 0 0 2px 1px rgba(71, 59, 123, 0.7);
+}
+
+.rightTitles {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.noMarginTop {
+    margin-top: 0;
+}
+
+.blocksatz {
+    text-align: justify;
+    text-justify: inter-word;
 }

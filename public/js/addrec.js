@@ -51,7 +51,7 @@ function chooseBtn(){
 function countChars(){
   const krzDesc = document.getElementById('krzDesc');
   const charCount = document.getElementById('charCount');
-  charCount.textContent = `${zaehleZeichen(krzDesc.value)}/500`
+  charCount.textContent = `${zaehleZeichen(krzDesc.value)}/250`
 }
 //label
 let lblcounter = 0;

@@ -3,40 +3,70 @@
     <div class="top">
         <div class="frstLine">
             <recName>[Titel d. Rezepts]</recName>
-            <p>[Nutzername] am [DD.MM.YYYY]</p>
+            <usr>[Nutzername] am [DD.MM.YYYY]</usr>
         </div>
-        <p>Zubereitungsdauer: [XX] Minuten</p>
-        <img>
+        <div class="scndLine">
+            <p class="scndLinTxt marginRight">Zubereitungsdauer: [XX] Minuten</p>
+            <p class="scndLinTxt">Schwierigkeitsgrad:</p>
+            <img class="stars" src="/img/3star.png" alt="3 von 5" id="difficulty" />
+        </div>
     </div>
-    <p>Zutaten für <input type="number" min="1"> [Einheit].</p>
-    <table>
-        <tr>
-            <td>[Zutat1]</td>
-            <td>[Menge1]</td>
-        </tr>
-    </table>
-    <p>[Kurzbeschreibung Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-        ut
-        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-        rebum.
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-        diam voluptua. At vero eos et accusam et justo duo dolores et e]</p>
-    <p>[Vorgehen Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-        labore
-        et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-        consetetur
-        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua.
-        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor
-        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-        et
-        ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.]</p>
-    <button id="addRecToList" class="addRecToList" onclick="neu">
-        <img src="/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
-    </button>
+    <hr class="hr">
+    <div>
+        <div class="deskleft">
+            <p class="menge">Zutaten für <input class="mengeInp" placeholder="[Zahl]" type="number" min="1"> [Einheit].
+            </p>
+            <table class="fixTable">
+                <tr>
+                    <td class="moreWidth">[Zutat1]</td>
+                    <td>[Menge1]</td>
+                </tr>
+                <tr>
+                    <td>[Zutat2]</td>
+                    <td>[Menge2]</td>
+                </tr>
+                <tr>
+                    <td>[Zutat3]</td>
+                    <td>[Menge3]</td>
+                </tr>
+            </table>
+            <button id="addRecToList" class="addRecToList" onclick="irgendeinefunktion()">
+                <img src="/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
+            </button>
+        </div>
+        <div class="deskright">
+            <p class="rightTitles">Kurzbeschreibung:</p>
+            <p class="noMarginTop blocksatz"> [Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea tak]</p>
+            <p class="rightTitles">Vorgehen:</p>
+            <p class="noMarginTop blocksatz">[Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt
+                ut
+                labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                rebum.
+                Stet
+                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                amet,
+                consetetur
+                sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                diam
+                voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                sanctus
+                est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod
+                tempor
+                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                dolores
+                et Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                ea rebum. Stet clita kasd gubergren, no sea tak
+                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.]</p>
+        </div>
+    </div>
+</div>
 </div>
 <script src="/js/recipe.js"></script>
