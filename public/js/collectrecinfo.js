@@ -1,4 +1,3 @@
-function extck(str){return document.getElementById(str).checked;}
 function extval(str){return document.getElementById(str).value;}
 function exttxt(str){return document.getElementById(str).textContent;}
 
@@ -59,6 +58,16 @@ function sendData(
 }
 
 function collectAndSend(){
+    var kindodish = []
+    function extck(str){
+        if(document.getElementById(str).checked){
+            kindodish.push(str);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     const usrnm = new URLSearchParams(window.location.search).get("usrnm");
     const chooseBtn = exttxt("chooseBtn");
     const ingtabl = document.getElementById("table1").rows.length;
@@ -68,7 +77,7 @@ function collectAndSend(){
     var ingredients = [];
     var directions = [];
     var coutfor = [extval("anzInp"), extval("anzEinhInp")]
-    var kindodish = [{warm:extck("warm"), kalt:extck("kalt"), vorspeise:extck("vorspeise"), hptgrcht:extck("hptgrcht"), nchtsch:extck("nchtsch"), vgtrsch:extck("vgtrsch"), vgn:extck("vgn"), flsch:extck("flsch"), fsch:extck("fsch"), gms:extck("gms"), ndl:extck("ndl"), brt:extck("brt"), dips:extck("dips"), spp:extck("spp"), slt:extck("slt"), kchn:extck("kchn"), gbck:extck("gbck"), grtn:extck("grtn"), knsrvrt:extck("knsrvrt"), suess:extck("suess"), hrzhft:extck("hrzhft"), fngrfd:extck("fngrfd")}]
+    extck("warm"); extck("kalt"); extck("vorspeise"); extck("hptgrcht"); extck("nchtsch"); extck("vgtrsch"); extck("vgn"); extck("flsch"); extck("fsch"); extck("gms"); extck("ndl"); extck("brt"); extck("dips"); extck("spp"); extck("slt"); extck("kchn"); extck("gbck"); extck("grtn"); extck("knsrvrt"); extck("suess"); extck("hrzhft"); extck("fngrfd");
 
     if (chooseBtn === "Im Fließtext beschreiben") {
         directions.push({steppwise:false})

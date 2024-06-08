@@ -3,6 +3,10 @@ function gebId(str){
     return document.getElementById(str);
 }
 function updatelist(){
+    var indexmultiplier = gebId('countfor').value 
+    var origindex = recData.countfor[0];
+    var multiplier = indexmultiplier/origindex;
+    console.log(multiplier);
     let list = gebId('fixTable');
     list.innerHTML = `
     <tr>
@@ -14,7 +18,7 @@ function updatelist(){
         let item = document.createElement('tr');
         item.innerHTML = `
         <td>${ing.ing}</td>
-        <td>${ing.ingamount}</td>
+        <td>${((ing.ingamount*multiplier).toFixed(0)) + ing.ingunit}</td>
         `;
         list.appendChild(item);
     });
@@ -43,9 +47,95 @@ function loadRecData(ammount){
             break;
     }
     gebId('description').textContent = recData.description;
-    gebId('directions').textContent = recData.directions[1];
+    if(recData.directions[0].steppwise === false){
+        gebId('directions').textContent = recData.directions[1];
+    }else{
+        gebId('directions').textContent = '';
+        for (let i = 1; i < recData.directions.length; i++) {
+            gebId('directions').innerHTML += `<br><span class="bold">Step ${recData.directions[i].i}:</span> ${recData.directions[i].step}<br>`;
+
+        }
+    }
     gebId('countforenh').innerHTML = `Zutaten für <input class="mengeInp" placeholder="[Zahl]" type="number" min="1" id="countfor"> ${recData.countfor[1]}`;
     gebId('countfor').value = recData.countfor[0];
+    for (let i = 0; i < recData.kindodish.length; i++) {
+        var lbl = ''
+        switch (recData.kindodish[i]) {
+            case 'warm':
+            lbl = 'Warm';
+                break;
+            case 'kalt':
+            lbl = 'Kalt';
+                break;
+            case 'vorspeise':
+            lbl = 'Vorspeise';
+                break;
+            case 'hptgrcht':
+            lbl = 'Hauptgericht';
+                break;
+            case 'nchtsch':
+            lbl = 'Nachtisch';
+                break;
+            case 'vgtrsch':
+            lbl = 'Vegetarisch';
+                break;
+            case 'vgn':
+            lbl = 'Vegan';  
+                break;
+            case 'flsch':
+            lbl = 'Fleisch';
+                break;
+            case 'fsch':
+            lbl = 'Fisch';
+                break;
+            case 'gms':
+            lbl = 'Gemüse';
+                break;
+            case 'ndl':
+            lbl = 'Nudeln';
+                break;
+            case 'brt':
+            lbl = 'Brot/Brötcen';
+                break;
+            case 'dips':
+            lbl = 'Soßen/Dips';
+                break;
+            case 'spp':
+            lbl = 'Suppen';
+                break;
+            case 'slt':
+            lbl = 'Salate';
+                break;
+            case 'kchn':
+            lbl = 'Kuchen';
+                break;
+            case 'gbck':
+            lbl = 'Gebäck';
+                break;
+            case 'grtn':
+            lbl = 'Überbacken/Gratin';
+                break;
+            case 'knsrvrt':
+            lbl = 'Konserviertes';
+                break;
+            case 'suess':
+            lbl = 'Süßspeisen';               
+                break;
+            case 'hrzhft':
+            lbl = 'Herzhaftes';                   
+                break;
+            case 'fngrfd':
+            lbl = 'Fingerfood';                        
+                break;
+        }
+        gebId('miniLbl' + (i+1)).classList.remove('hidden');
+        gebId('miniLbl' + (i+1)).textContent = lbl;
+    }
+    for (let i = 0; i < recData.labels.length; i++) {
+        gebId('krzInf' + (i+1)).classList.remove('hidden');
+        gebId('krzInf' + (i+1)).textContent = recData.labels[i];
+    }
     updatelist();
 }
 loadRecData();
+gebId('countfor').addEventListener('input', updatelist);
