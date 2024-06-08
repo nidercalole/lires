@@ -14,7 +14,8 @@ router.post('/add', async(req, res) => {
     try {
         const { recname, user, expense, duration, description, countfor, kindodish, labels, ingredients, directions } = req.body;
         const usrid = (await Usrnm.findOne({usrnm: user}).exec()).usrid;
-        
+        const rec = new Rec({ recname, user: [user, usrid], expense, duration, description, countfor, kindodish, labels, ingredients, directions });
+        rec.save();
         res.json({ success: true });
     } catch (error) {
         console.error(error);
