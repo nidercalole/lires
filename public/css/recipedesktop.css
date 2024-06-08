@@ -132,6 +132,42 @@ input[type=number] {
     border-top-right-radius: 5px;
 }
 
+krzInfo{
+    background-color: rgba(71, 59, 123, 0.5);
+    border:2px solid #473B7B;
+    border-radius: 50px;
+    padding: 4px;
+    font-size:small;
+}
+
+.krzInfoRow{
+    justify-content: space-between;
+    display:flex;
+    align-items:center;
+
+}
+
+lblMinis{
+    background-color: rgba(71, 59, 123, 0.5);
+    border:2px solid #473B7B;
+    border-radius: 50px;
+    padding: 4px;
+    margin: 0.5%;
+}
+
+.miniLblsColumn{
+    display: flex;
+    flex-direction: column;
+    max-width:95%;
+}
+
+.miniLblsRow{
+    display: flex;
+    flex-direction: row;
+    font-size:small;
+    justify-content: space-between;
+}
+
 .moreWidth {
     width: 85%;
 }
