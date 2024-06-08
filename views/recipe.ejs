@@ -5,11 +5,11 @@
 <div class="body">
     <div class="top">
         <div class="frstLine">
-            <recName>[Titel d. Rezepts]</recName>
-            <usr>[Nutzername] am [DD.MM.YYYY]</usr>
+            <recName id="recName"></recName>
+            <usr id="userAndDate"></usr>
         </div>
         <div class="scndLine">
-            <p class="scndLinTxt marginRight">Zubereitungsdauer: [XX] Minuten</p>
+            <p class="scndLinTxt marginRight">Zubereitungsdauer: <span id="duration"></span> Minuten</p>
             <p class="scndLinTxt">Schwierigkeitsgrad:</p>
             <img class="stars" src="/img/3star.png" alt="3 von 5" id="difficulty" />
         </div>
@@ -17,57 +17,17 @@
     <hr class="hr">
     <div>
         <div class="deskleft">
-            <p class="menge">Zutaten für <input class="mengeInp" placeholder="[Zahl]" type="number" min="1"> [Einheit].
-            </p>
-            <table class="fixTable">
-                <tr>
-                    <td class="moreWidth">[Zutat1]</td>
-                    <td>[Menge1]</td>
-                </tr>
-                <tr>
-                    <td>[Zutat2]</td>
-                    <td>[Menge2]</td>
-                </tr>
-                <tr>
-                    <td>[Zutat3]</td>
-                    <td>[Menge3]</td>
-                </tr>
-            </table>
+            <p class="menge" id="countforenh"></p>
+            <table class="fixTable" id="fixTable"></table>
             <button id="addRecToList" class="addRecToList" onclick="irgendeinefunktion()">
                 <img src="/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
             </button>
         </div>
         <div class="deskright">
             <p class="rightTitles">Kurzbeschreibung:</p>
-            <p class="noMarginTop blocksatz"> [Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea tak]</p>
+            <p class="noMarginTop blocksatz" id="description"></p>
             <p class="rightTitles">Vorgehen:</p>
-            <p class="noMarginTop blocksatz">[Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt
-                ut
-                labore
-                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                rebum.
-                Stet
-                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                amet,
-                consetetur
-                sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                diam
-                voluptua.
-                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                sanctus
-                est
-                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod
-                tempor
-                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                dolores
-                et Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
-                ea rebum. Stet clita kasd gubergren, no sea tak
-                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.]</p>
+            <p class="noMarginTop blocksatz" id="directions"></p>
         </div>
     </div>
 </div>
