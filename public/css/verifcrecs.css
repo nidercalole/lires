@@ -1,3 +1,13 @@
+.filbut{
+  display: none;
+}
+.suchleiste{
+  display: none;
+}
+.navpic{
+  display: none;
+}
+
 .mainverifyrecs{
     display: flex;
     margin: 10px;

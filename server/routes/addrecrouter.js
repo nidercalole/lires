@@ -53,19 +53,7 @@ router.post('/addrecingredients', async(req, res) => {
       }
 });
 
-router.get('/verify', async(req, res) => {
-    if(req.useragent.isMobile) {
-        return res.redirect('/mobile/notsupported');
-    }
-    const userid = req.query.usrid;
-    const query = { usrid: userid };
-    //const existingUser = await Usrnm.findOne(query).exec();
-    if (userid === '6k31a7cdbga' || userid === 'l725iqftr0l') {
-        const unverify = await Unverify.findById(idUnverifys).exec();
 
-        res.render('verifyrecsings', { title: 'Lires', usrnm: req.query.usrnm, data:unverify});
-    } else {
-        return res.redirect('/login?message=Keine Berechtigung.&islogin=true');
-    }
-});
+router.use('/verify' , require('./verifyrecsings'));
+
 module.exports = router;

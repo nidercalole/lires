@@ -15,16 +15,17 @@
                         <tr>
                             <td><%= ingredient.ingredient %></td>
                             <td>
-                                <form action="/verifyIngredient" method="post" style="display:inline;">
+                                <form action="/addrec/verify/verifyIngredient" method="post" style="display:inline;">
                                     <input type="hidden" name="ingredient" value="<%= ingredient.ingredient %>">
-                                    <input type="hidden" name="recid" value="<% ingredient.recid%>">
+                                    <input type="hidden" name="recid" value="<%= ingredient.recid%>">
+                                    <input type="hidden" name="send" value='false'>
                                     <button type="submit">Verifizieren</button>
                                 </form>
                             </td>
                             <td>
-                                <form action="/discardIngredient" method="post" style="display:inline;">
+                                <form action="/addrec/verify/discardIngredient" method="post" style="display:inline;">
                                     <input type="hidden" name="ingredient" value="<%= ingredient.ingredient %>">
-                                    <input type="hidden" name="recid" value="<% ingredient.recid%>">
+                                    <input type="hidden" name="recid" value="<%= ingredient.recid%>">
                                     <button type="submit">Nicht Verifizieren</button>
                                 </form>
                             </td>
@@ -53,13 +54,14 @@
                         <tr>
                             <td><%= recipe.recname %></td>
                             <td>
-                                <form action="/viewToVerify" method="post" style="display:inline;">
+                                <form action="/addrec/verify/viewToVerify" method="post" style="display:inline;">
                                     <input type="hidden" name="recid" value="<%= recipe.recid %>">
-                                    <button type="submit">Verifizieren</button>
+                                    <input type="hidden" name="send" value=false>
+                                    <button type="submit">Anschauen</button>
                                 </form>
                             </td>
                             <td>
-                                <form action="/discardRecipe" method="post" style="display:inline;">
+                                <form action="/addrec/verify/discardRecipe" method="post" style="display:inline;">
                                     <input type="hidden" name="recid" value="<%= recipe.recid %>">
                                     <button type="submit">Nicht Verifizieren</button>
                                 </form>
