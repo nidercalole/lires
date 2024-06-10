@@ -9,7 +9,6 @@ function insertUsr(data) {
     const usrnm = new Usrnm(data);
     usrnm.save()
         .then(() => {
-            console.log('Usrnm saved');
             return true;
         })
         .catch((err) => {
@@ -98,7 +97,6 @@ router.post('/anmld', async (req, res) => {
         const existingUser = await Usrnm.findOne(query).exec();
         
         if (!existingUser) {
-            console.log('User not found');
             return res.redirect('/login?message=Benutzer nicht gefunden.&islogin=true');
         }
         

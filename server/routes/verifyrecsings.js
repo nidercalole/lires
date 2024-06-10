@@ -17,7 +17,6 @@ router.get('/', async(req, res) => {
     const userid = req.query.usrid;
     if (userid === '6k31a7cdbga' || userid === 'l725iqftr0l') {
         const unverify = await Unverify.findById(idUnverifys).exec();
-        console.log(unverify);
         res.render('verifyrecsings', { title: 'Lires', usrnm: req.query.usrnm, data:unverify});
     } else {
         return res.redirect('/login?message=Keine Berechtigung.&islogin=true');
@@ -28,7 +27,6 @@ router.post('/verifyIngredient', async(req, res) => {
     const send = req.body.send;
     const recid = req.body.recid;
     const ing = req.body.ingredient;
-    console.log(recid, ing, send);
     if (send === 'true') {
         
     }else{

@@ -6,7 +6,6 @@ function updatelist(){
     var indexmultiplier = gebId('countfor').value 
     var origindex = recData.countfor[0];
     var multiplier = indexmultiplier/origindex;
-    console.log(multiplier);
     let list = gebId('fixTable');
     list.innerHTML = `
     <tr>
