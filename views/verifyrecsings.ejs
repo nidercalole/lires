@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="/css/verifcrecs.css">
+<div class="mainverifyrecs">
+    <div class="divings">
+        <table class="beinhTable">
+            <thead>
+                <tr>
+                    <th class="moreWidth">Neue Zutat</th>
+                    <th>Bearbeiten und Verifizieren</th>
+                    <th>Nicht Verifizieren</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (data.ings && data.ings.length > 0) { %>
+                    <% data.ings.forEach(ingredient => { %>
+                        <tr>
+                            <td><%= ingredient.ingredient %></td>
+                            <td>
+                                <form action="/verifyIngredient" method="post" style="display:inline;">
+                                    <input type="hidden" name="ingredient" value="<%= ingredient.ingredient %>">
+                                    <input type="hidden" name="recid" value="<% ingredient.recid%>">
+                                    <button type="submit">Verifizieren</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/discardIngredient" method="post" style="display:inline;">
+                                    <input type="hidden" name="ingredient" value="<%= ingredient.ingredient %>">
+                                    <input type="hidden" name="recid" value="<% ingredient.recid%>">
+                                    <button type="submit">Nicht Verifizieren</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="3">Keine unverifizierten Zutaten gefunden</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <div class="divrecs">
+        <table class="beinhTable">
+            <thead>
+                <tr>
+                    <th class="moreWidth">Neues Rezept</th>
+                    <th>Anschauen</th>
+                    <th>Nicht Verifizieren</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (data.recs && data.recs.length > 0) { %>
+                    <% data.recs.forEach(recipe => { %>
+                        <tr>
+                            <td><%= recipe.recname %></td>
+                            <td>
+                                <form action="/viewToVerify" method="post" style="display:inline;">
+                                    <input type="hidden" name="recid" value="<%= recipe.recid %>">
+                                    <button type="submit">Verifizieren</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/discardRecipe" method="post" style="display:inline;">
+                                    <input type="hidden" name="recid" value="<%= recipe.recid %>">
+                                    <button type="submit">Nicht Verifizieren</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="3">Keine unverifizierten Rezepte gefunden</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>

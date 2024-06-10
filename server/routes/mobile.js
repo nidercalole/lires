@@ -15,5 +15,8 @@ router.get('/', (req, res) => {
 router.get('/lists', (req, res) => {
     res.render('mobile/lists', { title: 'Lires', usrnm: req.query.usrnm});
   });
-  
+
+router.get('/notsupported', (req, res) => {
+    res.render('mobile/notsupported', { title: 'Lires', usrnm: req.query.usrnm });
+});
 module.exports = router;

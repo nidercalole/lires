@@ -50,7 +50,21 @@ function sendData(
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        window.location.href = "/verify/?usrnm=" + usrnm;
+
+        fetch('/addrec/addrecingredients', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                recname: titel
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            window.location.href = "/verify/?usrnm=" + usrnm;
+        })
     })
     .catch((error) => {
         console.error('Error:', error);
@@ -94,7 +108,8 @@ function collectAndSend(){
         const ing = exttxt("resing_" + i);
         const ingamount = parseInt(exttxt("resingamount_" + i));
         const ingunit = exttxt("resingunit_" + i);
-        ingredients.push({ing, ingamount, ingunit});
+        const ingextra = ''
+        ingredients.push({ing, ingextra, ingamount, ingunit});
     }
     for (let i = 0; i < lbls; i++) {
         const lbl = exttxt("lbl_" + i);
