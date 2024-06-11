@@ -26,10 +26,11 @@ router.get('/', async(req, res) => {
 router.post('/verifyIngredient', async(req, res) => {
     const send = req.body.send;
     const recid = req.body.recid;
-    const ing = req.body.ingredient;
+
     if (send === 'true') {
         
     }else{
+        const ing = req.body.ingredient;
         res.render('verifyings', { title: 'Lires', usrnm: req.query.usrnm, data:{recid:recid,ingredient:ing}});
     }
 

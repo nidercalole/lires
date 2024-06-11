@@ -1,3 +1,31 @@
 <p><%= data.ingredient %></p>
 <p><%= data.recid %></p>
+<link rel="stylesheet" href="/css/verifcrecs.css">
+<div class="mainverify">
 
+        <div class="inglbls">
+            <div class="blk12">
+                <div class="blk1">
+                    <%- include('./partials/blk1.ejs') %>
+                </div>
+                <div class="blk2">
+                    <%- include('./partials/blk2.ejs') %>
+                </div>
+            </div>
+            <div class="blk3">
+                <%- include('./partials/blk3.ejs') %>
+            </div>
+            <div class="siftright">
+                <div class="verifybuts">
+                    <button class="unclikabl" onclick="verifyIng()" id="verifyIngBut">Zutat Bestätigen</button>
+                    <button class="reject" onclick="rejectIng()">Zutat ablehnen</button>
+                </div>
+                <div class="ingedit">
+                    <input type="text" name="ingname" id="ingname" value="<%= data.ingredient %>">
+                    <input type="text" name="ingextra" id="ingextra" value="" >
+                    <input type="hidden" name="ingnameold" value="<%= data.ingredient %>">
+                    <input type="hidden" name="send" value="true">
+                </div>
+            </div>
+        </div>
+</div>
