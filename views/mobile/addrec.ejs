@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/mobile/addrec.css" />
+<div class="padding">
+    <ul class="noList">
+        <li class="headInpRow">
+            <zubDaTitle>Zubereitungsdauer:</zubDaTitle>
+            <input class="zubDauInp" type="number" min="1" id="zubDauInp" />
+            <slidZubDaTxt>Minuten</slidZubDaTxt>
+        </li>
+        <li class="headInpRow">
+            <zubDaTitle>Arbeitsaufwand:</zubDaTitle>
+            <slidZubDaTxt>gering</slidZubDaTxt>
+            <input class="aufwRange" type="range" min="1" max="5" value="2.5" id="aufwRange" />
+            <slidZubDaTxt>hoch</slidZubDaTxt>
+        </li>
+    </ul>
+    <button class="grchtArtBtn">Art des Gerichtes auswählen</button>
+    <textarea id="krzDesc" class="krzDesc" placeholder="Kurzbeschreibung (maximal 250 Zeichen)" maxlength="250"
+        oninput="countChars()"></textarea>
+    <div class="zutAn">
+        <zutAn>Zutatenangabe für
+            <input type="number" min="1" max="100" placeholder="Anzahl" class="anzEinhInp" id="anzInp" />
+            <input type="text" placeholder="Einheit" class="anzEinhInp" id="anzEinhInp" />.
+        </zutAn>
+    </div>
+    <table class="beinhTable" id="table1">
+        <tr>
+            <th class="moreWidth">Zutat</th>
+            <th>Menge</th>
+            <th>Einheit</th>
+        </tr>
+        <tr id="backfisch">
+            <td><input id="tableInp11" class="tableInp"></input></td>
+            <td><input id="tableInp12" class="tableInp" type="number"></input></td>
+            <td><input id="tableInp13" class="tableInp"></input></td>
+        </tr>
+    </table>
+    <input class="shoInfInp" placeholder="Kurzinformationen (bspw. Backtemperatur)" id="shoInfInp" />
+    <div class="hidden" id="lbls"></div>
+
+    <button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Im Fließtext beschreiben</button>
+    <button class="stepaddbtn hidden" id="stepaddbtn" onclick="addstepp()">Schritt hinzufügen</button>
+    
+    <textarea class="vorgehen" placeholder="Vorgehen" id="explanation"></textarea>
+    <div id="stepwise" class="stepwise hidden">
+        <textarea class="stepvorgehen" placeholder="Schritt 1" id="step_1"></textarea>
+    </div>
+</div>
