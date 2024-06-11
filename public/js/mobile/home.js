@@ -27,6 +27,7 @@ swipeArea.addEventListener('touchend', (event) => {
         // Horizontaler Wisch
         if (deltaX > 0) {
             console.log('Von links nach rechts gewischt');
+            window.location.href='/mobile'
         } else {
             console.log('Von rechts nach links gewischt');
             window.location.href='/mobile/lists'
