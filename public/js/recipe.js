@@ -51,7 +51,7 @@ function loadRecData(ammount){
     }else{
         gebId('directions').textContent = '';
         for (let i = 1; i < recData.directions.length; i++) {
-            gebId('directions').innerHTML += `<br><span class="bold">Step ${recData.directions[i].i}:</span> ${recData.directions[i].step}<br>`;
+            gebId('directions').innerHTML += `<br><span class="bold">Schritt ${recData.directions[i].i}:</span> ${recData.directions[i].step}<br>`;
 
         }
     }
