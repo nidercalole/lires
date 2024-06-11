@@ -81,7 +81,7 @@ router.get('/verify', async (req, res) => {
             const id = existingUser.usrid;
             return res.redirect('/?usrid=' + id + '&usrnm=' + username);
         } else {
-            return res.status(404).send('Benutzer nicht gefunden.');
+            return res.redirect('/login?message=Benutzer nicht gefunden.&islogin=true');
         }
     } catch (err) {
         console.error(err);
