@@ -28,12 +28,82 @@ router.post('/verifyIngredient', async(req, res) => {
     const recid = req.body.recid;
 
     if (send === 'true') {
+        const {labels,ingnameold,ingname,ingextra} = req.body;
+        try {
+            const recipe = await Rec.findOne({ recid });
+            if (!recipe) {
+                console.log('Recipe not found');
+                return;
+            }
+            const verifyDoc = await Verify.findById(idVerifys).exec();
+            if (!verifyDoc) {
+                console.log('Verify document not found');
+                return;
+            }
+
+            const unverifyDoc = await Unverify.findById(idUnverifys).exec();
+            if (!unverifyDoc) {
+                console.log('Unverify document not found');
+                return;
+            }
+
+            verifyDoc.ings.push({name:ingname,labels:labels});
+            unverifyDoc.ings = unverifyDoc.ings.filter(ing => ing.ingredient !== ingnameold);
+            
+            await verifyDoc.save();
+            await unverifyDoc.save();
+
+            const ingredientIndex = recipe.ingredients.findIndex(ing => ing.ing === ingnameold);
+            if (ingredientIndex === -1) {
+              console.log('Ingredient not found in recipe');
+              return;
+            }
+
+            recipe.ingredients[ingredientIndex].ing = ingname;
+            recipe.ingredients[ingredientIndex].ingextra = ingextra;
         
+            const update = {
+              $set: {
+                [`ingredients.${ingredientIndex}.ing`]: ingname,
+                [`ingredients.${ingredientIndex}.ingextra`]: ingextra
+              }
+            };
+        
+            const updatedRecipe = await Rec.findOneAndUpdate(
+              { recid },
+              update,
+              { new: true } 
+            );
+        
+            if (!updatedRecipe) {
+              console.log('Error: Recipe not updated');
+              return;
+            }
+
+        } catch (error) {
+            console.error('Error updating ingredient:', error);
+        }
     }else{
         const ing = req.body.ingredient;
         res.render('verifyings', { title: 'Lires', usrnm: req.query.usrnm, data:{recid:recid,ingredient:ing}});
     }
+});
 
+router.post('/rejectIngredient', async(req, res) => {
+    const {ingnameold,recid} = req.body;
+    try {
+        const unverifyDoc = await Unverify.findById(idUnverifys).exec();
+        if (!unverifyDoc) {
+          console.log('Unverify document not found');
+          return;
+        }
+    
+        unverifyDoc.ings = unverifyDoc.ings.filter(ing => !(ing.recid === recid && ing.ingredient === ingnameold));
+        await unverifyDoc.save();
+        
+      } catch (error) {
+        console.error('Error removing from Unverify document:', error);
+      }
 });
 
 module.exports = router;
