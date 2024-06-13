@@ -127,12 +127,12 @@ chckbx {
 
 .chooseBtn {
   border:#473B7B solid 2px;
-  margin-left: 0.5%;
   background-color: rgba(71, 59, 123, 0.5);
   color: #caffee;
   border-radius: 5px;
   padding: 10px;
   display: flex;
+  width:40%;
 }
 
 .chooseBtn:hover {
@@ -352,10 +352,6 @@ textarea {
   border: 2px solid #078881;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-}
 
 .shoInfInp {
   border:#473B7B solid 2px;
@@ -389,8 +385,6 @@ slidZubDaTxt {
   border-radius: 5px;
   border:#473B7B 2px solid;
   color: #caffee;
-  margin-left: 1%;
-  height:130%;
   padding: 0.3%;
 }
 .stepaddbtn:hover {

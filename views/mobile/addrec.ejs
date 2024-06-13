@@ -16,6 +16,7 @@
     <button class="grchtArtBtn">Art des Gerichtes auswählen</button>
     <textarea id="krzDesc" class="krzDesc" placeholder="Kurzbeschreibung (maximal 250 Zeichen)" maxlength="250"
         oninput="countChars()"></textarea>
+    <p id="charCount" class="charCount"></p>
     <div class="zutAn">
         <zutAn>Zutatenangabe für
             <input type="number" min="1" max="100" placeholder="Anzahl" class="anzEinhInp" id="anzInp" />
@@ -37,11 +38,17 @@
     <input class="shoInfInp" placeholder="Kurzinformationen (bspw. Backtemperatur)" id="shoInfInp" />
     <div class="hidden" id="lbls"></div>
 
-    <button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Im Fließtext beschreiben</button>
-    <button class="stepaddbtn hidden" id="stepaddbtn" onclick="addstepp()">Schritt hinzufügen</button>
-    
-    <textarea class="vorgehen" placeholder="Vorgehen" id="explanation"></textarea>
-    <div id="stepwise" class="stepwise hidden">
-        <textarea class="stepvorgehen" placeholder="Schritt 1" id="step_1"></textarea>
+    <div class="row"><button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Im Fließtext beschreiben</button>
+        <button class="stepaddbtn hidden" id="stepaddbtn" onclick="addstepp()">Schritt hinzufügen</button>
     </div>
+
+    <div class="hundredWidth"><textarea class="vorgehen" placeholder="Vorgehen" id="explanation"></textarea>
+        <div id="stepwise" class="stepwise hidden">
+            <textarea class="stepvorgehen" placeholder="Schritt 1" id="step_1"></textarea>
+        </div>
+    </div>
+    <button id="addRec" class="addRec" onclick="buttaddrec()">
+        <img src = "/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
+    </button>
 </div>
+<script src="/js/addrec.js"></script>
