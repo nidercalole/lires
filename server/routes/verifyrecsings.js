@@ -106,4 +106,42 @@ router.post('/rejectIngredient', async(req, res) => {
       }
 });
 
+router.post('/verifyrecipe', async(req, res) => {
+    const send = req.body.send;
+    const recid = req.body.recid;
+
+    if (send === 'true') {
+        try {
+            const recipe = await Rec.findOne({ recid });
+            if (!recipe) {
+                console.log('Recipe not found');
+                return;
+            }
+            const verifyDoc = await Verify.findById(idVerifys).exec();
+            if (!verifyDoc) {
+                console.log('Verify document not found');
+                return;
+            }
+
+            const unverifyDoc = await Unverify.findById(idUnverifys).exec();
+            if (!unverifyDoc) {
+                console.log('Unverify document not found');
+                return;
+            }
+
+            verifyDoc.recs.push({recid:recid});
+            unverifyDoc.recs = unverifyDoc.recs.filter(rec => rec.recid !== recid);
+            
+            await verifyDoc.save();
+            await unverifyDoc.save();
+
+
+          } catch (error) {
+            console.error('Error updating ingredient:', error);
+        }
+    }else{
+        res.render('verifyrecs', { title: 'Lires', usrnm: req.query.usrnm, data:{recid:recid}});
+    }
+});
+
 module.exports = router;
