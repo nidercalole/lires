@@ -23,4 +23,7 @@ router.get('/notsupported', (req, res) => {
 router.get('/addrec', (req, res) => {
     res.render('mobile/addrec', { title: 'Lires', usrnm: req.query.usrnm });
 });
+router.get('/recipe', (req, res) => {
+    res.render('mobile/recipemobile', { title: 'Lires', usrnm: req.query.usrnm });
+});
 module.exports = router;

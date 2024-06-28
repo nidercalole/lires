@@ -253,7 +253,6 @@ textarea {
 }
 
 .mitGridChoose {
-
   grid-area: mitchoose;
   display: flex;
   flex-direction: row;
@@ -386,6 +385,7 @@ slidZubDaTxt {
   border:#473B7B 2px solid;
   color: #caffee;
   padding: 0.3%;
+  margin-left:1%;
 }
 .stepaddbtn:hover {
   background-color: rgba(71, 59, 123, 0.75);

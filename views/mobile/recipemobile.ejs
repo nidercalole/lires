@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="/css/mobile/recipemobile.css">
+<div class="padding">
+    <recName id="recName">[RecTitle]</recName>
+    <div class="scndLine">
+        <div>
+            <p class="scndLinTxt marginRight">Zubereitungsdauer: <span id="duration"></span>120min</p>
+        </div>
+        <div class="scndLinDfclty">
+            <p class="scndLinTxt">Schwierigkeitsgrad:</p>
+            <img class="stars" src="/img/3star.png" alt="3 von 5" id="difficulty" />
+        </div>
+    </div>
+    <usr id="userAndDate">[UserAndDate]</usr>
+    <hr class="hr">
+    <angb>Zutatenangabe für <input id=wishedAmount type=number placeholder="[Anzahl]"> [Einheit].</angb>
+    <div class="moreSpace"></div>
+    <table class="fixTable" id="fixTable">
+        <tr>
+            <td class="fixTable">[Menge1]</td>
+            <td class="fixTable">[Zutat1]</td>
+        </tr>
+        <tr>
+            <td class="fixTable" id="amount1">[Menge2]</td>
+            <td class="fixTable" id="ingredient1">[Zutat2]</td>
+        </tr>
+        <tr>
+            <td class="fixTable" id="amount2">[Menge3]</td>
+            <td class="fixTable" id="ingredient2">[Zutat3]</td>
+        </tr>
+    </table>
+    <div class="moreSpace"></div>
+    <div class="krzInfoRow">
+        <krzInfo class="hidden" id="krzInf1">[krzInf1]</krzInfo>
+        <krzInfo class="hidden" id="krzInf2">[ABC(krzInf2)]</krzInfo>
+        <krzInfo class="hidden" id="krzInf3">[DEFGHI]</krzInfo>
+        <krzInfo class="hidden" id="krzInf4">[JkLmn OP]</krzInfo>
+        <krzInfo class="hidden" id="krzInf5">[QRST U vw XyZ]</krzInfo>
+    </div>
+    <div class="moreSpace"></div>
+    <p class="howToTitles">Kurzbeschreibung:</p>
+    <p class="blocksatz" id="description">[Ein Butterfisch im Buttermantel unter Butterkeksen mit Butterfly-Dekoration]</p>
+    <div class="moreSpace"></div>
+    <p class="howToTitles">Vorgehen:</p>
+    <p class="blocksatz" id="directions">[Hier eine sehr sehr sehr sehr ausführliche Beschreibung des Creation-Prozesses. Diese bitte vollständig durchlesen und akribisch befolgen, sonst wird das Essen womöglich nicht gelingen. Für den hervorragenden Geschmack kann nur garantiert sein, wenn der Lires-Nutzer alle Anweisungen ordnungsgemäß befolgt hat.]</p>
+    <div class="miniLblsColumn">
+        <div class="miniLblsRow">
+            <lblMinis class="hidden" id="miniLbl1"></lblMinis>
+            <lblMinis class="hidden" id="miniLbl2"></lblMinis>
+            <lblMinis class="hidden" id="miniLbl3"></lblMinis>
+            <lblMinis class="hidden" id="miniLbl4"></lblMinis>
+        </div>
+        <div class="miniLblsRow">
+            <lblMinis class="hidden" id="miniLbl5"></lblMinis>
+            <lblMinis class="hidden" id="miniLbl6"></lblMinis>
+            <lblMinis class="hidden" id="miniLbl7"></lblMinis>
+            <lblMinis class="hidden" id="miniLbl8"></lblMinis>
+        </div>
+    </div>
+    <button id="addRecToList" class="addRecToList" onclick="irgendeinefunktion()">
+        <img src="/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
+    </button>
+</div>
+<script src="/js/mobile/recipemobile.js"></script>
