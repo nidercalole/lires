@@ -135,7 +135,6 @@ router.post('/verifyrecipe', async(req, res) => {
             await verifyDoc.save();
             await unverifyDoc.save();
 
-
           } catch (error) {
             console.error('Error updating ingredient:', error);
         }
