@@ -2,10 +2,9 @@
 <header class="header">
     <img class="logo" src="/img/oni.png" alt="Lires-Zwiebel" id="logo" onclick="redirectHome()" />
     <input id="suchleiste" class="suchleiste" />
-    <div class="row"><input type="text" id="recTitle" class="recTitle" oninput="inputRecTitle()"
-            placeholder="Titel des Rezepts" />
+    <div class="row">
+        <input type="text" id="recTitle" class="recTitle" oninput="inputRecTitle()" placeholder="Titel des Rezepts" />
         <button class="recSave" onclick="collectAndSend()">Speichern</button>
-
     </div>
     <button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
         <img src="/img/fil.png" alt="Filter" width="30px" />

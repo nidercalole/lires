@@ -40,7 +40,11 @@ function filBut(){
 maxDauerInput = function(){
     const maxMin = document.getElementById('maxMin');
     const maxDauer = document.getElementById('maxDauer');
-    maxMin.textContent = maxDauer.value;
+    if(maxDauer.value == 14){
+        maxMin.textContent = 'Es wird nicht nach Zeit gefiltert';
+    }else{
+        maxMin.textContent = `Dir werden Rezepte mit einer Zubereitungsdauer von maximal ${maxDauer.value} Minuten angezeigt`;
+    }
 };
 
 //redirect to profile

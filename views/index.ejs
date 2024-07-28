@@ -2,19 +2,12 @@
   <filHeader class="filGridHeader">Filter</filHeader>
   <div class="filGridArtGericht" id="artGericht"><h3>Art des Gerichts</h3>
     <select class="filDropdown">
-      <option class="filDdHover" value="all">Alles</option>
-      <option class="filDdHover" value="hptgrcht">Hauptgericht</option>
-      <option class="filDdHover" value="nchtsch">Nachtisch</option>
-      <option class="filDdHover" value="gbck">Gebäck</option>
-      <option class="filDdHover" value="fngrfd">Fingerfood</option>
-      <option class="filDdHover" value="vrsps">Vorspeise</option>
-      <option class="filDdHover" value="suess">Süß</option>
-      <option class="filDdHover" value="slt">Salat</option>
+      <%- include('./partials/filteroptions.ejs') %>
     </select>
   </div>
   <div class="filGridZubDauer" id="zubDauer"><h3>Zubereitungsdauer</h3>
-    <input type="range" min="15" max="180" value="82.5" class="sliderZubDauer" id="maxDauer" oninput="maxDauerInput()"> 
-    <p>Dir werden Rezepte mit einer Zubereitungsdauer von maximal <span id="maxMin"></span> Minuten angezeigt.</p>
+    <input type="range" min="14" max="180" value="14" class="sliderZubDauer" id="maxDauer" oninput="maxDauerInput()"> 
+    <p><span id="maxMin"></span></p>
   </div>
   <div id=exclude><h3>Aus Suchergebnissen ausschließen</h3>
     <input class="filGridInp" placeholder="Zutaten">
