@@ -14,8 +14,8 @@
         </div>
         <div class="siftright">
             <div class="verifybuts">
-                <button class="unclikabl" onclick="verifyIng()" id="verifyIngBut">Zutat Bestätigen</button>
-                <button class="reject" onclick="rejectIng()">Zutat ablehnen</button>
+                <button class="unclikabl" onclick="verifyIng('<%= usrnm %>','<%= usrid %>')" id="verifyIngBut">Zutat Bestätigen</button>
+                <button class="reject" onclick="rejectIng('<%= usrnm %>','<%= usrid %>')">Zutat ablehnen</button>
             </div>
             <div class="ingedit">
                 <input type="text" name="ingname" id="ingname" value="<%= data.ingredient %>">

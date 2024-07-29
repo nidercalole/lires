@@ -79,13 +79,15 @@ router.post('/verifyIngredient', async(req, res) => {
               console.log('Error: Recipe not updated');
               return;
             }
-
+            res.redirect('/addrec/verify?usrid=' + req.body.usrid + '&usrnm=' + req.body.usrnm);
+            console.log('done');
         } catch (error) {
             console.error('Error updating ingredient:', error);
         }
     }else{
         const ing = req.body.ingredient;
-        res.render('verifyings', { title: 'Lires', usrnm: req.query.usrnm, data:{recid:recid,ingredient:ing}});
+        res.render('verifyings', { title: 'Lires', usrnm: req.body.usrnm, data:{recid:recid,ingredient:ing}, usrid: req.body.usrid});
+        
     }
 });
 
@@ -100,7 +102,7 @@ router.post('/rejectIngredient', async(req, res) => {
     
         unverifyDoc.ings = unverifyDoc.ings.filter(ing => !(ing.recid === recid && ing.ingredient === ingnameold));
         await unverifyDoc.save();
-        
+        return res.redirect('back');
       } catch (error) {
         console.error('Error removing from Unverify document:', error);
       }

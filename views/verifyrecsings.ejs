@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="/css/verifcrecs.css">
 <div class="mainverifyrecs">
     <div class="divings">
@@ -19,12 +20,14 @@
                                     <input type="hidden" name="ingredient" value="<%= ingredient.ingredient %>">
                                     <input type="hidden" name="recid" value="<%= ingredient.recid%>">
                                     <input type="hidden" name="send" value='false'>
+                                    <input type="hidden" id="usrid" name="usrid" value="">
+                                    <input type="hidden" id="usrnm" name="usrnm" value="">
                                     <button type="submit">Verifizieren</button>
                                 </form>
                             </td>
                             <td>
-                                <form action="/addrec/verify/discardIngredient" method="post" style="display:inline;">
-                                    <input type="hidden" name="ingredient" value="<%= ingredient.ingredient %>">
+                                <form action="/addrec/verify/rejectIngredient" method="post" style="display:inline;">
+                                    <input type="hidden" name="ingnameold" value="<%= ingredient.ingredient %>">
                                     <input type="hidden" name="recid" value="<%= ingredient.recid%>">
                                     <button type="submit">Nicht Verifizieren</button>
                                 </form>
@@ -77,3 +80,25 @@
         </table>
     </div>
 </div>
+<script>
+    function getURLParameter(name) {
+        return new URLSearchParams(window.location.search).get(name);
+    }
+    const usrid = getURLParameter('usrid');
+    const usrnm = getURLParameter('usrnm');
+
+    document.querySelectorAll('form[action="/addrec/verify/verifyIngredient"]').forEach(form => {
+        form.querySelector('input[name="usrid"]').value = usrid;
+        form.querySelector('input[name="usrnm"]').value = usrnm;
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (!localStorage.getItem('reloaded')) {
+            localStorage.setItem('reloaded', 'true');
+            location.reload();
+        }else{
+            localStorage.removeItem('reloaded');
+        }
+    });
+</script>
