@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const useragent = require('express-useragent');
 const Usrnm = require('../models/usrnm');
 const Rec = require('../models/rec');
+const chefkoch = require('../../custom_modules/chefkoch');
 
 function insertUsr(data) {
     const usrnm = new Usrnm(data);
@@ -124,5 +125,13 @@ router.get('/recipe', async (req, res) => {
 router.get('/profile', (req, res) => {
     res.render('profile', { title: 'Lires', usrnm: req.query.usrnm });
 });
+
+router.get('/test', (req, res) => {
+    chefkoch.chefkochAPI.getRecipe('/rezepte/1834411297437898/Kaese-Tomaten-Gratin.html')
+    .then(function(data){
+        res.render('test', { title: 'Lires',usrnm: req.query.usrnm, data: JSON.stringify(data)});
+    });
+
+}); 
 
 module.exports = router;
