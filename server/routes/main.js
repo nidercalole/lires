@@ -126,12 +126,11 @@ router.get('/profile', (req, res) => {
     res.render('profile', { title: 'Lires', usrnm: req.query.usrnm });
 });
 
-router.get('/test', (req, res) => {
-    chefkoch.chefkochAPI.getRecipe('/rezepte/1834411297437898/Kaese-Tomaten-Gratin.html')
+router.get('/getRecChefkoch', (req, res) => {
+    chefkoch.chefkochAPI.getRecipe(req.query.link)
     .then(function(data){
-        res.render('test', { title: 'Lires',usrnm: req.query.usrnm, data: JSON.stringify(data)});
+        res.json(data);
     });
-
 }); 
 
 module.exports = router;
