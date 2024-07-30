@@ -1,4 +1,6 @@
-
+## EDIT
+## The original Chefkoch API is by gamersi on GitHub.
+I made one modification. In this edited version of the API, you will also get the recipe description by using the getRecipe() function.
 ## Usage
 To use the API, you need to import the API in your code:
 ```
