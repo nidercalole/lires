@@ -108,7 +108,7 @@ router.post('/rejectIngredient', async(req, res) => {
       }
 });
 
-router.post('/verifyrecipe', async(req, res) => {
+router.post('/verifyRecipe', async (req, res) => {
     const send = req.body.send;
     const recid = req.body.recid;
 
@@ -137,12 +137,38 @@ router.post('/verifyrecipe', async(req, res) => {
             await verifyDoc.save();
             await unverifyDoc.save();
 
+            res.redirect('/addrec/verify?usrid=' + req.body.usrid + '&usrnm=' + req.body.usrnm);
+            console.log('done');
           } catch (error) {
             console.error('Error updating ingredient:', error);
         }
     }else{
-        res.render('verifyrecs', { title: 'Lires', usrnm: req.query.usrnm, data:{recid:recid}});
+        var rec
+        try {
+            rec = await Rec.findOne({ recid });
+        } catch (err) {
+            console.error(err);
+            return res.status(500).send('Fehler bei der Verarbeitung der Anfrage.');
+        }
+        res.render('verifyrecs', { title: 'Lires', usrnm: req.body.usrnm, usrid: req.body.usrid, data:{recid:recid}, rec: JSON.stringify(rec)});
     }
 });
+router.post('/rejectRecipe', async(req, res) => {
+    const {recid} = req.body;
+    try {
+        const unverifyDoc = await Unverify.findById(idUnverifys).exec();
+        if (!unverifyDoc) {
+          console.log('Unverify document not found');
+          return;
+        }
+        unverifyDoc.recs = unverifyDoc.recs.filter(rec => rec.recid !== recid);
+        await unverifyDoc.save();
+        return res.redirect('back');
+
+    } catch (error) {
+        console.error('Error removing from Unverify document:', error);
+    }
+});
+
 
 module.exports = router;

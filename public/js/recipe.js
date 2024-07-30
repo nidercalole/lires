@@ -14,10 +14,19 @@ function updatelist(){
     </tr>
     `;
     recData.ingredients.forEach(ing => {
+        let ingamountshow = '';
+        let ingunitshow = '';
+        if(ing.ingamount === 0 || ing.ingamount === null || ing.ingamount === undefined){
+            ingamountshow = '';
+            ingunitshow = '';
+        }else{
+            ingamountshow = (ing.ingamount*multiplier).toFixed(0);
+            ingunitshow = ing.ingunit;
+        }
         let item = document.createElement('tr');
         item.innerHTML = `
-        <td>${ing.ing}</td>
-        <td>${((ing.ingamount*multiplier).toFixed(0)) + ing.ingunit}</td>
+        <td>${ing.ing} ${ing.ingextra}</td>
+        <td>${(ingamountshow) + ' ' + ingunitshow}</td>
         `;
         list.appendChild(item);
     });

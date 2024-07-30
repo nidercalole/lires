@@ -1,0 +1,8 @@
+<%- include('./recipe.ejs') %>
+<input type="hidden" id="send" value="true">
+<input type="hidden" id="recidverify" value="<%= data.recid %>">
+<divc class="verifybutsRec">
+    <button class="verify" onclick="verifyRec('<%= usrnm %>','<%= usrid %>')">Rezept Verifizieren</button>
+    <button class="reject" onclick="rejectRec('<%= usrnm %>','<%= usrid %>')">Rezept nicht Verifizieren</button>
+</div>
+<script src="/js/verifyrecs.js"></script>

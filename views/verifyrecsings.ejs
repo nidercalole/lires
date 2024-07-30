@@ -57,14 +57,16 @@
                         <tr>
                             <td><%= recipe.recname %></td>
                             <td>
-                                <form action="/addrec/verify/viewToVerify" method="post" style="display:inline;">
+                                <form action="/addrec/verify/verifyRecipe" method="post" style="display:inline;">
                                     <input type="hidden" name="recid" value="<%= recipe.recid %>">
                                     <input type="hidden" name="send" value=false>
+                                    <input type="hidden" id="usrid" name="usrid" value="">
+                                    <input type="hidden" id="usrnm" name="usrnm" value="">
                                     <button type="submit">Anschauen</button>
                                 </form>
                             </td>
                             <td>
-                                <form action="/addrec/verify/discardRecipe" method="post" style="display:inline;">
+                                <form action="/addrec/verify/rejectRecipe" method="post" style="display:inline;">
                                     <input type="hidden" name="recid" value="<%= recipe.recid %>">
                                     <button type="submit">Nicht Verifizieren</button>
                                 </form>
@@ -88,6 +90,10 @@
     const usrnm = getURLParameter('usrnm');
 
     document.querySelectorAll('form[action="/addrec/verify/verifyIngredient"]').forEach(form => {
+        form.querySelector('input[name="usrid"]').value = usrid;
+        form.querySelector('input[name="usrnm"]').value = usrnm;
+    });
+    document.querySelectorAll('form[action="/addrec/verify/verifyRecipe"]').forEach(form => {
         form.querySelector('input[name="usrid"]').value = usrid;
         form.querySelector('input[name="usrnm"]').value = usrnm;
     });
