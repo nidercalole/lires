@@ -43,10 +43,10 @@ input.addEventListener("keypress", function (event) {
 });
 
 function chooseBtn(){
-  const btn = document.getElementById('chooseBtn');
-  const stepwise = document.getElementById('stepwise');
-  const stepaddbtn = document.getElementById('stepaddbtn')
-  const explanation = document.getElementById('explanation');
+  const btn = gebId('chooseBtn');
+  const stepwise = gebId('stepwise');
+  const stepaddbtn = gebId('stepaddbtn')
+  const explanation = gebId('explanation');
   if (btn.textContent === "Im Fließtext beschreiben") {
     btn.textContent = "Schrittweise beschreiben";
     stepaddbtn.classList.remove('hidden');
@@ -61,15 +61,15 @@ function chooseBtn(){
 }
 
 function countChars(){
-  const krzDesc = document.getElementById('krzDesc');
-  const charCount = document.getElementById('charCount');
+  const krzDesc = gebId('krzDesc');
+  const charCount = gebId('charCount');
   charCount.textContent = `${zaehleZeichen(krzDesc.value)}/250`
 }
 //label
 let lblcounter = 0;
 function addlabl() {
-  const shoInfInp = document.getElementById("shoInfInp").value;
-  const lbls = document.getElementById("lbls");
+  const shoInfInp = gebId("shoInfInp").value;
+  const lbls = gebId("lbls");
   lbls.className = "lbls";
   let lbl = document.createElement("p");
   lbl.textContent = shoInfInp;
@@ -78,10 +78,10 @@ function addlabl() {
   lbls.appendChild(lbl);
   lblcounter++;
 
-  document.getElementById("shoInfInp").value = "";
+  gebId("shoInfInp").value = "";
 }
 
-const shoInfInp = document.getElementById('shoInfInp');
+const shoInfInp = gebId('shoInfInp');
 shoInfInp.addEventListener('keypress', function(event){
   if (event.key === "Enter") {
     event.preventDefault();
