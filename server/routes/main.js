@@ -133,13 +133,13 @@ router.get('/getRecChefkoch', (req, res) => {
         res.json(data);
     });
 }); 
-
+/*
 router.get('/testapi', (req, res) => {
     chefkoch.chefkochAPI.getRecipe('/rezepte/923031197646622/Quarkbaellchen.html')
     .then(function(data){
         res.render('testapi', { title: 'Lires', data: JSON.stringify(data), usrnm: req.query.usrnm }); 
     });
 });
-
+*/
 
 module.exports = router;
