@@ -1,8 +1,7 @@
 //ich bin ganz :B
-function zaehleZeichen(string) {
-  return string.length;
-}
+function zaehleZeichen(string) {return string.length;}
 function gebId(str){return document.getElementById(str);}
+
 let counter = 0;
 function addTableRow() {
   const table = gebId("table1");
