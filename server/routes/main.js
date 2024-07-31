@@ -5,6 +5,7 @@ const useragent = require('express-useragent');
 const Usrnm = require('../models/usrnm');
 const Rec = require('../models/rec');
 const chefkoch = require('../../custom_modules/chefkoch');
+const usrnm = require('../models/usrnm');
 
 function insertUsr(data) {
     const usrnm = new Usrnm(data);
@@ -132,5 +133,13 @@ router.get('/getRecChefkoch', (req, res) => {
         res.json(data);
     });
 }); 
+
+router.get('/testapi', (req, res) => {
+    chefkoch.chefkochAPI.getRecipe('/rezepte/923031197646622/Quarkbaellchen.html')
+    .then(function(data){
+        res.render('testapi', { title: 'Lires', data: JSON.stringify(data), usrnm: req.query.usrnm }); 
+    });
+});
+
 
 module.exports = router;

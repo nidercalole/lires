@@ -60,13 +60,18 @@ class Tag {
 }
 
 class Recipe {
-    constructor(name, url, ingredients, category, tags = [], description) {
+    constructor(name, url, ingredients, category, tags = [], description, recipePortions = 0, recipeShortInfos = [], overallTime = 0, ecipeDificulty = 3) {
         this.name = name;
         this.url = url;
         this.ingredients = ingredients;
         this.category = category;
         this.tags = tags;
         this.description = description;
+        this.portions = recipePortions;
+        this.shortInfo = recipeShortInfos;
+        this.overallTime = overallTime;
+        this.dificulty = ecipeDificulty;
+
     }
 
     getName() {
@@ -90,6 +95,22 @@ class Recipe {
     }
     getDescription() {
         return this.description;
+    }
+
+    getPortions() {
+        return this.portions;
+    }
+
+    getShortInfo() {
+        return this.shortInfo;
+    }
+
+    getOverallTime() {
+        return this.overallTime;
+    }
+
+    getDificulty() {
+        return this.dificulty;
     }
 
     toString() {
@@ -283,6 +304,7 @@ class ChefkochAPI {
                 ingredient_list.push(new Ingredient(ingredient_name, ingredient_amount));
             });
         }
+        
         let category = null;
         let categoryURL = soup.find("ol", {"class": "ds-col-12"});
         if(categoryURL != null) {
@@ -290,6 +312,7 @@ class ChefkochAPI {
             categoryURL = categoryURL.findAll("li")[3].find("a").attrs.href;
             category = await this.getCategory(categoryURL);
         }
+
         let tagElement = soup.find("div", {"class": "recipe-tags"});
         if(tagElement != null) {
             tagElement.findAll("a").forEach(tagElement => {
@@ -298,18 +321,63 @@ class ChefkochAPI {
         } else {
             tags.push(new Tag("No tags found", "none"));
         }
+
         let recipeDescription 
         let recipeDescriptionArticle = soup.findAll("article", {"class": "ds-grid-float"});
+        let recipeShortInfo
         if(recipeDescriptionArticle[2].find("h2").text == "Nährwerte pro Portion") {
             if(recipeDescriptionArticle[3].find("h2").text == "Zubereitung") {
                 recipeDescription = this.beautifyText(recipeDescriptionArticle[3].findAll("div")[0].text); 
+                recipeShortInfo = recipeDescriptionArticle[3].find("small").findAll("span")
             }else{
                 recipeDescription = "No recipe description found";
+                recipeShortInfo = []
             }
         }else if(recipeDescriptionArticle[2].find("h2").text == "Zubereitung") {
             recipeDescription = this.beautifyText(recipeDescriptionArticle[2].findAll("div")[0].text);
+            recipeShortInfo = recipeDescriptionArticle[2].find("small").findAll("span")
         }
-        let recipe = new Recipe(recipeName, recipeSubURL, ingredient_list, category, tags, recipeDescription);
+        let recipeShortInfos = []
+        let overallTime 
+        recipeShortInfo.forEach(info => {
+            if(info.text.includes("Gesamtzeit")) {
+                var timeParts = this.beautifyText(info.text).split(" ")
+                overallTime = timeParts[timeParts.length-2]
+                return
+            }
+            recipeShortInfos.push(this.beautifyText(info.text))
+        });
+        let recipeDificulty
+        let recipeDificultyArticle = soup.findAll("article", {"class": "ds-grid-float"})[0];
+        recipeDificultyArticle = this.beautifyText(recipeDificultyArticle.find("small").findAll("span")[1].text);
+        if(recipeDificultyArticle.includes("simpel")) {
+            if(overallTime <= 20) {
+                recipeDificulty = 1
+            }
+            else if(overallTime >= 35) {
+                recipeDificulty = 2
+            }
+        }else if(recipeDificultyArticle.includes("normal")) {
+            if(overallTime <= 20) {
+                recipeDificulty = 3
+            }else if(overallTime >= 50) {
+                recipeDificulty = 4
+            }
+        }else if(recipeDificultyArticle.includes("pfiffig")) {
+            recipeDificulty = 5
+        }else if(recipeDificultyArticle.includes("kreativ")) {
+            recipeDificulty = 5
+        }else if(recipeDificultyArticle.includes("aufwendig")) {
+            recipeDificulty = 5
+        }else {
+            recipeDificulty = 3
+        }
+        let portionen = recipeDescriptionArticle[1].find("div").find("form").find("input").attrs.value;
+        let recipePortions
+        if(portionen !== "0"|| portionen !== null || portionen !== undefined){ 
+            recipePortions = portionen;
+        }
+        let recipe = new Recipe(recipeName, recipeSubURL, ingredient_list, category, tags, recipeDescription, recipePortions, recipeShortInfos, overallTime, recipeDificulty);
         return recipe;
     }
 
