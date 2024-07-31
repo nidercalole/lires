@@ -104,6 +104,5 @@ function addChefkochRec(){
             addlabl()
         });
         gebId("aufwRange").value = data.dificulty
-        console.log(data.dificulty, gebId("aufwRange").value)
     })
 }
