@@ -2,36 +2,37 @@
 function zaehleZeichen(string) {
   return string.length;
 }
-
+function gebId(str){return document.getElementById(str);}
 let counter = 0;
 function addTableRow() {
-  var tableInp11 = document.getElementById("tableInp11").value;
-  var tableInp12 = document.getElementById("tableInp12").value;
-  var tableInp13 = document.getElementById("tableInp13").value;
-  if (tableInp11 === "") {
-    return alert("Bitte geben Sie eine Zutat ein.");
+  const table = gebId("table1");
+  if (!gebId("tableInp11").value) {
+    alert("Bitte geben Sie eine Zutat ein.");
+    return;
   }
-  var table = document.getElementById("table1");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(2);
-  cell1.textContent = tableInp11;
-  cell2.textContent = tableInp12;
-  cell3.textContent = tableInp13;
-  cell1.id = "resing_" + counter;
-  cell2.id = "resingamount_" + counter;
-  cell3.id = "resingunit_" + counter;
-  cell1.classList.add("tableInp");
-  cell2.classList.add("tableInp");
-  cell3.classList.add("tableInp");
+
+  const row = table.insertRow(-1);
+  const cells = [
+    { value: gebId("tableInp11").value, idPrefix: "resing_" },
+    { value: gebId("tableInp12").value, idPrefix: "resingamount_" },
+    { value: gebId("tableInp13").value, idPrefix: "resingunit_" }
+  ];
+
+  cells.forEach((cellData, index) => {
+    const cell = row.insertCell(index);
+    cell.textContent = cellData.value;
+    cell.id = cellData.idPrefix + counter;
+    cell.classList.add("tableInp");
+  });
 
   counter++;
-  document.getElementById("tableInp11").value = "";
-  document.getElementById("tableInp12").value = "";
-  document.getElementById("tableInp13").value = "";
-  document.getElementById("tableInp11").select();
+  ["tableInp11", "tableInp12", "tableInp13"].forEach(id => {
+    gebId(id).value = "";
+  });
+
+  gebId("tableInp11").select();
 }
+
 
 var input = document.getElementById("backfisch");
 input.addEventListener("keypress", function (event) {
