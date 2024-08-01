@@ -91,7 +91,7 @@ function collectAndSend(){
     var ingredients = [];
     var directions = [];
     var coutfor = [extval("anzInp"), extval("anzEinhInp")]
-    extck("warm"); extck("kalt"); extck("vorspeise"); extck("hptgrcht"); extck("nchtsch"); extck("vgtrsch"); extck("vgn"); extck("flsch"); extck("fsch"); extck("gms"); extck("ndl"); extck("brt"); extck("dips"); extck("spp"); extck("slt"); extck("kchn"); extck("gbck"); extck("grtn"); extck("knsrvrt"); extck("suess"); extck("hrzhft"); extck("fngrfd");
+    /*mobile anders!!!*/extck("warm"); extck("kalt"); extck("vorspeise"); extck("hptgrcht"); extck("nchtsch"); extck("vgtrsch"); extck("vgn"); extck("flsch"); extck("fsch"); extck("gms"); extck("ndl"); extck("brt"); extck("dips"); extck("spp"); extck("slt"); extck("kchn"); extck("gbck"); extck("grtn"); extck("knsrvrt"); extck("suess"); extck("hrzhft"); extck("fngrfd");
 
     if (chooseBtn === "Im Fließtext beschreiben") {
         directions.push({steppwise:false})

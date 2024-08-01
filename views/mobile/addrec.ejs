@@ -26,8 +26,8 @@
     <table class="beinhTable" id="table1">
         <tr>
             <th class="moreWidth">Zutat</th>
-            <th>Menge</th>
-            <th>Einheit</th>
+            <th class="kindaMoreWidth">Menge</th>
+            <th class="kindaMoreWidth">Einheit</th>
         </tr>
         <tr id="backfisch">
             <td><input id="tableInp11" class="tableInp"></input></td>
@@ -42,13 +42,11 @@
         <button class="stepaddbtn hidden" id="stepaddbtn" onclick="addstepp()">Schritt hinzufügen</button>
     </div>
 
-    <div class="hundredWidth"><textarea class="vorgehen" placeholder="Vorgehen" id="explanation"></textarea>
+    <div ><textarea class="vorgehen" placeholder="Vorgehen" id="explanation"></textarea>
         <div id="stepwise" class="stepwise hidden">
             <textarea class="stepvorgehen" placeholder="Schritt 1" id="step_1"></textarea>
         </div>
     </div>
-    <button id="addRec" class="addRec" onclick="buttaddrec()">
-        <img src = "/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
-    </button>
 </div>
 <script src="/js/addrec.js"></script>
+<script src="/js/collectrecinfo.js"></script>

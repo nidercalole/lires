@@ -2,7 +2,7 @@
 //growing list
 let ended = false;
 
-listButclick = function(){
+function listButclick(){
     const listArea = document.getElementById('listArea');
 
     if (ended) {
@@ -14,14 +14,14 @@ listButclick = function(){
  };
 
 //inputRecTitle
-inputRecTitle = function(){
+function inputRecTitle(){
     const recTitle = document.getElementById('recTitle');
     const inputWidth = recTitle.scrollWidth; 
     recTitle.style.width = inputWidth + "px"; 
 };
 
 //buttaddrec
-buttaddrec = function(){
+function buttaddrec(){
     const username = document.getElementById('usrnm').textContent
     window.location.href = '/addrec/?usrnm=' + username;
 };
@@ -37,7 +37,7 @@ function filBut(){
 }
 
 //inputUpdate at filter
-maxDauerInput = function(){
+function maxDauerInput(){
     const maxMin = document.getElementById('maxMin');
     const maxDauer = document.getElementById('maxDauer');
     if(maxDauer.value == 14){

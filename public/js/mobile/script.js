@@ -41,3 +41,12 @@ swipeArea.addEventListener('touchend', (event) => {
         }
     }
 });
+
+function buttaddrec(){
+    window.location.href='/mobile/addrec'
+}
+function inputRecTitle(){
+    const recTitle = document.getElementById('recTitle');
+    const inputWidth = recTitle.scrollWidth; 
+    recTitle.style.width = inputWidth + "px"; 
+};

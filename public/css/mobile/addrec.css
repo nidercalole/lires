@@ -134,7 +134,7 @@ zubDaTitle {
 }
 
 .zutAn {
-    width: 100%;
+
     border-radius: 5px;
     border: none;
     background-color: rgba(71, 59, 123, 0.5);
@@ -142,7 +142,7 @@ zubDaTitle {
 }
 
 zutAn {
-    width: 100%;
+
     color: #caffee;
     size: small;
 }
@@ -214,7 +214,10 @@ zutAn {
 }
 
 .moreWidth {
-    width: 85%;
+    width: 60%;
+}
+.kindaMoreWidth{
+    width: 20%;
 }
 
 .tableInp {
@@ -287,7 +290,7 @@ zutAn {
 
 .vorgehen {
     border: #473B7B solid 2px;
-    width: 100%;
+    width: 98%;
     margin-top: 3px;
     color: #caffee;
     border-radius: 5px;
@@ -305,7 +308,7 @@ zutAn {
 }
 
 .stepvorgehen {
-    width: 100%;
+    width: 98%;
     margin-top: 3px;
     resize: none;
     background-color: rgba(71, 59, 123, 0.5);
