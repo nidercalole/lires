@@ -49,7 +49,6 @@ function sendData(
     })
     .then(response => response.json())
     .then(data => {
-        //console.log('Success:', data);
 
         fetch('/addrec/addrecingredients', {
             method: 'POST',
@@ -62,8 +61,13 @@ function sendData(
         })
         .then(response => response.json())
         .then(data => {
-            //console.log('Success:', data);
-            window.location.href = "/verify/?usrnm=" + usrnm;
+            if(data.useragent === 'mobile'){
+                window.location.href = "/mobile/verify?usrnm=" + usrnm;
+                return;
+            }else{
+                window.location.href = "/verify/?usrnm=" + usrnm;
+                return;
+            }
         })
     })
     .catch((error) => {

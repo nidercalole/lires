@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/mobile/mobilelogin.css">
+<div class="toplogin">
+    <div class="filOptionPagelogin">
+        <filHeader class="filGridHeader">Login</filHeader>
+        <form action="/mobile/anmld" method="post" class="formlogin">
+
+            <input type="text" name="username" placeholder="Nutzername" id="usrnmlogin" required class="inputusrnm">
+            <input type="submit" value="Login" class="submitloginreg">
+        </form>
+    </div>
+    <div class="filOptionPagelogin filOptionPageloginBottom">
+        <filHeader class="filGridHeader">Registrieren</filHeader>
+        <form action="/mobile/register" method="post" class="formlogin">
+            
+            <input type="text" name="username" placeholder="Nutzername" id="usrnmregister" required class="inputsreg">
+            <input type="password" name="permstring" placeholder="Berechtigungs-ID" id="permstring" required class="inputsreg">
+            <input type="submit" value="Register" class="submitloginreg">
+        </form>
+    </div>
+</div>
+<div class="center" id="centerDiv">
+    <p id='regerror' class='error'></p>
+    <p id="loginerror" class="error"></p>
+</div>
+<script src="/js/loginerr.js"></script>

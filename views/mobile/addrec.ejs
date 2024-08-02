@@ -13,7 +13,10 @@
             <slidZubDaTxt>hoch</slidZubDaTxt>
         </li>
     </ul>
-    <button class="grchtArtBtn">Art des Gerichtes auswählen</button>
+    <button class="grchtArtBtn" onclick="openTagList()">Art des Gerichtes auswählen</button>
+    <div class="hidden" id="mobileTagList">
+        <%- include('../partials/vieletags.ejs') %>
+    </div>
     <textarea id="krzDesc" class="krzDesc" placeholder="Kurzbeschreibung (maximal 250 Zeichen)" maxlength="250"
         oninput="countChars()"></textarea>
     <p id="charCount" class="charCount"></p>

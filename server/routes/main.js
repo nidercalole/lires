@@ -22,26 +22,31 @@ function insertUsr(data) {
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get('/', async(req, res) => {
+  
     if(req.useragent.isMobile) {
         return res.redirect('/mobile');
-    }
-    if(req.query.usrnm === undefined) {
-        return res.redirect('/login');
     }else{
-        try{
-            const query = { usrid: req.query.usrid };
-            const existingUser = await Usrnm.findOne(query).exec();
-            if(existingUser){
-                const username = existingUser.usrnm;
-                return res.render('index', { title: 'Lires', usrnm: username });
-            }else{
-                return res.redirect('/login');
+        if(req.query.usrnm === undefined) {
+            return res.redirect('/login');
+        }else{
+            try{
+                const query = { usrid: req.query.usrid };
+                const existingUser = await Usrnm.findOne(query).exec();
+                if(existingUser){
+                    const username = existingUser.usrnm;
+                    return res.render('index', { title: 'Lires', usrnm: username });
+                }else{
+                    return res.redirect('/login');
+                }
+            }catch(err){
+                console.error(err);
+                return res.status(500).send('Fehler bei der Verarbeitung der Anfrage.');
             }
-        }catch(err){
-            console.error(err);
-            return res.status(500).send('Fehler bei der Verarbeitung der Anfrage.');
         }
     }
+
+
+
 });
 
 router.get('/login', (req, res) => {

@@ -43,10 +43,19 @@ swipeArea.addEventListener('touchend', (event) => {
 });
 
 function buttaddrec(){
-    window.location.href='/mobile/addrec'
+    window.location.href='/mobile/addrec?usrnm=' + document.getElementById('usrnm').textContent;
 }
 function inputRecTitle(){
     const recTitle = document.getElementById('recTitle');
     const inputWidth = recTitle.scrollWidth; 
     recTitle.style.width = inputWidth + "px"; 
 };
+
+function openTagList(){
+    if(document.getElementById('mobileTagList').className == 'hidden'){
+        document.getElementById('mobileTagList').className = '';
+    }else{
+        document.getElementById('mobileTagList').className = 'hidden';
+    }
+
+}

@@ -28,6 +28,10 @@ router.post('/add', async(req, res) => {
 });
 
 router.post('/addrecingredients', async(req, res) => {
+    let useragent = 'desktop';
+    if(req.useragent.isMobile) {
+        useragent = 'mobile';
+    }
     try {
         const { recname } = req.body;
         const rec = await Rec.findOne({ recname: recname }).exec();
@@ -46,7 +50,7 @@ router.post('/addrecingredients', async(req, res) => {
           $addToSet: { recs: {recid:recid,recname:recname}, ings: { $each: newIngredients } }
         }, { new: true, upsert: true });
     
-        res.json({ success: true });
+        res.json({ success: true, useragent: useragent });
       } catch (error) {
         console.error(error);
         res.status(500).json({ success: false });
