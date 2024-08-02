@@ -14,7 +14,7 @@ input, textarea {
 }
 .swipeArea{
     height:650px;
-    width: 100%;
+    width:100%;
     z-index:100;
 }
 .addRec{

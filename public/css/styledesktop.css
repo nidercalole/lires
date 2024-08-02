@@ -120,6 +120,9 @@ filHeader{
     margin: 0;
     box-shadow: 0px/*versch. x*/ 8px/*versch. y unten*/ 8px/*?*/ 0px/*zoom*/ rgb(85, 71, 148);
 }
+.hidden{
+    display: none;
+}
 .hoLineSplitRight{
     margin-left: 20px;
     margin-right: 20px;

@@ -32,9 +32,13 @@ router.get('/', async(req, res) => {
             try{
                 const query = { usrid: req.query.usrid };
                 const existingUser = await Usrnm.findOne(query).exec();
+                var recs = [];
+                recs = await Rec.find({}).exec();
+                recs.sort((a, b) => new Date(b.ts) - new Date(a.ts));
+                var newestRecs = recs.slice(0, 3);
                 if(existingUser){
                     const username = existingUser.usrnm;
-                    return res.render('index', { title: 'Lires', usrnm: username });
+                    return res.render('index', { title: 'Lires', usrnm: username, recs: recs});
                 }else{
                     return res.redirect('/login');
                 }

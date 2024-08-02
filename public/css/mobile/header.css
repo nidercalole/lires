@@ -12,7 +12,6 @@ body {
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    height: 60px;
     margin: 0;
     box-shadow: 0px
         /*versch. x*/
@@ -26,7 +25,7 @@ body {
 }
 
 .logo {
-    height: 50px;
+    height: 60px;
     margin: 1%;
 }
 
@@ -41,7 +40,7 @@ body {
     font-size: small;
     font-weight:200;
     -webkit-text-fill-color: #CAFFEE;
-    width: 150px;
+    width: 100px;
 }
 .suchleiste:focus{
     background-color: rgba(99, 83, 172, 0.6);

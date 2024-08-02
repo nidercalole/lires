@@ -52,3 +52,8 @@ function redirectProfil(){
     const username = document.getElementById('usrnm').textContent
     window.location.href = '/profile/?usrnm=' + username;
 }
+
+function openRec(recid){
+    const username = document.getElementById('usrnm').textContent
+    window.location.href = '/recipe/?usrnm=' + username + '&recid=' + recid;
+}
