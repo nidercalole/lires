@@ -361,3 +361,39 @@ usrnm{
     top: -28px;
     font-size: medium;
 }
+/*.recsrow{
+    flex-direction: row;
+    border:#473B7B solid 2px;
+    background-color: red;
+    border-radius: 5px;
+    margin: 4px;
+    padding: 0;
+}*/
+.recsindex {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .recsindex td, .recsindex th {
+    border: none;
+    padding: 4px;
+  }
+  
+  .recsindex tr:nth-child(even){background-color: rgba(71, 59, 123, 0.5);}
+  
+  .recsindex tr:hover {background-color: rgba(71, 59, 123, 0.9);}
+  
+  .recsindex th {
+    border-color: none;
+    text-align: left;
+    color: #caffee;
+  }
+  .recsindex th:hover{
+    background-color: #6353ac;
+  }
+  .recname{
+    font-size:large;
+    text-align: left;
+    color: #caffee;
+  }

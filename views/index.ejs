@@ -29,13 +29,13 @@
 
   <div>
     <table class="recsindex">
-        <tr class="recsrow">
+        <tr>
             <th colspan="4"><h1>Neueste Rezepte</h1></th>
         </tr>
         <% recs.forEach(rec => { %>
             <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
                 <td class="recname"><%= rec.recname %></td>
-                <td class="duration"><%= rec.duration %></td>
+                <td class="duration">Dauer: <%= rec.duration %>min</td>
                 <td class="expense"><%= rec.expense %></td>
                 <td class="recuser"><%= rec.user[0] %></td>
             </tr>

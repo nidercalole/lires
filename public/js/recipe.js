@@ -103,7 +103,7 @@ function loadRecData(ammount){
             lbl = 'Nudeln';
                 break;
             case 'brt':
-            lbl = 'Brot/Brötcen';
+            lbl = 'Brot/Brötchen';
                 break;
             case 'dips':
             lbl = 'Soßen/Dips';

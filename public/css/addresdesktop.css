@@ -65,6 +65,27 @@
   line-height: 24px;
 }
 
+.chefkoch{
+  width: 98.5%;
+  margin-top: 0.5%;
+  border-radius: 5px;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+.chefkoch-add-but{
+  background-color: rgba(71, 59, 123, 0.3);
+  border-radius: 5px;
+  border: #473B7B solid 2px;
+  color: #caffee;
+  padding: 4px;
+  font-size: medium;
+}
+.chefkoch-add-but:hover {
+  cursor: pointer;
+  box-shadow: 0 0 2px 2px rgba(7, 136, 129, 1);
+  background-color: rgba(71, 59, 123, 0.75);
+}
+
 .last-row-left {
   border-bottom-left-radius: 5px;
 }
@@ -124,8 +145,21 @@ chckbx {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
-
+.chefkoch-link{
+  border-radius: 5px;
+  border: solid 2px #473B7B;
+  background-color: rgba(71, 59, 123, 0.3);
+  color: #caffee;
+  text-decoration: none;
+  width: 500px;
+}
+.chefkoch-link:focus {
+  background-color: rgba(71, 59, 123, 0.3);
+  border: 2px solid rgba(7, 136, 129, 1);
+  outline: 1px ridge rgba(71, 59, 123, 0.6);
+}
 .chooseBtn {
+  font-size: medium;
   border:#473B7B solid 2px;
   background-color: rgba(71, 59, 123, 0.5);
   color: #caffee;
