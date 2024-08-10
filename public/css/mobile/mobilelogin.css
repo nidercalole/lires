@@ -1,4 +1,69 @@
 .filbut{
     display: none;
 }
+.toplogin{
+    margin-top: 5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+.inputusrnm{
+    width: 70%;
+    padding: 2px;
+    display: inline-block;
+    background-color: rgba(71, 59, 123, 0.5);
+    border-radius: 5px;
+    border:#473B7B 2px solid;
+    color: #caffee;
+    font-size: large;
+    margin-top:4px;
+    margin-bottom:4px;
+}
+.inputusrnm:focus{
+    background-color: rgba(71, 59, 123, 0.75);
+    outline: 2px solid rgba(7, 136, 129, 1);
+}
+.filGridHeader{
+    font-size: x-large;
+    color: #caffee;
+    text-align: center;
+}
+.submitloginreg{
+    border-color:#473B7B;
+    padding: 2px;
+    display: inline-block;
+    background-color: #6353ac;
+    border-radius: 5px;
+    color: #caffee;
+    font-size: medium;
+}
+.submitloginreg:focus{
+    background-color: rgba(71, 59, 123, 0.75);
+    outline: 2px solid rgba(7, 136, 129, 1);
+}
+.inputregis{
+    width: 70%;
+    padding: 2px;
+    display: inline-block;
+    background-color: rgba(71, 59, 123, 0.5);
+    border-radius: 5px;
+    border:#473B7B 2px solid;
+    color: #caffee;
+    font-size: large;
+    margin-top:4px;
+}
+.inputregis:focus{
+    background-color: rgba(71, 59, 123, 0.75);
+    outline: 2px solid rgba(7, 136, 129, 1);
+}
+.addRec{
+    position: absolute;
+    background-color: transparent;
+    border-radius: 100%;
+    padding: 0;
+    width:20%;
+    height: 20%;
+    margin:1%;
+    display: block;
+    z-index: 1001;
+}
 /*Style füßr Mobile Login*/

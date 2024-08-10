@@ -6,6 +6,7 @@
     font-size: small;
 }
 
+
 ::placeholder {
     color: #caffee;
     opacity: 0.75;
@@ -16,7 +17,7 @@
 .noList {
     list-style: none;
     margin: 0;
-    padding: 4px;
+    padding: 1%;
     background-color: rgba(71, 59, 123, 0.5);
     border-radius: 5px;
     border: solid 2px #473B7B;
@@ -33,7 +34,7 @@
     background-color: #6353ac;
     border: none;
     border-radius: 5px;
-    width: 8%;
+    width: 20%;
     display: inline-flex;
     color: #caffee;
     margin-left: 1%;
@@ -47,13 +48,13 @@
 
 slidZubDaTxt {
     margin: 2px;
-    font-size: small;
+    font-size: medium;
     background-color: none;
 }
 
 zubDaTitle {
     margin: 4px;
-    font-size: small;
+    font-size: medium;
     background-color: none;
     font-weight: bold;
 }
@@ -302,7 +303,7 @@ zutAn {
 }
 
 .vorgehen:focus {
-    background-color: rgba(71, 59, 123, 0.6);
+    background-color: rgba(71, 59, 123, 0.3);
     border: 2px solid rgba(7, 136, 129, 1);
     outline: 1px ridge rgba(71, 59, 123, 0.6);
 }
@@ -320,7 +321,7 @@ zutAn {
 }
 
 .stepvorgehen:focus {
-    background-color: rgba(71, 59, 123, 0.6);
+    background-color: rgba(71, 59, 123, 0.3);
     border: 2px solid rgba(7, 136, 129, 1);
     outline: 1px ridge rgba(71, 59, 123, 0.6);
 }
@@ -366,7 +367,7 @@ zutAn {
     font-weight: 200;
     color: #caffee;
     box-sizing: border-box;
-    margin-left:3px;
+    margin-left: 3%;
     z-index: 0;
 }
 
@@ -385,7 +386,7 @@ zutAn {
     padding: 4px;
     font-size: small;
     position:absolute;
-    left: 250px;
+    left: 82%;
     z-index: 0;
 }
 

@@ -30,17 +30,15 @@ body {
 }
 
 .suchleiste{
-    /*position: absolute;
-    left: 120px;*/
     background-color: #6353ac;
     border: 1px solid #078881;
     border-radius: 50px;
-    padding: 5px;
+    padding: 2%;
     border-width: 2px;
-    font-size: small;
+    font-size: medium;
     font-weight:200;
-    -webkit-text-fill-color: #CAFFEE;
-    width: 100px;
+    color: #CAFFEE;
+    width: 50%;
 }
 .suchleiste:focus{
     background-color: rgba(99, 83, 172, 0.6);
@@ -51,7 +49,7 @@ body {
     border:none;
     border-radius: 5px;
     padding: 2px;
-    width:40px;
+    width:10%;
     margin:5px;
     display: block;
 }
