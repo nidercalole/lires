@@ -143,10 +143,11 @@ zubDaTitle {
 }
 
 zutAn {
-
+    display: inline;
     color: #caffee;
     size: small;
 }
+
 
 .anzEinhInp {
     background-color: #6353ac;
@@ -217,7 +218,8 @@ zutAn {
 .moreWidth {
     width: 60%;
 }
-.kindaMoreWidth{
+
+.kindaMoreWidth {
     width: 20%;
 }
 
@@ -385,7 +387,7 @@ zutAn {
     color: #caffee;
     padding: 4px;
     font-size: small;
-    position:absolute;
+    position: absolute;
     left: 82%;
     z-index: 0;
 }
@@ -395,9 +397,92 @@ zutAn {
     box-shadow: 0 0 2px 2px rgba(7, 136, 129, 1);
     background-color: rgba(99, 83, 172, 0.3);
 }
-.suchleiste{
-    display:none;
+
+.suchleiste {
+    display: none;
 }
-.filbut{
-    display:none;
+
+.filbut {
+    display: none;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgba(71, 59, 123, 0.3);
+    /* Not removed via appearance */
+    width: 12px;
+    height: 12px;
+    color: #078881;
+    margin: 3px;
+    border: 2px solid #473B7B;
+    border-radius: 2px;
+    display: inline-grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: #caffee;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid #078881;
+    outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+    --form-control-color: var(--form-control-disabled);
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+}
+
+.addZutBtn {
+    background-color: rgba(71, 59, 123, 0.5);
+    border-radius: 5px;
+    border: #473B7B 2px solid;
+    color: #caffee;
+    margin-left: 4px;
+    padding: 6px;
+}
+
+.addZutBtn:focus {
+    background-color: rgba(71, 59, 123, 0.75);
+    outline: 2px solid rgba(7, 136, 129, 1);
+}
+.addInfoBtn {
+    background-color: rgba(71, 59, 123, 0.5);
+    border-radius: 5px;
+    border: #473B7B 2px solid;
+    color: #caffee;
+    margin-left: 4px;
+    margin-top:3px;
+    padding: 6px;
+}
+
+.addInfoBtn:focus {
+    background-color: rgba(71, 59, 123, 0.75);
+    outline: 2px solid rgba(7, 136, 129, 1);
+}
+.inline {
+    display: flex;
+}
+
+tagTitle {
+    margin-left: 4px;
+    margin: top 12px bottom 12px;
+    font-size: large;
+    background-color: none;
+    font-weight: bold;
 }
