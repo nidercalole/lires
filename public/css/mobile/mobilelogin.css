@@ -23,7 +23,7 @@
     outline: 2px solid rgba(7, 136, 129, 1);
 }
 .filGridHeader{
-    font-size: x-large;
+    font-size: 150%;
     color: #caffee;
     text-align: center;
 }
@@ -65,5 +65,12 @@
     margin:1%;
     display: block;
     z-index: 1001;
+}
+.suchleiste{
+    display: none;
+}
+.hun_pro{
+    width: 100%;
+    height: 100vh;
 }
 /*Style füßr Mobile Login*/
