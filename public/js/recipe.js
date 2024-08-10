@@ -127,14 +127,63 @@ function loadRecData(ammount){
             lbl = 'Konserviertes';
                 break;
             case 'suess':
-            lbl = 'Süßspeisen';               
+            lbl = 'Süßspeisen';
                 break;
             case 'hrzhft':
-            lbl = 'Herzhaftes';                   
+            lbl = 'Herzhaftes';
                 break;
             case 'fngrfd':
-            lbl = 'Fingerfood';                        
+            lbl = 'Fingerfood';
                 break;
+            case 'fstlch':
+            lbl = 'Festlich';
+                break;
+            case 'grlln':
+            lbl = 'Grillen';
+                break;
+            case 'aufstrch':
+            lbl = 'Aufstrich';
+                break;
+            case 'gtrnk':
+            lbl = 'Getränke';
+                break;
+            case 'gkcht':
+            lbl = 'Gekocht';
+                break;
+            case 'gbrtn':
+            lbl = 'Gebraten';
+                break;
+            case 'gdnstt':
+            lbl = 'Gedünstet';
+                break;
+            case 'gbckn':
+            lbl = 'Gebacken';
+                break;
+            case 'ubrbckn':
+            lbl = 'Überbacken';
+                break;
+            case 'mrnrt':
+            lbl = 'Mariniert';
+                break;
+            case 'frttrt':
+            lbl = 'Frittiert';
+                break;
+            case 'hltbr':
+            lbl = 'Haltbar gemacht';
+                break;
+            case 'blg':
+            lbl = 'Beilage';
+                break;
+            case 'frstck':
+            lbl = 'Frühstück';
+                break;
+            case 'kndr':
+            lbl = 'Kinder';
+                break;
+            case 'frcht':
+            lbl = 'Früchte';
+                break;
+
         }
         gebId('miniLbl' + (i+1)).classList.remove('hidden');
         gebId('miniLbl' + (i+1)).textContent = lbl;

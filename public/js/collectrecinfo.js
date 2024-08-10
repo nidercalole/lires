@@ -95,7 +95,7 @@ function collectAndSend(){
     var ingredients = [];
     var directions = [];
     var coutfor = [extval("anzInp"), extval("anzEinhInp")]
-    /*mobile anders!!!*/extck("warm"); extck("kalt"); extck("vorspeise"); extck("hptgrcht"); extck("nchtsch"); extck("vgtrsch"); extck("vgn"); extck("flsch"); extck("fsch"); extck("gms"); extck("ndl"); extck("brt"); extck("dips"); extck("spp"); extck("slt"); extck("kchn"); extck("gbck"); extck("grtn"); extck("knsrvrt"); extck("suess"); extck("hrzhft"); extck("fngrfd");
+    extck("warm"); extck("kalt"); extck("vorspeise"); extck("hptgrcht"); extck("nchtsch"); extck("vgtrsch"); extck("vgn"); extck("flsch"); extck("fsch"); extck("gms"); extck("ndl"); extck("brt"); extck("dips"); extck("spp"); extck("slt"); extck("kchn"); extck("gbck"); extck("grtn"); extck("knsrvrt"); extck("suess"); extck("hrzhft"); extck("fngrfd");extck("fstlch");extck("grlln");extck("aufstrch");extck("gtrnk");extck("gkcht");extck("gbrtn");extck("gdnstt");extck("gbckn");extck("ubrbckn");extck("mrnrt");extck("frttrt");extck("hltbr");extck("blg");extck("frstck");extck("kndr");extck("frcht");
 
     if (chooseBtn === "Im Fließtext beschreiben") {
         directions.push({steppwise:false})

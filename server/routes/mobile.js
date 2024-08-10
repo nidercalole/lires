@@ -7,6 +7,18 @@ const Rec = require('../models/rec');
 const chefkoch = require('../../custom_modules/chefkoch');
 const usrnm = require('../models/usrnm');
 
+function insertUsr(data) {
+    const usrnm = new Usrnm(data);
+    usrnm.save()
+        .then(() => {
+            return true;
+        })
+        .catch((err) => {
+            console.log('Error:', err);
+            return false;
+        });
+}
+
 router.use(bodyParser.json());
 
 router.get('/', async(req, res) => {
