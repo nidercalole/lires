@@ -53,9 +53,3 @@ input, textarea {
 width: 100%;
 height: 100vh;
 }
-frameset frame{
-    width: 100%; /* Setze die Breite des iframes auf 100% des übergeordneten Containers */
-    height: 600px; /* Setze eine feste Höhe */
-    border: none; /* Entferne den Rahmen des iframes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: füge einen Schatten hinzu */
-}
