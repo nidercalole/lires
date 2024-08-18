@@ -1,0 +1,72 @@
+.line1 {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.line2 {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.quarter {
+    width: 48%;
+    height: 48%;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(71, 59, 123, 0.5);
+}
+
+partialTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #caffee;
+}
+
+partialsubtext {
+    font-size: 13px;
+    color: #caffee;
+    display: block;
+}
+
+.friends {
+    width: 22%;
+    text-align: center;
+}
+
+.recList {
+    position: relative;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+ol li::marker {
+    content: "▶ ";
+    margin-right: 50px;
+}
+
+profileusrnm {
+    display: block;
+    font-size: x-large;
+    font-weight: bold;
+    position:absolute;
+    left:120px;
+}
+.suchleiste{
+    display:none;
+}
+#filbut{
+    display:none;
+}
+.oR{
+    display:none;
+}
+#accCreation{
+    display: block;
+  }

@@ -6,6 +6,7 @@
     id="logo"
     onclick="redirectHome()"
   />
+  <profileusrnm><%= usrnm %></profileusrnm>
   <input id="suchleiste" class="suchleiste" />
   <button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
     <img src="/img/fil.png" alt="Filter" width="55px" />
@@ -44,19 +45,19 @@
 
   <nav>
     <ul class="navLinks">
-      <li class="tooltipCal">
+      <li class="tooltipCal oR">
         <a href="link"></a>
         <img class="navpic" src="/img/cal.png" alt="Kochkalender" />
         <span class="tooltipCaltext">Kochen planen</span>
       </li>
-      <li class="tooltipList" id="ListBut" onclick="listButclick()">
+      <li class="tooltipList oR" id="ListBut" onclick="listButclick()">
         <a href="link"></a>
         <img class="navpic" src="/img/lists.png" alt="Listen" />
         <span class="tooltipListtext"
-          >Zutaten in Einkaufslisten zusammenfassen</span
-        >
+          >Zutaten in Einkaufslisten zusammenfassen</span>
       </li>
-      <li>
+      <usrnm id="accCreation">DD.MM.YYYY</usrnm>
+      <li class="oR">
         <a href="link"></a>
         <usrnm id="usrnm"><%= usrnm %></usrnm>
       </li>
@@ -72,4 +73,5 @@
       </li>
     </ul>
   </nav>
+
 </header>

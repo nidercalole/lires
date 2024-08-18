@@ -397,3 +397,9 @@ usrnm{
     text-align: left;
     color: #caffee;
   }
+  profileusrnm{
+    display: none;
+  }
+  #accCreation{
+    display: none;
+  }
