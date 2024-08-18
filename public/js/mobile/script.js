@@ -27,10 +27,10 @@ swipeArea.addEventListener('touchend', (event) => {
         // Horizontaler Wisch
         if (deltaX > 0) {
             console.log('Von links nach rechts gewischt');
-            window.location.href='/mobile'
+            window.location.href='/mobile/verify?usrnm=' + document.getElementById('usrnm').textContent;
         } else {
             console.log('Von rechts nach links gewischt');
-            window.location.href='/mobile/lists'
+            window.location.href='/mobile/lists?usrnm=' + document.getElementById('usrnm').textContent;
         }
     } else {
         // Vertikaler Wisch

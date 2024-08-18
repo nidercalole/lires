@@ -3,12 +3,12 @@
     <img class="logo" src="/img/oni.png" alt="Lires-Zwiebel" id="logo" onclick="redirectHome()" />
     <input id="suchleiste" class="suchleiste" />
     <button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
-        <img src="/img/fil.png" alt="Filter" width="30px" />
+        <img src="/img/fil.png" alt="Filter" width="80%" />
     </button>
     
     <div class="row">
         <input type="text" id="recTitle" class="recTitle" oninput="inputRecTitle()" placeholder="Titel des Rezepts" />
         <button class="recSave" onclick="collectAndSend()">Speichern</button>
-        <p id="usrnm"><%= usrnm %></p>
+        <p class="usrnm-mobile" id="usrnm"><%= usrnm %></p>
     </div>
 </header>

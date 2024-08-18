@@ -15,7 +15,7 @@ input, textarea {
     display:flex;
     justify-content: space-evenly;
     position: absolute;
-    bottom: 2%;
+    bottom: 8vh;
     background-color: transparent;
     border-radius: 100%;
     border:#CAFFEE 2px;

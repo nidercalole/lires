@@ -3,15 +3,14 @@
     color: #caffee;
     opacity: 0.75;
     font-family: Verdana, sans-serif;
-    font-size: small;
+    font-size: 3vw;
 }
-
 
 ::placeholder {
     color: #caffee;
     opacity: 0.75;
     font-family: Verdana, sans-serif;
-    font-size: small;
+    font-size: 3vw;
 }
 
 .noList {
@@ -19,8 +18,8 @@
     margin: 0;
     padding: 1%;
     background-color: rgba(71, 59, 123, 0.5);
-    border-radius: 5px;
-    border: solid 2px #473B7B;
+    border-radius: 1.5vw;
+    border: solid 0.6vw #473B7B;
 }
 
 .headInpRow {
@@ -33,8 +32,9 @@
 .zubDauInp {
     background-color: #6353ac;
     border: none;
-    border-radius: 5px;
+    border-radius: 1.5vw;
     width: 20%;
+    height: 2vh;
     display: inline-flex;
     color: #caffee;
     margin-left: 1%;
@@ -42,19 +42,19 @@
 
 .zubDauInp:focus {
     background-color: rgba(99, 83, 172, 0.6);
-    outline: 1px ridge rgba(99, 83, 172, 0.9);
-    border: 2px solid #078881;
+    outline: 0.3vw ridge rgba(99, 83, 172, 0.9);
+    border: 0.6vw solid #078881;
 }
 
 slidZubDaTxt {
-    margin: 2px;
-    font-size: medium;
+    margin: 0.6vw;
+    font-size: 4vw;
     background-color: none;
 }
 
 zubDaTitle {
-    margin: 4px;
-    font-size: medium;
+    margin: 1.2vw;
+    font-size: 4vw;
     background-color: none;
     font-weight: bold;
 }
@@ -62,7 +62,7 @@ zubDaTitle {
 .aufwRange {
     width: 25%;
     background: #6353ac;
-    border-radius: 5px;
+    border-radius: 1.5vw;
     outline: none;
 }
 
@@ -72,7 +72,7 @@ zubDaTitle {
     appearance: none;
     width: 25%;
     background: #6353ac;
-    border-radius: 5px;
+    border-radius: 1.5vw;
     outline: none;
     opacity: 1;
     transition: opacity .2s;
@@ -80,108 +80,110 @@ zubDaTitle {
 
 .aufwRange::-webkit-slider-runnable-track {
     background: #6353ac;
-    border-radius: 5px;
+    border-radius: 1.5vw;
 }
 
 .aufwRange::-webkit-slider-thumb {
     -webkit-appearance: none;
     /* Entfernt Standardstil in WebKit-basierten Browsern */
     appearance: none;
-    height: 17px;
+    height: 2.5vh;
     /* Angepasst für bessere Sichtbarkeit */
     background: #caffee;
-    width: 12px;
+    width: 3.6vw;
     /* Angepasst für bessere Sichtbarkeit */
     border: none;
-    border-radius: 5px;
+    border-radius: 1.5vw;
 }
 
 .grchtArtBtn {
     width: 100%;
     background-color: rgba(71, 59, 123, 0.5);
-    border-radius: 5px;
-    border: 2px solid #473B7B;
-    font-size: small;
+    border-radius: 1.5vw;
+    border: 0.6vw solid #473B7B;
+    font-size: 3.5vw;
     color: #caffee;
     font-family: verdana, sans-serif;
-    margin-top: 3px;
+    margin-top: 0.9vw;
 }
 
 .grchtArtBtn:focus {
     background-color: rgba(99, 83, 172, 0.6);
-    outline: 1px ridge rgba(99, 83, 172, 0.9);
-    border: 2px solid #078881;
+    outline: 0.3vw ridge rgba(99, 83, 172, 0.9);
+    border: 0.6vw solid #078881;
 }
 
 .krzDesc {
     width: 100%;
-    margin-top: 3px;
+    margin-top: 0.9vw;
     color: #caffee;
     border: none;
-    border-radius: 5px;
-    border: #473B7B solid 2px;
+    border-radius: 1.5vw;
+    border: #473B7B solid 0.6vw;
     background-color: rgba(71, 59, 123, 0.5);
-    height: 75px;
+    height: 8vh;
     font-family: Verdana, sans-serif;
-    font-size: small;
+    font-size: 3vw;
     resize: none;
     box-sizing: border-box;
 }
 
 .krzDesc:focus {
     background-color: rgba(99, 83, 172, 0.6);
-    outline: 1px ridge rgba(99, 83, 172, 0.9);
-    border: 2px solid #078881;
+    outline: 0.3vw ridge rgba(99, 83, 172, 0.9);
+    border: 0.6vw solid #078881;
 }
 
 .zutAn {
 
-    border-radius: 5px;
+    border-radius: 1.5vw;
     border: none;
     background-color: rgba(71, 59, 123, 0.5);
-    padding: 2px;
+    padding: 0.6vw;
 }
 
 zutAn {
     display: inline;
     color: #caffee;
     size: small;
+    font-size: 3.5vw;
 }
 
 
 .anzEinhInp {
     background-color: #6353ac;
     border: none;
-    border-radius: 5px;
-    width: 13%;
+    border-radius: 1.5vw;
+    width: 18%;
     display: inline-flex;
     color: #caffee;
-    font-size: small;
+    font-size: 3vw;
 }
 
 .anzEinhInp:focus {
     background-color: rgba(71, 59, 123, 0.3);
-    outline: 2px solid rgba(7, 136, 129, 1);
+    outline: 0.6vw solid rgba(7, 136, 129, 1);
 }
 
 .beinhTable {
-    margin-top: 3px;
+    margin-top: 0.9vw;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 1.5vw;
     background-color: rgba(71, 59, 123, 0.5);
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
 }
 
 .beinhTable td,
-.beinhTable th {
+.beinhTable th,
+.beinhTable tr {
     border: none;
-    padding: 2px;
+    padding: 0.6vw;
 }
 
 .beinhTable tr:nth-child(even) {
     background-color: rgba(71, 59, 123, 0.9);
-    border-radius: 5px;
+    border-radius: 1.5vw;
 }
 
 .beinhTable tr:hover {
@@ -189,30 +191,30 @@ zutAn {
 }
 
 .beinhTable th {
-    font-size: large;
+    font-size: 5vw;
     font-weight: bold;
     text-align: left;
     background-color: #078881;
     color: #caffee;
-    line-height: 24px;
+    line-height: 3vh;
 }
 
 .last-row-left {
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 1.5vw;
 }
 
 .last-row-right {
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 1.5vw;
 }
 
 /* top-left border-radius */
 .beinhTable tr:first-child th:first-child {
-    border-top-left-radius: 5px;
+    border-top-left-radius: 1.5vw;
 }
 
 /* top-right border-radius */
 .beinhTable tr:first-child th:last-child {
-    border-top-right-radius: 5px;
+    border-top-right-radius: 1.5vw;
 }
 
 .moreWidth {
@@ -232,8 +234,8 @@ zutAn {
     border: none;
     color: #caffee;
     font-family: Verdana, sans-serif;
-    resize: none;
-    padding: 4px;
+    font-size: 3.5vw;
+    padding: 1.2vw;
 }
 
 .tableInp:focus {
@@ -242,20 +244,20 @@ zutAn {
 }
 
 .shoInfInp {
-    border: #473B7B solid 2px;
+    border: #473B7B solid 0.6vw;
     width: 96%;
     color: #caffee;
-    margin-top: 3px;
-    border-radius: 5px;
+    margin-top: 0.6vw;
+    border-radius: 1.5vw;
     font-family: Verdana, sans-serif;
-    font-size: small;
+    font-size: 3vw;
     background-color: rgba(71, 59, 123, 0.5);
 }
 
 .shoInfInp:focus {
     background-color: rgba(71, 59, 123, 0.3);
-    border: 2px solid rgba(7, 136, 129, 1);
-    outline: 1px ridge rgba(71, 59, 123, 0.6);
+    border: 0.6vw solid rgba(7, 136, 129, 1);
+    outline: 0.3vw ridge rgba(71, 59, 123, 0.6);
 }
 
 .hidden {
@@ -263,13 +265,14 @@ zutAn {
 }
 
 .chooseBtn {
-    border: #473B7B solid 2px;
+    border: #473B7B solid 0.6vw;
     background-color: rgba(71, 59, 123, 0.5);
     color: #caffee;
-    margin-top: 3px;
-    border-radius: 5px;
-    padding: 6px;
-    margin-right: 3px;
+    margin-top: 0.9vw;
+    border-radius: 1.5vw;
+    padding: 1.8vw;
+    margin-right: 0.9vw;
+    font-size: 3.5vw;
 }
 
 .chooseBtn:focus {
@@ -279,53 +282,54 @@ zutAn {
 
 .stepaddbtn {
     background-color: rgba(71, 59, 123, 0.5);
-    border-radius: 5px;
-    border: #473B7B 2px solid;
+    border-radius: 1.5vw;
+    border: #473B7B 0.6vw solid;
     color: #caffee;
-    margin-top: 3px;
-    padding: 6px;
+    margin-top: 0.9vw;
+    padding: 1.8vw;
+    font-size: 3.5vw;
 }
 
 .stepaddbtn:focus {
     background-color: rgba(71, 59, 123, 0.75);
-    outline: 2px solid rgba(7, 136, 129, 1);
+    outline: 0.6vw solid rgba(7, 136, 129, 1);
 }
 
 .vorgehen {
-    border: #473B7B solid 2px;
+    border: #473B7B solid 0.6vw;
     width: 98%;
-    margin-top: 3px;
+    margin-top: 0.9vw;
     color: #caffee;
-    border-radius: 5px;
+    border-radius: 1.5vw;
     height: 100px;
     font-family: Verdana, sans-serif;
-    font-size: small;
+    font-size: 4vw;
     resize: none;
     background-color: rgba(71, 59, 123, 0.5);
 }
 
 .vorgehen:focus {
     background-color: rgba(71, 59, 123, 0.3);
-    border: 2px solid rgba(7, 136, 129, 1);
-    outline: 1px ridge rgba(71, 59, 123, 0.6);
+    border: 0.6vw solid rgba(7, 136, 129, 1);
+    outline: 0.3vw ridge rgba(71, 59, 123, 0.6);
 }
 
 .stepvorgehen {
     width: 98%;
-    margin-top: 3px;
+    margin-top: 0.9vw;
     resize: none;
     background-color: rgba(71, 59, 123, 0.5);
-    border-radius: 5px;
-    border: #473B7B 2px solid;
+    border-radius: 1.5vw;
+    border: #473B7B 0.6vw solid;
     color: #caffee;
     font-family: Verdana, sans-serif;
-    font-size: small;
+    font-size: 4vw;
 }
 
 .stepvorgehen:focus {
     background-color: rgba(71, 59, 123, 0.3);
-    border: 2px solid rgba(7, 136, 129, 1);
-    outline: 1px ridge rgba(71, 59, 123, 0.6);
+    border: 0.6vw solid rgba(7, 136, 129, 1);
+    outline: 0.3vw ridge rgba(71, 59, 123, 0.6);
 }
 
 .row {
@@ -359,13 +363,13 @@ zutAn {
     display: block;
     width: 50%;
     position: absolute;
-    left: 55px;
+    left: 14vw;
     background-color: #6353ac;
     border: none;
-    border-radius: 15px;
-    font-size: large;
-    padding: 5px;
-    border-width: 2px;
+    border-radius: 4.5vw;
+    font-size: 5vw;
+    padding: 1.5vw;
+    border-width: 0.6vw;
     font-weight: 200;
     color: #caffee;
     box-sizing: border-box;
@@ -375,18 +379,18 @@ zutAn {
 
 .recTitle:focus {
     background-color: rgba(99, 83, 172, 0.6);
-    outline: 1px ridge rgba(99, 83, 172, 0.9);
-    border: 2px solid #078881;
+    outline: 0.3vw ridge rgba(99, 83, 172, 0.9);
+    border: 0.6vw solid #078881;
 }
 
 .recSave {
     display: block;
     background-color: #6353ac;
-    border-radius: 5px;
+    border-radius: 1.5vw;
     border: none;
     color: #caffee;
-    padding: 4px;
-    font-size: small;
+    padding: 1.2vw;
+    font-size: 3vw;
     position: absolute;
     left: 82%;
     z-index: 0;
@@ -414,9 +418,9 @@ input[type="checkbox"] {
     width: 12px;
     height: 12px;
     color: #078881;
-    margin: 3px;
-    border: 2px solid #473B7B;
-    border-radius: 2px;
+    margin: 0.9vw;
+    border: 0.6vw solid #473B7B;
+    border-radius: 0.6vw;
     display: inline-grid;
     place-content: center;
 }
@@ -438,11 +442,11 @@ input[type="checkbox"]:checked::before {
 }
 
 input[type="checkbox"]:focus {
-    outline: max(2px, 0.15em) solid #078881;
+    outline: max(0.6vw, 0.15em) solid #078881;
     outline-offset: max(2px, 0.15em);
 }
 
-input[type="checkbox"]:disabled {
+input[type="checkbox"]:disabled { 
     --form-control-color: var(--form-control-disabled);
     color: var(--form-control-disabled);
     cursor: not-allowed;
@@ -450,39 +454,45 @@ input[type="checkbox"]:disabled {
 
 .addZutBtn {
     background-color: rgba(71, 59, 123, 0.5);
-    border-radius: 5px;
-    border: #473B7B 2px solid;
+    border-radius: 1.5vw;
+    border: #473B7B 0.6vw solid;
     color: #caffee;
-    margin-left: 4px;
-    padding: 6px;
+    margin-left: 1.2vw;
+    padding: 1.8vw;
+    font-size: 3.5vw;
 }
 
 .addZutBtn:focus {
     background-color: rgba(71, 59, 123, 0.75);
-    outline: 2px solid rgba(7, 136, 129, 1);
+    outline: 0.6vw solid rgba(7, 136, 129, 1);
 }
 .addInfoBtn {
     background-color: rgba(71, 59, 123, 0.5);
-    border-radius: 5px;
-    border: #473B7B 2px solid;
+    border-radius: 1.5vw;
+    border: #473B7B 0.6vw solid;
     color: #caffee;
-    margin-left: 4px;
-    margin-top:3px;
-    padding: 6px;
+    margin-left: 1.2vw;
+    margin-top: 0.6vw;
+    padding: 1.8vw;
+    font-size: 3.5vw;
 }
 
 .addInfoBtn:focus {
     background-color: rgba(71, 59, 123, 0.75);
-    outline: 2px solid rgba(7, 136, 129, 1);
+    outline: 0.6vw solid rgba(7, 136, 129, 1);
 }
 .inline {
     display: flex;
+    margin-top: 0.6vw;
 }
 
 tagTitle {
-    margin-left: 4px;
+    margin-left: 1.2vw;
     margin: top 12px bottom 12px;
     font-size: large;
     background-color: none;
     font-weight: bold;
+}
+.usrnm-mobile{
+    display: none;
 }
