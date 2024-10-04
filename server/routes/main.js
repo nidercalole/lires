@@ -35,10 +35,10 @@ router.get('/', async(req, res) => {
                 var recs = [];
                 recs = await Rec.find({}).exec();
                 recs.sort((a, b) => new Date(b.ts) - new Date(a.ts));
-                var newestRecs = recs.slice(0, 3);
+                var newestRecs = recs.slice(0, 5);
                 if(existingUser){
                     const username = existingUser.usrnm;
-                    return res.render('index', { title: 'Lires', usrnm: username, recs: recs});
+                    return res.render('index', { title: 'Lires', usrnm: username, recs: newestRecs});
                 }else{
                     return res.redirect('/login');
                 }

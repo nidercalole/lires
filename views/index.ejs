@@ -1,7 +1,7 @@
 <div id="filOptionPage" class="filOptionPage">
   <filHeader class="filGridHeader">Filter</filHeader>
   <div class="filGridArtGericht" id="artGericht"><h3>Art des Gerichts</h3>
-    <select class="filDropdown">
+    <select class="filDropdown" multiple>
       <%- include('./partials/filteroptions.ejs') %>
     </select>
   </div>
@@ -10,13 +10,39 @@
     <p><span id="maxMin"></span></p>
   </div>
   <div id=exclude><h3>Aus Suchergebnissen ausschließen</h3>
-    <input class="filGridInp" placeholder="Zutaten">
+
+    <div class="filGridInp">
+      <select name="zutFilterMain" id="zutFilterMain">
+        <option value="none">Nichts</option>
+        <!-- hier Optionen für Dropdown Filter für Zutaten -->
+      </select>
+    </div>
+
     <input class="filGridInp" placeholder="Zubehör">
-    <input class="filGridInp" placeholder="Prozesse">
+
+    <div class="filGridInp">
+      <select name="zutFilterMain" id="zutFilterMain">
+        <option value="none">Nichts</option>
+        <!-- hier Optionen für Dropdown Filter für Prozesse -->
+      </select>
+    </div>
+
   </div>
   <div id=include><h3>In Suchergebnisse inkludieren</h3>
-    <input class="filGridInp" placeholder="Zutaten">
-    <input class="filGridInp" placeholder="Prozesse">
+    
+    <div class="filGridInp">
+      <select name="zutFilterMain" id="zutFilterMain">
+        <option value="none">Nichts</option>
+        <!-- hier Optionen für Dropdown Filter für Zutaten -->
+      </select>
+    </div>
+
+    <div class="filGridInp">
+      <select name="zutFilterMain" id="zutFilterMain">
+        <option value="none">Nichts</option>
+        <!-- hier Optionen für Dropdown Filter für Prozesse -->
+      </select>
+    </div>
   </div>
 </div>
 </div>
@@ -61,3 +87,4 @@
 <button id="addRec" class="addRec" onclick="buttaddrec()">
     <img src = "/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
 </button>
+<script></script>

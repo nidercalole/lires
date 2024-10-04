@@ -57,3 +57,18 @@ function openRec(recid){
     const username = document.getElementById('usrnm').textContent
     window.location.href = '/recipe/?usrnm=' + username + '&recid=' + recid;
 }
+
+
+
+
+
+
+
+const options = document.querySelectorAll('option');
+
+options.forEach(option => {
+    option.addEventListener('mousedown', function(e) {
+        e.preventDefault(); // Verhindert das Standardverhalten
+        option.selected = !option.selected; // Auswahl umschalten
+    });
+});
