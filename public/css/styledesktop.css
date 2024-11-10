@@ -403,3 +403,11 @@ usrnm{
   #accCreation{
     display: none;
   }
+  .filterSearchButtonOk{
+    background-color: #473B7B;
+    border-radius: 5px;
+    border:#CAFFEE 2px;
+    padding: 2px;
+    margin:5px;
+    display: block;
+  }

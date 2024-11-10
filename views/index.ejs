@@ -1,7 +1,8 @@
+<!-- begin of Search filter-->
 <div id="filOptionPage" class="filOptionPage">
   <filHeader class="filGridHeader">Filter</filHeader>
   <div class="filGridArtGericht" id="artGericht"><h3>Art des Gerichts</h3>
-    <select class="filDropdown" multiple>
+    <select class="filDropdown" id="kindOfDishFilterMain" multiple>
       <%- include('./partials/filteroptions.ejs') %>
     </select>
   </div>
@@ -12,16 +13,16 @@
   <div id=exclude><h3>Aus Suchergebnissen ausschließen</h3>
 
     <div class="filGridInp">
-      <select name="zutFilterMain" id="zutFilterMain">
+      <select name="zutFilterMainex" id="zutFilterMainex"  multiple>
         <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Zutaten -->
       </select>
     </div>
 
-    <input class="filGridInp" placeholder="Zubehör">
+    <input class="filGridInp" placeholder="Zubehör" id="zubFilternMainEx">
 
     <div class="filGridInp">
-      <select name="zutFilterMain" id="zutFilterMain">
+      <select name="prFilterMainex" id="prFilterMainex" multiple>
         <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Prozesse -->
       </select>
@@ -31,20 +32,22 @@
   <div id=include><h3>In Suchergebnisse inkludieren</h3>
     
     <div class="filGridInp">
-      <select name="zutFilterMain" id="zutFilterMain">
+      <select name="zutFilterMainin" id="zutFilterMainin"  multiple>
         <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Zutaten -->
       </select>
     </div>
 
     <div class="filGridInp">
-      <select name="zutFilterMain" id="zutFilterMain">
+      <select name="prFilterMainin" id="prFilterMainin"  multiple>
         <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Prozesse -->
       </select>
     </div>
+    <div class="filterSearchButtonOk" id="filterSearchButtonOk"><button onclick="getCurrentSearchConfig()">OK</button></div>
   </div>
 </div>
+<!-- end of Search filter-->
 </div>
 
 <div class="split splitLeft">

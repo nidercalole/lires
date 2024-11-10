@@ -1,3 +1,5 @@
+
+
 //test
 //growing list
 let ended = false;
@@ -58,12 +60,6 @@ function openRec(recid){
     window.location.href = '/recipe/?usrnm=' + username + '&recid=' + recid;
 }
 
-
-
-
-
-
-
 const options = document.querySelectorAll('option');
 
 options.forEach(option => {
@@ -72,3 +68,45 @@ options.forEach(option => {
         option.selected = !option.selected; // Auswahl umschalten
     });
 });
+
+//default search fuction
+async function getCurrentSearchConfig() {
+    const queryString = window.location.search; 
+    const urlParams = new URLSearchParams(queryString);
+    const username = urlParams.get('usrnm');
+    const usrid = urlParams.get('usrid');
+
+
+    const kindOfDish = Array.from(document.getElementById('kindOfDishFilterMain').selectedOptions).map(option => option.value);
+    const zubDauer = document.getElementById('maxDauer').value;
+    const zutEx = document.getElementById('zutFilterMainex').value;
+    const zutIn = document.getElementById('zutFilterMainin').value;
+    const prEx = document.getElementById('prFilterMainex').value;
+    const prIn = document.getElementById('prFilterMainin').value;
+    const zubEx = document.getElementById('zubFilternMainEx').value;
+    await fetch('/search', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            kindOfDish: kindOfDish,
+            zubDauer: zubDauer,
+            zutEx: zutEx,
+            zutIn: zutIn,
+            prEx: prEx,
+            prIn: prIn,
+            zubEx: zubEx
+        }),
+    }).then(response => response.json())
+    .then(filtertRecs => {
+        const queryParams = new URLSearchParams({
+            filtertRecs: JSON.stringify(filtertRecs)
+        }).toString();
+        
+        window.location.href = `/?${queryParams}&usrnm=${username}&usrid=${usrid}`;
+    });
+    console.log(kindOfDish, zubDauer, zutEx, zutIn, prEx, prIn, zubEx);
+}
+
+

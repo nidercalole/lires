@@ -6,6 +6,7 @@ const Usrnm = require('../models/usrnm');
 const Rec = require('../models/rec');
 const chefkoch = require('../../custom_modules/chefkoch');
 const usrnm = require('../models/usrnm');
+const { recompileSchema } = require('../models/unverify');
 
 function insertUsr(data) {
     const usrnm = new Usrnm(data);
@@ -31,14 +32,22 @@ router.get('/', async(req, res) => {
         }else{
             try{
                 const query = { usrid: req.query.usrid };
+                const searchRecs = req.query.filtertRecs;
                 const existingUser = await Usrnm.findOne(query).exec();
                 var recs = [];
                 recs = await Rec.find({}).exec();
                 recs.sort((a, b) => new Date(b.ts) - new Date(a.ts));
                 var newestRecs = recs.slice(0, 5);
+                console.log(newestRecs[0]);
+                let recrToSend = [];
+                if(searchRecs === undefined){
+                    recrToSend = newestRecs;
+                }else{
+                    recrToSend = [JSON.parse(searchRecs)];
+                }
                 if(existingUser){
                     const username = existingUser.usrnm;
-                    return res.render('index', { title: 'Lires', usrnm: username, recs: newestRecs});
+                    return res.render('index', { title: 'Lires', usrnm: username, recs: recrToSend});
                 }else{
                     return res.redirect('/login');
                 }
@@ -142,6 +151,13 @@ router.get('/getRecChefkoch', (req, res) => {
         res.json(data);
     });
 }); 
+router.post('/search', async (req, res) => {
+    const { kindOfDish, zubDauer, zutEx, zutIn, prEx, prIn, zubEx } = req.body
+    recs = await Rec.find({}).exec();
+    var test = recs[0]
+    return res.json(test);
+
+});
 /*
 router.get('/testapi', (req, res) => {
     chefkoch.chefkochAPI.getRecipe('/rezepte/923031197646622/Quarkbaellchen.html')
