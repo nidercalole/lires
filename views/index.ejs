@@ -66,11 +66,12 @@
                 <td class="recname"><%= rec.recname %></td>
                 <td class="duration">Dauer: <%= rec.duration %>min</td>
                 <td class="expense"><%= rec.expense %></td>
-                <td class="recuser"><%= rec.user[0] %></td>
+                <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
             </tr>
         <% }); %>
     </table>
   </div>
+  <div class="allrecs"><button class="allrecsbuttob" onclick="getAndShowAllRecs()">Alle Rezepte</button></div>
 
   </div>
   <div id="listArea" class="split splitRight ">
@@ -82,7 +83,7 @@
         <li>Hier</li>
         <li>Wieauchimmer</li>
         <li>man das mit dem</li>
-        <li>Adden umsetzt...</li>
+        <li>Adden umsetzt...</li>user
       </ul>
     </div>
   </div>

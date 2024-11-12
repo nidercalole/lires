@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="/css/profiledesktop.css" />
+<div id="dataCollection" style="display: none;">
+    <div id="selfRecs"><%= selfRecs %></div>
+</div>
 <div class="line1">
     <div class="quarter">
         <partialTitle>Freunde</partialTitle>
@@ -23,11 +26,11 @@
     <div class="quarter">
         <partialTitle>Erstellte Rezepte</partialTitle>
         <ol>
-            <li class="recList">Rezept NUmmer 1</li>
-            <li class="recList">Rezept 2</li>
-            <li class="recList">Kochanleitung Nr3</li>
-            <li class="recList">Rezept Nr 4</li>
-            <li class="recList">potentielles Rezept 5</li>
+            <li class="recList" id="recList1">[]</li>
+            <li class="recList" id="recList2">[]</li>
+            <li class="recList" id="recList3">[]</li>
+            <li class="recList" id="recList4">[]</li>
+            <li class="recList" id="recList5">[]</li>
         </ol>
     </div>
 </div>
@@ -35,18 +38,18 @@
     <div class="quarter">
         <partialTitle>Anfragen</partialTitle>
         <ol>
-            <li class="recList">Anfrage NUmmer 1</li>
-            <li class="recList">Anfrage 2</li>
-            <li class="recList">Anfrage Nr3</li>
+            <li class="recList">Keine Freundesanfragen</li>
+            <li class="recList"></li>
+            <li class="recList"></li>
         </ol>
     </div>
     <div class="quarter">
         <partialTitle>Zuletzt zu Listen hinzugefügt</partialTitle>
         <ol>
-            <li class="recList">Rezept NUmmer 1 von [User]</li>
-            <li class="recList">Rezept 2 von [User]</li>
-            <li class="recList">Rezept Nr3 von [User]</li>
+            <li class="recList">Keine hinzugefügten Rezepte</li>
+            <li class="recList"></li>
+            <li class="recList"></li>
         </ol>
     </div>
 </div>
-<script src="?"></script>
+<script src="/js/profile.js"></script>

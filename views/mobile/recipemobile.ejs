@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="/css/mobile/recipemobile.css">
+<div id="recipeDataMoblie" style="display: none;"><%= rec %></div>
+
 <div class="padding">
     <recName id="recName">[RecTitle]</recName>
     <div class="scndLine">
@@ -12,7 +14,7 @@
     </div>
     <usr id="userAndDate">[UserAndDate]</usr>
     <hr class="hr">
-    <angb>Zutatenangabe für <input id=wishedAmount type=number placeholder="[Anzahl]"> [Einheit].</angb>
+    <angb id="countforenh"></angb>
     <div class="moreSpace"></div>
     <table class="fixTable" id="fixTable">
         <tr>
@@ -56,9 +58,7 @@
             <lblMinis class="hidden" id="miniLbl8"></lblMinis>
         </div>
     </div>
-    <button id="addRecToList" class="addRecToList" onclick="irgendeinefunktion()">
-        <img src="/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
-    </button>
+
 </div>
 <script src="/js/mobile/recipemobile.js"></script>
 <script src="/js/mobile/script.js"></script>

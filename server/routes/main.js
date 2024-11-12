@@ -21,6 +21,7 @@ function insertUsr(data) {
 }
 
 router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.json());
 
 router.get('/', async(req, res) => {
   
@@ -38,12 +39,12 @@ router.get('/', async(req, res) => {
                 recs = await Rec.find({}).exec();
                 recs.sort((a, b) => new Date(b.ts) - new Date(a.ts));
                 var newestRecs = recs.slice(0, 5);
-                console.log(newestRecs[0]);
                 let recrToSend = [];
-                if(searchRecs === undefined){
+                if(searchRecs === undefined || searchRecs === null || searchRecs === 'undefined' || searchRecs === 'null'){
                     recrToSend = newestRecs;
                 }else{
                     recrToSend = [JSON.parse(searchRecs)];
+                    console.log('searchRecs');
                 }
                 if(existingUser){
                     const username = existingUser.usrnm;
@@ -141,8 +142,9 @@ router.get('/recipe', async (req, res) => {
     res.render('recipe', { title: 'Lires', usrnm: req.query.usrnm, rec: JSON.stringify(rec)});
 });
 
-router.get('/profile', (req, res) => {
-    res.render('profile', { title: 'Lires', usrnm: req.query.usrnm });
+router.get('/profile', async (req, res) => {
+    const selfRecs = await Rec.find({"user.1": req.query.usertosee}).exec()
+    res.render('profile', { title: 'Lires', usrnm: req.query.usrnm, selfRecs: JSON.stringify(selfRecs)});
 });
 
 router.get('/getRecChefkoch', (req, res) => {
@@ -152,12 +154,21 @@ router.get('/getRecChefkoch', (req, res) => {
     });
 }); 
 router.post('/search', async (req, res) => {
-    const { kindOfDish, zubDauer, zutEx, zutIn, prEx, prIn, zubEx } = req.body
-    recs = await Rec.find({}).exec();
-    var test = recs[0]
-    return res.json(test);
+    const { kindOfDish, zubDauer, zutEx, zutIn, prEx, prIn, zubEx, recTitle } = req.body
+    var recs = await Rec.find({}).exec();
+    var recsPrefer 
+    if (recTitle) {
+        recsPrefer = recs.find(rec => rec.recname.toLowerCase().includes(recTitle.toLowerCase())) || null;
+    }
+
+    return res.json(recsPrefer);
 
 });
+router.get('/allrecs', async (req, res) => {
+    var recs = await Rec.find({}).exec();
+    
+    res.render('allrecs', { title: 'Lires', usrnm: req.query.usrnm, recs: recs});
+})
 /*
 router.get('/testapi', (req, res) => {
     chefkoch.chefkochAPI.getRecipe('/rezepte/923031197646622/Quarkbaellchen.html')

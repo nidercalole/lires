@@ -59,3 +59,7 @@ function openTagList(){
     }
 
 }
+function redirectHome() {
+    const username = document.getElementById('usrnm').textContent
+    window.location.href = '/mobile/verify/?usrnm=' + username;
+}

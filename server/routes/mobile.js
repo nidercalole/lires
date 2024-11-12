@@ -56,8 +56,18 @@ router.get('/addrec', (req, res) => {
     res.render('mobile/addrec', { title: 'Lires', usrnm: req.query.usrnm });
 });
 
-router.get('/recipe', (req, res) => {
-    res.render('mobile/recipemobile', { title: 'Lires', usrnm: req.query.usrnm });
+router.get('/recipe', async (req, res) => {
+    var rec 
+    const recid = req.query.recid;
+    try {
+        const query = { recid: recid };
+        rec = await Rec.findOne(query).exec();
+    } catch (err) {
+        console.error(err);
+        return res.status(500).send('Fehler bei der Verarbeitung der Anfrage.');
+    }
+
+    res.render('mobile/recipemobile', { title: 'Lires', usrnm: req.query.usrnm, rec: JSON.stringify(rec)});
 });
 
 router.get('/login', (req, res) => {

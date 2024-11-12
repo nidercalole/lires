@@ -1,4 +1,4 @@
-const recData = JSON.parse(document.getElementById('recipeData').textContent);
+const recData = JSON.parse(document.getElementById('recipeDataMoblie').textContent);
 function gebId(str){
     return document.getElementById(str);
 }

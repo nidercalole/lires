@@ -1,0 +1,17 @@
+<h1>Hier kommt die liste aller rezepte von a-z sortiert</h1>
+
+<div>
+    <table class="recsindex">
+        <tr>
+            <th colspan="4"><h1>Neueste Rezepte</h1></th>
+        </tr>
+        <% recs.forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+                <td class="recname"><%= rec.recname %></td>
+                <td class="duration">Dauer: <%= rec.duration %>min</td>
+                <td class="expense"><%= rec.expense %></td>
+                <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+  </div>
