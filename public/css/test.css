@@ -1,0 +1,18 @@
+/* Scrollbar-Stile für Webkit-basierte Browser (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 12px;  /* Breite der Scrollbar */
+    height: 12px; /* Höhe der horizontalen Scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Farbe des Scrollbar-Knopfes */
+    border-radius: 10px; /* Abgerundete Ecken */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Hover-Effekt für den Scrollbar-Knopf */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Hintergrund der Scrollbar */
+}

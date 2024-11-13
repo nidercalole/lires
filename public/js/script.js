@@ -42,6 +42,12 @@ function filBut(){
         filOptionPage.style.display = 'none';
     }
 }
+function fillButClose(){
+    console.log('close');
+    const filOptionPage = document.getElementById('filOptionPage');
+    filOptionPage.style.display = 'none';
+}
+
 
 //inputUpdate at filter
 function maxDauerInput(){
@@ -61,7 +67,8 @@ function redirectProfil(){
 }
 
 function openRec(recid){
-    const user = getUserCredetials()[0];
+    const user = getUserCredetials();
+    console.log(user);
     window.location.href = '/recipe/?usrnm=' + user[0] + '&userid' + user[1] + '&recid=' + recid;
 }
 
@@ -78,7 +85,6 @@ options.forEach(option => {
 async function getCurrentSearchConfig() {
     const user = getUserCredetials();
 
-    const kindOfDish = Array.from(document.getElementById('kindOfDishFilterMain').selectedOptions).map(option => option.value);
     const zubDauer = document.getElementById('maxDauer').value;
     const zutEx = document.getElementById('zutFilterMainex').value;
     const zutIn = document.getElementById('zutFilterMainin').value;
@@ -91,8 +97,7 @@ async function getCurrentSearchConfig() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            kindOfDish: kindOfDish,
+        body: JSON.stringify({ 
             zubDauer: zubDauer,
             zutEx: zutEx,
             zutIn: zutIn,
@@ -115,4 +120,6 @@ async function getAndShowAllRecs(){
     const user = getUserCredetials();
     window.location.href = `allrecs/?usrnm=${user[0]}&usrid=${user[1]}`;
 }
+
+document.getElementById('nichtFilter').addEventListener('click', fillButClose);
 

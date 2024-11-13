@@ -154,7 +154,7 @@ router.get('/getRecChefkoch', (req, res) => {
     });
 }); 
 router.post('/search', async (req, res) => {
-    const { kindOfDish, zubDauer, zutEx, zutIn, prEx, prIn, zubEx, recTitle } = req.body
+    const { zubDauer, zutEx, zutIn, prEx, prIn, zubEx, recTitle } = req.body
     var recs = await Rec.find({}).exec();
     var recsPrefer 
     if (recTitle) {

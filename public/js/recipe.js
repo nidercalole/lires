@@ -2,7 +2,12 @@ const recData = JSON.parse(document.getElementById('recipeData').textContent);
 function gebId(str){
     return document.getElementById(str);
 }
+const formatText = (text) => {
+
+    return text.replace(/([.!?])\s*(?=[A-Z])/g, '$1<br>');
+  };
 function updatelist(){
+    let ingAddCount = 0;
     var indexmultiplier = gebId('countfor').value 
     var origindex = recData.countfor[0];
     var multiplier = indexmultiplier/origindex;
@@ -11,8 +16,7 @@ function updatelist(){
     <tr>
         <td class="moreWidth bold">Zutaten</td>
         <td class="bold">Menge</td>
-    </tr>
-    `;
+    </tr>`;
     recData.ingredients.forEach(ing => {
         let ingamountshow = '';
         let ingunitshow = '';
@@ -26,9 +30,32 @@ function updatelist(){
         let item = document.createElement('tr');
         item.innerHTML = `
         <td>${ing.ing} ${ing.ingextra}</td>
-        <td>${(ingamountshow) + ' ' + ingunitshow}</td>
-        `;
+        <td>${(ingamountshow) + ' ' + ingunitshow}</td>`;
         list.appendChild(item);
+    });
+    let listAdd = gebId('fixTable1');
+    listAdd.innerHTML = `
+    <tr>
+        <td class="moreWidth bold">Zutaten</td>
+        <td class="bold">Menge</td>
+    </tr>`;
+    recData.ingredients.forEach(ing => {
+        let ingamountshow = '';
+        let ingunitshow = '';
+        if(ing.ingamount === 0 || ing.ingamount === null || ing.ingamount === undefined){
+            ingamountshow = '';
+            ingunitshow = '';
+        }else{
+            ingamountshow = (ing.ingamount*multiplier).toFixed(0);
+            ingunitshow = ing.ingunit;
+        }
+        let item = document.createElement('tr');
+        item.innerHTML = `
+        <td>${ing.ing}</td>
+        <td><input type="text" id="${ingAddCount}" value="${ingamountshow}">${' ' + ingunitshow}</td>
+        <td class="ingredientstablenotableview">wegbut</td>`;
+        listAdd.appendChild(item);
+        ingAddCount++;
     });
 }
 
@@ -56,7 +83,7 @@ function loadRecData(ammount){
     }
     gebId('description').textContent = recData.description;
     if(recData.directions[0].steppwise === false){
-        gebId('directions').textContent = recData.directions[1];
+        gebId('directions').innerHTML = formatText(recData.directions[1]);
     }else{
         gebId('directions').textContent = '';
         for (let i = 1; i < recData.directions.length; i++) {
