@@ -86,8 +86,8 @@ filHeader{
     display: none;
     grid-template-areas:
     'filheader filheader'
-    'art dauer'
-    'excl incl';
+    'dauer dauer'
+    'incl excl';
     gap: 10px;
     padding: 1.5%;
     position:fixed;
@@ -101,7 +101,6 @@ filHeader{
     /*padding: 10px;*/
 }
 .filGridHeader { grid-area: filheader; }
-.filGridArtGericht { grid-area: art; }
 .filGridZubDauer { grid-area: dauer; }
 .filGridExclude { grid-area: excl; }
 .filGridInclude { grid-area: incl; }
@@ -192,8 +191,6 @@ input, textarea {
 }
 .sliderZubDauer{
     cursor: pointer;
-    width: 90%;
-    height: 10%;
     background: #09aaa2;
     border-radius: 5px;
     outline: none;
@@ -202,10 +199,8 @@ input, textarea {
     transition: opacity .2s;
 }
 .sliderZubDauer::-moz-range-thumb {
-    height: 110%;
     background: #caffee;
     cursor: pointer;
-    width: 10%;
     border: 2px solid rgba(99, 83, 172, 1);
 }
 .suchleiste{
@@ -415,10 +410,13 @@ usrnm{
     
   } */
   .allrecsbuttob{
-    background-color: #473B7B;
+    margin-top: 5px;
+    background-color: rgba(71, 59, 123, 0.5);
     border-radius: 5px;
-    border:#CAFFEE 2px;
-    padding: 2px;
-    margin:5px;
-    display: block;
+    border:#473B7B 2px solid;
+    color: #caffee;
+  }
+  .allrecsbuttob:hover{
+    background-color: rgba(71, 59, 123, 0.75);
+    outline: 2px solid rgba(7, 136, 129, 1);
   }
