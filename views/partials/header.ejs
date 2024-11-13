@@ -7,12 +7,16 @@
     onclick="redirectHome()"
   />
   <profileusrnm><%= usrnm %></profileusrnm>
-  <input id="suchleiste" class="suchleiste" />
-  <div class="filbut" id="filterSearchButtonOk"><button onclick="getCurrentSearchConfig()">OK</button></div>
+
+  <div class="suchleiste">
+    <input id="suchleiste"  class="transparent">
+    <img class="pfeil" src="/img/weiter.png" alt="weiter" height="30px">
+  </div>
+
   <button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
     <img src="/img/fil.png" alt="Filter" width="55px" />
   </button>
-  <button class="hidden" id="admintools" onclick="openAdminTools()">Admintools</button>
+
   <input
     type="text"
     id="recTitle"
@@ -46,6 +50,9 @@
 
   <nav>
     <ul class="navLinks">
+      <li class="oR">
+        <img class="navpic" src="/img/admin.png" alt="admin tool" onclick="openAdminTools()"/>
+      </li>
       <li class="tooltipCal oR">
         <a href="link"></a>
         <img class="navpic" src="/img/cal.png" alt="Kochkalender" />

@@ -1,115 +1,173 @@
-.addRec{
+.addRec {
     position: absolute;
     bottom: 2%;
     background-color: transparent;
     border-radius: 100%;
-    border:#CAFFEE 2px;
+    border: #CAFFEE 2px;
     padding: 0;
-    width:55px;
+    width: 55px;
     height: 55px;
-    margin:1%;
+    margin: 1%;
     display: block;
     z-index: 1001;
 }
-.addRec:hover{
+
+.pfeil{
+    position: absolute;         /* Absolut positioniertes Bild */
+    right: 10px;                /* Bild 10px vom rechten Rand des Containers */
+    top: 50%;                   /* Vertikal in der Mitte des Containers */
+    transform: translateY(-50%);
+}
+
+.addRec:hover {
     cursor: pointer;
     box-shadow: 0 0 2px 1px rgba(71, 59, 123, 0.7);
 }
-body{
+
+.transparent {
+    position: absolute;
+    /* Absolut innerhalb von .suchleiste positioniert */
+    top: 50%;
+    /* Vertikale Mitte der suchleiste */
+    left: 50%;
+    /* Horizontale Mitte der suchleiste */
+    transform: translate(-50%, -50%);
+    /* Verschiebung um die Hälfte des Input-Feldes */
+    width: 100%;
+    /* Input-Feld übernimmt volle Breite des Containers */
+    height: 100%;
+    /* Input-Feld übernimmt volle Höhe des Containers */
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    font-weight: 200;
+    font-size: large;
+    -webkit-text-fill-color: #CAFFEE;
+    box-sizing: border-box;
+}
+
+.transparent:focus {
+    outline: none;
+    border: none;
+}
+
+body {
     background-color: #6353ac;
     padding: 0;
     font-family: Verdana, sans-serif;
-    color:#CAFFEE;
+    color: #CAFFEE;
     margin: 0;
 }
 
-.filbut{
+.filbut {
     position: absolute;
-    left: 351px;
-    background-color: #473B7B;
+    left: 480px;
+    background-color: transparent;
     border-radius: 5px;
-    border:#CAFFEE 2px;
+    border: #CAFFEE 2px;
     padding: 2px;
-    width:6%;
-    margin:5px;
+    width: 6%;
+    margin: 5px;
     display: block;
 }
-.filbut:hover{
+
+.filbut:hover {
     cursor: pointer;
     box-shadow: 0 0 2px 1px rgba(99, 83, 172, 0.6);
     background-color: rgba(99, 83, 172, 0.3);
 }
+
 :root {
     --select-border: #6353ac;
     --select-arrow: var(--select-border);
 }
-.filDropdown{
-    border-radius:5px;
+
+.filDropdown {
+    border-radius: 5px;
     width: 80%;
     border: 2px solid var(--select-border);
     padding: 1.5%;
-    font-size:medium;
-    color:#CAFFEE;
+    font-size: medium;
+    color: #CAFFEE;
     cursor: pointer;
     background-color: #09aaa2;
 }
-.filDropdown:focus{
+
+.filDropdown:focus {
     background-color: rgba(99, 83, 172, 0.6);
     outline: 1px ridge rgba(99, 83, 172, 0.9);
 }
-.filGridInp{
+
+.filGridInp {
     width: 80%;
     left: 120px;
-    background-color:#09aaa2;
+    background-color: #09aaa2;
     border: 1px solid #6353ac;
     border-radius: 5px;
-    margin-bottom:1.5%;
+    margin-bottom: 1.5%;
     padding: 5px;
     border-width: 2px;
-    font-size:medium;
+    font-size: medium;
     -webkit-text-fill-color: #CAFFEE;
 }
-.filGridInp:focus{
+
+.filGridInp:focus {
     background-color: rgba(99, 83, 172, 0.6);
     outline: 1px ridge rgba(99, 83, 172, 0.9);
 }
-.filGridZubDauer{
-    width:80%;
+
+.filGridZubDauer {
+    width: 80%;
 }
-filHeader{
-    font-size:x-large;
+
+filHeader {
+    font-size: x-large;
     font-weight: bold;
     width: 100%;
 }
-.filOptionPage{
+
+.filOptionPage {
     max-width: 45%;
     display: none;
     grid-template-areas:
-    'filheader filheader'
-    'dauer dauer'
-    'incl excl';
+        'filheader filheader'
+        'dauer dauer'
+        'incl excl';
     gap: 10px;
     padding: 1.5%;
-    position:fixed;
-    top:15%;
-    left:15%;
-    border-radius:5px;
+    position: fixed;
+    top: 15%;
+    left: 15%;
+    border-radius: 5px;
     /*width:30%;*/
     background-color: #078881;
     z-index: 1000;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     /*padding: 10px;*/
 }
-.filGridHeader { grid-area: filheader; }
-.filGridZubDauer { grid-area: dauer; }
-.filGridExclude { grid-area: excl; }
-.filGridInclude { grid-area: incl; }
+
+.filGridHeader {
+    grid-area: filheader;
+}
+
+.filGridZubDauer {
+    grid-area: dauer;
+}
+
+.filGridExclude {
+    grid-area: excl;
+}
+
+.filGridInclude {
+    grid-area: incl;
+}
+
 /*.filOptionItems{
   border: 1px solid rgba(0, 0, 0, 0.8);
   font-size: medium;
   text-align: left;
 }*/
-.header{
+.header {
     background-color: #473B7B;
     display: flex;
     justify-content: flex-end;
@@ -117,22 +175,35 @@ filHeader{
     flex-direction: row;
     height: 10%;
     margin: 0;
-    box-shadow: 0px/*versch. x*/ 8px/*versch. y unten*/ 8px/*?*/ 0px/*zoom*/ rgb(85, 71, 148);
+    box-shadow: 0px
+        /*versch. x*/
+        8px
+        /*versch. y unten*/
+        8px
+        /*?*/
+        0px
+        /*zoom*/
+        rgb(85, 71, 148);
 }
-.hidden{
+
+.hidden {
     display: none;
 }
-.hoLineSplitRight{
+
+.hoLineSplitRight {
     margin-left: 20px;
     margin-right: 20px;
     border: 1px solid #CAFFEE;
     margin-top: 0;
 }
-input, textarea {
+
+input,
+textarea {
     caret-color: #CAFFEE;
     cursor: text;
 }
-.logo{
+
+.logo {
     position: absolute;
     left: 0;
     width: 80px;
@@ -140,56 +211,67 @@ input, textarea {
     margin-left: 20px;
     margin-right: 20px;
 }
+
 .navLinks li {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    list-style:none;
+    list-style: none;
 }
-.navLinks li{
-    display:inline;
+
+.navLinks li {
+    display: inline;
     padding: 0 20px;
 }
-.navLinks li a{
-    transition:all 0.3s ease 0s;
+
+.navLinks li a {
+    transition: all 0.3s ease 0s;
 }
-.navLinks li a:hover{
+
+.navLinks li a:hover {
     background-color: #078881;
     cursor: pointer;
 }
-.navpic{
+
+.navpic {
     height: 58px;
-    cursor:pointer;
+    cursor: pointer;
     margin: 5px;
-    padding:2px;
-    background:none;
+    padding: 2px;
+    background: none;
     border: none;
     border-radius: 5px;
 }
-.navpic2{
+
+.navpic2 {
     height: 58px;
-    cursor:pointer;
+    cursor: pointer;
     margin: 5px;
-    padding:2px;
-    background:none;
+    padding: 2px;
+    background: none;
     border: none;
     border-radius: 5px;
 }
-.navpic:hover{
+
+.navpic:hover {
     cursor: pointer;
     box-shadow: 0 0 2px 1px rgba(99, 83, 172, 0.6);
     background-color: rgba(99, 83, 172, 0.3);
 }
-.recHeadInpList{
-    display:none;
-}
-.recSave{
+
+.recHeadInpList {
     display: none;
 }
-.recTitle{
-    display:none;
+
+.recSave {
+    display: none;
 }
-.sliderZubDauer{
+
+.recTitle {
+    display: none;
+}
+
+.sliderZubDauer {
     cursor: pointer;
     background: #09aaa2;
     border-radius: 5px;
@@ -198,79 +280,95 @@ input, textarea {
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
+
 .sliderZubDauer::-moz-range-thumb {
     background: #caffee;
     cursor: pointer;
     border: 2px solid rgba(99, 83, 172, 1);
 }
-.suchleiste{
+
+.suchleiste {
     position: absolute;
+    /* Die suchleiste bleibt an ihrer ursprünglichen Position */
     left: 120px;
+    /* Ursprüngliche Position der suchleiste */
+    top: 20px;
+    /* Optional: Position von oben, je nach Bedarf anpassen */
     background-color: #6353ac;
     border: 1px solid #078881;
+    width: 300px;
+    height: 50px;
+    /* Höhe des Containers */
     border-radius: 50px;
-    padding: 5px;
+    padding: 7px;
     border-width: 2px;
-    font-size: medium;
-    font-weight:200;
-    -webkit-text-fill-color: #CAFFEE;
 }
-.suchleiste:focus{
+
+.suchleiste:focus {
     background-color: rgba(99, 83, 172, 0.6);
     outline: 1px ridge rgba(99, 83, 172, 0.9);
 }
+
 .split {
-    height:86%;
+    height: 86%;
     width: 25%;
     position: fixed;
     z-index: 1;
     overflow-x: hidden;
     padding-top: 0px;
 }
+
 .splitLeft {
     padding-left: 10px;
     /*float:left;*/
 }
+
 .splitRight {
     /*float:left;*/
-  margin: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #078881;
-  right: 0;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transition: all 1.5s;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #078881;
+    right: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 1.5s;
 }
-.splitRight.growing{
-  width: 98.6%;
-  margin-left: 0.7%;
-  margin-right: 0.7%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transition: all 1.5s;
+
+.splitRight.growing {
+    width: 98.6%;
+    margin-left: 0.7%;
+    margin-right: 0.7%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 1.5s;
 }
+
 .splRiTxt {
-  margin-left: 20px;
-  margin-top: none;
-  margin-bottom: none;
+    margin-left: 20px;
+    margin-top: none;
+    margin-bottom: none;
 }
+
 .tooltipCal {
     position: relative;
     display: inline-block;
 }
+
 .tooltipList {
     position: relative;
     display: inline-block;
 }
+
 .tooltipProfil {
     position: relative;
     display: inline-block;
 }
+
 .tooltipCal .tooltipCaltext {
     visibility: hidden;
-    width:fit-content;
+    width: fit-content;
     background-color: #CAFFEE;
     color: #473B7B;
-    font-size:smaller;
+    font-size: smaller;
     text-align: center;
     border-radius: 5px;
     padding: 2%;
@@ -280,12 +378,13 @@ input, textarea {
     left: 50%;
     margin-left: -50px;
 }
+
 .tooltipList .tooltipListtext {
     visibility: hidden;
-    width:fit-content;
+    width: fit-content;
     background-color: #CAFFEE;
     color: #473B7B;
-    font-size:smaller;
+    font-size: smaller;
     text-align: center;
     border-radius: 5px;
     padding: 2%;
@@ -295,12 +394,13 @@ input, textarea {
     left: 50%;
     margin-left: -60px;
 }
+
 .tooltipProfil .tooltipProfiltext {
     visibility: hidden;
-    width:fit-content;
+    width: fit-content;
     background-color: #CAFFEE;
     color: #473B7B;
-    font-size:smaller;
+    font-size: smaller;
     text-align: center;
     border-radius: 5px;
     padding: 2%;
@@ -310,6 +410,7 @@ input, textarea {
     left: 50%;
     margin-left: -35px;
 }
+
 .tooltipCal .tooltipCaltext::after {
     content: "";
     position: absolute;
@@ -320,6 +421,7 @@ input, textarea {
     border-style: solid;
     border-color: transparent transparent #CAFFEE transparent;
 }
+
 .tooltipList .tooltipListtext::after {
     content: "";
     position: absolute;
@@ -330,6 +432,7 @@ input, textarea {
     border-style: solid;
     border-color: transparent transparent #CAFFEE transparent;
 }
+
 .tooltipProfil .tooltipProfiltext::after {
     content: "";
     position: absolute;
@@ -340,22 +443,27 @@ input, textarea {
     border-style: solid;
     border-color: transparent transparent #CAFFEE transparent;
 }
+
 .tooltipCal:hover .tooltipCaltext {
     visibility: visible;
 }
+
 .tooltipList:hover .tooltipListtext {
     visibility: visible;
 }
+
 .tooltipProfil:hover .tooltipProfiltext {
     visibility: visible;
 }
-usrnm{
-    -webkit-text-fill-color: #CAFFEE; 
+
+usrnm {
+    -webkit-text-fill-color: #CAFFEE;
     font-weight: light;
     position: relative;
     top: -28px;
     font-size: medium;
 }
+
 /*.recsrow{
     flex-direction: row;
     border:#473B7B solid 2px;
@@ -368,55 +476,67 @@ usrnm{
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
     width: 100%;
-  }
-  
-  .recsindex td, .recsindex th {
+}
+
+.recsindex td,
+.recsindex th {
     border: none;
     padding: 4px;
-  }
-  
-  .recsindex tr:nth-child(even){background-color: rgba(71, 59, 123, 0.5);}
-  
-  .recsindex tr:hover {background-color: rgba(71, 59, 123, 0.9);}
-  
-  .recsindex th {
+}
+
+.recsindex tr:nth-child(even) {
+    background-color: rgba(71, 59, 123, 0.5);
+}
+
+.recsindex tr:hover {
+    background-color: rgba(71, 59, 123, 0.9);
+}
+
+.recsindex th {
     border-color: none;
     text-align: left;
     color: #caffee;
-  }
-  .recsindex th:hover{
+}
+
+.recsindex th:hover {
     background-color: #6353ac;
-  }
-  .recname{
-    font-size:large;
+}
+
+.recname {
+    font-size: large;
     text-align: left;
     color: #caffee;
-  }
-  profileusrnm{
+}
+
+profileusrnm {
     display: none;
-  }
-  #accCreation{
+}
+
+#accCreation {
     display: none;
-  }
-  .filterSearchButtonOk{
+}
+
+.filterSearchButtonOk {
     background-color: #473B7B;
     border-radius: 5px;
-    border:#CAFFEE 2px;
+    border: #CAFFEE 2px;
     padding: 2px;
-    margin:5px;
+    margin: 5px;
     display: block;
-  }
-  /* .allrecs{
+}
+
+/* .allrecs{
     
   } */
-  .allrecsbuttob{
+.allrecsbuttob {
     margin-top: 5px;
     background-color: rgba(71, 59, 123, 0.5);
     border-radius: 5px;
-    border:#473B7B 2px solid;
+    border: #473B7B 2px solid;
     color: #caffee;
-  }
-  .allrecsbuttob:hover{
+}
+
+.allrecsbuttob:hover {
     background-color: rgba(71, 59, 123, 0.75);
     outline: 2px solid rgba(7, 136, 129, 1);
-  }
+}
