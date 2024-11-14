@@ -2,32 +2,34 @@
 <div id="filOptionPage" class="filOptionPage">
   <filHeader class="filGridHeader">Filter</filHeader>
 
+<!--filter Start-->
   <div class="filGridZubDauer" id="zubDauer">
     <h3>Zubereitungsdauer</h3>
     <input type="range" min="14" max="180" value="14" class="sliderZubDauer" id="maxDauer" oninput="maxDauerInput()">
     <p><span id="maxMin"></span></p>
   </div>
-  <div id=include>
-    <h3>In Suchergebnisse inkludieren</h3>
 
-    <div>
+  <div id=include>
+    <filTitles>In Suchergebnisse inkludieren</filTitles>
+    <div class="filDropdownLeft">
       <select class="filDropdown" name="zutFilterMainin" id="zutFilterMainin" multiple>
         <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Zutaten -->
       </select>
     </div>
 
-    <div>
+    <div class="filDropdownLeft">
       <select class="filDropdown" name="prFilterMainin" id="prFilterMainin" multiple>
         <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Prozesse -->
       </select>
     </div>
   </div>
-  <div id=exclude>
-    <h3>Aus Suchergebnissen ausschließen</h3>
 
-    <div>
+  <div id=exclude>
+    <filTitles>Aus Suchergebnissen ausschließen</filTitles>
+
+    <div class="filDropdownRight">
       <select class="filDropdown" name="zutFilterMainex" id="zutFilterMainex" multiple>
         <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Zutaten -->
@@ -36,7 +38,7 @@
 
     <input class="filGridInp" placeholder="Zubehör" id="zubFilternMainEx">
 
-    <div>
+    <div class="filDropdownRight">
       <select class="filDropdown" name="prFilterMainex" id="prFilterMainex" multiple>
         <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Prozesse -->

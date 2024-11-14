@@ -2,7 +2,7 @@
     -webkit-appearance: none; /* Entfernt Standardstil in WebKit-basierten Browsern */
     appearance: none;
     cursor: pointer;
-    width: 90%;
+    width: 92%;
     height: 18px; /* Angepasst für bessere Sichtbarkeit */
     background: #09aaa2;
     border-radius: 5px;
@@ -23,7 +23,7 @@
     height: 20px; /* Angepasst für bessere Sichtbarkeit */
     background: #caffee;
     cursor: pointer;
-    width: 12px; /* Angepasst für bessere Sichtbarkeit */
+    width: 20px; /* Angepasst für bessere Sichtbarkeit */
     border: 2px solid rgba(99, 83, 172, 1);
     border-radius: 5px;
 }
