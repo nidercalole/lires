@@ -1,3 +1,58 @@
+.splitLeftGrid{
+    display:grid;
+    grid-template-areas:
+        'alle dev'
+        'new fav'
+        'new fav'
+        'new fav'
+        'sort sort'
+        'act act';
+    gap: 10px;
+    padding: 1.5%;
+    border-radius: 5px;
+}
+
+.development{
+    height:110px;
+    grid-area: dev;
+}
+
+.favRecs {
+    grid-area: fav;
+}
+
+.newRecs {
+    grid-area: new;
+}
+
+.allRecs {
+    grid-area: alle;
+}
+
+.sortBtnDif{
+    grid-area: sort;
+}
+.actionBtnDif{
+    grid-area: act;
+}
+.mainPageBtnImages{
+    background-color: transparent;
+    height:55px;
+    width: 55px;
+    border-radius: 5px;
+    border: #CAFFEE 2px;
+}
+
+.mainPageBtns{
+    background-color: rgba(71, 59, 123, 0.5);
+    padding: 3px;
+    border-radius: 5px;
+    border:#473B7B 2px solid;
+}
+.mainPageBtns:hover{
+    background-color: rgba(71, 59, 123, 0.75);
+    outline: 2px solid rgba(7, 136, 129, 1);
+}
 .addRec {
     position: absolute;
     bottom: 2%;
@@ -340,7 +395,6 @@ textarea {
 
 .split {
     height: 86%;
-    width: 25%;
     position: fixed;
     z-index: 1;
     overflow-x: hidden;
@@ -349,11 +403,13 @@ textarea {
 
 .splitLeft {
     padding-left: 10px;
+    width: 72%;
     /*float:left;*/
 }
 
 .splitRight {
     /*float:left;*/
+    width: 25%;
     margin: 10px;
     border: none;
     border-radius: 5px;

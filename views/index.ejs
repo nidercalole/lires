@@ -2,7 +2,7 @@
 <div id="filOptionPage" class="filOptionPage">
   <filHeader class="filGridHeader">Filter</filHeader>
 
-<!--filter Start-->
+  <!--filter Start-->
   <div class="filGridZubDauer" id="zubDauer">
     <h3>Zubereitungsdauer</h3>
     <input type="range" min="14" max="180" value="14" class="sliderZubDauer" id="maxDauer" oninput="maxDauerInput()">
@@ -52,13 +52,19 @@
 
 </div>
 <div id="nichtFilter">
-  <div class="split splitLeft">
-    <div>
+  <div class="split splitLeft splitLeftGrid">
+
+    <!--Text (kann irgendwann weg ig)-->
+    <div class="development">
       <h2>This Website is in development</h2>
       <p>Mehr Text <br> This development is in website</p>
     </div>
 
-    <div>
+    <!--Button "alle zeigen"-->
+    <div class="allrecs allRecs"><button class="allrecsbuttob" onclick="getAndShowAllRecs()">Alle Rezepte</button></div>
+
+    <!--Neueste Rezepte-->
+    <div class="newRecs">
       <table class="recsindex">
         <tr>
           <th colspan="4">
@@ -81,8 +87,66 @@
           <% }); %>
       </table>
     </div>
-    <div class="allrecs"><button class="allrecsbuttob" onclick="getAndShowAllRecs()">Alle Rezepte</button></div>
 
+    <!--Beliebteste Rezepte-->
+    <div class="favRecs">
+      <table class="recsindex">
+        <tr>
+          <th colspan="4">
+            <h1>Beliebteste Rezepte</h1>
+          </th>
+        </tr>
+        <% recs.forEach(rec=> { %>
+          <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname">
+              <%= rec.recname %>
+            </td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense">
+              <%= rec.expense %>
+            </td>
+            <td class="recuser">
+              <%= rec.user && rec.user.length> 0 ? rec.user[0] : 'N/A' %>
+            </td>
+          </tr>
+          <% }); %>
+      </table>
+    </div>
+
+    <!--Knöpfe Filter-->
+    <div class="sortBtnDif">
+      <button>Warm</button>
+      <button>Einfach</button>
+      <button>Vegetarisch</button>
+      <button>Backen</button>
+      <button>und mehr.</button>
+      <button>die soll man</button>
+      <button>ja auch irgendiwe</button>
+      <button>scrollen können</button>
+      <button>ig</button>
+      <button>weiß nicht wie man dies tut</button>
+      <button>...oder ob wir überhaupt buttons nutzen</button>
+      <button>yeet :)</button>
+    </div>
+
+    <!--Knöpfe Aktionen-->
+    <div class="actionBtnDif">
+      <button id="addRec" onclick="buttaddrec()" class="mainPageBtns">
+        <img class="mainPageBtnImages" src="/img/plus.png" alt="Füge Rezepte hinzu" width="55px">
+      </button>
+
+      <button class="mainPageBtns">
+        <img src="/img/freunde.png" class="mainPageBtnImages" alt="Freunde" width="55px">
+      </button>
+
+      <button  class="mainPageBtns">
+        <img src="/img/cal.png" class="mainPageBtnImages" alt="Kochkalender" width="55px">
+      </button>
+
+      <button class="mainPageBtns">
+        <img src="/img/lists.png" class="mainPageBtnImages" alt = "Listen" width="55px">
+      </button>
+    </div>
   </div>
   <div id="listArea" class="split splitRight ">
     <div>
@@ -93,13 +157,9 @@
         <li>Hier</li>
         <li>Wieauchimmer</li>
         <li>man das mit dem</li>
-        <li>Adden umsetzt...</li>user
+        <li>Adden umsetzt...</li>
       </ul>
     </div>
   </div>
-
-  <button id="addRec" class="addRec" onclick="buttaddrec()">
-    <img src="/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
-  </button>
 </div>
 <script></script>
