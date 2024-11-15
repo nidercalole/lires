@@ -217,3 +217,22 @@ lblMinis{
 .suchleiste{
     display: none;
 }
+.filIngPage {
+    max-width: 45%;
+    display: grid;
+    grid-template-areas:
+        'filheader filheader'
+        'dauer dauer'
+        'incl excl';
+    gap: 10px;
+    padding: 1.5%;
+    position: fixed;
+    top: 15%;
+    left: 15%;
+    border-radius: 5px;
+    /*width:30%;*/
+    background-color: #078881;
+    z-index: 1000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*padding: 10px;*/
+}
