@@ -1,12 +1,10 @@
 .splitLeftGrid{
     display:grid;
     grid-template-areas:
-        'alle dev'
-        'new fav'
-        'new fav'
         'new fav'
         'sort sort'
         'act act';
+    grid-template-rows: 540px 120px 120px;
     gap: 10px;
     padding: 1.5%;
     border-radius: 5px;
@@ -18,10 +16,12 @@
 }
 
 .favRecs {
+    margin-top:12px;
     grid-area: fav;
 }
 
 .newRecs {
+    margin-top: 12px;
     grid-area: new;
 }
 
@@ -35,24 +35,41 @@
 .actionBtnDif{
     grid-area: act;
 }
-.mainPageBtnImages{
-    background-color: transparent;
-    height:55px;
-    width: 55px;
-    border-radius: 5px;
-    border: #CAFFEE 2px;
+.mainPageFilBtns {
+    display: flex;
+    flex-direction: column; /* Bild oben, Text unten */
+    align-items: center; /* Zentriert Bild und Text horizontal */
+    justify-content: center; /* Zentriert Bild und Text vertikal */
+    width: 270px;
+    height: 200px;
+    padding: 10px; /* Optional: Innenabstand */
+    box-sizing: border-box; /* Padding wird in der Button-Größe berücksichtigt */
+    text-align: center; /* Zentriert den Text */
+    border: 2px solid #6353ac; /* Dicke (2px), Farbe (#6353ac) und Stil (solid) des Rahmens */
+    border-radius: 15px; /* Abgerundete Ecken (15px Radius) */
+    cursor: pointer; /* Zeigt bei Hover einen Pointer an */
+    overflow: hidden; /* Verhindert das Überlappen von Inhalten */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Für Hover-Effekte */
 }
 
-.mainPageBtns{
-    background-color: rgba(71, 59, 123, 0.5);
-    padding: 3px;
-    border-radius: 5px;
-    border:#473B7B 2px solid;
+.mainPageFilBtns:hover {
+    background-color: #6353ac; /* Ändert die Hintergrundfarbe bei Hover */
+    transform: scale(1.05); /* Leichtes Vergrößern beim Hover */
+    border-color: #078881; /* Ändert die Rahmenfarbe bei Hover */
 }
-.mainPageBtns:hover{
-    background-color: rgba(71, 59, 123, 0.75);
-    outline: 2px solid rgba(7, 136, 129, 1);
+
+.mainPageFilImages {
+    max-width: 100%; /* Bild passt sich an die Breite des Buttons an */
+    max-height: 70%; /* Bild nutzt max. 70% der Button-Höhe */
+    object-fit: contain; /* Verhindert Verzerrungen des Bildes */
+    border-radius: 10px; /* Optionale abgerundete Ecken für das Bild */
 }
+
+.mainPageFilBtns span {
+    margin-top: 10px; /* Abstand zwischen Bild und Text */
+    font-size: 16px; /* Schriftgröße */
+}
+
 .addRec {
     position: absolute;
     bottom: 2%;
@@ -548,80 +565,192 @@ usrnm {
     top: -28px;
     font-size: medium;
 }
+tableHeader{
+    text-align: center;
+    font-Size:x-large;
+    font-weight: bold;
+    color: #CAFFEE;
+    margin:0;
+}
+recUser{
+    font-Size:5;
+    font-weight:light;
+    color: #CAFFEE;
+    margin:0;
+}
 
-/*.recsrow{
+/* Tabellenzeilen-Design */
+.recsrow {
+    display: flex; /* Flexbox für bessere Kontrolle */
     flex-direction: row;
-    border:#473B7B solid 2px;
-    background-color: red;
-    border-radius: 5px;
-    margin: 4px;
-    padding: 0;
-}*/
+    align-items: center;
+    justify-content: space-between; /* Verteilt Inhalte gleichmäßig */
+    height: 70px; /* Festgelegte Zeilenhöhe */
+    border: 2px solid #473B7B;
+    border-radius: 8px; /* Abgerundete Ecken */
+    margin: 6px 0; /* Abstand zwischen den Zeilen */
+    padding: 4px 15px; /* Innenabstand */
+    background-color: rgba(71, 59, 123, 0.5); /* Hintergrundfarbe */
+    transition: transform 0.2s, background-color 0.2s; /* Animationseffekt */
+}
+
+/* Hover-Effekt für die Zeilen */
+.recsrow:hover {
+    background-color: rgba(71, 59, 123, 0.8); /* Hintergrundfarbe dunkler beim Hover */
+    transform: translateY(-3px); /* Leichtes Anheben beim Hover */
+    cursor: pointer; /* Zeigt an, dass die Zeile klickbar ist */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Schatteneffekt */
+}
+
+/* Tabelle - allgemeines Styling */
 .recsindex {
     font-family: Verdana, sans-serif;
-    border-collapse: collapse;
     width: 100%;
+    border-collapse: separate; /* Erlaubt Zwischenräume zwischen den Zeilen */
+    border-spacing: 0 10px; /* Abstand zwischen den Zeilen */
 }
 
+/* Tabellenzellen */
 .recsindex td,
 .recsindex th {
-    border: none;
-    padding: 4px;
+    padding: 8px; /* Innenabstand */
+    text-align: left; /* Textausrichtung */
+    vertical-align: middle; /* Zentriert den Text vertikal */
 }
 
-.recsindex tr:nth-child(even) {
-    background-color: rgba(71, 59, 123, 0.5);
-}
-
-.recsindex tr:hover {
-    background-color: rgba(71, 59, 123, 0.9);
-}
-
+/* Kopfzeile */
 .recsindex th {
-    border-color: none;
-    text-align: left;
-    color: #caffee;
+    color: #caffee; /* Textfarbe */
+    text-transform: uppercase; /* Text groß schreiben */
+    background-color: #473B7B; /* Hintergrund der Kopfzeile */
+    border-radius: 5px; /* Abgerundete Ecken */
+    padding: 15px 10px;
 }
 
-.recsindex th:hover {
-    background-color: #6353ac;
+/* Schriftart und Ausrichtung für Rezeptnamen */
+recname {
+    font-size: 18px; /* Größere Schrift */
+    font-weight: bold;
+    color: #CAFFEE; /* Akzentfarbe */
 }
 
-.recname {
-    font-size: large;
-    text-align: left;
-    color: #caffee;
+/* Dauer */
+.duration {
+    vertical-align: right;
+    font-size: 16px;
+    font-style: italic;
 }
 
-profileusrnm {
-    display: none;
+/* Sternebewertung */
+.expense img {
+    vertical-align: right; /* Ausrichtung der Sterne */
+    height: 25px; /* Einheitliche Bildgröße */
+    width: auto; /* Proportionale Skalierung */
 }
 
-#accCreation {
-    display: none;
+
+.sortBtnDif {
+    width: 100%;
+    height: auto; /* Ermöglicht Anpassung an die Größe der Inhalte */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center; /* Zentriert die Buttons vertikal */
 }
 
-.filterSearchButtonOk {
-    background-color: #473B7B;
-    border-radius: 5px;
-    border: #CAFFEE 2px;
-    padding: 2px;
-    margin: 5px;
-    display: block;
+.button-wrapper-filButs {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* .allrecs{
-    
-  } */
-.allrecsbuttob {
-    margin-top: 5px;
+.button-wrapper-filButs button {
     background-color: rgba(71, 59, 123, 0.5);
     border-radius: 5px;
-    border: #473B7B 2px solid;
+    border:#473B7B 2px solid;
     color: #caffee;
+    width: 260px;
+    height: 210px; /* Höhe der Buttons */
+    margin: 0;
+    flex-shrink: 0;
 }
 
-.allrecsbuttob:hover {
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border-radius: 5px;
+    border: none;
+    width: 3%;
+    height: 44%;
+    cursor: pointer;
+}
+.arrow:hover {
     background-color: rgba(71, 59, 123, 0.75);
     outline: 2px solid rgba(7, 136, 129, 1);
+}
+
+.arrow.left {
+    left: 0;
+    z-index: 20;
+}
+
+.arrow.right {
+    right: 0;
+}
+
+.actionBtnDif {
+    width: 100%;
+    height: auto; /* Höhe passt sich dynamisch an */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row; /* Buttons nebeneinander */
+    justify-content: space-between; /* Platz zwischen den Buttons */
+    align-items: center; /* Zentriert die Buttons vertikal */
+}
+
+.mainPageBtns {
+    background-color: rgba(71, 59, 123, 0.5); /* Transparenter Hintergrund */
+    height: 98%; /* Knopf nimmt fast die gesamte Höhe ein */
+    width: 19.5%; /* Proportionale Breite */
+    padding: 10px; /* Innenabstand */
+    border-radius: 5px; /* Abgerundete Ecken */
+    border: #473B7B 2px solid; /* Rahmen */
+    display: flex; /* Flexbox-Layout */
+    flex-direction: column; /* Inhalte vertikal anordnen */
+    align-items: center; /* Zentriert Inhalte horizontal */
+    justify-content: space-between; /* Verhindert Überlappung von Bild und Text */
+    text-align: center; /* Text wird zentriert */
+    box-sizing: border-box; /* Padding und Border in Button-Größe einberechnen */
+    overflow: hidden; /* Verhindert Überlauf */
+    cursor: pointer; /* Klickbare Mausanzeige */
+    transition: background-color 0.2s ease-in-out; /* Weicher Hover-Effekt */
+}
+
+.mainPageBtns:hover {
+    background-color: rgba(71, 59, 123, 0.75); /* Dunkler beim Hover */
+    outline: 2px solid rgba(7, 136, 129, 1); /* Umrandung beim Hover */
+}
+
+/* Bilder der Buttons */
+.mainPageBtnImages {
+    width: auto; /* Breite passt sich proportional an */
+    height: auto; /* Höhe passt sich proportional an */
+    max-height: 50%; /* Bildhöhe darf maximal 50% des Buttons betragen */
+    max-width: 90%; /* Bildbreite darf maximal 90% des Buttons betragen */
+    object-fit: contain; /* Bild bleibt proportional */
+    margin-bottom: 5px; /* Abstand zwischen Bild und Text */
+    display: block; /* Sicherstellen, dass Bilder als Block behandelt werden */
+}
+
+/* Text der Buttons */
+.mainPageBtns span {
+    font-size: 16px; /* Schriftgröße */
+    color: #caffee; /* Textfarbe */
+    line-height: 1.2; /* Abstand zwischen Textzeilen */
+    text-align: center; /* Zentrierter Text */
+    margin-top: auto; /* Text bleibt immer unterhalb des Bildes */
+    word-wrap: break-word; /* Textumbruch bei langen Wörtern */
 }
