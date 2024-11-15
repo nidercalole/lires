@@ -4,7 +4,7 @@
 </div>
 
 <!-- begin Ingridient add page-->
-<div class="filIngPage">
+<div class="filIngPage" id="filIngPage">
     <table class="fixTable" id="fixTable1"></table>
 </div>
 <!-- begin Ingridient add page-->
@@ -40,7 +40,7 @@
                     <lblMinis class="hidden" id="miniLbl8"></lblMinis>
                 </div>
             </div>
-            <button id="addRecToList" class="addRecToList" onclick="irgendeinefunktion()">
+            <button id="addRecToList" class="addRecToList" onclick="addToAnyList()">
                 <img src="/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
             </button>
         </div>
@@ -60,4 +60,6 @@
     </div>
 </div>
 </div>
+<div id="closeArea" style="width: 100%; height: 100vh; z-index: -10;"></div>
 <script src="/js/recipe.js"></script>
+<script src="/js/addRecToList.js"></script>

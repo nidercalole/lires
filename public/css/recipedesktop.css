@@ -219,7 +219,7 @@ lblMinis{
 }
 .filIngPage {
     max-width: 45%;
-    display: grid;
+    display: none;
     grid-template-areas:
         'filheader filheader'
         'dauer dauer'
@@ -235,4 +235,10 @@ lblMinis{
     z-index: 1000;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     /*padding: 10px;*/
+}
+.dontAdd{
+    color: gray; /* Textfarbe auf Grau setzen */
+    background-color: #f0f0f0; /* Heller grauer Hintergrund */
+    filter: grayscale(100%); /* Filter für Grau-Skalierung */
+    opacity: 0.8; /* Leicht transparente Darstellung */
 }

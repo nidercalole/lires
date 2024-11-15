@@ -39,6 +39,7 @@ function updatelist(){
         <td class="moreWidth bold">Zutaten</td>
         <td class="bold">Menge</td>
     </tr>`;
+    ingAddCount = 0;
     recData.ingredients.forEach(ing => {
         let ingamountshow = '';
         let ingunitshow = '';
@@ -50,10 +51,12 @@ function updatelist(){
             ingunitshow = ing.ingunit;
         }
         let item = document.createElement('tr');
+        item.id = "posIngsToAdd" + ingAddCount;
+        item.classList = '';
         item.innerHTML = `
         <td>${ing.ing}</td>
         <td><input type="text" id="${ingAddCount}" value="${ingamountshow}">${' ' + ingunitshow}</td>
-        <td class="ingredientstablenotableview">wegbut</td>`;
+        <td class="ingredientstablenotableview"><button onclick="dontAdd(${"posIngsToAdd" + ingAddCount})">wegbut</button></td>`;
         listAdd.appendChild(item);
         ingAddCount++;
     });

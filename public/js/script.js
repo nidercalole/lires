@@ -42,12 +42,6 @@ function filBut(){
         filOptionPage.style.display = 'none';
     }
 }
-function fillButClose(){
-    console.log('close');
-    const filOptionPage = document.getElementById('filOptionPage');
-    filOptionPage.style.display = 'none';
-}
-
 
 //inputUpdate at filter
 function maxDauerInput(){
@@ -120,6 +114,3 @@ async function getAndShowAllRecs(){
     const user = getUserCredetials();
     window.location.href = `allrecs/?usrnm=${user[0]}&usrid=${user[1]}`;
 }
-
-document.getElementById('nichtFilter').addEventListener('click', fillButClose);
-
