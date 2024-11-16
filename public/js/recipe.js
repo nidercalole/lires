@@ -3,7 +3,6 @@ function gebId(str){
     return document.getElementById(str);
 }
 const formatText = (text) => {
-
     return text.replace(/([.!?])\s*(?=[A-Z])/g, '$1<br>');
   };
 function updatelist(){
