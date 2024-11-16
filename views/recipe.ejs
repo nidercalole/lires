@@ -5,12 +5,24 @@
 
 <!-- begin Ingridient add page-->
 <div class="filIngPage" id="filIngPage">
+    
     <table class="fixTable" id="fixTable1"></table>
+
+    <div class="NextToings" id="">
+        <p>zu folgenden Listen hinzufügen:</p>
+        <div id="defaultListNew" class="listsNextToings selected" onclick="toggleSelectionLists(this)">Neue Liste erstellen</div>
+        <div id="sdsdsd" class="listsNextToings" onclick="toggleSelectionLists(this)">NUR FÜR DESIGN1</div>
+        <div id="sdsdsds" class="listsNextToings" onclick="toggleSelectionLists(this)">NUR FÜR DESIGN2</div>
+        <div id="sdsdsdss" class="listsNextToings" onclick="toggleSelectionLists(this)">NUR FÜR DESIGN3</div>
+    </div>
+    <button onclick="addToAnyListClose()">X</button>
+    <div><button onclick="addToListFinal()">HIER DER PFEIL</button></div>
 </div>
-<!-- begin Ingridient add page-->
+<!-- end Ingridient add page-->
 
 <div class="body">
     <div class="top">
+    
         <div class="frstLine">
             <recName id="recName"></recName>
             <usr id="userAndDate"></usr>
@@ -40,7 +52,7 @@
                     <lblMinis class="hidden" id="miniLbl8"></lblMinis>
                 </div>
             </div>
-            <button id="addRecToList" class="addRecToList" onclick="addToAnyList()">
+            <button id="addRecToList" class="addRecToList" style="z-index: 10000;" onclick="addToAnyList()">
                 <img src="/img/addrec.png" alt="Füge Rezepte hinzu" width="55px">
             </button>
         </div>
@@ -58,8 +70,9 @@
             <p class="noMarginTop blocksatz" id="directions"></p>
         </div>
     </div>
+
 </div>
-</div>
-<div id="closeArea" style="width: 100%; height: 100vh; z-index: -10;"></div>
+
+
 <script src="/js/recipe.js"></script>
 <script src="/js/addRecToList.js"></script>

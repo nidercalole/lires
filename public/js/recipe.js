@@ -52,11 +52,10 @@ function updatelist(){
         }
         let item = document.createElement('tr');
         item.id = "posIngsToAdd" + ingAddCount;
-        item.classList = '';
         item.innerHTML = `
-        <td>${ing.ing}</td>
+        <td class="ingsListShowNotNotGreyed" id="posIngsToAdd${ingAddCount}greyable">${ing.ing}</td>
         <td><input type="text" id="${ingAddCount}" value="${ingamountshow}">${' ' + ingunitshow}</td>
-        <td class="ingredientstablenotableview"><button onclick="dontAdd(${"posIngsToAdd" + ingAddCount})">wegbut</button></td>`;
+        <td class="ingredientstablenotableview"><button onclick="dontAdd(${`posIngsToAdd${ingAddCount}`})">wegbut</button></td>`;
         listAdd.appendChild(item);
         ingAddCount++;
     });

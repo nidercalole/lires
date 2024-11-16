@@ -1,15 +1,28 @@
-function addToAnyList(){
-    if(document.getElementById('filIngPage').style.display == 'grid'){
-        document.getElementById('filIngPage').style.display = 'none';
-    }else{
-        document.getElementById('filIngPage').style.display = 'grid';
-    }
-}
 function addToAnyListClose(){
     document.getElementById('filIngPage').style.display = 'none';
 }
-function dontAdd(id){
-    console.log(id);
-    document.getElementById(id).classList.add('dontAdd');
+function addToAnyList(){
+        document.getElementById('filIngPage').style.display = 'grid';
 }
-document.getElementById('closeArea').addEventListener('click', addToAnyListClose);
+
+function dontAdd(id){
+    document.getElementById(id.id).classList.toggle('dontAdd');
+    document.getElementById(id.id + "greyable").classList.toggle('ingsListShowNotNotGreyed');
+
+}
+
+function toggleSelectionLists(element){
+    element.classList.toggle('selected');
+
+}
+
+function addToListFinal(){
+    let selected = document.querySelectorAll('.ingsListShowNotNotGreyed');
+    console.log(selected);  
+    let ingList = [];
+    selected.forEach(ing => {
+        ingList.push(ing.textContent);
+    });
+    console.log(ingList);   
+}
+

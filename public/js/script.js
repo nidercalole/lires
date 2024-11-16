@@ -114,3 +114,22 @@ async function getAndShowAllRecs(){
     const user = getUserCredetials();
     window.location.href = `allrecs/?usrnm=${user[0]}&usrid=${user[1]}`;
 }
+
+let scrollIndex = 0;
+function scrollButtons(dir) {
+  wrapper = document.getElementById("buttonWrapper");
+  const buttonWidth = 270;
+  const visibleButtons = 5.2;
+  const maxScroll = 13 - visibleButtons;
+  scrollIndex = Math.min(Math.max(scrollIndex + dir * 2.5, 0), maxScroll);
+
+  wrapper.style.transform = `translateX(-${scrollIndex * buttonWidth}px)`;
+  if (scrollIndex == 0) {
+    document.getElementById("arr-left").style.display = "none";
+  } else if (scrollIndex == maxScroll) {
+    document.getElementById("arr-right").style.display = "none";
+  } else {
+    document.getElementById("arr-left").style.display = "block";
+    document.getElementById("arr-right").style.display = "block";
+  }
+}

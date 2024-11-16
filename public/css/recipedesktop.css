@@ -242,3 +242,23 @@ lblMinis{
     filter: grayscale(100%); /* Filter für Grau-Skalierung */
     opacity: 0.8; /* Leicht transparente Darstellung */
 }
+.listsNextToings {
+    display: flex;
+    gap: 20px;
+    background-color: #078881;
+}
+.listsNextToings.selected {
+    background-color: #473B7B;
+}
+
+.closeArea{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    z-index: -3;
+    pointer-events: auto;
+}
