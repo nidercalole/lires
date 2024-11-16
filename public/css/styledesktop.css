@@ -4,12 +4,14 @@
         'new fav'
         'sort sort'
         'act act';
-    grid-template-rows: 540px 120px 120px;
+    grid-template-rows: 480px 140px 140px;
     gap: 10px;
     padding: 1.5%;
     border-radius: 5px;
 }
-
+#accCreation{
+    display: none;
+}
 .development{
     height:110px;
     grid-area: dev;
@@ -35,6 +37,7 @@
 .actionBtnDif{
     grid-area: act;
 }
+
 .mainPageFilBtns {
     display: flex;
     flex-direction: column; /* Bild oben, Text unten */
@@ -59,8 +62,7 @@
 }
 
 .mainPageFilImages {
-    max-width: 100%; /* Bild passt sich an die Breite des Buttons an */
-    max-height: 70%; /* Bild nutzt max. 70% der Button-Höhe */
+    max-height: 50%;
     object-fit: contain; /* Verhindert Verzerrungen des Bildes */
     border-radius: 10px; /* Optionale abgerundete Ecken für das Bild */
 }
@@ -247,7 +249,7 @@ filTitles {
     max-width: 45%;
     display: none;
     grid-template-areas:
-        'filheader filheader'
+        'filheader close'
         'dauer dauer'
         'incl excl';
     gap: 10px;
@@ -261,6 +263,9 @@ filTitles {
     z-index: 1000;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     /*padding: 10px;*/
+}
+.filButClose{
+    grid-area: close;
 }
 
 .filGridHeader {
@@ -565,89 +570,9 @@ usrnm {
     top: -28px;
     font-size: medium;
 }
-tableHeader{
-    text-align: center;
-    font-Size:x-large;
-    font-weight: bold;
-    color: #CAFFEE;
-    margin:0;
+accCreaText{
+    display:none;
 }
-recUser{
-    font-Size:5;
-    font-weight:light;
-    color: #CAFFEE;
-    margin:0;
-}
-
-/* Tabellenzeilen-Design */
-.recsrow {
-    display: flex; /* Flexbox für bessere Kontrolle */
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between; /* Verteilt Inhalte gleichmäßig */
-    height: 70px; /* Festgelegte Zeilenhöhe */
-    border: 2px solid #473B7B;
-    border-radius: 8px; /* Abgerundete Ecken */
-    margin: 6px 0; /* Abstand zwischen den Zeilen */
-    padding: 4px 15px; /* Innenabstand */
-    background-color: rgba(71, 59, 123, 0.5); /* Hintergrundfarbe */
-    transition: transform 0.2s, background-color 0.2s; /* Animationseffekt */
-}
-
-/* Hover-Effekt für die Zeilen */
-.recsrow:hover {
-    background-color: rgba(71, 59, 123, 0.8); /* Hintergrundfarbe dunkler beim Hover */
-    transform: translateY(-3px); /* Leichtes Anheben beim Hover */
-    cursor: pointer; /* Zeigt an, dass die Zeile klickbar ist */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Schatteneffekt */
-}
-
-/* Tabelle - allgemeines Styling */
-.recsindex {
-    font-family: Verdana, sans-serif;
-    width: 100%;
-    border-collapse: separate; /* Erlaubt Zwischenräume zwischen den Zeilen */
-    border-spacing: 0 10px; /* Abstand zwischen den Zeilen */
-}
-
-/* Tabellenzellen */
-.recsindex td,
-.recsindex th {
-    padding: 8px; /* Innenabstand */
-    text-align: left; /* Textausrichtung */
-    vertical-align: middle; /* Zentriert den Text vertikal */
-}
-
-/* Kopfzeile */
-.recsindex th {
-    color: #caffee; /* Textfarbe */
-    text-transform: uppercase; /* Text groß schreiben */
-    background-color: #473B7B; /* Hintergrund der Kopfzeile */
-    border-radius: 5px; /* Abgerundete Ecken */
-    padding: 15px 10px;
-}
-
-/* Schriftart und Ausrichtung für Rezeptnamen */
-recname {
-    font-size: 18px; /* Größere Schrift */
-    font-weight: bold;
-    color: #CAFFEE; /* Akzentfarbe */
-}
-
-/* Dauer */
-.duration {
-    vertical-align: right;
-    font-size: 16px;
-    font-style: italic;
-}
-
-/* Sternebewertung */
-.expense img {
-    vertical-align: right; /* Ausrichtung der Sterne */
-    height: 25px; /* Einheitliche Bildgröße */
-    width: auto; /* Proportionale Skalierung */
-}
-
 
 .sortBtnDif {
     width: 100%;
@@ -714,7 +639,7 @@ recname {
 .mainPageBtns {
     background-color: rgba(71, 59, 123, 0.5); /* Transparenter Hintergrund */
     height: 98%; /* Knopf nimmt fast die gesamte Höhe ein */
-    width: 19.5%; /* Proportionale Breite */
+    width: 16%; /* Proportionale Breite */
     padding: 10px; /* Innenabstand */
     border-radius: 5px; /* Abgerundete Ecken */
     border: #473B7B 2px solid; /* Rahmen */
@@ -738,8 +663,7 @@ recname {
 .mainPageBtnImages {
     width: auto; /* Breite passt sich proportional an */
     height: auto; /* Höhe passt sich proportional an */
-    max-height: 50%; /* Bildhöhe darf maximal 50% des Buttons betragen */
-    max-width: 90%; /* Bildbreite darf maximal 90% des Buttons betragen */
+    max-height: 70%; /* Bildhöhe darf maximal 50% des Buttons betragen */
     object-fit: contain; /* Bild bleibt proportional */
     margin-bottom: 5px; /* Abstand zwischen Bild und Text */
     display: block; /* Sicherstellen, dass Bilder als Block behandelt werden */
@@ -753,4 +677,96 @@ recname {
     text-align: center; /* Zentrierter Text */
     margin-top: auto; /* Text bleibt immer unterhalb des Bildes */
     word-wrap: break-word; /* Textumbruch bei langen Wörtern */
+}
+
+
+
+
+
+/* Tabelle - Grunddesign */
+.recsindex {
+    width: 100%;
+    border-collapse: separate;
+}
+
+/* Tabellenkopf */
+.recsindex th {
+    font-size: 24px;
+    color: #caffee;
+    text-align: left;
+    padding: 15px;
+    background: rgba(71, 59, 123, 0.75);
+    border-radius: 5px;
+}
+
+/* Tabellenzeilen */
+.recsrow {
+    display: flex; /* Flexbox für bessere Kontrolle */
+    flex-direction: row; /* Inhalte horizontal ausrichten */
+    align-items: center; /* Vertikal zentrieren */
+    justify-content: space-between; /* Elemente verteilen */
+    padding: 15px; /* Innenabstand */
+    margin: 6px 0; /* Abstand zwischen Zeilen */
+    border:rgba(71, 59, 123, 0.5) 2px solid; /* Rahmen */
+    background-color: rgba(71, 59, 123, 0.255);/*  Transparenter Hintergrund */
+    border-radius: 5px; /* Abgerundete Ecken */
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  Leichter Schatten */
+    transition: transform 0.2s, background-color 0.2s; /* Animation beim Hover */
+}
+
+/* Hover-Effekt */
+.recsrow:hover {
+    background-color: rgba(71, 59, 123, 0.5); /* Dunkler beim Hover */
+    transform: translateY(-3px); /* Zeile hebt sich an */
+    border:#078881 2px solid;
+    cursor: pointer;
+}
+
+/* Text-Design für Rezeptname */
+recname {
+    font-size: 18px;
+    font-weight: bold;
+    color: #CAFFEE; /* Akzentfarbe */
+}
+
+/* Text-Design für Benutzer */
+recUser {
+    font-size: 14px;
+    color: #caffee; /* Dezente Farbe */
+    font-style: italic; /* Stil für Kontrast */
+    opacity: 0.8; /* Leicht transparent */
+}
+
+/* Dauer - rechtsbündig und stilisiert */
+.duration {
+    font-size: 16px;
+    margin-right:20px;
+    color: #CAFFEE; /* Akzentfarbe */
+    text-align: right; /* Rechtsbündig */
+    flex: 1; /* Platzhalter, um Elemente zu verteilen */
+}
+
+/* Bild in der Tabelle */
+.expense img {
+    max-height: 30px; /* Maximale Bildhöhe */
+    display: block;
+    margin: 0 auto; /* Bild zentrieren */
+}
+
+.filButClose{
+    width: 15%;
+    height: 100%;
+    background-color:rgba(71, 59, 123, 0.25);
+    border: 2px solid rgba(71, 59, 123, 0.5);
+    border-radius: 5px;
+}
+.filButClose:hover{
+    border: 2px solid #078881;
+    outline:#473B7B 1px solid;
+}
+.closeDiv {
+    display: flex; /* Aktiviert Flexbox */
+    justify-content: flex-end; /* Schiebt den Button nach rechts */
+    align-items: center; /* Zentriert vertikal */
+    height: 100%; /* Passt sich der Höhe an */
 }

@@ -70,3 +70,12 @@ profileusrnm {
 #accCreation{
     display: block;
   }
+#adminTool{
+    display:none;
+}
+accCreaText{
+    -webkit-text-fill-color: #CAFFEE;
+    font-weight: light;
+    position: relative;
+    font-size: medium;
+}

@@ -6,7 +6,6 @@
     id="logo"
     onclick="redirectHome()"
   />
-  <profileusrnm><%= usrnm %></profileusrnm>
 
   <div class="suchleiste">
     <input id="suchleiste"  class="transparent">
@@ -51,7 +50,7 @@
   <nav>
     <ul class="navLinks">
       <li class="oR">
-        <img class="navpic" src="/img/admin.png" alt="admin tool" onclick="openAdminTools()"/>
+        <img class="navpic" src="/img/admin.png" alt="admin tool" id="adminTool"onclick="openAdminTools()"/>
       </li>
       <li class="tooltipCal oR">
         <a href="link"></a>
@@ -59,18 +58,16 @@
         <span class="tooltipCaltext">Kochen planen</span>
       </li>
       <li class="tooltipList oR" id="ListBut" onclick="listButclick()">
-        <a href="link"></a>
         <img class="navpic" src="/img/lists.png" alt="Listen" />
         <span class="tooltipListtext"
           >Zutaten in Einkaufslisten zusammenfassen</span>
       </li>
-      <usrnm id="accCreation">DD.MM.YYYY</usrnm>
+  
       <li class="oR">
-        <a href="link"></a>
+        <!--<accCreaText id="accCreation">DD.MM.YYYY</accCreaText>-->
         <usrnm id="usrnm"><%= usrnm %></usrnm>
       </li>
       <li class="tooltipProfil">
-        <a href="link"></a>
         <img
           class="navpic2"
           src="/img/bsppb.png"

@@ -2,6 +2,12 @@
 <div id="filOptionPage" class="filOptionPage">
   <filHeader class="filGridHeader">Filter</filHeader>
 
+  <div class="closeDiv">
+    <button class="filButClose" onclick="fillButClose()">
+    <img width="30px" src="/img/x.png" alt="Filteransicht schließen">
+    </button>
+  </div>
+
   <!--filter Start-->
   <div class="filGridZubDauer" id="zubDauer">
     <h3>Zubereitungsdauer</h3>
@@ -87,20 +93,20 @@
             <tableHeader>Beliebteste Rezepte</tableHeader>
           </th>
         </tr>
-        <% recs.forEach(rec=> { %>
+        <% recs.forEach(rec => { %>
           <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
-            <td class="recname">
-              <%= rec.recname %>
+            <td>
+              <recname><%= rec.recname %></recname> <br>
+              <recUser><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></recUser>
             </td>
-            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="duration">
+              <span>Dauer: <%= rec.duration %> min</span>
+            </td>
             <td class="expense">
-              <%= rec.expense %>
-            </td>
-            <td class="recuser">
-              <%= rec.user && rec.user.length> 0 ? rec.user[0] : 'N/A' %>
+                <img src="/img/1star.png" alt="Stern" />
             </td>
           </tr>
-          <% }); %>
+        <% }); %>
       </table>
     </div>
 
@@ -191,6 +197,10 @@
         <img class="mainPageBtnImages" src="/img/alle.png" alt="Alle Rezepte anzeigen">
         <span>Alle Rezepte</span>
       </button>
+
+      <button class="mainPageBtns" onclick="report()">
+        <img src="/img/ausrufezeichen.png" class="mainPageBtnImages" alt="Profil">
+        <span>Melden</span>
 
       <button class="mainPageBtns" onclick="openEditFriend()">
         <img src="/img/freunde.png" class="mainPageBtnImages" alt="Freunde">
