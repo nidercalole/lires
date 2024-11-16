@@ -16,13 +16,40 @@ function toggleSelectionLists(element){
 
 }
 
-function addToListFinal(){
-    let selected = document.querySelectorAll('.ingsListShowNotNotGreyed');
-    console.log(selected);  
+async function addToListFinal(){
+    let selectedings = document.querySelectorAll('.ingsListShowNotNotGreyed');
     let ingList = [];
-    selected.forEach(ing => {
-        ingList.push(ing.textContent);
+    selectedings.forEach(ing => {
+        let valueid = 'ingamount' + (ing.id).match(/\d+/)[0]
+        const value = document.getElementById(valueid).value;
+        const unit = document.getElementById(valueid).parentElement.textContent;
+        if(unit === null|| unit === undefined){unit = '';}
+        if(value === null || value === undefined){value = '';}
+        ingList.push([ing.textContent, value, unit]);
+
     });
-    console.log(ingList);   
+    let selectedLists = document.querySelectorAll('.selected');
+    let finalLists = [];
+    selectedLists.forEach(list => {
+        finalLists.push(list.id);
+    });
+
+    await fetch('/addToList', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            ingList: ingList,
+            selectedLists: finalLists,
+        })
+    }).then((res) => {
+        if(res.ok){
+            return res.json();
+        }else{
+            throw new Error('Fehler beim Hinzufügen der Zutaten zur Liste');
+        }
+    });
+
 }
 
