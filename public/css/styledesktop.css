@@ -419,7 +419,7 @@ textarea {
     height: 86%;
     position: fixed;
     z-index: 1;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     padding-top: 0px;
 }
 
@@ -770,3 +770,27 @@ recUser {
     align-items: center; /* Zentriert vertikal */
     height: 100%; /* Passt sich der Höhe an */
 }
+
+
+/* Dropdown style grob mit minianimation */
+.dropdown-content {
+    /* Animation-Einstellungen */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  }
+  
+  .dropdown-content p {
+    margin: 0;
+    padding: 5px 0;
+  }
+  
+  .dropdown-content p:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown.open .dropdown-content {
+    max-height: 200px; 
+    opacity: 1; 
+  }

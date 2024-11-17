@@ -8,7 +8,9 @@ function initialLoad(){
     const user = getUserCredetials();
     const adminTools = document.getElementById('admintools');
     if(user[1] === '6k31a7cdbga' || user[1] === 'l725iqftr0l'){
-        adminTools.style.display = 'block';
+        return
+    }else{
+        adminTools.style.display = 'none';
     }
 }
 initialLoad();

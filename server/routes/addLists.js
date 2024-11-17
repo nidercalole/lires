@@ -15,6 +15,7 @@ router.post('/', async(req, res) => {
     let defaultList = false;
     try {
         const { ingList, selectedLists, user, newlistName } = req.body;
+        console.log(ingList, selectedLists, user, newlistName);
         if(selectedLists.length === 0){
             return res.json({ success: true});
         }else if(selectedLists[0] === 'defaultListNew'){
@@ -25,7 +26,8 @@ router.post('/', async(req, res) => {
             newlist = new List({
                 user: user,
                 listname: newlistName,
-                list: ingList
+                list: ingList,
+                listid: Math.random().toString(36).substring(2, 12)
             });
             await newlist.save();
             return res.json({ success: true});
@@ -66,12 +68,13 @@ router.post('/', async(req, res) => {
                 }
             }
             if(defaultList){
-                newlist = new List({
+                newlist1 = new List({
                     user: user,
                     listname: newlistName,
-                    list: ingList
+                    list: ingList,
+                    listid: Math.random().toString(36).substring(2, 12)
                 });
-                await newlist.save();
+                await newlist1.save();
             }
             return res.json({ success: true});
         }
@@ -81,6 +84,18 @@ router.post('/', async(req, res) => {
         res.json({ success: false });
     }
 
+});
+
+router.post('/getLists', async(req, res) => {
+    try {
+        const { user } = req.body;
+        const query = { user: user };
+        const lists = await List.find(query).exec();
+        res.json(lists);
+    } catch (error) {
+        console.error(error);
+        res.json({ success: false });
+    }
 });
 
 module.exports = router;

@@ -218,7 +218,7 @@ lblMinis{
     display: none;
 }
 .filIngPage {
-    width: 60%;
+    width: 50%;
     display: none;
     grid-template-areas:
         'filheader filheader'
