@@ -133,3 +133,9 @@ function scrollButtons(dir) {
     document.getElementById("arr-right").style.display = "block";
   }
 }
+
+
+function openRecList(filter){
+    const user = getUserCredetials();
+    window.location.href = '/recList/?usrnm=' + user[0] + '&usrid=' + user[1] + '&recfilter=' + filter;
+}

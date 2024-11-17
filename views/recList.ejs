@@ -1,8 +1,7 @@
-<h1>Hier kommt die liste aller rezepte von a-z sortiert</h1>
+<h1>Hier sind alle Rezepte zu </h1>
 
 <div>
     <table class="recsindex">
-
         <% recs.forEach(rec => { %>
             <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
                 <td class="recname"><%= rec.recname %></td>
