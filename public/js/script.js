@@ -63,7 +63,7 @@ function redirectProfil(){
 function openRec(recid){
     const user = getUserCredetials();
     console.log(user);
-    window.location.href = '/recipe/?usrnm=' + user[0] + '&userid' + user[1] + '&recid=' + recid;
+    window.location.href = '/recipe/?usrnm=' + user[0] + '&usrid=' + user[1] + '&recid=' + recid;
 }
 
 const options = document.querySelectorAll('option');

@@ -53,7 +53,7 @@ function updatelist(){
         item.id = "posIngsToAdd" + ingAddCount;
         item.innerHTML = `
         <td class="ingsListShowNotNotGreyed" id="posIngsToAdd${ingAddCount}greyable">${ing.ing}</td>
-        <td><input type="text" id="ingamount${ingAddCount}" value="${ingamountshow}">${' ' + ingunitshow}</td>
+        <td><input type="text" id="ingamount${ingAddCount}" value="${ingamountshow + ' ' + ingunitshow}"></td>
         <td class="ingredientstablenotableview"><button onclick="dontAdd(${`posIngsToAdd${ingAddCount}`})">wegbut</button></td>`;
         listAdd.appendChild(item);
         ingAddCount++;

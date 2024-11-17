@@ -12,17 +12,75 @@ const List = require('../models/list');
 router.use(bodyParser.json());
 
 router.post('/', async(req, res) => {
+    let defaultList = false;
     try {
-        const { ingList, selectedLists } = req.body;
-        console.log(ingList, selectedLists);
+        const { ingList, selectedLists, user, newlistName } = req.body;
+        if(selectedLists.length === 0){
+            return res.json({ success: true});
+        }else if(selectedLists[0] === 'defaultListNew'){
+            defaultList = true;
+            selectedLists.splice(0, 1);
+        }
+        if(selectedLists.length === 0){
+            newlist = new List({
+                user: user,
+                listname: newlistName,
+                list: ingList
+            });
+            await newlist.save();
+            return res.json({ success: true});
+        }else{
+            for (let i = 0; i < selectedLists.length; i++) {
+                const query = { listid: selectedLists[i] };
+                const existingList = await List.findOne(query).exec();
+
+                if (existingList) {
+                    for (let i = 0; i < ingList.length; i++) {
+                        let index = existingList.list.findIndex(
+                            entry => entry[0] === ingList[i][0]
+                        );
+                        if (index > -1) {
+                            // Zutat existiert bereits
+                            if (existingList.list[index][2] === ingList[i][2]) {
+                                // Einheit gleich -> Mengen addieren          
+                                existingList.list[index][1] += ingList[i][1];
+                                existingList.markModified('list');
+                                await existingList.save();
+                            } else if (existingList.list[index][2] === '') {
+                                // Einheit leer -> Einheit und Menge setzen
+                                existingList.list[index][1] += ingList[i][1];
+                                existingList.list[index][2] = ingList[i][2];
+                                existingList.markModified('list');
+                                await existingList.save();
+                            } else {
+                                // Einheiten unterschiedlich -> Neuer Eintrag
+                                existingList.list.push([ingList[i][0], ingList[i][1], ingList[i][2]]);
+                            }
+                        } else {
+                            existingList.list.push(ingList[i]);
+                        }
+                    }
+                    await existingList.save();
+                } else {
+                    return res.json({ success: false });
+                }
+            }
+            if(defaultList){
+                newlist = new List({
+                    user: user,
+                    listname: newlistName,
+                    list: ingList
+                });
+                await newlist.save();
+            }
+            return res.json({ success: true});
+        }
+        
     } catch (error) {
         console.error(error);
         res.json({ success: false });
     }
+
 });
-
-
-
-
 
 module.exports = router;

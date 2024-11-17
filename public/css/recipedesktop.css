@@ -218,7 +218,7 @@ lblMinis{
     display: none;
 }
 .filIngPage {
-    max-width: 45%;
+    width: 60%;
     display: none;
     grid-template-areas:
         'filheader filheader'
@@ -261,4 +261,30 @@ lblMinis{
     background-color: transparent;
     z-index: -3;
     pointer-events: auto;
+}
+.responseAddListOk{
+    display: none;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    width: 30%;
+    height: 5%;
+    transform: translate(-50%, -50%);
+    background-color: #078881;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+.responseAddListNotOk{
+    display: none;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    width: 30%;
+    height: 5%;
+    transform: translate(-50%, -50%);
+    background-color: #ff0000;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
 }

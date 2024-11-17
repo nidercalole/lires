@@ -16,20 +16,56 @@ function toggleSelectionLists(element){
 
 }
 
+function showResponseOk(){
+    document.getElementById('responseAddListOk').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('responseAddListOk').style.display = 'none';
+    }, 1500);
+}
+
+function showResponseNotOk(){
+    document.getElementById('responseAddListNotOk').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('responseAddListNotOk').style.display = 'none';
+    }, 1500);
+}
+
+function getUserCreds(){
+    const queryString = window.location.search; 
+    const urlParams = new URLSearchParams(queryString);
+    return [urlParams.get('usrnm'), urlParams.get('usrid')]
+}
+
+
 async function addToListFinal(){
     let selectedings = document.querySelectorAll('.ingsListShowNotNotGreyed');
     let ingList = [];
     selectedings.forEach(ing => {
         let valueid = 'ingamount' + (ing.id).match(/\d+/)[0]
         const value = document.getElementById(valueid).value;
-        const unit = document.getElementById(valueid).parentElement.textContent;
-        if(unit === null|| unit === undefined){unit = '';}
-        if(value === null || value === undefined){value = '';}
-        ingList.push([ing.textContent, value, unit]);
+        var ingamount = document.getElementById(valueid).value
+        var ingunit = ingamount.match(/[a-zA-Z]+/g);
+        if(ingamount === 0 || ingamount === null || ingamount === undefined || ingamount === ' '){
+            ingamount = 0;
+        }else{
+            ingamount = parseInt(ingamount);
+        }
+        if(ingunit === null){
+            ingunit = '';
+        }else{
+            ingunit = ingunit[0];
+        }
+        ingList.push([ing.textContent, ingamount, ingunit]);
 
     });
     let selectedLists = document.querySelectorAll('.selected');
     let finalLists = [];
+    let newlistName = '';
+    if(document.getElementById('inputListNameNew').value === ''){
+        newlistName = 'Neue Liste';
+    }else{
+        newlistName = document.getElementById('inputListNameNew').value;
+    }
     selectedLists.forEach(list => {
         finalLists.push(list.id);
     });
@@ -42,11 +78,17 @@ async function addToListFinal(){
         body: JSON.stringify({
             ingList: ingList,
             selectedLists: finalLists,
+            user: getUserCreds(),
+            newlistName: newlistName
         })
     }).then((res) => {
         if(res.ok){
+            addToAnyListClose();
+            showResponseOk();
             return res.json();
         }else{
+            addToAnyListClose();
+            showResponseNotOk();
             throw new Error('Fehler beim Hinzufügen der Zutaten zur Liste');
         }
     });
