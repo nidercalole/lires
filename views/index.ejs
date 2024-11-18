@@ -78,7 +78,8 @@
               <span>Dauer: <%= rec.duration %> min</span>
             </td>
             <td class="expense">
-                <img src="/img/1star.png" alt="Stern" />
+              <!-- prettier-ignore -->
+                <img src="/img/1star.png" alt="Stern" onload="updateStartAtRec(<%= rec.expense %>, this)" />
             </td>
           </tr>
         <% }); %>
@@ -103,7 +104,8 @@
               <span>Dauer: <%= rec.duration %> min</span>
             </td>
             <td class="expense">
-                <img src="/img/1star.png" alt="Stern" />
+              
+              <img src="/img/1star.png" alt="Stern" onload="updateStartAtRec(<%= rec.expense %>, this) " />
             </td>
           </tr>
         <% }); %>

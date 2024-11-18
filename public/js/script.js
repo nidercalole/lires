@@ -119,7 +119,7 @@ let scrollIndex = 0;
 function scrollButtons(dir) {
   wrapper = document.getElementById("buttonWrapper");
   const buttonWidth = 270;
-  const visibleButtons = 5.2;
+  const visibleButtons = 5.5;
   const maxScroll = 13 - visibleButtons;
   scrollIndex = Math.min(Math.max(scrollIndex + dir * 2.5, 0), maxScroll);
 
