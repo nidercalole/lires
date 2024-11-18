@@ -794,3 +794,8 @@ recUser {
     max-height: 200px; 
     opacity: 1; 
   }
+  bigPrefix{
+    font-size: 40px;
+    font-weight: bold;
+    color: #CAFFEE;
+  }
