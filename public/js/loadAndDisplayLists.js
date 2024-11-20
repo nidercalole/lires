@@ -37,7 +37,7 @@ function loadAndDisplayLists() {
                     ingunitshow = ing[2];
                 }
                 //<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1"> I have a bike</label><br></br>
-                itemsStacked += `<input type="checkbox" id="${i}" name="${ing[0]}" value="${ing[0]}"> <label for="${ing[0]}">${ingamountshow} ${ingunitshow} ${ing[0]}</label><br></br>`;
+                itemsStacked += `<input type="checkbox" id="${list.listid + i}" name="${ing[0]}" value="${ing[0]}"> <label for="${list.listid + i}">${ingamountshow} ${ingunitshow} ${ing[0]}</label><br></br>`;
                 //itemsStacked += `<listContentTxt>${ ingamountshow} ${ingunitshow}</listContentTxt><listContentTxt>${ing[0]}</listContentTxt><br>`;
                 i++
             });
