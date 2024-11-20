@@ -430,7 +430,7 @@ textarea {
 }
 
 .splitRight {
-    /*float:left;*/
+    padding:5px;
     width: 25%;
     margin: 10px;
     border: none;
@@ -804,3 +804,8 @@ recUser {
     color: #CAFFEE;
     margin: 0;
   }
+.dropdown{
+    background-color: red;
+    border-radius: 5px;
+    margin-bottom:5px;
+}

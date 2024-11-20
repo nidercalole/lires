@@ -3,6 +3,9 @@
     padding-right: 0.5%;
     padding-top: 0.5%;
 }
+.body::selection {
+    background-color: #09aaa2;
+}
 
 .frstLine {
     display: flex;
@@ -237,6 +240,10 @@ lblMinis{
     z-index: 1000;
     box-shadow: 0 4px 8px 0 rgba(73, 68, 68, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.filIngPage::selection {
+    background-color: #09aaa2;
+}
 .dontAdd{
     color: #858585; /* Textfarbe auf Grau setzen */
     background-color: #f0f0f0; /* Heller grauer Hintergrund */
@@ -253,6 +260,7 @@ lblMinis{
 }
 .listsNextToings.selected {
     background-color: #473B7B;
+    cursor:pointer;
 }
 .closeButton {
     width: 30px;
@@ -281,7 +289,9 @@ lblMinis{
     display: flex; /* Aktiviert Flexbox im Container */
     justify-content: flex-end; /* Platziert den Inhalt horizontal rechts */
     align-items: flex-end; /* Platziert den Inhalt vertikal unten */
-    position: relative; /
+    position: absolute; /* Absolute Positionierung */
+    bottom: 15px; /* Abstand vom unteren Rand */
+    right: 15px; /* Abstand vom rechten Rand */
 }
 
 .addToListFinal {
@@ -344,65 +354,72 @@ addToListTitle{
     border-radius: 5px;
     z-index: 1000;
 }
-.fixTable1 {
-    grid-area: tabelle;
-    margin-left: 2px;
-    margin-right: 2px;
-    width: 95%;
-    border-radius: 5px;
-    border: solid 2px #473B7B;
-    background-color: rgba(71, 59, 123, 0.5);
-    font-family: Verdana, sans-serif;
-    border-collapse: collapse;
-}
 
+/* Haupttabelle */
 .fixTable1 {
     grid-area: tabelle;
     margin: 0;
-    border-radius: 5px;
-    border: solid 2px #473B7B;
-    background-color: #473B7B;
+    border-radius: 5px; /* Abgerundete Ecken für einen weichen Look */
+    border: solid 2px #6353ac; /* Neuer Border-Farbton für ein cooleres Aussehen */
+    background: #473B7B; /* Farbverlauf für den Hintergrund */
     border-collapse: collapse;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für einen schwebenden Effekt */
-    overflow: hidden; /* Verhindert, dass der Schatten über den Rand hinausgeht */
-    /*transition: all 0.3s ease-in-out; /* Sanfter Übergang bei Hover */
-}
+    overflow:hidden;
+    flex-direction: column;
+    }
 
+
+/* Tabellenzellen */
 .fixTable1 td {
-    border: 2px solid #473B7B; /* Beibehaltung der ursprünglichen Randfarbe */
-    padding: 10px;
-    text-align: center; /* Text zentrieren */
-    /*transition: background-color 0.3s ease; /* Sanfter Hintergrundübergang */
+    border: 2px solid #6353ac; /* Angepasste Randfarbe */
+    padding: 10px; /* Mehr Abstand für ein offeneres Layout */
+    text-align: center;
+    /*transition: background-color 0.3s ease, transform 0.2s ease; /* Sanfter Übergang bei Hover */
 }
 
 .fixTable1 td:hover {
-    background-color: #078881; /* Hover-Effekt für Zellen */
+    background-color: #078881; /* Kräftiger Hover-Effekt für Zellen */
 }
 
+/* Zeilen im Wechsel für ein modernes Design */
 .fixTable1 tr:nth-child(even) {
-    background-color: #6353ac; /* Leicht andere Farbe für gerade Zeilen */
+    background-color: #6353ac; /* Leicht transparenter Hintergrund für gerade Zeilen */
 }
 
+.fixTable1 tr:nth-child(odd) {
+    background-color: #473B7B; /* Transparenz für ungerade Zeilen */
+}
+
+/* Tabellenkopf */
 .fixTable1 th {
-    text-align: center; /* Text zentrieren */
     font-weight: bold;
-    font-size: 22px;
-}
-.fixTable1 tr:first-child th:first-child {
-    border-top-left-radius: 10px; /* Abgerundete obere linke Ecke */
+    font-size: 22px; /* Etwas kleinere Schrift für den Kopfbereich */
+    padding: 15px;
 }
 
-.fixTable1 tr:first-child th:last-child {
-    border-top-right-radius: 10px; /* Abgerundete obere rechte Ecke */
-}
-
+/* Stärkere Abgrenzung der letzten Zeile */
 .fixTable1 tr:last-child td:last-child {
-    border-bottom-right-radius: 10px; /* Abgerundete untere rechte Ecke */
+    border-bottom-right-radius: 10px;
 }
 
 .fixTable1 tr:last-child td:first-child {
-    border-bottom-left-radius: 10px; /* Abgerundete untere linke Ecke */
+    border-bottom-left-radius: 10px;
 }
+
+/* Anpassung der Eingabefelder */
+.ingamountinput {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    /*box-sizing: border-box;*/
+}
+
+.ingamountinput:focus {
+    background-color: rgba(71,59,123,0.75); /* Sanfterer Hintergrund bei Fokus */
+    outline: 2px solid rgba(7, 136, 129, 1); /* Entfernen des Standardrahmens */
+}
+
 .ingamountinput{
     width: 100%;
     background-color: transparent;
@@ -415,11 +432,8 @@ addToListTitle{
     background-color: rgba(71, 59, 123, 0.75);
     outline: 2px solid rgba(7, 136, 129, 1);
 }
-.wegbut{
-    background-color: rgba(71, 59, 123, 0.5);
-    border:#078881 2px solid;
-    border-radius: 5px;
-    color: #caffee;
+.ingredientstablenotableview.focus{
+    background-color: red;
 }
 verfList{
     font-size:20px;
@@ -440,6 +454,7 @@ listeErstellenBut{
     background-color: rgba(99, 83, 172,0.25);
     margin-bottom: 5px;
 }
+
 .inputListNameNew{
     width: 100%;
     background-color: rgba(71, 59, 123, 0.25);
