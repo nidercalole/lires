@@ -10,21 +10,26 @@
 </div>
 <!-- begin Ingridient add page-->
 <div class="filIngPage" id="filIngPage">
-    
-    <table class="fixTable" id="fixTable1"></table>
+    <addToListTitle>Wähle die Menge und die Zutaten aus, die du zu Listen hinzufügen möchtest
+    </addToListTitle>
+    <table class="fixTable1" id="fixTable1"></table>
 
     <div class="NextToings" >
-        <p>zu folgenden Listen hinzufügen:</p>
+        <verfList>Verfügbare Listen:</verfList>
         <div id="defaultListNew" class="listsNextToings selected" onclick="toggleSelectionLists(this)">
-            <p>Neue Liste erstellen</p>
+            <listeErstellenBut>Neue Liste erstellen</listeErstellenBut>
         </div>
         <div><input type="text" placeholder="Liste benennen" class="inputListNameNew" id="inputListNameNew"></div>
         <div id="u96x0kgopj" class="listsNextToings" onclick="toggleSelectionLists(this)">NUR FÜR DESIGN1</div>
         <div id="sdsdsds" class="listsNextToings" onclick="toggleSelectionLists(this)">NUR FÜR DESIGN2</div>
         <div id="sdsdsdss" class="listsNextToings" onclick="toggleSelectionLists(this)">NUR FÜR DESIGN3</div>
     </div>
-    <button onclick="addToAnyListClose()">X</button>
-    <div><button onclick="addToListFinal()">HIER DER PFEIL</button></div>
+    <div class="closeDiv"><button class="closeButton" onclick="addToAnyListClose()">
+        <img width="30px" src="/img/x.png" alt="Listenbearbeitung schließen">
+    </button></div>
+    <div class="addIngToListUR"><button class="addToListFinal" onclick="addToListFinal()">
+        <img width="30px" src="/img/weiter.png" alt="Bestätige die Änderungen">
+    </button></div>
 </div>
 <!-- end Ingridient add page-->
 

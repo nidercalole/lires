@@ -65,10 +65,10 @@
     max-height: 50%;
     object-fit: contain; /* Verhindert Verzerrungen des Bildes */
     border-radius: 10px; /* Optionale abgerundete Ecken für das Bild */
+    margin-bottom: 10px; /* Abstand zwischen Bild und Text */
 }
 
 .mainPageFilBtns span {
-    margin-top: 10px; /* Abstand zwischen Bild und Text */
     font-size: 16px; /* Schriftgröße */
 }
 
@@ -794,8 +794,13 @@ recUser {
     max-height: 200px; 
     opacity: 1; 
   }
+  .noPadding{
+    padding: 0;
+    margin-top:0px;
+  }
   bigPrefix{
     font-size: 40px;
     font-weight: bold;
     color: #CAFFEE;
+    margin: 0;
   }
