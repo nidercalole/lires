@@ -805,7 +805,23 @@ recUser {
     margin: 0;
   }
 .dropdown{
-    background-color: red;
+    background-color: rgba(71, 59, 123, 0.5);
+    border:2px solid #473B7B;
+    padding:5px;
     border-radius: 5px;
     margin-bottom:5px;
+}
+.dropdown:hover{
+    background-color: rgba(71, 59, 123, 0.75);
+}
+listContentTxt{
+    font-size: 16px;
+    color: #CAFFEE;
+    margin: 0;
+}
+listName{
+    font-size: 20px;
+    font-weight: bold;
+    color: #CAFFEE;
+    margin: 0;
 }

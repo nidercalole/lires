@@ -223,7 +223,7 @@ lblMinis{
 .filIngPage {
     width: 70%;
     height: 70%;
-    display:grid;
+    display:none;
     grid-template-areas:
         'title title close'
         'tabelle addToList addToList'
@@ -358,6 +358,8 @@ addToListTitle{
 /* Haupttabelle */
 .fixTable1 {
     grid-area: tabelle;
+    max-height:681px;
+    overflow:auto;
     margin: 0;
     border-radius: 5px; /* Abgerundete Ecken für einen weichen Look */
     border: solid 2px #6353ac; /* Neuer Border-Farbton für ein cooleres Aussehen */
@@ -371,7 +373,6 @@ addToListTitle{
 /* Tabellenzellen */
 .fixTable1 td {
     border: 2px solid #6353ac; /* Angepasste Randfarbe */
-    padding: 10px; /* Mehr Abstand für ein offeneres Layout */
     text-align: center;
     /*transition: background-color 0.3s ease, transform 0.2s ease; /* Sanfter Übergang bei Hover */
 }
@@ -404,6 +405,18 @@ addToListTitle{
 .fixTable1 tr:last-child td:first-child {
     border-bottom-left-radius: 10px;
 }
+.fixTable1 tr:first-child td:first-child {
+    border-top-left-radius: 10px;
+}
+.fixTable1 th:nth-child(1), td:nth-child(1) {
+    width: 70%;
+}
+.fixTable1 th:nth-child(2), td:nth-child(2) {
+    width: 20%;
+}
+.fixTable1 th:nth-child(3), td:nth-child(3) {
+    width: 10%;
+}
 
 /* Anpassung der Eingabefelder */
 .ingamountinput {
@@ -433,7 +446,7 @@ addToListTitle{
     outline: 2px solid rgba(7, 136, 129, 1);
 }
 .ingredientstablenotableview.focus{
-    background-color: red;
+    background-color: yellow;
 }
 verfList{
     font-size:20px;

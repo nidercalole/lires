@@ -25,6 +25,7 @@ function loadAndDisplayLists() {
         let itemsStacked = '';
         lists.forEach(list => {
             itemsStacked = '';
+            var i = 0
             list.list.forEach(ing => {
                 let ingamountshow = '';
                 let ingunitshow = '';
@@ -35,15 +36,16 @@ function loadAndDisplayLists() {
                     ingamountshow = ing[1];
                     ingunitshow = ing[2];
                 }
-
-                itemsStacked += `<p>${ing[0]} ${ ingamountshow} ${ingunitshow}</p>`;
-
+                //<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1"> I have a bike</label><br></br>
+                itemsStacked += `<input type="checkbox" id="${i}" name="${ing[0]}" value="${ing[0]}"> <label for="${ing[0]}">${ingamountshow} ${ingunitshow} ${ing[0]}</label><br></br>`;
+                //itemsStacked += `<listContentTxt>${ ingamountshow} ${ingunitshow}</listContentTxt><listContentTxt>${ing[0]}</listContentTxt><br>`;
+                i++
             });
             let item = document.createElement('div');
             item.classList.add('dropdown');
             item.id = list.listid;
             item.innerHTML = `
-            <button class="dropdown-button" onclick="openDropdown('${list.listid}', this)">${list.listname}</button>
+            <div class="dropdown-button" onclick="openDropdown('${list.listid}', this)"><listName>${list.listname}</listName></div>
             <div class="dropdown-content">${itemsStacked}</div>`;
             listContainer.appendChild(item);
 
