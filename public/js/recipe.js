@@ -1,4 +1,14 @@
 const recData = JSON.parse(document.getElementById('recipeData').textContent);
+
+function formatDateToSchee(datee) {
+  const date = new Date(datee);
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0"); // Monate sind 0-indexiert
+  const year = date.getFullYear();
+
+  const formattedDate = `${day}.${month}.${year}`;
+  return formattedDate;
+}
 function gebId(str){
     return document.getElementById(str);
 }
@@ -64,7 +74,7 @@ function updatelist(){
 
 function loadRecData(ammount){
     gebId('recName').textContent = recData.recname;
-    gebId('userAndDate').textContent = `Von ${recData.user[0]} am ${new Date(recData.ts).toLocaleDateString()}`;
+    gebId('userAndDate').textContent = `Von ${recData.user[0]} am ${formatDateToSchee(recData.ts)}`;
     gebId('duration').textContent = recData.duration;
     difimg = gebId('difficulty');
     switch(recData.expense){

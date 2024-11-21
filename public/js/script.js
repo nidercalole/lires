@@ -120,8 +120,8 @@ function scrollButtons(dir) {
   wrapper = document.getElementById("buttonWrapper");
   const buttonWidth = 270;
   const visibleButtons = 5.5;
-  const maxScroll = 13 - visibleButtons;
-  scrollIndex = Math.min(Math.max(scrollIndex + dir * 2.5, 0), maxScroll);
+  const maxScroll = 14 - visibleButtons;
+  scrollIndex = Math.min(Math.max(scrollIndex + dir * 2.85, 0), maxScroll);
 
   wrapper.style.transform = `translateX(-${scrollIndex * buttonWidth}px)`;
   if (scrollIndex == 0) {
