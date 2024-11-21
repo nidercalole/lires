@@ -36,9 +36,7 @@ function loadAndDisplayLists() {
                     ingamountshow = ing[1];
                     ingunitshow = ing[2];
                 }
-                //<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> <label for="vehicle1"> I have a bike</label><br></br>
-                itemsStacked += `<input type="checkbox" id="${list.listid + i}"> <label for="${list.listid + i}">${ingamountshow} ${ingunitshow} ${ing[0]}</label><br>`;
-                //itemsStacked += `<listContentTxt>${ ingamountshow} ${ingunitshow}</listContentTxt><listContentTxt>${ing[0]}</listContentTxt><br>`;
+                itemsStacked += `<input type="checkbox" class="checkboxLists" id="${list.listid + i}"> <label for="${list.listid + i}">${ingamountshow} ${ingunitshow} ${ing[0]}</label><br>`;
                 i++
             });
             let item = document.createElement('div');

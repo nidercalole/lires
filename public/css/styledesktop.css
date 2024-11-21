@@ -142,6 +142,10 @@ body {
     color: #CAFFEE;
     margin: 0;
 }
+body::selection {
+    background-color: #078881;
+    color: #CAFFEE;
+}
 
 .filbut {
     position: absolute;
@@ -439,6 +443,9 @@ textarea {
     right: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: all 1.5s;
+}
+.splitRight::selection {
+    background-color: #09aaa2;
 }
 
 .splitRight.growing {
@@ -826,3 +833,61 @@ listName{
     margin: 0;
     margin-bottom: 5px;
 }
+/* Grundstil für die Checkbox */
+.checkboxLists {
+    display: none; /* Versteckt die Standard-Checkbox */
+  }
+  
+  /* Styling des Labels (damit die benutzerdefinierte Checkbox sichtbar ist) */
+  .checkboxLists + label {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px; /* Abstand für benutzerdefinierte Checkbox */
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+  }
+  
+  /* Erstellen einer benutzerdefinierten Checkbox */
+  .checkboxLists + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #caffee;
+    background-color: #078881;
+    border-radius: 5px;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  /* Benutzerdefinierte Checkbox im aktiven Zustand */
+  .checkboxLists:checked + label::before {
+    background-color: #6353ac;
+    border-color: #473B7B;
+  }
+  
+  /* Häkchen, wenn die Checkbox aktiviert ist */
+  .checkboxLists:checked + label::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    clip-path: polygon(0% 0%, 100% 100%, 50% 50%);
+    transition: background-color 0.2s;
+  }
+  
+  /* Hover-Effekt für das Label */
+  .checkboxLists + label:hover {
+    color: #09aaa2;
+  }
+  
+  /* Fokus-Effekt für Barrierefreiheit */
+  .checkboxLists:focus + label::before {
+    outline: 2px solid #caffee;
+  }  

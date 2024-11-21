@@ -103,48 +103,6 @@
 .beinhTable tr:first-child th:last-child {
   border-top-right-radius: 5px;
 }
-
-chckbx {
-  font-family: Verdana, sans-serif;
-  margin: 0;
-}
-
-.chckbxalign {
-  display: flex;
-  align-items: center;
-  margin-top: 2px;
-}
-
-.chckbxbx {
-  display: none;
-}
-
-.chckbxbx+label {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin: 0;
-  background-color: #6353ac;
-  border: 2px solid #473B7B;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-}
-
-.chckbxbx:checked+label {
-  background-color: rgba(7, 136, 129, 0.5);
-}
-
-.chckbxbx:checked+label::after {
-  content: "";
-  position: absolute;
-  left: 4px;
-  width: 5px;
-  height: 10px;
-  border: solid #caffee;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
 .chefkoch-link{
   border-radius: 5px;
   border: solid 2px #473B7B;
