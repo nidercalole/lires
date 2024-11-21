@@ -141,13 +141,12 @@ krzInfo{
     border-radius: 50px;
     padding: 4px;
     font-size:small;
+    margin-right:5px;
 }
 
 .krzInfoRow{
-    justify-content: space-between;
     display:flex;
     align-items:center;
-
 }
 
 lblMinis{
@@ -168,30 +167,23 @@ lblMinis{
     display: flex;
     flex-direction: row;
     font-size:small;
-    justify-content: space-between;
 }
 
 .moreWidth {
     width: 85%;
 }
 
-.addRecToList {
-    position: absolute;
-    bottom: 2%;
-    background-color: transparent;
-    border-radius: 100%;
-    border: #CAFFEE 2px;
-    padding: 0;
-    width: 55px;
-    height: 55px;
-    margin: 1%;
-    display: block;
-    z-index: 1001;
+.recActionBtns {
+    background-color: rgba(71, 59, 123, 0.5);
+    border-radius: 5px;
+    border: #473B7B 2px solid;
+    padding: 2px;
 }
 
-.addRecToList:hover {
+.recActionBtns:hover {
     cursor: pointer;
-    box-shadow: 0 0 2px 1px rgba(71, 59, 123, 0.7);
+    background-color: rgba(71, 59, 123, 0.75);
+    border: 2px solid rgba(7, 136, 129, 1);
 }
 
 .rightTitles {

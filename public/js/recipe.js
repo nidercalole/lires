@@ -1,5 +1,20 @@
 const recData = JSON.parse(document.getElementById('recipeData').textContent);
 
+function achtungDieseFunktionHatSchonEineFunktionInRECIPEJSAberhierFehltnochwas() {
+    const saveRecButton = document.getElementById('saveRec');
+    const currentImage = saveRecButton.querySelector('img');
+    
+    if (currentImage) {
+        if (currentImage.src.includes('/img/nadel.png')) {
+            currentImage.src = '/img/nadelfull.png';
+            saveRecButton.style.outline = '2px solid #caffee';
+        } else {
+            currentImage.src = '/img/nadel.png'; // Bild zurücksetzen
+            saveRecButton.style.outline = 'transparent';
+        }
+    }    
+}
+
 function formatDateToSchee(datee) {
   const date = new Date(datee);
   const day = String(date.getDate()).padStart(2, "0");
