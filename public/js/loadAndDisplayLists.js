@@ -36,7 +36,18 @@ function loadAndDisplayLists() {
                     ingamountshow = ing[1];
                     ingunitshow = ing[2];
                 }
-                itemsStacked += `<input type="checkbox" class="checkboxLists" id="${list.listid + i}"> <label for="${list.listid + i}">${ingamountshow} ${ingunitshow} ${ing[0]}</label><br>`;
+                itemsStacked += 
+                `<div class="divRowListElement">
+                    <input type="checkbox" class="checkboxLists" id="${list.listid + i}"> <label for="${list.listid + i}">${ingamountshow} ${ingunitshow} ${ing[0]}</label>
+                    <div class="listsBtnsListElement">
+                        <button class="editLists">
+                            <img src="/img/edit.png" width="15px" height="15px" alt="Bearbeite diese Liste" onclick="irgendwas()">
+                        </button>
+                        <button class="editLists">
+                            <img src="/img/x.png" width="15px" height="15px alt="Lösche diese Liste" onclick="irgendwas2()">
+                        </button>
+                    </div>
+                </div>`;
                 i++
             });
             let item = document.createElement('div');
@@ -46,9 +57,6 @@ function loadAndDisplayLists() {
             <div class="divRow">
                 <div class="dropdown-button" onclick="openDropdown('${list.listid}', this)"><listName>${list.listname}</listName></div>
                 <div class="listsBtns">
-                    <button class="editLists">
-                        <img src="/img/edit.png" width="20px" height="20px" alt="Bearbeite diese Liste" onclick="irgendwas()">
-                    </button>
                     <button class="editLists">
                         <img src="/img/x.png" width="20px" height="20px alt="Lösche diese Liste" onclick="irgendwas2()">
                     </button>
@@ -61,3 +69,10 @@ function loadAndDisplayLists() {
     });
 }
 loadAndDisplayLists();
+
+/*<button class="editLists">
+     <img src="/img/edit.png" width="20px" height="20px" alt="Bearbeite diese Liste" onclick="irgendwas()">
+</button>
+<button class="editLists">
+    <img src="/img/x.png" width="20px" height="20px alt="Lösche diese Liste" onclick="irgendwas2()">
+</button>*/

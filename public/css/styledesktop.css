@@ -794,7 +794,7 @@ recUser {
   }
   
   .dropdown-content p:hover {
-    background-color: #f1f1f1;
+    background-color: #CAFFEE;
   }
   
   .dropdown.open .dropdown-content {
@@ -921,7 +921,14 @@ listname:hover{
     box-shadow: 0 0 2px 1px rgba(71, 59, 123, 0.7);
     background-color: rgba(71, 59, 123, 0.5);
   }
-  .textContainer {
-    flex-grow: 1;  /* Der Textbereich nimmt den verfügbaren Platz ein und lässt die Buttons nach rechts verschieben */
+  .divRowListElement {
+    display: flex;  /* Flexbox auf den Container anwenden */
+    justify-content: space-between;  /* Platziert die Kinder-Elemente an den Enden */
+    width: 100%;  /* Der Container nimmt den gesamten verfügbaren Platz ein */
+  }
+  .listsBtnsListElement{
+    margin-left:5px;
+    display: flex;  /* Stellt sicher, dass die Buttons innerhalb des divs flexibel sind */
+    justify-content: flex-end;  /* Positioniert die Buttons am rechten Rand */
   }
   
