@@ -19,8 +19,8 @@
     <filTitles>In Suchergebnisse inkludieren</filTitles>
     <div class="filDropdownLeft">
       <select class="filDropdown" name="zutFilterMainin" id="zutFilterMainin" multiple>
-        <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Zutaten -->
+        <%- include('partials/ingsInclude.ejs') %>
       </select>
     </div>
 
@@ -28,6 +28,7 @@
       <select class="filDropdown" name="prFilterMainin" id="prFilterMainin" multiple>
         <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Prozesse -->
+        <%- include('partials/process.ejs') %>
       </select>
     </div>
   </div>
@@ -37,8 +38,8 @@
 
     <div class="filDropdownRight">
       <select class="filDropdown" name="zutFilterMainex" id="zutFilterMainex" multiple>
-        <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Zutaten -->
+        <%- include('partials/ingsExclude.ejs') %>
       </select>
     </div>
 
@@ -48,6 +49,7 @@
       <select class="filDropdown" name="prFilterMainex" id="prFilterMainex" multiple>
         <option value="none">Nichts</option>
         <!-- hier Optionen für Dropdown Filter für Prozesse -->
+        <%- include('partials/process.ejs') %>
       </select>
     </div>
 
