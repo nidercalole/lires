@@ -179,14 +179,14 @@ router.get('/testapi', (req, res) => {
 */
 
 router.get('/recList', async (req, res) => {
-    const { recfilter } = req.query;
+    const { recfilter, showText } = req.query;
     const recs = await Rec.find({}).exec();
     const filteredRecs = recs.filter(rec => 
         Array.isArray(rec.kindodish) &&
         rec.kindodish.some(dish => dish.toLowerCase() === recfilter?.toLowerCase())
     );
 
-    res.render('recList', { title: 'Lires', usrnm: req.query.usrnm, recs: filteredRecs });
+    res.render('recList', { title: 'Lires', usrnm: req.query.usrnm, recs: filteredRecs, showText: showText });
 });
 
 

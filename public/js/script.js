@@ -135,7 +135,7 @@ function scrollButtons(dir) {
 }
 
 
-function openRecList(filter){
+function openRecList(filter, showText){
     const user = getUserCredetials();
-    window.location.href = '/recList/?usrnm=' + user[0] + '&usrid=' + user[1] + '&recfilter=' + filter;
+    window.location.href = '/recList/?usrnm=' + user[0] + '&usrid=' + user[1] + '&recfilter=' + filter + '&showText=' + showText;
 }
