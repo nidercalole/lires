@@ -317,8 +317,8 @@ filTitles {
 }
 
 .hoLineSplitRight {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
     border: 1px solid #CAFFEE;
     margin-top: 0;
 }
@@ -798,7 +798,7 @@ recUser {
   }
   
   .dropdown.open .dropdown-content {
-    max-height: 200px; 
+    max-height: 100%; 
     opacity: 1; 
   }
   .noPadding{
@@ -812,6 +812,8 @@ recUser {
     margin: 0;
   }
 .dropdown{
+    margin-left: 12px;
+    margin-right: 12px;
     background-color: rgba(71, 59, 123, 0.5);
     border:2px solid #473B7B;
     padding:5px;
@@ -833,7 +835,10 @@ listName{
     margin: 0;
     margin-bottom: 5px;
 }
-/* Grundstil für die Checkbox */
+
+listname:hover{
+    cursor: pointer;;
+}
 .checkboxLists {
     display: none; /* Versteckt die Standard-Checkbox */
   }
@@ -874,11 +879,13 @@ listName{
   .checkboxLists:checked + label::after {
     content: '';
     position: absolute;
-    left: 6px;
-    top: 6px;
-    width: 8px;
-    height: 8px;
-    clip-path: polygon(0% 0%, 100% 100%, 50% 50%);
+    left: 4px; /* Position des Häkchens horizontal */
+    top: 3px; /* Position des Häkchens vertikal */
+    width: 10px; /* Breite des Häkchens */
+    height: 6px; /* Höhe des Häkchens */
+    border-left: 2px solid #fff; /* Linke Linie des Häkchens */
+    border-bottom: 2px solid #fff; /* Untere Linie des Häkchens */
+    transform: rotate(-45deg); /* Das Häkchen wird durch Drehen geformt */
     transition: background-color 0.2s;
   }
   
@@ -890,4 +897,31 @@ listName{
   /* Fokus-Effekt für Barrierefreiheit */
   .checkboxLists:focus + label::before {
     outline: 2px solid #caffee;
-  }  
+  }
+  .divRow {
+    display: flex;  /* Flexbox auf den Container anwenden */
+    justify-content: space-between;  /* Platziert die Kinder-Elemente an den Enden */
+    width: 100%;  /* Der Container nimmt den gesamten verfügbaren Platz ein */
+  }
+  .listsBtns{
+    display: flex;  /* Stellt sicher, dass die Buttons innerhalb des divs flexibel sind */
+    justify-content: flex-end;  /* Positioniert die Buttons am rechten Rand */
+  }
+  .editLists {
+    padding:0;
+    margin:0;
+    background-color: transparent;
+    border:2px solid transparent;
+    border-radius: 5px;
+    margin-left:5px;
+  }
+  .editLists:hover {
+    cursor: pointer;
+    border:#078881 solid 2px;
+    box-shadow: 0 0 2px 1px rgba(71, 59, 123, 0.7);
+    background-color: rgba(71, 59, 123, 0.5);
+  }
+  .textContainer {
+    flex-grow: 1;  /* Der Textbereich nimmt den verfügbaren Platz ein und lässt die Buttons nach rechts verschieben */
+  }
+  

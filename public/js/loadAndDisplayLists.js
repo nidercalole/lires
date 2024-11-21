@@ -43,7 +43,17 @@ function loadAndDisplayLists() {
             item.classList.add('dropdown');
             item.id = list.listid;
             item.innerHTML = `
-            <div class="dropdown-button" onclick="openDropdown('${list.listid}', this)"><listName>${list.listname}</listName></div>
+            <div class="divRow">
+                <div class="dropdown-button" onclick="openDropdown('${list.listid}', this)"><listName>${list.listname}</listName></div>
+                <div class="listsBtns">
+                    <button class="editLists">
+                        <img src="/img/edit.png" width="20px" height="20px" alt="Bearbeite diese Liste" onclick="irgendwas()">
+                    </button>
+                    <button class="editLists">
+                        <img src="/img/x.png" width="20px" height="20px alt="Lösche diese Liste" onclick="irgendwas2()">
+                    </button>
+                </div>
+            </div>
             <div class="dropdown-content">${itemsStacked}</div>`;
             listContainer.appendChild(item);
 
