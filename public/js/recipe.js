@@ -1,18 +1,35 @@
 const recData = JSON.parse(document.getElementById('recipeData').textContent);
-
-function achtungDieseFunktionHatSchonEineFunktionInRECIPEJSAberhierFehltnochwas() {
+const recmarked = JSON.parse(document.getElementById('recmarked').textContent);
+function getUserCredetials(){
+    const queryString = window.location.search; 
+    const urlParams = new URLSearchParams(queryString);
+    return [urlParams.get('usrnm'), urlParams.get('usrid')]
+}
+async function achtungDieseFunktionHatSchonEineFunktionInRECIPEJSAberhierFehltnochwas() {
     const saveRecButton = document.getElementById('saveRec');
     const currentImage = saveRecButton.querySelector('img');
-    
+    var markedAfter = false;
     if (currentImage) {
         if (currentImage.src.includes('/img/nadel.png')) {
             currentImage.src = '/img/nadelfull.png';
             saveRecButton.style.outline = '2px solid #caffee';
+            markedAfter = true;
         } else {
             currentImage.src = '/img/nadel.png'; // Bild zurücksetzen
             saveRecButton.style.outline = 'transparent';
+            markedAfter = false;
         }
-    }    
+    }
+    await fetch('/saveMarker', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ recid: recData.recid, usrid: getUserCredetials()[1], markedAfter: markedAfter }),
+    }).then(response => response.json())
+    .then(data => {
+        console.log(data);
+    });
 }
 
 function formatDateToSchee(datee) {
@@ -248,6 +265,36 @@ function loadRecData(ammount){
         gebId('krzInf' + (i+1)).textContent = recData.labels[i];
     }
     updatelist();
+    if (recmarked) {
+        const saveRecButton = document.getElementById('saveRec');
+        const currentImage = saveRecButton.querySelector('img');
+        currentImage.src = '/img/nadelfull.png';
+        saveRecButton.style.outline = '2px solid #caffee';
+        
+    }
 }
+async function loadLists(){
+const lists = await fetch('/addToList/getLists', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ user: getUserCredetials()[1] }),
+}).then(response => response.json())
+    .then(data => {
+
+        data.forEach(list => {
+            let item = document.createElement('div');
+            item.classList.add('listsNextToings');
+            item.id = list.listid;
+            item.textContent = list.listname;
+            item.onclick = () => toggleSelectionLists(item);
+            gebId('nextToingsoverall').appendChild(item);
+        });
+        return 
+    });
+    return lists;
+}
+loadLists();
 loadRecData();
 gebId('countfor').addEventListener('input', updatelist);

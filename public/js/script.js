@@ -139,3 +139,20 @@ function openRecList(filter, showText){
     const user = getUserCredetials();
     window.location.href = '/recList/?usrnm=' + user[0] + '&usrid=' + user[1] + '&recfilter=' + filter + '&showText=' + showText;
 }
+function reportAny(){
+    const user = getUserCredetials();
+    window.location.href = '/reportAny/?usrnm=' + user[0] + '&usrid=' + user[1];
+}
+
+function openEditFriend(){
+    const user = getUserCredetials();
+    window.location.href = '/editFriend/?usrnm=' + user[0] + '&usrid=' + user[1];
+}
+function openEditCalender(){
+    const user = getUserCredetials();
+    window.location.href = '/editCalenderAny/?usrnm=' + user[0] + '&usrid=' + user[1];
+}
+function openEditLists(){
+    const user = getUserCredetials();
+    window.location.href = '/editList/?usrnm=' + user[0] + '&usrid=' + user[1];
+}

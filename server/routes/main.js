@@ -6,12 +6,26 @@ const Usrnm = require('../models/usrnm');
 const Rec = require('../models/rec');
 const chefkoch = require('../../custom_modules/chefkoch');
 const usrnm = require('../models/usrnm');
+const userCreds = require('../models/usercreds');
 const { recompileSchema } = require('../models/unverify');
 
 function insertUsr(data) {
     const usrnm = new Usrnm(data);
     usrnm.save()
         .then(() => {
+            const usid = usrnm.usrid;
+            const userCred = new userCreds({
+                user: usid,
+                reccreated: [],
+                recmarked: []
+            });
+            userCred.save()
+                .then(() => {
+                    return true;
+                })
+                .catch((err) => {
+                    console.log('Error:', err);
+                });
             return true;
         })
         .catch((err) => {
@@ -44,7 +58,6 @@ router.get('/', async(req, res) => {
                     recrToSend = newestRecs;
                 }else{
                     recrToSend = [JSON.parse(searchRecs)];
-                    console.log('searchRecs');
                 }
                 if(existingUser){
                     const username = existingUser.usrnm;
@@ -80,7 +93,7 @@ router.post('/register', async (req, res) => {
             if (existingUser) {
                 return res.redirect('/login?message=Benutzername bereits vergeben.&islogin=false');
             } else {
-                await insertUsr({ usrnm: username });
+                await insertUsr({ usrnm: username })
                 return res.redirect('/verify/?usrnm=' + username);
             }
         } catch (err) {
@@ -132,14 +145,25 @@ router.post('/anmld', async (req, res) => {
 router.get('/recipe', async (req, res) => {
     var rec 
     const recid = req.query.recid;
+    const usrid = req.query.usrid;
     try {
         const query = { recid: recid };
         rec = await Rec.findOne(query).exec();
+        var marked = await userCreds.findOne({user: usrid}).exec();
+        if(marked){
+            if(marked.recmarked.includes(recid)){
+                marked = true;
+            }else{
+                marked = false;
+            }
+        }else{
+            marked = false;
+        }
     } catch (err) {
         console.error(err);
         return res.status(500).send('Fehler bei der Verarbeitung der Anfrage.');
     }
-    res.render('recipe', { title: 'Lires', usrnm: req.query.usrnm, rec: JSON.stringify(rec)});
+    res.render('recipe', { title: 'Lires', usrnm: req.query.usrnm, rec: JSON.stringify(rec), marked: marked });
 });
 
 router.get('/profile', async (req, res) => {
@@ -187,6 +211,56 @@ router.get('/recList', async (req, res) => {
     );
 
     res.render('recList', { title: 'Lires', usrnm: req.query.usrnm, recs: filteredRecs, showText: showText });
+});
+
+router.get('/reportAny', (req, res) => {
+    res.render('report', { title: 'Lires', usrnm: req.query.usrnm });
+});
+router.get('/editFriend', (req, res) => {
+    res.render('friendsonly', { title: 'Lires', usrnm: req.query.usrnm });
+});
+router.get('/editCalenderAny', (req, res) => {
+    res.render('calednderedit', { title: 'Lires', usrnm: req.query.usrnm });
+});
+router.get('/editList', (req, res) => {
+    res.render('listsonly', { title: 'Lires', usrnm: req.query.usrnm });
+});
+router.post('/saveMarker', async (req, res) => {
+    const { recid, usrid } = req.body;
+    const query = { usrid: usrid };
+    const query2 = { user: usrid };
+    const existingUser = await usrnm.findOne(query).exec();
+    const existingExtras = await userCreds.findOne(query2).exec();
+    if(existingUser == null) return res.redirect('/login?message=Benutzer nicht gefunden.&islogin=true');
+    else if(existingUser != null && existingExtras == null) {
+        const userCred = new userCreds({
+            user: usrid,
+            recmarked: [recid]
+        });
+        userCred.save()
+            .then(() => {
+                return res.json({ message: 'UserCredetials erstellt.' });
+            })
+            .catch((err) => {
+                console.log('Error:', err);
+                return res.json({ message: false });
+            });
+    }else if(existingUser != null && existingExtras != null){
+            if(existingExtras.recmarked.includes(recid)){
+                existingExtras.recmarked = existingExtras.recmarked.filter(rec => rec !== recid);
+            }else{
+                existingExtras.recmarked.push(recid);
+            }
+            existingExtras.save()
+            .then(() => {
+                return res.json({ message: true });
+            })
+            .catch((err) => {
+                console.log('Error:', err);
+                return res.json({ message: false });
+            });
+
+    }
 });
 
 

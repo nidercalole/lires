@@ -12,6 +12,7 @@ function dontAdd(id){
 }
 
 function toggleSelectionLists(element){
+    //console.log(element);
     element.classList.toggle('selected');
 
 }
