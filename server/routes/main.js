@@ -8,6 +8,7 @@ const chefkoch = require('../../custom_modules/chefkoch');
 const usrnm = require('../models/usrnm');
 const userCreds = require('../models/usercreds');
 const { recompileSchema } = require('../models/unverify');
+const nodemailer = require('nodemailer');
 
 function insertUsr(data) {
     const usrnm = new Usrnm(data);
@@ -261,6 +262,37 @@ router.post('/saveMarker', async (req, res) => {
             });
 
     }
+});
+router.post('/sendReport', async (req, res) => {
+
+    const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
+        auth: {
+          user: "nidercalole@gmail.com",
+          pass: process.env.GOOGLE, 
+        },
+    });
+    const mailOptions = {
+        from: `${req.body.user} <nidercalole@gmail.com>`,
+        to: 'team@lires.de',
+        replyTo: `${req.body.email}`,
+        subject: 'Report',
+        text: 'Report sent from lires.de',
+        html: `<h1>Report sent from lires.de</h1><p>${req.body.message}</p>`
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+            return res.render('report', { title: 'Lires', usrnm: req.body.user, message: false });
+        }
+        console.log('Message sent: %s', info.messageId);
+        const parts  = req.body.user.split(' ');
+        console.log('/?usrnm=' + parts[0] + '&usrid=' + parts[1] + '&message=true');
+        return res.redirect('/?usrnm=' + parts[0] + '&usrid=' + parts[1] + '&message=true');
+    });
+
 });
 
 

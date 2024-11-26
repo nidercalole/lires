@@ -54,11 +54,11 @@ function loadAndDisplayLists() {
             item.classList.add('dropdown');
             item.id = list.listid;
             item.innerHTML = `
-            <div class="divRow">
-                <div class="dropdown-button" onclick="openDropdown('${list.listid}', this)"><listName>${list.listname}</listName></div>
+            <div class="divRow" onclick="openDropdown('${list.listid}', this)">
+                <div class="dropdown-button" ><listName>${list.listname}</listName></div>
                 <div class="listsBtns">
                     <button class="editLists">
-                        <img src="/img/x.png" width="20px" height="20px alt="Lösche diese Liste" onclick="irgendwas2()">
+                        <img src="/img/x.png" width="20px" height="20px alt="Lösche diese Liste" onclick="irgendwas2(event)">
                     </button>
                 </div>
             </div>

@@ -8,6 +8,16 @@ function getUserCredetials(){
     const urlParams = new URLSearchParams(queryString);
     return [urlParams.get('usrnm'), urlParams.get('usrid')]
 }
+function showMessageIf(){
+    const queryString = window.location.search; 
+    const urlParams = new URLSearchParams(queryString);
+    if(urlParams.get('message') != null){
+        document.getElementById('responseAddListOk').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('responseAddListOk').style.display = 'none';
+        }, 1500);
+    }
+}
 
 function listButclick(){
     const listArea = document.getElementById('listArea');
@@ -156,3 +166,7 @@ function openEditLists(){
     const user = getUserCredetials();
     window.location.href = '/editList/?usrnm=' + user[0] + '&usrid=' + user[1];
 }
+function irgendwas2(event) {
+    event.stopPropagation(); 
+}
+showMessageIf();

@@ -785,7 +785,7 @@ recUser {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    transition: max-height 0.6s ease-out, opacity 0.3s ease-out;
   }
   
   .dropdown-content p {
@@ -798,7 +798,7 @@ recUser {
   }
   
   .dropdown.open .dropdown-content {
-    max-height: 100%; 
+    max-height: 1000px; 
     opacity: 1; 
   }
   .noPadding{
@@ -899,6 +899,7 @@ listname:hover{
     outline: 2px solid #caffee;
   }
   .divRow {
+    cursor: pointer;
     display: flex;  /* Flexbox auf den Container anwenden */
     justify-content: space-between;  /* Platziert die Kinder-Elemente an den Enden */
     width: 100%;  /* Der Container nimmt den gesamten verfügbaren Platz ein */
@@ -931,4 +932,16 @@ listname:hover{
     display: flex;  /* Stellt sicher, dass die Buttons innerhalb des divs flexibel sind */
     justify-content: flex-end;  /* Positioniert die Buttons am rechten Rand */
   }
-  
+  .responseAddListOk{
+    display: none;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    width: 30%;
+    height: 5%;
+    transform: translate(-50%, -50%);
+    background-color: #078881;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}

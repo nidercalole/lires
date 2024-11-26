@@ -1,1 +1,21 @@
-<h1>report</h1>
+<form action="/sendReport" method="POST">
+
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Nachricht:</label><br>
+    <textarea id="message" name="message" required></textarea><br><br>
+
+    <label for="user" class="hidden">User:</label>
+    <input type="text" id="user" name="user" class="hidden"><br><br>
+
+    <button type="submit">Absenden</button>
+</form>
+<script>
+    function getUserCredetials(){
+        const queryString = window.location.search; 
+        const urlParams = new URLSearchParams(queryString);
+        return [urlParams.get('usrnm'), urlParams.get('usrid')]
+    }
+    document.getElementById('user').value = getUserCredetials()[0] + ' ' + getUserCredetials()[1];
+</script>
