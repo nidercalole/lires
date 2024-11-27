@@ -15,7 +15,7 @@ function showMessageIf(){
         document.getElementById('responseAddListOk').style.display = 'block';
         setTimeout(() => {
             document.getElementById('responseAddListOk').style.display = 'none';
-        }, 1500);
+        }, 2000);
     }
 }
 

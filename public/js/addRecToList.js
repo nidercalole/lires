@@ -21,14 +21,14 @@ function showResponseOk(){
     document.getElementById('responseAddListOk').style.display = 'block';
     setTimeout(() => {
         document.getElementById('responseAddListOk').style.display = 'none';
-    }, 1500);
+    }, 2000);
 }
 
 function showResponseNotOk(){
     document.getElementById('responseAddListNotOk').style.display = 'block';
     setTimeout(() => {
         document.getElementById('responseAddListNotOk').style.display = 'none';
-    }, 1500);
+    }, 2000);
 }
 
 function getUserCreds(){
