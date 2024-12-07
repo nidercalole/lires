@@ -17,8 +17,9 @@ router.get('/', (req, res) => {
 router.post('/add', async(req, res) => {
     try {
         const { recname, user, expense, duration, description, countfor, kindodish, labels, ingredients, directions } = req.body;
+        const recid = Math.random().toString(36).substring(2);
         const usrid = (await Usrnm.findOne({usrnm: user}).exec()).usrid;
-        const rec = new Rec({ recname, user: [user, usrid], expense, duration, description, countfor, kindodish, labels, ingredients, directions });
+        const rec = new Rec({ recname, user: [user, usrid], expense, duration, description, countfor, kindodish, labels, ingredients, directions, recid });
         rec.save();
         res.json({ success: true });
     } catch (error) {
