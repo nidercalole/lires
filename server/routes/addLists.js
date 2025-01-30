@@ -97,5 +97,22 @@ router.post('/getLists', async(req, res) => {
         res.json({ success: false });
     }
 });
+router.post('/listItemCheckUpdate', async(req, res) => {
+    try {
+        const { listid, ingIndex, checked } = req.body;
+        const query = { listid: listid };
+        const existingList = await List.findOne(query).exec();
+        if (existingList) {
+            existingList.list[ingIndex].push(checked);
+            existingList.markModified("list");
+            await existingList.save();
+        } 
+        
+        res.json({ success: true });
+    } catch (error) {
+        console.error(error);
+        res.json({ success: false });
+    }
+});
 
 module.exports = router;

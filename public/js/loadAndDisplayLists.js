@@ -27,6 +27,10 @@ function loadAndDisplayLists() {
             itemsStacked = '';
             var i = 0
             list.list.forEach(ing => {
+                var checked = '';
+                if(ing[3] === true){
+                    checked = 'checked';
+                }
                 let ingamountshow = '';
                 let ingunitshow = '';
                 if(ing[1] === 0){
@@ -38,7 +42,7 @@ function loadAndDisplayLists() {
                 }
                 itemsStacked += 
                 `<div class="divRowListElement">
-                    <input type="checkbox" class="checkboxLists" id="${list.listid + i}"> <label for="${list.listid + i}">${ingamountshow} ${ingunitshow} ${ing[0]}</label>
+                    <input type="checkbox" class="checkboxLists" id="${list.listid + i}" ${checked}> <label for="${list.listid + i}">${ingamountshow} ${ingunitshow} ${ing[0]}</label>
                     <div class="listsBtnsListElement">
                         <button class="editLists">
                             <img src="/img/edit.png" width="15px" height="15px" alt="Bearbeite diese Liste" onclick="irgendwas()">
