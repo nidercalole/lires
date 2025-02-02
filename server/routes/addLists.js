@@ -103,7 +103,7 @@ router.post('/listItemCheckUpdate', async(req, res) => {
         const query = { listid: listid };
         const existingList = await List.findOne(query).exec();
         if (existingList) {
-            existingList.list[ingIndex].push(checked);
+            existingList.list[ingIndex][3] = checked;
             existingList.markModified("list");
             await existingList.save();
         } 
