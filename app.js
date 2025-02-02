@@ -31,6 +31,7 @@ app.use('/', require('./server/routes/main'))
 app.use('/addrec', require('./server/routes/addrecrouter'))
 app.use('/mobile', require('./server/routes/mobile'))
 app.use('/addToList', require('./server/routes/addLists'))
+app.use('/api', require('./server/routes/api'))
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)

@@ -56,7 +56,7 @@ async function addToListFinal(){
         }else{
             ingunit = ingunit[0];
         }
-        ingList.push([ing.textContent, ingamount, ingunit]);
+        ingList.push([ing.textContent, ingamount, ingunit, false]);
 
     });
     let selectedLists = document.querySelectorAll('.selected');
