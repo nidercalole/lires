@@ -23,7 +23,7 @@ router.get('/lists', async(req, res) => {
             listCounter++;
             items = [];
             list.list.forEach(ing => {
-                itemCounter++;
+                
                 var checked;
                 if(ing[3] === true){
                     checked = true;
@@ -31,7 +31,8 @@ router.get('/lists', async(req, res) => {
                     checked = false;
                 }
 
-                items.push({id: itemCounter, name: ing[0], quantity: (ing[1] + " " + ing[2]), checked: checked});
+                items.push({id: (list.listid + itemCounter), name: ing[0], quantity: (ing[1] + " " + ing[2]), checked: checked});
+                itemCounter++;
             });
             formattedList = {
                 id: listCounter,
