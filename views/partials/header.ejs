@@ -1,18 +1,68 @@
-<header class="header">
-  <img
-    class="logo"
-    src="/img/oni.png"
-    alt="Lires-Zwiebel"
-    id="logo"
-    onclick="redirectHome()"
-  />
 
-  <div class="suchleiste">
-    <input id="suchleiste"  class="transparent">
-    <img class="pfeil" src="/img/weiter.png" alt="weiter" height="30px" onclick="getCurrentSearchConfig()">
+<link rel="stylesheet" href="/css/v2/styleheader.css">
+<header class="header">
+<div class="kumpeln horizont spaceBetween">
+  <div class="kumpeln horizon leftSide">
+    <img
+      class="logo"
+      src="/img/oni.png"
+      alt="Lires-Zwiebel"
+      id="logo"
+      onclick="redirectHome()"
+    />
+
+    <div class="hidden">
+      <input id="suchleiste"  class="transparent">
+      <img class="pfeil" src="/img/weiter.png" alt="weiter" height="30px" onclick="getCurrentSearchConfig()">
+    </div>
   </div>
 
-  <button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
+  <div class="kumpeln horizont">
+    <img class="navigation" src="/img/admin.png" alt="admin tool" id="admintools"onclick="openAdminTools()">
+    <img class="navigation" src="/img/cal.png" alt="Kochkalender"/>
+    <img class="navigation" src="/img/lists.png" alt="Listen"/>
+    <%= usrnm %>
+    <img
+          class="navigation"
+          src="/img/bsppb.png"
+          alt="beispielhaftes Profilbild"
+          onclick="redirectProfil()"
+        />
+  </div>
+</div>
+
+  <!--<nav>
+    <ul class="navLinks">
+      <li class="oR">
+        <img class="navpic" src="/img/admin.png" alt="admin tool" id="admintools"onclick="openAdminTools()"/>
+      </li>
+      <li class="tooltipCal oR">
+        <a href="link"></a>
+        <img class="navpic" src="/img/cal.png" alt="Kochkalender" />
+        <span class="tooltipCaltext">Kochen planen</span>
+      </li>
+      <li class="tooltipList oR" id="ListBut" onclick="listButclick()">
+        <img class="navpic" src="/img/lists.png" alt="Listen" />
+        <span class="tooltipListtext"
+          >Zutaten in Einkaufslisten zusammenfassen</span>
+      </li>
+  
+      <li class="oR">
+        <usrnm id="usrnm"><%= usrnm %></usrnm>
+      </li>
+      <li class="tooltipProfil">
+        <img
+          class="navpic2"
+          src="/img/bsppb.png"
+          alt="beispielhaftes Profilbild"
+          onclick="redirectProfil()"
+        />
+        <span class="tooltipProfiltext">Zum Profil</span>
+      </li>
+    </ul>
+  </nav>-->
+
+  <!--<button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
     <img src="/img/fil.png" alt="Filter" width="55px" />
   </button>
 
@@ -45,39 +95,7 @@
       </li>
     </ul>
   </div>
-  <button class="recSave" onclick="collectAndSend()">Speichern</button>
-
-  <nav>
-    <ul class="navLinks">
-      <li class="oR">
-        <img class="navpic" src="/img/admin.png" alt="admin tool" id="admintools"onclick="openAdminTools()"/>
-      </li>
-      <li class="tooltipCal oR">
-        <a href="link"></a>
-        <img class="navpic" src="/img/cal.png" alt="Kochkalender" />
-        <span class="tooltipCaltext">Kochen planen</span>
-      </li>
-      <li class="tooltipList oR" id="ListBut" onclick="listButclick()">
-        <img class="navpic" src="/img/lists.png" alt="Listen" />
-        <span class="tooltipListtext"
-          >Zutaten in Einkaufslisten zusammenfassen</span>
-      </li>
-  
-      <li class="oR">
-        <!--<accCreaText id="accCreation">DD.MM.YYYY</accCreaText>-->
-        <usrnm id="usrnm"><%= usrnm %></usrnm>
-      </li>
-      <li class="tooltipProfil">
-        <img
-          class="navpic2"
-          src="/img/bsppb.png"
-          alt="beispielhaftes Profilbild"
-          onclick="redirectProfil()"
-        />
-        <span class="tooltipProfiltext">Zum Profil</span>
-      </li>
-    </ul>
-  </nav>
+  <button class="recSave" onclick="collectAndSend()">Speichern</button>-->
 
 </header>
 <script src="/js/admintool.js"></script>

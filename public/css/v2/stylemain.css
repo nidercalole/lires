@@ -1,0 +1,75 @@
+:root {
+    font-family: "Be Vietnam Pro", serif;
+    font-weight: 400;
+    font-style: normal;
+    /*farben*/
+    --contrastMain: #be29ec;
+    --contrastBuddy: #800080;
+    --light: #caffee;
+    --special: #0AC2B9;
+    /*design*/
+    --borderRadius: 5px;
+    --borderBuddy: 2px solid var(--contrastBuddy);
+    --borderLight: 2px solid var(--light);
+    --borderFocus: 2px solid var(--special);
+    /*font*/
+    --bigTitle:2em;
+    --fatFont: 575;
+}
+
+body {
+    background-color: var(--contrastMain);
+    color: var(--light);
+    margin: 0;
+}
+
+.stapeln {
+    display: flex;
+    flex-direction: column;
+}
+
+.kumpeln {
+    display: flex;
+    justify-content: center;
+}
+
+.nomargin {
+    margin: 0;
+}
+
+.zentrieren {
+    align-items: center;
+}
+
+.hidden{
+    display: none;
+}
+.noBg{
+    background-color: none;
+}
+.horizont{
+    display: flex;
+    align-items: center;
+}
+.spaceBetween{
+    justify-content: space-evenly;
+    width: 100%;
+}
+.marginZehn{
+    margin: 10px;
+}
+input[type="text"], input[type="password"]{
+    color: var(--light);
+    background-color: var(--contrastMain);
+    border-radius: var(--borderRadius);
+    padding: 5px 10px;
+    margin: 10px;
+    border: var(--borderBuddy);
+}
+input[type="text"]:focus, input[type="password"]:focus{
+    outline: none;
+    border: var(--borderFocus);
+}
+input[type="text"]::placeholder, input[type="password"]::placeholder{
+    color: var(--contrastBuddy);
+}
