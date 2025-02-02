@@ -90,11 +90,11 @@ router.post('/register', async (req, res) => {
 
     if (permstring === permstringPermision) {
         try {
-            const existingUser = await Usrnm.findOne({ usrnm: username }).exec();
+            const existingUser = await Usrnm.findOne({ usrnm: username  }).exec();
             if (existingUser) {
                 return res.redirect('/login?message=Benutzername bereits vergeben.&islogin=false');
             } else {
-                await insertUsr({ usrnm: username })
+                await insertUsr({ usrnm: username, usrid: (Math.random().toString(36).substring(2)) })
                 return res.redirect('/verify/?usrnm=' + username);
             }
         } catch (err) {

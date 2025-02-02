@@ -11,6 +11,7 @@ const recSchema = new mongoose.Schema({
     },
     recid: {
         type: String,
+        unique: true,
         default: Math.random().toString(36).substring(2)
     },
     user:{

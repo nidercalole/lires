@@ -1,9 +1,5 @@
 const mongoose = require('mongoose')
 
-function getRandomId() {
-    return Math.random().toString(36).substring(2);
-}
-
 const usrnmSchema = new mongoose.Schema({
     usrnm: {
         type: String,
@@ -11,7 +7,7 @@ const usrnmSchema = new mongoose.Schema({
     },
     usrid: {
         type: String,
-        default: getRandomId()
+        unique: true,
     },
     ts: {
         type: Date,

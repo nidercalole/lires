@@ -19,6 +19,7 @@ const listSchema = new mongoose.Schema({
     },
     listid: {
         type: String,
+        unique: true,
         default: Math.random().toString(36).substring(2, 12)
     },
     list: {
