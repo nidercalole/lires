@@ -7,7 +7,6 @@ const Rec = require('../models/rec');
 const chefkoch = require('../../custom_modules/chefkoch');
 const usrnm = require('../models/usrnm');
 const userCreds = require('../models/usercreds');
-const { recompileSchema } = require('../models/unverify');
 const nodemailer = require('nodemailer');
 
 function insertUsr(data) {

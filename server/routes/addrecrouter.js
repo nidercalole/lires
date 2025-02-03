@@ -58,6 +58,59 @@ router.post('/addrecingredients', async(req, res) => {
       }
 });
 
+router.post('/filterRequest', async(req, res) => { 
+    try {
+        var { zubDauer, zutEx, zutIn, prEx, prIn } = req.body;
+        // Zum Beispiel, wenn zutEx in der Anfrage übertragen wird
+        zutEx = zutEx.map(zut => zut.trim().toLowerCase()); // Alle Zutaten in zutEx in Kleinbuchstaben umwandeln
+        zutIn = zutIn.map(zut => zut.trim().toLowerCase()); // Alle Zutaten in zutIn in Kleinbuchstaben umwandeln
+        //console.log(zubDauer, zutEx, zutIn, prEx, prIn);
+        let maxDauer = 0;
+        maxDauer = parseInt(zubDauer);
+        if(maxDauer === 14){
+          maxDauer = 100000000;
+        }
+        console.log('maxDauer: ' + maxDauer);
+        if(zutEx.length === 0 && zutIn.length === 0 && prEx.length === 0 && prIn.length === 0 && maxDauer === 0){
+            return res.json({ success: true, message: 'noFilterRequest' });
+        }else if((zutEx.length != 0 && zutIn.length != 0)||(prEx.length != 0 && prIn.length != 0) ){
+            return res.json({ success: true, message: 'randomFilterRequest' });
+        }else if(zutEx.length >= 6 || zutIn.length >= 6 || prEx.length >= 6 || prIn.length >= 6 || (zutEx.length + zutIn.length + prEx.length + prIn.length) >= 7){
+            return res.json({ success: true, message: 'tooManyFilterRequest' });
+        }else if(zutEx.length === 0 && zutIn.length === 0 && prEx.length === 0 && prIn.length === 0 && maxDauer != 0){
+          await Rec.find({ duration: { $lte: maxDauer } }).exec().then((recs) => {
+            res.json({ success: true, recs: recs, message: 'validFilterRequest' });
+          });
+          return;
+          //HIER LÄUFT WAS GANZ FALSCH
+        }else {
+          if(zutIn.length === 0){
+            console.log('zutEx: ' + JSON.stringify(zutEx));
+            await Rec.find({
+              ingredients: { $elemMatch: { ing: { $nin: zutEx } } },
+              duration: { $lte: maxDauer }
+            }).exec().then((recs) => {
+              res.json({ success: true, recs: recs, message: 'validFilterRequest' });
+            });
+            //hier noch nach process filtern
+          }else {
+            console.log('zutIn: ' + JSON.stringify(zutIn)); 
+            await Rec.find({
+              ingredients: { $elemMatch: { ing: {  $in: zutIn } } },
+              duration: { $lte: maxDauer }
+            }).exec().then((recs) => {
+              res.json({ success: true, recs: recs, message: 'validFilterRequest' });
+            });
+            //hier noch nach process filtern
+          }
+
+
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false });
+    }
+});
 
 router.use('/verify' , require('./verifyrecsings'));
 
