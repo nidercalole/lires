@@ -73,3 +73,12 @@ input[type="text"]:focus, input[type="password"]:focus{
 input[type="text"]::placeholder, input[type="password"]::placeholder{
     color: var(--contrastBuddy);
 }
+
+::selection {
+    background-color: var(--contrastBuddy);
+    color: var(--contrastMain);
+}
+
+.paddingZehn{
+    padding: 10px;
+}
