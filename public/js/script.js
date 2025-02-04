@@ -60,7 +60,7 @@ function maxDauerInput(){
     if(maxDauer.value == 14){
         maxMin.textContent = 'Es wird nicht nach Zeit gefiltert';
     }else{
-        maxMin.textContent = `Dir werden Rezepte mit einer Zubereitungsdauer von maximal ${maxDauer.value} Minuten angezeigt`;
+        maxMin.textContent = `Dir werden Rezepte mit einer Zubereitungsdauer von maximal ${maxDauer.value} Minuten angezeigt.`;
     }
 };
 

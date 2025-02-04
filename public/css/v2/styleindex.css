@@ -7,6 +7,7 @@
     background-color: var(--contrastBuddy);
     border-radius: var(--borderRadius);
     padding: 5px 10px;
+    width: 50%;
 }
 input[type="range"] {
     -webkit-appearance: none;
@@ -61,6 +62,7 @@ select {
   option:hover {
     background-color: var(--light); 
     color: var(--contrastMain);
+    border-radius: var(--borderRadius);
   }
   
   select[multiple] {
@@ -77,5 +79,16 @@ select {
   }
   select[multiple]::-webkit-scrollbar {
     display: none;  
+  }
+  .sliderText{
+    font-family: "Be Vietnam Pro", serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--light);
+  }
+  option:checked {
+    background-color: var(--contrastMain);
+    color: var(--light);
+    border-radius: var(--borderRadius);
   }
   
