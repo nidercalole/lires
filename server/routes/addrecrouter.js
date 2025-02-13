@@ -61,9 +61,9 @@ router.post('/addrecingredients', async(req, res) => {
 router.post('/filterRequest', async(req, res) => { 
     try {
         var { zubDauer, zutEx, zutIn, prEx, prIn } = req.body;
-        // Zum Beispiel, wenn zutEx in der Anfrage übertragen wird
-        zutEx = zutEx.map(zut => zut.trim().toLowerCase()); // Alle Zutaten in zutEx in Kleinbuchstaben umwandeln
-        zutIn = zutIn.map(zut => zut.trim().toLowerCase()); // Alle Zutaten in zutIn in Kleinbuchstaben umwandeln
+
+        zutEx = zutEx.map(zut => zut.trim().toLowerCase()); 
+        zutIn = zutIn.map(zut => zut.trim().toLowerCase()); 
         //console.log(zubDauer, zutEx, zutIn, prEx, prIn);
         let maxDauer = 0;
         maxDauer = parseInt(zubDauer);
