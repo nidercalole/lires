@@ -7,6 +7,8 @@ const Unverify = require('../models/unverify');
 const Verify = require('../models/verify');
 const idUnverifys = '6667388c04a3ed7a5539fb55';
 const idVerifys = '66673a48df82133513053caa';
+const natural = require('natural');
+const stemmer = natural.PorterStemmer;
 
 router.use(bodyParser.json());
 
@@ -57,7 +59,45 @@ router.post('/addrecingredients', async(req, res) => {
         res.status(500).json({ success: false });
       }
 });
-
+function text(rec){
+  let recText = '';
+  if(rec.directions[0].steppwise){
+    recText = rec.directions.map(item => item.step).join(' ');
+  }else{
+    recText = rec.directions[1];
+  }
+  return recText;
+}
+function filterRecsbyProcess(recs, prEx, prIn){
+  let returnRecs = [];
+  let recDirectionText = '';
+  if(prEx.length === 0 && prIn.length === 0){
+    return recs;
+  }else if(prEx.length === 0){
+    prIn.forEach(pr => {
+      var stemmedProcess = stemmer.stem(pr);
+      //console.log('stemmedProcess: ' + stemmedProcess);
+      recs.forEach(rec => {
+        recDirectionText = text(rec);
+        if(recDirectionText.split(/\W+/).some(word => stemmer.stem(word) === stemmedProcess)){
+          returnRecs.push(rec);
+        }
+      });
+    });
+    return returnRecs;
+  }else{
+    prEx.forEach(pr =>{
+      var stemmedProcess = stemmer.stem(pr);
+      recs.forEach(rec => {
+        recDirectionText = text(rec);
+        if(!(recDirectionText.split(/\W+/).some(word => stemmer.stem(word) === stemmedProcess))){
+          returnRecs.push(rec);
+        }
+      });
+    })
+    return returnRecs;
+  }
+}
 router.post('/filterRequest', async(req, res) => { 
     try {
         var { zubDauer, zutEx, zutIn, prEx, prIn } = req.body;
@@ -70,8 +110,8 @@ router.post('/filterRequest', async(req, res) => {
         if(maxDauer === 14){
           maxDauer = 100000000;
         }
-        console.log('maxDauer: ' + maxDauer);
-        if(zutEx.length === 0 && zutIn.length === 0 && prEx.length === 0 && prIn.length === 0 && maxDauer === 0){
+        
+        if(zutEx.length === 0 && zutIn.length === 0 && prEx.length === 0 && prIn.length === 0 && maxDauer === 100000000){
             return res.json({ success: true, message: 'noFilterRequest' });
         }else if((zutEx.length != 0 && zutIn.length != 0)||(prEx.length != 0 && prIn.length != 0) ){
             return res.json({ success: true, message: 'randomFilterRequest' });
@@ -82,29 +122,34 @@ router.post('/filterRequest', async(req, res) => {
             res.json({ success: true, recs: recs, message: 'validFilterRequest' });
           });
           return;
-          //HIER LÄUFT WAS GANZ FALSCH
         }else {
           if(zutIn.length === 0){
             console.log('zutEx: ' + JSON.stringify(zutEx));
             await Rec.find({
-              ingredients: { $elemMatch: { ing: { $nin: zutEx } } },
+              ingredients: {
+                $not: {
+                  $elemMatch: {
+                    ing: { 
+                      $in: zutEx.map(zut => new RegExp(zut, 'i')) // Prüft, ob eines der zutEx in 'ing' vorhanden ist
+                    }
+                  }
+                }
+              },
               duration: { $lte: maxDauer }
             }).exec().then((recs) => {
-              res.json({ success: true, recs: recs, message: 'validFilterRequest' });
+              const recsFinal = filterRecsbyProcess(recs, prEx, prIn);
+              res.json({ success: true, recs: recsFinal, message: 'validFilterRequest' });
             });
-            //hier noch nach process filtern
           }else {
             console.log('zutIn: ' + JSON.stringify(zutIn)); 
             await Rec.find({
-              ingredients: { $elemMatch: { ing: {  $in: zutIn } } },
+              ingredients: { $elemMatch: { ing: {  $in: zutIn.map(zut => new RegExp(zut, 'i')) } } },
               duration: { $lte: maxDauer }
             }).exec().then((recs) => {
-              res.json({ success: true, recs: recs, message: 'validFilterRequest' });
+              const recsFinal = filterRecsbyProcess(recs, prEx, prIn);
+              res.json({ success: true, recs: recsFinal, message: 'validFilterRequest' });
             });
-            //hier noch nach process filtern
           }
-
-
         }
     } catch (error) {
         console.error(error);
