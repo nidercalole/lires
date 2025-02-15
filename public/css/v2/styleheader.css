@@ -2,14 +2,14 @@ header {
     background-color: var(--contrastBuddy);
     color: var(--light);
     margin: 0;
-    padding: 1.5vh;
+    padding: 1vh;
     display: flex;
     justify-content: space-between;
     align-items: center; 
 }
 
 .logo{
-    height: 15vh;
+    height: 10vh;
     margin-right: 10px;
 }
 
@@ -19,6 +19,6 @@ header {
 
 
 .navigation {
-    height: 10vh;
-    margin: 10px;
+    height: 8vh;
+    margin: 10px 0 10px 40px;
 }

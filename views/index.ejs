@@ -22,49 +22,50 @@
       <span class="sliderText" id="maxMin"></span>
     </div>
 
-    
-    <div class="stapeln zentrieren marginZehn">
-      In Suchergebnisse inkludieren
-      <div class="kumpeln">
-        <div class="zentrieren stapeln marginZehn">
-          <select class="filDropdown" name="zutFilterMainin" id="zutFilterMainin" multiple>
-            <!-- hier Optionen für Dropdown Filter für Zutaten -->
-            <%- include('partials/ingsInclude.ejs') %>
-          </select>
-        </div>
+    <div class="kumpeln">
+      <div class="stapeln zentrieren marginZehn ">
+        In Suchergebnisse inkludieren
+        <div class="kumpeln">
+          <div class="zentrieren stapeln marginZehn">
+            <select class="filDropdown" name="zutFilterMainin" id="zutFilterMainin" multiple>
+              <!-- hier Optionen für Dropdown Filter für Zutaten -->
+              <%- include('partials/ingsInclude.ejs') %>
+            </select>
+          </div>
 
-        <div class="zentrieren stapeln marginZehn">
-          <select class="filDropdown" name="prFilterMainin" id="prFilterMainin" multiple>
-            <option value="none">Nichts</option>
-            <!-- hier Optionen für Dropdown Filter für Prozesse -->
-            <%- include('partials/process.ejs') %>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div id="exclude" class="stapeln zentrieren marginZehn">
-      Aus Suchergebnissen ausschließen
-
-      <div class="kumpeln">
-        <div class="zentrieren stapeln marginZehn">
-          <select class="filDropdown" name="zutFilterMainex" id="zutFilterMainex" multiple>
-            <!-- hier Optionen für Dropdown Filter für Zutaten -->
-            <%- include('partials/ingsExclude.ejs') %>
-          </select>
-        </div>
-
-        <div class="stapeln zentrieren marginZehn">
-          <select class="filDropdown" name="prFilterMainex" id="prFilterMainex" multiple>
-            <option value="none">Nichts</option>
-            <!-- hier Optionen für Dropdown Filter für Prozesse -->
-            <%- include('partials/process.ejs') %>
-          </select>
+          <div class="zentrieren stapeln marginZehn">
+            <select class="filDropdown" name="prFilterMainin" id="prFilterMainin" multiple>
+              <option value="none">Nichts</option>
+              <!-- hier Optionen für Dropdown Filter für Prozesse -->
+              <%- include('partials/process.ejs') %>
+            </select>
+          </div>
         </div>
       </div>
+      <div class="verticalLine"></div>
+      <div id="exclude" class="stapeln zentrieren marginZehn">
+        Aus Suchergebnissen ausschließen
 
+        <div class="kumpeln">
+          <div class="zentrieren stapeln marginZehn">
+            <select class="filDropdown" name="zutFilterMainex" id="zutFilterMainex" multiple>
+              <!-- hier Optionen für Dropdown Filter für Zutaten -->
+              <%- include('partials/ingsExclude.ejs') %>
+            </select>
+          </div>
+
+          <div class="stapeln zentrieren marginZehn">
+            <select class="filDropdown" name="prFilterMainex" id="prFilterMainex" multiple>
+              <option value="none">Nichts</option>
+              <!-- hier Optionen für Dropdown Filter für Prozesse -->
+              <%- include('partials/process.ejs') %>
+            </select>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="stapeln zentrieren">
+    <div class="stapeln marginZehn zentrieren">
       <button id="filButSearchFinal" onclick="collectDataForSearch()">Irgendein Senden button</button>
     </div>
   </div>
@@ -76,55 +77,51 @@
     <div class="split splitLeft splitLeftGrid">
 
       <!--Neueste Rezepte-->
-      <div class="newRecs">
-        <table class="recsindex">
-          <tr>
-            <th colspan="4">
-              <tableHeader>Neueste Rezepte</tableHeader>
-            </th>
-          </tr>
-          <% recs.forEach(rec => { %>
-            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+      <div class="kumpeln spaceEvenly">
+          <table>
+            <tr>
               <td>
-                <recname><%= rec.recname %></recname> <br>
-                <recUser><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></recUser>
-              </td>
-              <td class="duration">
-                <span>Dauer: <%= rec.duration %> min</span>
-              </td>
-              <td class="expense">
-                <!-- prettier-ignore -->
-                  <img src="/img/1star.png" alt="Stern" onload="updateStartAtRec(<%= rec.expense %>, this)" />
+                <tableTitle>Neueste Rezepte</tableTitle>
               </td>
             </tr>
-          <% }); %>
-        </table>
-      </div>
+            <% recs.forEach(rec => { %>
+              <tr onclick="openRec('<%= rec.recid %>')">
+                <td>
+                  <recname><%= rec.recname %></recname><br>
+                  <recUser><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></recUser>
+                </td>
+                <td>
+                  <span>Dauer: <%= rec.duration %> min</span>
+                </td>
+                <td>
+                    <img class="stars" src="/img/1star.png" alt="Stern" onload="updateStartAtRec(<%= rec.expense %>, this)" />
+                </td>
+              </tr>
+            <% }); %>
+          </table>
       
-      <!--Beliebteste Rezepte-->
-      <div class="favRecs">
-        <table class="recsindex">
-          <tr>
-            <th colspan="4">
-              <tableHeader>Beliebteste Rezepte</tableHeader>
-            </th>
-          </tr>
-          <% recs.forEach(rec => { %>
-            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+        <!--Beliebteste Rezepte-->
+          <table>
+            <tr>
               <td>
-                <recname><%= rec.recname %></recname> <br>
-                <recUser><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></recUser>
-              </td>
-              <td class="duration">
-                <span>Dauer: <%= rec.duration %> min</span>
-              </td>
-              <td class="expense">
-                
-                <img src="/img/1star.png" alt="Stern" onload="updateStartAtRec(<%= rec.expense %>, this) " />
+                <tableTitle>Beliebteste Rezepte</tableTitle>
               </td>
             </tr>
-          <% }); %>
-        </table>
+            <% recs.forEach(rec => { %>
+              <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+                <td>
+                  <recname><%= rec.recname %></recname> <br>
+                  <recUser><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></recUser>
+                </td>
+                <td class="duration">
+                  <span>Dauer: <%= rec.duration %> min</span>
+                </td>
+                <td class="expense">
+                  <img class="stars" src="/img/1star.png" alt="Stern" onload="updateStartAtRec(<%= rec.expense %>, this) " />
+                </td>
+              </tr>
+            <% }); %>
+          </table>
       </div>
 
       <!--Knöpfe Filter ANFANG-->

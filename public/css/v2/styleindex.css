@@ -46,7 +46,7 @@ select {
 
   select:focus {
     border-color: var(--special); ;  
-    outline: none; 
+    outline: none;
   }
   
   select::-ms-expand {
@@ -91,4 +91,40 @@ select {
     color: var(--light);
     border-radius: var(--borderRadius);
   }
-  
+  .verticalLine{
+    border-left: 2px solid var(--contrastMain);
+    margin-right:2%;
+  }
+  button{
+    background-color: var(--special);
+    border-radius: var(--borderRadius);
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    color: var(--light);
+    font-family: "Be Vietnam Pro", serif;
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .stars{
+    width: 25%;
+  }
+  recUser{
+    font-style: italic;
+    font-size: small;;
+  }
+  tr, td, th{
+    padding: 10px 5px;
+  }
+  tableTitle{
+    font-weight:bold;
+  }
+ table{
+  border-collapse:collapse;
+ }
+ .spaceEvenly{
+  display: flex;
+  justify-content: space-evenly !important;
+ }
