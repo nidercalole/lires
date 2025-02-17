@@ -293,6 +293,9 @@ router.post('/sendReport', async (req, res) => {
     });
 
 });
+router.get('/calTests', (req, res) => {
+    res.render('calMain', { title: 'Lires', usrnm: req.query.usrnm });
+});
 
 
 module.exports = router;

@@ -1,0 +1,194 @@
+<style>
+    .mainCal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+    .left {
+        width: 18%;
+        height: 100%;
+
+    }
+    .calMin {
+        width: 64%;
+        height: 100%;
+
+    }
+    .right {
+        width: 18%;
+        height: 100%;
+
+    }
+    .tabs {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tab {
+            background-color: #ddd;
+            margin: 5px 0;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+        }
+
+        .tab.active .tab-content {
+            display: block;
+        }
+        .left-lower {
+            height: 100%;
+            overflow-y: auto;
+        }
+        .tabb {
+            background-color: #ddd;
+            margin: 5px 0;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        table {
+            width: 94%; /* Nimmt die gesamte Breite ein */
+            height: 80%; /* Nimmt die gesamte Höhe ein */
+            border-collapse: collapse; /* Entfernt Abstände zwischen den Zellen */
+            margin: 0 auto; /* Zentriert die Tabelle */
+        }
+
+        td {
+            width: 14.28%; /* Jede Zelle nimmt 1/7 der Breite ein */
+            height: 100px; /* Höhe der Zellen */
+            padding: 0;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid black; /* Dünner schwarzer Rand um jede Zelle */
+        }
+
+        .cell {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* Hier kannst du optional noch eine "aktive" Zelle hervorheben */
+        .active {
+            background-color: #f0f0f0;
+        }
+        .overCal {
+            height: 8%;
+            width: 100%;
+
+        }
+        .underCal {
+            height: 12%;
+            width: 100%;
+
+        }
+</style>
+<div class="mainCal">
+    <div class="left">
+        <div class="left-lower">
+            <ul class="tabs">
+                <li class="tab">
+                    Schon Geplant
+                    <div class="tab-content">Beispiel Rezept</div>
+                </li>
+                <li class="tab">
+                    Angepinnt
+                    <div class="tab-content">Beispiel Rezept</div>
+                </li>
+                <li class="tabb" style="display: block;">
+                    Alle
+                    <div class="tab-content" style="display: block;">Bsp. für alle</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="calMin">
+        <div class="overCal">
+            <button>
+                Wochenansicht
+            </button>
+        </div>
+        <table>
+            <!-- Tabelle mit 7 Zeilen und 4 Spalten -->
+            <tr>
+                <td><div class="cell">1</div></td>
+                <td><div class="cell">2</div></td>
+                <td><div class="cell">3</div></td>
+                <td><div class="cell">4</div></td>
+                <td><div class="cell">5</div></td>
+                <td><div class="cell">6</div></td>
+                <td><div class="cell">7</div></td>
+            </tr>
+            <tr>
+                <td><div class="cell">8</div></td>
+                <td><div class="cell">9</div></td>
+                <td><div class="cell">10</div></td>
+                <td><div class="cell">11</div></td>
+                <td><div class="cell">12</div></td>
+                <td><div class="cell">13</div></td>
+                <td><div class="cell">14</div></td>
+            </tr>
+            <tr>
+                <td><div class="cell">15</div></td>
+                <td><div class="cell">16</div></td>
+                <td><div class="cell">17</div></td>
+                <td><div class="cell">18</div></td>
+                <td><div class="cell">19</div></td>
+                <td><div class="cell">20</div></td>
+                <td><div class="cell">21</div></td>
+            </tr>
+            <tr>
+                <td><div class="cell">22</div></td>
+                <td><div class="cell">23</div></td>
+                <td><div class="cell">24</div></td>
+                <td><div class="cell">25</div></td>
+                <td><div class="cell">26</div></td>
+                <td><div class="cell">27</div></td>
+                <td><div class="cell">28</div></td>
+            </tr>
+        </table>
+        <div class="underCal">
+            <button>
+                Neue Liste mit kompletem monat
+            </button>
+            <button>
+                neue Liste mit individuell
+            </button>
+            <button>
+                individuell zu liste hinzufügen
+            </button>
+        </div>
+    </div>
+    <div class="right">
+        <div id="listArea" class="split splitRight ">
+            <div>
+              <h2 class="splRiTxt">Deine Listen</h2>
+              <hr class="hoLineSplitRight">
+              <div class="dropdownsLists" id="dropdownsLists">
+      
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+<script>
+    const tabs = document.querySelectorAll('.tab');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tab.classList.toggle('active');
+        });
+    });
+</script>
