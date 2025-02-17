@@ -115,17 +115,144 @@ select {
     font-style: italic;
     font-size: small;;
   }
-  tr, td, th{
-    padding: 10px 5px;
-  }
   tableTitle{
     font-weight:bold;
   }
  table{
   table-layout: auto;
   border-collapse:collapse;
+  
+  border-radius: var(--borderRadius);
  }
  .spaceEvenly{
   display: flex;
-  justify-content: space-evenly !important;
+  justify-content: space-evenly;
  }
+.res{
+  position:absolute;
+  width: 75vw;
+  padding: 0 10px;
+  margin: 10px;
+}
+.li{
+  position:absolute;
+  width: 20vw;
+  height: 84vh;
+  padding: 10px;	
+  background-color: var(--contrastBuddy);
+  right:0;
+  margin: 10px;
+  border-radius: var(--borderRadius);
+}
+.li hr{
+  border-top: var(--borderLight);
+
+}
+.noMargin{
+  margin: 0;	
+}
+
+td {
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+recname {
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: var(--contrastBuddy);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--contrastMain);
+}
+
+th:first-child, td:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+th:last-child, td:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+tr:hover {
+  transform: scale(1.05);
+  background-color: var(--special);
+  cursor: pointer;
+  
+}
+tr:first-child:hover{
+  background-color: var(--contrastMain);
+}
+
+.schnellFilterImg{
+  width: 5vw;
+}
+.schnellFilter{
+  background-color: transparent;
+  border: none;
+  width: 10vw;
+}
+
+
+/* Container für die Buttons, der verschoben wird */
+#buttonWrapper {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+  
+  transition: transform 0.3s ease; /* Sanfter Übergang für die Verschiebung */
+}
+
+/* Die Pfeile bleiben statisch */
+.arrow {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+/* Styling für die Buttons */
+.schnellFilter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Vergrößerung beim Hover */
+  cursor: pointer;
+}
+
+.schnellFilter:hover {
+  transform: scale(1.1); 
+}
+
+/* Styling für die Bilder der Buttons */
+.schnellFilterImg {
+  max-width: 50px;
+  max-height: 50px;
+  margin-bottom: 5px;
+}
+
+/* Styling für den Text */
+.schnellFilter span {
+  font-size: 14px;
+  text-align: center;
+  word-wrap: break-word;
+}

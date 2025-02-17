@@ -128,8 +128,8 @@ async function getAndShowAllRecs(){
 let scrollIndex = 0;
 function scrollButtons(dir) {
   wrapper = document.getElementById("buttonWrapper");
-  const buttonWidth = 270;
-  const visibleButtons = 5.5;
+  const buttonWidth = 167;
+  const visibleButtons = 7.5;
   const maxScroll = 14 - visibleButtons;
   scrollIndex = Math.min(Math.max(scrollIndex + dir * 2.85, 0), maxScroll);
 
