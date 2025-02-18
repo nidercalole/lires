@@ -192,20 +192,18 @@ tr:first-child:hover{
 .schnellFilterImg{
   width: 5vw;
 }
-.schnellFilter{
-  background-color: transparent;
-  border: none;
-  width: 10vw;
-}
 
 
 /* Container für die Buttons, der verschoben wird */
 #buttonWrapper {
   display: flex;
-  gap: 10px;
   padding: 10px 0;
-  
+  width: 100%;
   transition: transform 0.3s ease; /* Sanfter Übergang für die Verschiebung */
+  overflow:hidden;
+  margin-top: 4vh;
+  
+  justify-content: flex-start;
 }
 
 /* Die Pfeile bleiben statisch */
@@ -229,18 +227,18 @@ tr:first-child:hover{
 
 /* Styling für die Buttons */
 .schnellFilter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  background-color: transparent;
+  border-left: 2px solid var(--contrastMain);
+  min-width: 10vw;
+  border-radius: 0;
+  background-color: var(--contrastBuddy);
   transition: transform 0.3s ease; /* Vergrößerung beim Hover */
   cursor: pointer;
 }
 
 .schnellFilter:hover {
   transform: scale(1.1); 
+  background-color: var(--special);
 }
 
 /* Styling für die Bilder der Buttons */
@@ -255,4 +253,16 @@ tr:first-child:hover{
   font-size: 14px;
   text-align: center;
   word-wrap: break-word;
+}
+.actionImg{
+  width: 6vw;
+}
+.action{
+  background-color:var(--contrastMain);
+  bottom: 0;
+}
+.action:hover{
+  background-color:var(--special);
+  cursor:pointer;
+  transition: transform 0.3s ease; /* Vergrößerung beim Hover */
 }

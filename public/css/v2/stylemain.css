@@ -51,8 +51,12 @@ body {
     display: flex;
     align-items: center;
 }
-.spaceBetween{
+.spaceEvenly{
     justify-content: space-evenly;
+    width: 100%;
+}
+.spaceBetween{
+    justify-content: space-between;
     width: 100%;
 }
 .marginZehn{
