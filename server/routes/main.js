@@ -17,7 +17,7 @@ function insertUsr(data) {
             const userCred = new userCreds({
                 user: usid,
                 reccreated: [],
-                recmarked: []
+                recmarked: [[], []]
             });
             userCred.save()
                 .then(() => {
@@ -219,9 +219,6 @@ router.get('/reportAny', (req, res) => {
 router.get('/editFriend', (req, res) => {
     res.render('friendsonly', { title: 'Lires', usrnm: req.query.usrnm });
 });
-router.get('/editCalenderAny', (req, res) => {
-    res.render('calednderedit', { title: 'Lires', usrnm: req.query.usrnm });
-});
 router.get('/editList', (req, res) => {
     res.render('listsonly', { title: 'Lires', usrnm: req.query.usrnm });
 });
@@ -235,7 +232,7 @@ router.post('/saveMarker', async (req, res) => {
     else if(existingUser != null && existingExtras == null) {
         const userCred = new userCreds({
             user: usrid,
-            recmarked: [recid]
+            recmarked: [[recid],[]]
         });
         userCred.save()
             .then(() => {
@@ -247,9 +244,9 @@ router.post('/saveMarker', async (req, res) => {
             });
     }else if(existingUser != null && existingExtras != null){
             if(existingExtras.recmarked.includes(recid)){
-                existingExtras.recmarked = existingExtras.recmarked.filter(rec => rec !== recid);
+                existingExtras.recmarked[0] = existingExtras.recmarked[0].filter(rec => rec !== recid);
             }else{
-                existingExtras.recmarked.push(recid);
+                existingExtras.recmarked[0].push(recid);
             }
             existingExtras.save()
             .then(() => {
@@ -293,8 +290,20 @@ router.post('/sendReport', async (req, res) => {
     });
 
 });
-router.get('/calTests', (req, res) => {
-    res.render('calMain', { title: 'Lires', usrnm: req.query.usrnm });
+router.get('/calendar', async (req, res) => {
+    const usrid = req.query.usrid;
+    query2 = { user: usrid };
+    const existingUser = await userCreds.findOne(query2).exec();
+    if(existingUser == null) return res.redirect('/login?message=Benutzer nicht gefunden.&islogin=true');
+
+    var markedRecs = existingUser.recmarked[0];
+    const recs = await Rec.find({}).exec();
+    var usedRecs = existingUser.recmarked[1];
+    if(markedRecs.length === 0){ markedRecs = [new Rec({recname: 'Keine Rezepte markiert', user: [usrid, '']})]}
+    if(usedRecs.length === 0){ usedRecs = [new Rec({recname: 'Noch keine Rezepte Verwendet', user: [usrid, '']})]}
+
+
+    res.render('calMain', { title: 'Lires', usrnm: req.query.usrnm, markedRecs: markedRecs, recs: recs, usedRecs: usedRecs });
 });
 
 

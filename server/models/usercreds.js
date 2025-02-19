@@ -11,7 +11,7 @@ const userCreds = new mongoose.Schema({
     },
     recmarked: {
         type: Array,
-        default: []
+        default: [[], []]
     },
 })
 

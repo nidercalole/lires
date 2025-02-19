@@ -100,16 +100,23 @@
         <div class="left-lower">
             <ul class="tabs">
                 <li class="tab">
-                    Schon Geplant
-                    <div class="tab-content">Beispiel Rezept</div>
+                    Schon Verwendet
+                        <% usedRecs.forEach(recipe => { %>
+                            <div class="tab-content"><%= recipe.recname %></div>
+                        <% }) %>
                 </li>
                 <li class="tab">
                     Angepinnt
-                    <div class="tab-content">Beispiel Rezept</div>
+                        <% markedRecs.forEach(recipe => { %>
+                            <div class="tab-content"><%= recipe.recname %></div>
+                        <% }) %>
+                   
                 </li>
-                <li class="tabb" style="display: block;">
+                <li class="tabb active" style="display: block;">
                     Alle
-                    <div class="tab-content" style="display: block;">Bsp. für alle</div>
+                        <% recs.forEach(recipe => { %>
+                            <div class="tab-content" style="display: block;"><%= recipe.recname %></div>
+                        <% }) %>
                 </li>
             </ul>
         </div>
@@ -175,12 +182,7 @@
         <%- include('partials/list.ejs') %>
     </div>
 </div>
-<script>
-    const tabs = document.querySelectorAll('.tab');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tab.classList.toggle('active');
-        });
-    });
+<script src="/js/calendarMain.js">
 </script>
+<script src="/js/loadAndDisplayLists.js"></script>
+<script src="/js/loadAndDisplayRecsCalendar.js"></script>

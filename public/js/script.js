@@ -75,6 +75,10 @@ function openRec(recid){
     console.log(user);
     window.location.href = '/recipe/?usrnm=' + user[0] + '&usrid=' + user[1] + '&recid=' + recid;
 }
+function openCalView(){
+    const user = getUserCredetials();
+    window.location.href = '/calendar/?usrnm=' + user[0] + '&usrid=' + user[1];
+}
 
 const options = document.querySelectorAll('option');
 
