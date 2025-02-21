@@ -107,6 +107,9 @@ router.post('/listItemCheckUpdate', async(req, res) => {
             existingList.markModified("list");
             await existingList.save();
         } 
+        else {
+            return res.json({ success: false });
+        }
         
         res.json({ success: true });
     } catch (error) {

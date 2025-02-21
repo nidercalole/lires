@@ -151,7 +151,7 @@ router.get('/recipe', async (req, res) => {
         rec = await Rec.findOne(query).exec();
         var marked = await userCreds.findOne({user: usrid}).exec();
         if(marked){
-            if(marked.recmarked.includes(recid)){
+            if(marked.recmarked[0].includes(recid)){
                 marked = true;
             }else{
                 marked = false;
@@ -248,6 +248,7 @@ router.post('/saveMarker', async (req, res) => {
             }else{
                 existingExtras.recmarked[0].push(recid);
             }
+            existingExtras.markModified('recmarked');
             existingExtras.save()
             .then(() => {
                 return res.json({ message: true });
@@ -296,9 +297,9 @@ router.get('/calendar', async (req, res) => {
     const existingUser = await userCreds.findOne(query2).exec();
     if(existingUser == null) return res.redirect('/login?message=Benutzer nicht gefunden.&islogin=true');
 
-    var markedRecs = existingUser.recmarked[0];
     const recs = await Rec.find({}).exec();
-    var usedRecs = existingUser.recmarked[1];
+    var markedRecs = recs.filter(rec => existingUser.recmarked[0].includes(rec.recid));
+    var usedRecs = recs.filter(rec => existingUser.recmarked[1].includes(rec.recid));
     if(markedRecs.length === 0){ markedRecs = [new Rec({recname: 'Keine Rezepte markiert', user: [usrid, '']})]}
     if(usedRecs.length === 0){ usedRecs = [new Rec({recname: 'Noch keine Rezepte Verwendet', user: [usrid, '']})]}
 

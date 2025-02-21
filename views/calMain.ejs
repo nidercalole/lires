@@ -3,7 +3,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 80vh;
+        height: 87.7vh;
     }
     .left {
         width: 18%;
@@ -39,6 +39,7 @@
             margin-top: 10px;
             background-color: #e9e9e9;
             border-radius: 5px;
+            color: black;
         }
 
         .tab.active .tab-content {
@@ -73,10 +74,11 @@
 
         .cell {
             width: 100%;
-            height: 100%;
+            height: 70%;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             box-sizing: border-box;
         }
 
@@ -87,12 +89,71 @@
         .overCal {
             height: 8%;
             width: 100%;
-
+            width: 94%;
+            margin: 0 auto;
         }
         .underCal {
             height: 12%;
             width: 100%;
 
+        }
+        .head{
+            height: 20%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-sizing: border-box;
+
+        }
+        .dropped {
+            width: 100%;
+            height: 20%;
+            display: flex;
+            flex-direction: row;
+        }
+        .draggable {
+            cursor: pointer;
+        }
+        .draggable[draggable="false"] {
+        cursor: not-allowed;
+        }
+        .dragging {
+            opacity: 0.5;
+        }
+        .tooltip-container {
+        position: relative;
+        cursor: pointer;
+        }
+
+        .tooltip-container .tooltip {
+            visibility: hidden;
+            background-color: black;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0s 0.3s;
+        }
+
+        .tooltip-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+        .underCalMain {
+            display: flex;
+            flex-direction: row;
+            height: 12%;
+            width: 94%;
+            margin: 0 auto;
         }
 </style>
 <div class="mainCal">
@@ -101,21 +162,33 @@
             <ul class="tabs">
                 <li class="tab">
                     Schon Verwendet
-                        <% usedRecs.forEach(recipe => { %>
-                            <div class="tab-content"><%= recipe.recname %></div>
-                        <% }) %>
+                    <% usedRecs.forEach(recipe => { %>
+                        <% var drag = recipe.recname === 'Noch keine Rezepte Verwendet' ? 'false' : 'true'; %>
+                        <div class="tab-content draggable" 
+                            draggable="<%= recipe.recname === 'Noch keine Rezepte Verwendet' ? 'false' : 'true'; %>" 
+                            id="<%= recipe.recid %>"
+                            >
+                            <span class="tooltip-container"><%= recipe.recname %></span>
+                        </div>
+                    <% }) %>
                 </li>
                 <li class="tab">
                     Angepinnt
-                        <% markedRecs.forEach(recipe => { %>
-                            <div class="tab-content"><%= recipe.recname %></div>
-                        <% }) %>
-                   
+                    <% markedRecs.forEach(recipe => { %>
+                        <% var drag = recipe.recname === 'Keine Rezepte markiert' ? 'false' : 'true'; %>
+                            <div class="tab-content draggable" 
+                            draggable= <%= drag %> 
+                            id="<%= recipe.recid%>">
+                            <span class="tooltip-container"><%= recipe.recname %></span> 
+                            </div>
+                    <% }) %>
                 </li>
                 <li class="tabb active" style="display: block;">
                     Alle
                         <% recs.forEach(recipe => { %>
-                            <div class="tab-content" style="display: block;"><%= recipe.recname %></div>
+                            <div class="tab-content draggable" style="display: block;" draggable="true" id="<%= recipe.recid%>">
+                                <span class="tooltip-container"><%= recipe.recname %></span>
+                            </div>
                         <% }) %>
                 </li>
             </ul>
@@ -128,61 +201,37 @@
             </button>
         </div>
         <table>
-            <!-- Tabelle mit 7 Zeilen und 4 Spalten -->
-            <tr>
-                <td><div class="cell">1</div></td>
-                <td><div class="cell">2</div></td>
-                <td><div class="cell">3</div></td>
-                <td><div class="cell">4</div></td>
-                <td><div class="cell">5</div></td>
-                <td><div class="cell">6</div></td>
-                <td><div class="cell">7</div></td>
-            </tr>
-            <tr>
-                <td><div class="cell">8</div></td>
-                <td><div class="cell">9</div></td>
-                <td><div class="cell">10</div></td>
-                <td><div class="cell">11</div></td>
-                <td><div class="cell">12</div></td>
-                <td><div class="cell">13</div></td>
-                <td><div class="cell">14</div></td>
-            </tr>
-            <tr>
-                <td><div class="cell">15</div></td>
-                <td><div class="cell">16</div></td>
-                <td><div class="cell">17</div></td>
-                <td><div class="cell">18</div></td>
-                <td><div class="cell">19</div></td>
-                <td><div class="cell">20</div></td>
-                <td><div class="cell">21</div></td>
-            </tr>
-            <tr>
-                <td><div class="cell">22</div></td>
-                <td><div class="cell">23</div></td>
-                <td><div class="cell">24</div></td>
-                <td><div class="cell">25</div></td>
-                <td><div class="cell">26</div></td>
-                <td><div class="cell">27</div></td>
-                <td><div class="cell">28</div></td>
-            </tr>
+            <div class="week"><%- include('partials/calendarTabPart.ejs') %></div>
+            <div class="week"><%- include('partials/calendarTabPart.ejs') %></div>
+            <div class="week"><%- include('partials/calendarTabPart.ejs') %></div>
+            <div class="week"><%- include('partials/calendarTabPart.ejs') %></div>
         </table>
-        <div class="underCal">
-            <button>
-                Neue Liste mit kompletem monat
-            </button>
-            <button>
-                neue Liste mit individuell
-            </button>
-            <button>
-                individuell zu liste hinzufügen
-            </button>
+        <div class="underCalMain">
+            <div class="underCal">
+                <button>
+                    Neue Liste mit kompletem monat
+                </button>
+                <button>
+                    neue Liste mit individuell
+                </button>
+                <button>
+                    individuell zu liste hinzufügen
+                </button>
+            </div>
+            <div class="underCalRight">
+                <button>
+                    Speichern
+                </button>
+            </div>
         </div>
+
     </div>
     <div class="right">
         <%- include('partials/list.ejs') %>
     </div>
 </div>
-<script src="/js/calendarMain.js">
-</script>
+
+<script src="/js/calendarMain.js"></script>
 <script src="/js/loadAndDisplayLists.js"></script>
 <script src="/js/loadAndDisplayRecsCalendar.js"></script>
+<script src="/js/listCheckboxes.js"></script>
