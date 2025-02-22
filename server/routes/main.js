@@ -291,21 +291,5 @@ router.post('/sendReport', async (req, res) => {
     });
 
 });
-router.get('/calendar', async (req, res) => {
-    const usrid = req.query.usrid;
-    query2 = { user: usrid };
-    const existingUser = await userCreds.findOne(query2).exec();
-    if(existingUser == null) return res.redirect('/login?message=Benutzer nicht gefunden.&islogin=true');
-
-    const recs = await Rec.find({}).exec();
-    var markedRecs = recs.filter(rec => existingUser.recmarked[0].includes(rec.recid));
-    var usedRecs = recs.filter(rec => existingUser.recmarked[1].includes(rec.recid));
-    if(markedRecs.length === 0){ markedRecs = [new Rec({recname: 'Keine Rezepte markiert', user: [usrid, '']})]}
-    if(usedRecs.length === 0){ usedRecs = [new Rec({recname: 'Noch keine Rezepte Verwendet', user: [usrid, '']})]}
-
-
-    res.render('calMain', { title: 'Lires', usrnm: req.query.usrnm, markedRecs: markedRecs, recs: recs, usedRecs: usedRecs });
-});
-
 
 module.exports = router;
