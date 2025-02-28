@@ -138,14 +138,13 @@ select {
   margin: 10px;
 }
 .li{
-  position:absolute;
   width: 20vw;
-  height: 84vh;
+  height: 86vh;
   padding: 10px;	
   background-color: var(--contrastBuddy);
   right:0;
-  
-  border-radius: var(--borderRadius);
+  border-top-right-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
 }
 .li hr{
   border-top: var(--borderLight);

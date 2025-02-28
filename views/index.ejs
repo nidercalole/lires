@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="/css/v2/styleindex.css">
+<link rel="stylesheet" href="/css/v2/styleindex_v2.css">
 
-<div class="">
+<div class="width100vw kumpeln noPadding">
   <%- include('partials/list.ejs') %>
 
   <div class = "stapeln zentrieren hidden">
@@ -100,11 +100,11 @@
         </div>
 
         <!--Knöpfe Filter ANFANG-->
-        <div class="kumpeln">
-          <div class="kumpeln" id="buttonWrapper">
-              <button id= "arr-left" class="arrow left" style="display: none;" onclick="scrollButtons(-1)">
+        <div class="kumpeln horizont spaceBetween">
+              <button id= "arr-left" class="arrow left"  onclick="scrollButtons(-1)">
                 <img src="/img/zurueck.png" alt="Pfeil nach links" width="30px">
               </button>
+          <div class="kumpeln" id="buttonWrapper">
             <button class="schnellFilter zentrieren stapeln" onclick="openRecList('warm', 'Hier sind alle warmen Gerichte')">
               <img class="schnellFilterImg" src="/img/warm.png" alt="Filtere nach warmen Rezepten">
               <span>Warm</span>
@@ -174,16 +174,14 @@
               <img class="schnellFilterImg" src="/img/nudel.png" alt="Filtere nach Nudelgerichten">
               <span>Nudelgerichte</span>
             </button>
-
+          </div>
             <button id="arr-right" class="arrow right" onclick="scrollButtons(1)">
               <img src="/img/weiter.png" alt="Pfeil nach rechts" width="30px">
             </button>
-          </div>
-          
         </div>
 
         <!--Knöpfe Aktionen ANFANG-->
-        <div class="kumpeln spaceBetween">
+        <div class="kumpeln spaceBetween actionBalken">
           <button id="addRec" onclick="buttaddrec()" class="action" >
             <img class="actionImg stapeln zentrieren" src="/img/plus.png" alt="Füge Rezepte hinzu">
             <span>Rezept hinzufügen</span>

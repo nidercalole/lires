@@ -22,6 +22,9 @@ body {
     color: var(--light);
     margin: 0;
 }
+.noPadding{
+    padding: 0;
+}
 
 .stapeln {
     display: flex;
@@ -85,4 +88,7 @@ input[type="text"]::placeholder, input[type="password"]::placeholder{
 
 .paddingZehn{
     padding: 10px;
+}
+.width100vw{
+    width: 100vw;
 }
