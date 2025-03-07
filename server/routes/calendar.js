@@ -4,10 +4,8 @@ const bodyParser = require('body-parser');
 const useragent = require('express-useragent');
 const Usrnm = require('../models/usrnm');
 const Rec = require('../models/rec');
-const chefkoch = require('../../custom_modules/chefkoch');
 const usrnm = require('../models/usrnm');
 const userCreds = require('../models/usercreds');
-const nodemailer = require('nodemailer');
 
 
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -26,9 +24,9 @@ router.get('/', async (req, res) => {
 
     if(markedRecs.length === 0){ markedRecs = [new Rec({recname: 'Keine Rezepte markiert', user: [usrid, '']})]}
     if(usedRecs.length === 0){ usedRecs = [new Rec({recname: 'Noch keine Rezepte Verwendet', user: [usrid, '']})]}
+    //console.log(existingUser.recmarked[1]);
 
-
-    res.render('calMain', { title: 'Lires', usrnm: req.query.usrnm, markedRecs: markedRecs, recs: recs, usedRecs: usedRecs });
+    res.render('calMain', { title: 'Lires', usrnm: req.query.usrnm, markedRecs: markedRecs, recs: recs, usedRecs: usedRecs, recsMarkedOne: existingUser.recmarked[1] });
 });
 
 router.post('/addRecToCollection', async (req, res) => {

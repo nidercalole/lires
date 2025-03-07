@@ -162,6 +162,8 @@
             <ul class="tabs">
                 <li class="tab">
                     Schon Verwendet
+                    <div class="hidden" id="usedRecs"><%= JSON.stringify(usedRecs) %></div>
+                    <div class="hidden" id="recsMarkedOne"> <%= JSON.stringify(recsMarkedOne) %></div>
                     <% usedRecs.forEach(recipe => { %>
                         <% var drag = recipe.recname === 'Noch keine Rezepte Verwendet' ? 'false' : 'true'; %>
                         <div class="tab-content draggable" 
@@ -218,11 +220,7 @@
                     individuell zu liste hinzufügen
                 </button>
             </div>
-            <div class="underCalRight">
-                <button>
-                    Speichern
-                </button>
-            </div>
+
         </div>
 
     </div>

@@ -3,10 +3,10 @@
     font-weight: 400;
     font-style: normal;
     /*farben*/
-    --contrastMain: #be29ec;
-    --contrastBuddy: #800080;
+    --contrastMain: #782F8E;
+    --contrastBuddy: #4C0B4C; 
     --light: #caffee;
-    --special: #0AC2B9;
+    --special: #4F7FB0;
     /*design*/
     --borderRadius: 5px;
     --borderBuddy: 2px solid var(--contrastBuddy);

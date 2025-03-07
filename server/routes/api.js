@@ -19,8 +19,10 @@ router.get('/lists', async(req, res) => {
         var listCounter = 0;
         var itemCounter = 0;
         var finalJSON =[];
+
         lists.forEach(list => {
             listCounter++;
+            itemCounter = 0;
             items = [];
             list.list.forEach(ing => {
                 
