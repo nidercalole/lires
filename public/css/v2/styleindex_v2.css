@@ -131,7 +131,7 @@ select {
 .res{
   display: flex;
   flex-direction: column;
-  background-color: aqua;
+  /*background-color: aqua;*/
   height: 86vh;
   width: 75vw;
   padding: 0 10px;
