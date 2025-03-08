@@ -29,6 +29,7 @@ Der Start von Kombi aus Rezepten und Einfaufsliste <br> Mal gucken obs was wird 
 
 ## 🤝 Mitwirken
 - **Hauptentwickler** derlole, Nica
+- **UNTERSTÜTZER** Pauli Paul
 
 
 
