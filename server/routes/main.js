@@ -52,7 +52,7 @@ router.get('/', async(req, res) => {
                 var recs = [];
                 recs = await Rec.find({}).exec();
                 recs.sort((a, b) => new Date(b.ts) - new Date(a.ts));
-                var newestRecs = recs.slice(0, 5);
+                var newestRecs = recs.slice(0, 7);
                 let recrToSend = [];
                 if(searchRecs === undefined || searchRecs === null || searchRecs === 'undefined' || searchRecs === 'null'){
                     recrToSend = newestRecs;
