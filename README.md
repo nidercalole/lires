@@ -1,6 +1,40 @@
 # lires
 Der Start von Kombi aus Rezepten und Einfaufsliste <br> Mal gucken obs was wird :D
 ****
+
+
+
+# 🍽️ RezeptPlaner - Deine smarte Kochhilfe
+
+## 🚀 Beschreibung
+**RezeptPlaner** ist eine moderne Web-App, mit der du mühelos Rezepte entdecken, filtern und verwalten kannst. Erstelle personalisierte Einkaufslisten und plane deinen Kochplan mit einer einfachen Kalenderfunktion. Perfekt für alle, die ihre Mahlzeiten effizient organisieren möchten! 🍲🛒📅
+
+
+## ✨ Features
+✅ **Rezepte filtern** nach Zutaten, Kategorien oder Ernährungsweisen  
+✅ **Dynamische Einkaufslisten** basierend auf ausgewählten Rezepten  
+✅ **Kochplan erstellen** mit intuitivem Kalender-Feature  
+✅ **Modernes & responsives Design** für Desktop und Mobil  
+✅ **Benutzerfreundliche Oberfläche** mit einfacher Navigation  
+✅ **In-App Report** Schreibe und direkt über das eingebettete Feature in der Web-App einen Vorschlag, Bewertung o.ä.
+
+
+## 🌍 Website
+🔗 **Besuche die App hier:** [Lires](https://lires.de)  
+
+## 🔧 Technologien
+- **Frontend:** EJS, HTML
+- **Backend:** Node.js, Express
+- **Datenbank:** MongoDB 
+
+## 🤝 Mitwirken
+- **Hauptentwickler** derlole, Nica
+
+
+
+
+
+# Ein Beispiel:
 ### Rezept für Kaffee:
 #### Zutaten:
 * Kaffeebohnen oder Pulver
