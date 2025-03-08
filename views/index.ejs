@@ -75,22 +75,93 @@
           </div>
   </div>
   <div class="res stapeln">
-    <div class="resOben kumpeln">
+    <div class="resOben kumpeln spaceBetween">
       <div class="recipes">
-      recipeeees
+        <div class="kumpeln spaceBetween">
+            <table class="noMargin">
+              <tr>
+                <td>
+                  <tableTitle>Neueste Rezepte</tableTitle>
+                </td>
+              </tr>
+              <% recs.forEach(rec => { %>
+                <tr onclick="openRec('<%= rec.recid %>')">
+                  <td>
+                    <recname><%= rec.recname %></recname><br>
+                    <recUser><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></recUser>
+                  </td>
+                  <td>
+                    <span>Dauer: <%= rec.duration %> min</span>
+                  </td>
+                  <td>
+                      <img class="stars" src="/img/1star.png" alt="Stern" onload="updateStartAtRec(<%= rec.expense %>, this)" />
+                  </td>
+                </tr>
+              <% }); %>
+            </table>          
+        </div>
       </div>
       <div class= "calender stapeln">
-        <div class="calenderVision">
-         kalender!
+        <div class="calenderVision stapeln">
+          <kalenderTitel>Geplante Rezepte</kalenderTitel>
+          <div class="kumpeln">
+            <div class="nextRecipes stapeln zentrieren" id="firstNextRec">
+              <calDatum>DD.MM.YYYY</calDatum>
+              <hr>
+              <calRecNumber>X</calRecNumber>
+              Rezepte
+            </div>
+            <div class="nextRecipes stapeln zentrieren" id="secondNextRec">
+              <calDatum>DD.MM.YYYY</calDatum>
+              <hr>
+              <calRecNumber>X</calRecNumber>
+              Rezepte
+            </div>
+            <div class="nextRecipes stapeln zentrieren" id="thirdNextRec">
+              <calDatum>DD.MM.YYYY</calDatum>
+              <hr>
+              <calRecNumber>X</calRecNumber>
+              Rezepte
+            </div>
+          </div>
         </div>
         <div class="detailedVision">
          mehr.
         </div>
       </div>
     </div>
-    unten.
     <div class="resUnten">
+      <div class="kumpeln spaceBetween actionBalken">
+          <button id="addRec" onclick="buttaddrec()" class="action stapeln zentrieren" >
+            <img class="actionImg stapeln zentrieren" src="/img/plus.png" alt="Füge Rezepte hinzu">
+            <span>Rezept hinzufügen</span>
+          </button>
 
+          <button  onclick="getAndShowAllRecs()" class="action stapeln zentrieren">
+            <img class="actionImg stapeln zentrieren" src="/img/alle.png" alt="Alle Rezepte anzeigen">
+            <span>Alle Rezepte</span>
+          </button>
+
+          <button class="action stapeln zentrieren" onclick="reportAny()">
+            <img src="/img/ausrufezeichen.png" class="actionImg stapeln zentrieren" alt="Profil">
+            <span>Feedback</span>
+
+          <button class="action stapeln zentrieren" onclick="openEditFriend()">
+            <img src="/img/freunde.png" class="actionImg stapeln zentrieren" alt="Freunde">
+            <span>Freunde</span>
+          </button>
+
+          <button  class="action stapeln zentrieren" onclick="openCalView()">
+            <img src="/img/cal.png" class="actionImg stapeln zentrieren" alt="Kochkalender">
+            <span>Kalender</span>
+          </button>
+
+          <button class="action stapeln zentrieren" onclick="openEditLists()">
+            <img src="/img/lists.png" class="actionImg stapeln zentrieren" alt = "Listen">
+            <span>Listen</span>
+          </button>
+        </div>
+        <!--Knöpfe Aktionen ENDE-->
     </div>
   </div>
   <div class="li">

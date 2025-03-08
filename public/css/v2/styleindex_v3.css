@@ -30,8 +30,9 @@
 }
 .res {
   display: flex;
-  background-color: red;
   height: var(--fullHeight);
+  flex-direction: column; 
+  height: var(--fullHeight); 
 }
 
 .resOben {
@@ -53,11 +54,16 @@
 }
 
 .detailedVision {
+  background-color: var(--contrastBuddy);
+  border-radius: var(--borderRadius);
+  padding: 10px;
 }
 
 .resUnten {
+  display:flex;
   padding: 10px;
   border-radius: var(--borderRadius);
+  margin-top: auto;
 }
 
 /* Styling für den unteren Bereich der Seite */
@@ -143,41 +149,187 @@ listName {
   margin: 10px 5px;
 }
 
-.checkboxbox + label {
-  display: flex;
+.checkboxLists {
+  display: none; 
+}
+
+
+.checkboxLists + label {
+  display: inline-flex;
   align-items: center;
+  position: relative;
+  padding-left: 30px; 
+  font-size: 16px;
   cursor: pointer;
-  transition: color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  transition: color 0.2s;
 }
- 
-.checkboxbox {
-  display: none;
-}
- 
-.checkboxbox + label::before {
+
+.checkboxLists + label::before {
   content: '';
-  position: relative;
-  margin: 0 5px 0 0;
-  width: 18px;
-  height: 18px;
-  border: none;
-  border-radius: var(--borderRadius);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--contrastMain);
   background-color: var(--contrastMain);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  border-radius: var(--borderRadius);
+  transition: background-color 0.2s, border-color 0.2s;
 }
-
-.checkboxbox:checked + label::before {
+ 
+.checkboxLists:checked + label::before {
   background-color: var(--contrastBuddy);
+  border-color: var(--contrastBuddy);
 }
-
-.checkboxbox:checked + label::after {
-  content: ':D';
-  position: relative;
-  color: var(--light);
+ 
+.checkboxLists:checked + label::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 3px; 
+  width: 10px; 
+  height: 6px; 
+  border-left: 2px solid var(--light);
+  border-bottom: 2px solid var(--light);
+  transform: rotate(-45deg); 
+  transition: background-color 0.2s;
 }
 
 /* Hover-Effekt für das Label */
-.checkboxbox + label:hover {
-  color: var(--contrastMain);
-  transform: translateX(2px);
+.checkboxLists + label:hover {
+  color: var(--contrastBuddy);
+}
+
+/* Fokus-Effekt für Barrierefreiheit */
+.checkboxLists:focus + label::before {
+  outline: 2px solid var(--light);
+}
+
+.stars{
+  width: 7.4vw;
+}
+recUser{
+  font-style: italic;
+  font-size: small;;
+}
+tableTitle{
+  font-weight: bold;
+  font-size: 20px;
+}
+table{
+table-layout: auto;
+border-collapse:collapse;
+
+border-radius: var(--borderRadius);
+}
+td {
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+recname {
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: var(--contrastBuddy);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--contrastMain);
+}
+
+th:first-child, td:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+th:last-child, td:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+tr:hover {
+  transform: scale(1.05);
+  background-color: var(--special);
+  cursor: pointer;
+  
+  
+}
+tr:first-child:hover{
+  background-color: var(--contrastMain);
+  transform:none;
+  cursor:default;
+}
+
+.actionImg{
+  width: 6vw;
+  outline:none;
+}
+.action{
+  background-color:var(--contrastMain);
+  border:none;
+  width: 10vw;
+  border-radius: var(--borderRadius);
+  color: var(--light);
+  bottom: 0;
+  
+}
+.action:hover{
+  background-color:var(--special);
+  cursor:pointer;
+  transition: transform 0.3s ease;
+  outline:none;
+}
+
+kalenderTitel{
+  font-weight: bold;
+  font-size: 20px;
+}
+.nextRecipes{
+  padding: 10px;
+  width: 8vw;
+  border-radius: var(--borderRadius);
+  background-color: var(--contrastBuddy);
+  margin:10px;
+}
+
+.nextRecipes:hover{
+  background-color: var(--special);
+  cursor: pointer;
+}
+
+.nextRecipes hr{
+  width: 100%;
+  border-top: solid 1.5px var(--light);
+  border-radius: var(--borderRadius);
+}
+
+calDatum{
+  font-weight: bold;
+
+}
+
+calRecNumber{
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.li::-webkit-scrollbar {
+  width: 5px;
+}
+
+.li::-webkit-scrollbar-track {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.li::-webkit-scrollbar-thumb {
+  background-color: var(--contrastBuddy);
+  border-radius: 5px;
+}
+
+.li::-webkit-scrollbar-corner {
+  background-color: transparent;
 }
