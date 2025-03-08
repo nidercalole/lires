@@ -51,6 +51,7 @@
 }
 
 .calenderVision {
+  margin: 0 0 10px 0;
 }
 
 .detailedVision {
@@ -286,13 +287,13 @@ tr:first-child:hover{
 kalenderTitel{
   font-weight: bold;
   font-size: 20px;
+  margin: 0 0 10px 0;
 }
 .nextRecipes{
   padding: 10px;
   width: 8vw;
   border-radius: var(--borderRadius);
   background-color: var(--contrastBuddy);
-  margin:10px;
 }
 
 .nextRecipes:hover{
@@ -332,4 +333,13 @@ calRecNumber{
 
 .li::-webkit-scrollbar-corner {
   background-color: transparent;
+}
+detailRecName{
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+detailRecDauer{
+  font-style: italic;
+  font-size: 16px;
 }
