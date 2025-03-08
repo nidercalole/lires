@@ -59,13 +59,13 @@
   background-color: var(--contrastBuddy);
   border-radius: var(--borderRadius);
   padding: 10px 5px 0 5px;
-  max-height: 45vh;
+  max-height: 43.7vh;
   overflow-y: auto;
 }
 
 .resUnten {
   display:flex;
-  padding: 10px;
+  padding:10px;
   border-radius: var(--borderRadius);
   margin-top: auto;
 }
