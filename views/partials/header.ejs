@@ -11,16 +11,19 @@
       onclick="redirectHome()"
     />
 
-    <div class="hidden">
+    <div class="kumpeln horizont">
       <input id="suchleiste"  class="transparent">
       <img class="pfeil" src="/img/weiter.png" alt="weiter" height="30px" onclick="getCurrentSearchConfig()">
+      <button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
+          <img src="/img/fil.png" alt="Filter" width="55px" />
+      </button>
     </div>
   </div>
 
   <div class="kumpeln horizont">
     <img class="navigation" src="/img/admin.png" alt="admin tool" id="admintools"onclick="openAdminTools()">
     <img class="navigation" src="/img/cal.png" alt="Kochkalender" onclick="openCalView()"/>
-    <img class="navigation" src="/img/lists.png" alt="Listen"/>
+    <!--<img class="navigation" src="/img/lists.png" alt="Listen"/>-->
     <div id="usrnm"><%= usrnm %></div>
     <img
           class="navigation"
@@ -30,6 +33,8 @@
         />
   </div>
 </div>
+
+
 
   <!--<nav>
     <ul class="navLinks">

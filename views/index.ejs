@@ -208,6 +208,71 @@
   </div>
 </div>
 
+<!-- begin of Search filter-->
+<div class="darkBg">
+    <div id="filOptionPage" class="filter stapeln zentrieren">
+      <div class="stapeln zentrieren widthNeunzig">
+        <filterTitle>Filter</filterTitle>
+        <hr class="filterLine">
+      </div>
+
+      <div class="stapeln zentrieren marginZehn" id="zubDauer">
+        Zubereitungsdauer
+        <input class="marginZehn" type="range" min="14" max="180" value="14" id="maxDauer" oninput="maxDauerInput()">
+        <span class="sliderText" id="maxMin"></span>
+      </div>
+
+      <div class="kumpeln">
+        <div class="stapeln zentrieren marginZehn ">
+          In Suchergebnisse inkludieren
+          <div class="kumpeln">
+            <div class="zentrieren stapeln marginZehn">
+              <select class="filDropdown" name="zutFilterMainin" id="zutFilterMainin" multiple>
+                <!-- hier Optionen für Dropdown Filter für Zutaten -->
+                <%- include('partials/ingsInclude.ejs') %>
+              </select>
+            </div>
+
+            <div class="zentrieren stapeln marginZehn">
+              <select class="filDropdown" name="prFilterMainin" id="prFilterMainin" multiple>
+                <option value="none">Nichts</option>
+                <!-- hier Optionen für Dropdown Filter für Prozesse -->
+                <%- include('partials/process.ejs') %>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="verticalLine"></div>
+        <div id="exclude" class="stapeln zentrieren marginZehn">
+          Aus Suchergebnissen ausschließen
+
+          <div class="kumpeln">
+            <div class="zentrieren stapeln marginZehn">
+              <select class="filDropdown" name="zutFilterMainex" id="zutFilterMainex" multiple>
+                <!-- hier Optionen für Dropdown Filter für Zutaten -->
+                <%- include('partials/ingsExclude.ejs') %>
+              </select>
+            </div>
+
+            <div class="stapeln zentrieren marginZehn">
+              <select class="filDropdown" name="prFilterMainex" id="prFilterMainex" multiple>
+                <option value="none">Nichts</option>
+                <!-- hier Optionen für Dropdown Filter für Prozesse -->
+                <%- include('partials/process.ejs') %>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="stapeln marginZehn zentrieren">
+        <button id="filButSearchFinal" onclick="collectDataForSearch()">Irgendein Senden button</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- end of Search filter-->
+
 <script src="/js/eventListenersOnMain.js"></script>
 <script src="/js/loadAndDisplayLists.js"></script>
 <script src="/js/listCheckboxes.js"></script>
