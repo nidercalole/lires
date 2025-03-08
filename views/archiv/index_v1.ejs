@@ -1,0 +1,218 @@
+<div class="width100vw kumpeln noPadding">
+  <div class = "stapeln zentrieren hidden">
+    <div class="responseAddListOk stapeln zentrieren marginZehn" id="responseAddListOk">
+      Hier steht ein toller text, der sagt, dass alles funktioniert hat.
+    </div>
+
+    <!-- begin of Search filter-->
+    <div id="filOptionPage" class="filter stapeln zentrieren">
+      <div class="stapeln zentrieren">
+        <h3>Filter</h3>
+      </div>
+
+      <div class="stapeln zentrieren marginZehn" id="zubDauer">
+        Zubereitungsdauer
+        <input class="marginZehn" type="range" min="14" max="180" value="14" id="maxDauer" oninput="maxDauerInput()">
+        <span class="sliderText" id="maxMin"></span>
+      </div>
+
+      <div class="kumpeln">
+        <div class="stapeln zentrieren marginZehn ">
+          In Suchergebnisse inkludieren
+          <div class="kumpeln">
+            <div class="zentrieren stapeln marginZehn">
+              <select class="filDropdown" name="zutFilterMainin" id="zutFilterMainin" multiple>
+                <!-- hier Optionen für Dropdown Filter für Zutaten -->
+                <%- include('partials/ingsInclude.ejs') %>
+              </select>
+            </div>
+
+            <div class="zentrieren stapeln marginZehn">
+              <select class="filDropdown" name="prFilterMainin" id="prFilterMainin" multiple>
+                <option value="none">Nichts</option>
+                <!-- hier Optionen für Dropdown Filter für Prozesse -->
+                <%- include('partials/process.ejs') %>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="verticalLine"></div>
+        <div id="exclude" class="stapeln zentrieren marginZehn">
+          Aus Suchergebnissen ausschließen
+
+          <div class="kumpeln">
+            <div class="zentrieren stapeln marginZehn">
+              <select class="filDropdown" name="zutFilterMainex" id="zutFilterMainex" multiple>
+                <!-- hier Optionen für Dropdown Filter für Zutaten -->
+                <%- include('partials/ingsExclude.ejs') %>
+              </select>
+            </div>
+
+            <div class="stapeln zentrieren marginZehn">
+              <select class="filDropdown" name="prFilterMainex" id="prFilterMainex" multiple>
+                <option value="none">Nichts</option>
+                <!-- hier Optionen für Dropdown Filter für Prozesse -->
+                <%- include('partials/process.ejs') %>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="stapeln marginZehn zentrieren">
+        <button id="filButSearchFinal" onclick="collectDataForSearch()">Irgendein Senden button</button>
+      </div>
+    </div>
+
+    <!-- end of Search filter-->
+
+    </div>
+    <div id="nichtFilter" class="res">
+      <div class="split splitLeft splitLeftGrid">
+
+        <!--Neueste Rezepte-->
+        <div class="kumpeln spaceEvenly">
+            <table class="noMargin">
+              <tr>
+                <td>
+                  <tableTitle>Neueste Rezepte</tableTitle>
+                </td>
+              </tr>
+              <% recs.forEach(rec => { %>
+                <tr onclick="openRec('<%= rec.recid %>')">
+                  <td>
+                    <recname><%= rec.recname %></recname><br>
+                    <recUser><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></recUser>
+                  </td>
+                  <td>
+                    <span>Dauer: <%= rec.duration %> min</span>
+                  </td>
+                  <td>
+                      <img class="stars" src="/img/1star.png" alt="Stern" onload="updateStartAtRec(<%= rec.expense %>, this)" />
+                  </td>
+                </tr>
+              <% }); %>
+            </table>          
+        </div>
+
+        <!--Knöpfe Filter ANFANG-->
+        <div class="kumpeln horizont spaceBetween">
+              <button id= "arr-left" class="arrow left"  onclick="scrollButtons(-1)">
+                <img src="/img/zurueck.png" alt="Pfeil nach links" width="30px">
+              </button>
+          <div class="kumpeln" id="buttonWrapper">
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('warm', 'Hier sind alle warmen Gerichte')">
+              <img class="schnellFilterImg" src="/img/warm.png" alt="Filtere nach warmen Rezepten">
+              <span>Warm</span>
+            </button>
+      
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('hrzhft', 'Hier sind alle herzhaften Gerichte')">
+              <img class="schnellFilterImg" src="/img/herzhaft.png" alt="Filtere nach herzhaften Rezepten">
+              <span>Herzhaft</span>
+            </button>
+      
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('vgtrsch', 'Hier sind alle vegetarischen Gerichte')">
+              <img class="schnellFilterImg" src="/img/veg.png" alt="Filtere nach vegetarischen Rezepten">
+              <span>Vegetarisch</span>
+            </button>
+      
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('vorspeise' , 'Hier sind alle Vorspeisen')">
+              <img class="schnellFilterImg" src="/img/vorspeise.png" alt="Filtere nach Vorspeisen">
+              <span>Vorspeise</span>
+            </button>
+
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('hptgrcht', 'Hier sind alle Hauptgerichte')">
+              <img class="schnellFilterImg" src="/img/hauptspeise.png" alt="Filtere nach Hauptgerichten">
+              <span>Hauptgericht</span>
+            </button>
+
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('nchtsch', 'Hier sind alle Nachspeisen')">
+              <img class="schnellFilterImg" src="/img/nachspeise.png" alt="Filtere nach Nachspeisen">
+              <span>Nachspeise</span>
+            </button>
+
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('spp', 'Hier sind alle Suppen')">
+              <img class="schnellFilterImg" src="/img/suppe.png" alt="Filtere nach Suppen">
+              <span>Suppe</span>
+            </button>
+
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('slt', 'Hier sind alle Salate')">
+              <img class="schnellFilterImg" src="/img/salat.png" alt="Filtere nach Salaten">
+              <span>Salat</span>
+            </button>
+      
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('fsch', 'Hier sind alle Fischgerichte')">
+              <img class="schnellFilterImg" src="/img/fisch.png" alt="Filtere nach Rezepten, die Fisch enthalten">
+              <span>Fisch</span>
+            </button>
+      
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('dips', 'Hier sind alle Dips und Saucen')">
+              <img class="schnellFilterImg" src="/img/kanne.png" alt="Filtere nach Saucen und Dips">
+              <span>Saucen und Dips</span>
+            </button>
+      
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('grtn', 'Hier sind alle Aufläufe und Gratins')">
+              <img class="schnellFilterImg" src="/img/auflauf.png" alt="Filtere nach Aufläufen">
+              <span>Auflauf</span>
+            </button>
+      
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('kchn', 'Hier sind alle Kuchen')">
+              <img class="schnellFilterImg" src="/img/kuchen.png" alt="Filtere nach Kuchen">
+              <span>Kuchen</span>
+            </button>
+      
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('brt', 'Hier sind alle brote und Brötchen')">
+              <img class="schnellFilterImg" src="/img/broooot.png" alt="Filtere nach Brot und Brötchen">
+              <span>Brot und Brötchen</span>
+            </button>
+      
+            <button class="schnellFilter zentrieren stapeln" onclick="openRecList('ndl', 'Hier sind alle Nudelgerichte')">
+              <img class="schnellFilterImg" src="/img/nudel.png" alt="Filtere nach Nudelgerichten">
+              <span>Nudelgerichte</span>
+            </button>
+          </div>
+            <button id="arr-right" class="arrow right" onclick="scrollButtons(1)">
+              <img src="/img/weiter.png" alt="Pfeil nach rechts" width="30px">
+            </button>
+        </div>
+
+        <!--Knöpfe Aktionen ANFANG-->
+        <div class="kumpeln spaceBetween actionBalken">
+          <button id="addRec" onclick="buttaddrec()" class="action" >
+            <img class="actionImg stapeln zentrieren" src="/img/plus.png" alt="Füge Rezepte hinzu">
+            <span>Rezept hinzufügen</span>
+          </button>
+
+          <button  onclick="getAndShowAllRecs()" class="action">
+            <img class="actionImg stapeln zentrieren" src="/img/alle.png" alt="Alle Rezepte anzeigen">
+            <span>Alle Rezepte</span>
+          </button>
+
+          <button class="action" onclick="reportAny()">
+            <img src="/img/ausrufezeichen.png" class="actionImg stapeln zentrieren" alt="Profil">
+            <span>Feedback</span>
+
+          <button class="action" onclick="openEditFriend()">
+            <img src="/img/freunde.png" class="actionImg stapeln zentrieren" alt="Freunde">
+            <span>Freunde</span>
+          </button>
+
+          <button  class="action" onclick="openCalView()">
+            <img src="/img/cal.png" class="actionImg stapeln zentrieren" alt="Kochkalender">
+            <span>Kalender</span>
+          </button>
+
+          <button class="action" onclick="openEditLists()">
+            <img src="/img/lists.png" class="actionImg stapeln zentrieren" alt = "Listen">
+            <span>Listen</span>
+          </button>
+        </div>
+            <!--Knöpfe Aktionen ENDE-->
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/list.ejs') %>
+  
+</div>

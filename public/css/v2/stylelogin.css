@@ -16,9 +16,7 @@ header{
 .logoLogin{
     height: 40vh;
     margin: 10px;
-    border: 5px solid var(--contrastBuddy);
-    border-radius: 50%;
-}
+    }
 liresTitelLogin{
     font-weight: var(--fatFont);
     font-size: var(--bigTitle);

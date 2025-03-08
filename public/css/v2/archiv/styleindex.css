@@ -131,20 +131,19 @@ select {
 .res{
   display: flex;
   flex-direction: column;
-  background-color: aqua;
   height: 86vh;
   width: 75vw;
   padding: 0 10px;
   margin: 10px;
 }
 .li{
-  position:absolute;
+  position:relative;
   width: 20vw;
   height: 84vh;
-  padding: 10px;	
+  padding: 10px;
   background-color: var(--contrastBuddy);
   right:0;
-  
+  margin: 10px;
   border-radius: var(--borderRadius);
 }
 .li hr{
