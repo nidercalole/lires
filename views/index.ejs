@@ -76,14 +76,10 @@
   </div>
   <div class="res stapeln">
     <div class="resOben kumpeln spaceBetween">
-      <div class="recipes">
-        <div class="kumpeln spaceBetween">
+      <div class="recipes stapeln">
+      <tableTitle>Neueste Rezepte</tableTitle>
+        <div class="kumpeln spaceBetween tableDiv">
             <table class="noMargin">
-              <tr>
-                <td>
-                  <tableTitle>Neueste Rezepte</tableTitle>
-                </td>
-              </tr>
               <% recs.forEach(rec => { %>
                 <tr onclick="openRec('<%= rec.recid %>')">
                   <td>
@@ -107,19 +103,19 @@
           <div class="kumpeln spaceBetween">
             <div class="nextRecipes stapeln zentrieren" id="firstNextRec">
               <calDatum>DD.MM.YYYY</calDatum>
-              <hr>
+              <hr class="listTitleLine">
               <calRecNumber>X</calRecNumber>
               Rezepte
             </div>
             <div class="nextRecipes stapeln zentrieren" id="secondNextRec">
               <calDatum>DD.MM.YYYY</calDatum>
-              <hr>
+              <hr class="listTitleLine">
               <calRecNumber>X</calRecNumber>
               Rezepte
             </div>
             <div class="nextRecipes stapeln zentrieren" id="thirdNextRec">
               <calDatum>DD.MM.YYYY</calDatum>
-              <hr>
+              <hr class="listTitleLine">
               <calRecNumber>X</calRecNumber>
               Rezepte
             </div>
@@ -127,21 +123,44 @@
         </div>
         <div class="detailedVision">
          <calDatum>Detailansicht DD.MM.YYYY</calDatum>
-          <hr>
-          <div>
-            <detailRecName>Rezeptname</detailRecName>
-            <br>
-            <detailRecDauer>Dauer: XX min</detailRecDauer>
-          </div>
-          <div>
-            <detailRecName>Rezeptname</detailRecName>
-            <br>
-            <detailRecDauer>Dauer: XX min</detailRecDauer>
-          </div>
-          <div>
-            <detailRecName>Rezeptname</detailRecName>
-            <br>
-            <detailRecDauer>Dauer: XX min</detailRecDauer>
+          <hr class="detailRecLineTitle">
+          <div class="paddingZehn">
+            <div class="detailRec">
+              <detailRecName>Rezeptname</detailRecName>
+              <br>
+              <detailRecDauer>Dauer: XX min</detailRecDauer>
+              <hr class="detailRecLine">
+            </div>
+            <div class="detailRec">
+              <detailRecName>Rezeptname</detailRecName>
+              <br>
+              <detailRecDauer>Dauer: XX min</detailRecDauer>
+              <hr class="detailRecLine">
+            </div>
+            <div class="detailRec">
+              <detailRecName>Rezeptname</detailRecName>
+              <br>
+              <detailRecDauer>Dauer: XX min</detailRecDauer>
+              <hr class="detailRecLine">
+            </div>
+            <div class="detailRec">
+              <detailRecName>Rezeptname</detailRecName>
+              <br>
+              <detailRecDauer>Dauer: XX min</detailRecDauer>
+              <hr class="detailRecLine">
+            </div>
+            <div class="detailRec">
+              <detailRecName>Rezeptname</detailRecName>
+              <br>
+              <detailRecDauer>Dauer: XX min</detailRecDauer>
+              <hr class="detailRecLine">
+            </div>
+            <div class="detailRec">
+              <detailRecName>Rezeptname</detailRecName>
+              <br>
+              <detailRecDauer>Dauer: XX min</detailRecDauer>
+              <hr class="detailRecLine">
+            </div>
           </div>
         </div>
       </div>

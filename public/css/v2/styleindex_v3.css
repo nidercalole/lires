@@ -45,6 +45,7 @@
 }
 
 .calender {
+  width: 27vw;
   display: flex;
   padding: 10px;
   border-radius: var(--borderRadius);
@@ -57,7 +58,9 @@
 .detailedVision {
   background-color: var(--contrastBuddy);
   border-radius: var(--borderRadius);
-  padding: 10px;
+  padding: 10px 5px 0 5px;
+  max-height: 45vh;
+  overflow-y: auto;
 }
 
 .resUnten {
@@ -111,6 +114,7 @@ listName {
 
 .listTitleLine {
   border: 1.5px solid var(--light);
+  width: 100%;
   border-radius: var(--borderRadius);
 }
 
@@ -208,20 +212,21 @@ listName {
 }
 
 .stars{
-  width: 7.4vw;
+  width: 8vw;
 }
 recUser{
   font-style: italic;
-  font-size: small;;
+  font-size: regular;
 }
 tableTitle{
   font-weight: bold;
   font-size: 20px;
+  margin-bottom: 10px;
 }
 table{
 table-layout: auto;
 border-collapse:collapse;
-
+width: 33vw;
 border-radius: var(--borderRadius);
 }
 td {
@@ -232,14 +237,15 @@ td {
 
 recname {
   font-weight: bold;
+  font-size: 18px;
 }
 
 tr:nth-child(even) {
-  background-color: var(--contrastBuddy);
+  background-color: var(--contrastMain);
 }
 
 tr:nth-child(odd) {
-  background-color: var(--contrastMain);
+  background-color: var(--contrastBuddy);
 }
 
 th:first-child, td:first-child {
@@ -252,16 +258,9 @@ th:last-child, td:last-child {
   border-bottom-right-radius: 15px;
 }
 tr:hover {
-  transform: scale(1.05);
+  
   background-color: var(--special);
   cursor: pointer;
-  
-  
-}
-tr:first-child:hover{
-  background-color: var(--contrastMain);
-  transform:none;
-  cursor:default;
 }
 
 .actionImg{
@@ -291,7 +290,7 @@ kalenderTitel{
 }
 .nextRecipes{
   padding: 10px;
-  width: 8vw;
+  width: 7vw;
   border-radius: var(--borderRadius);
   background-color: var(--contrastBuddy);
 }
@@ -301,15 +300,14 @@ kalenderTitel{
   cursor: pointer;
 }
 
-.nextRecipes hr{
-  width: 100%;
+.detailRecLineTitle{
+  width: 99%;
   border-top: solid 1.5px var(--light);
   border-radius: var(--borderRadius);
 }
 
 calDatum{
   font-weight: bold;
-
 }
 
 calRecNumber{
@@ -343,3 +341,54 @@ detailRecDauer{
   font-style: italic;
   font-size: 16px;
 }
+.detailRec{
+  padding: 5px 5px;
+  border-radius: var(--borderRadius);
+}
+
+.detailRec:hover{
+  background-color: var(--special);
+  border-radius: var(--borderRadius);
+}
+
+.detailedVision::-webkit-scrollbar {
+  width: 5px;
+}
+
+.detailedVision::-webkit-scrollbar-track {
+  background-color: var(--contrastBuddy);
+  border-radius: 5px;
+}
+
+.detailedVision::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.detailedVision::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.tableDiv{
+  max-height: 63vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.tableDiv::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tableDiv::-webkit-scrollbar-track {
+  background-color: var(--contrastMain);
+  
+  border-radius: 5px;
+}
+
+.tableDiv::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.tableDiv::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
