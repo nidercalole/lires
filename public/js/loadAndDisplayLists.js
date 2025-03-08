@@ -66,9 +66,10 @@ function loadAndDisplayLists() {
                         </button>
                     </div>
                 </div>
-                <hr class="listTitleLine">
+                
                 <div class="dropdown-content">${itemsStacked}</div>
-            </div>`;
+            </div>
+            <hr class="listTitleLine">`;
             listContainer.appendChild(item);
 
         });
