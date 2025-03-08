@@ -405,8 +405,7 @@ detailRecDauer{
 filterTitle{
   font-weight: bold;
   font-size: 20px;
-  margin: 10px 0 0 0;
-}
+  }
 .filterLine{
   border: 1.5px solid var(--light);
   border-radius: var(--borderRadius);
@@ -414,6 +413,7 @@ filterTitle{
   width: 100%;
 }
 .darkBg{
+  display:none;
   position: absolute;
   z-index: 1;
   left: 0;
@@ -434,10 +434,14 @@ filterTitle{
   padding: 5px 10px;
   width: 50%;
 }
+.sliderText{
+  font-style: italic;
+  font-size: 10px;
+}
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none; 
-  width: 30vw;
+  width: 70%;
   height: 8px;  
   background: var(--contrastMain);
   border-radius: var(--borderRadius);
@@ -449,7 +453,7 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none; 
   width: 20px;
   height: 20px;
-  background: var(--special);
+  background: var(--contrastBuddy);
   border-radius: 50%;  
   cursor: pointer;
 }
@@ -459,15 +463,16 @@ input[type="range"]::-webkit-slider-thumb {
 select {
   -webkit-appearance: none;  
   appearance: none;  
-  width: 100%;  
+  width: 10vw;
   padding: 5px 10px;  
   border-radius: var(--borderRadius);
   border: var(--borderMain);  
-  background-color: var(--contrastBuddy);
+  background-color: var(--contrastMain);
   color: var(--light); 
   cursor: pointer; 
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
+
 
 select:focus {
   border-color: var(--special); ;  
@@ -491,7 +496,8 @@ option:hover {
 }
 
 select[multiple] {
-  height: auto;
+  height: 200px;
+  width: 10vw;
   overflow-y: none;
 }
 
@@ -500,7 +506,7 @@ select[multiple] option {
 }
 
 select[multiple]:focus {
-  border-color: var(--contrastMain);  
+  border-color: var(--contrastBuddy);  
 }
 select[multiple]::-webkit-scrollbar {
   display: none;  
@@ -512,16 +518,18 @@ select[multiple]::-webkit-scrollbar {
   color: var(--light);
 }
 option:checked {
-  background-color: var(--contrastMain);
+  background-color: var(--contrastBuddy);
   color: var(--light);
   border-radius: var(--borderRadius);
 }
 .verticalLine{
   border-left: 2px solid var(--contrastMain);
+  border-radius: var(--borderRadius);
   margin-right:2%;
 }
-button{
-  background-color: var(--special);
+
+#filButSearchFinal{
+  background-color: var(--contrastMain);
   border-radius: var(--borderRadius);
   border: none;
   outline: none;
@@ -532,4 +540,32 @@ button{
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+#filButSearchFinal:hover{
+  background-color: var(--contrastBuddy);
+}
+.closeFilter{
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  margin-left: auto;
+  padding: 5px;
+  cursor: pointer;
+}
+.closeFilter:hover{
+  background-color: var(--contrastMain);
+}
+
+
+.filterHeader{
+  width: 100%;
+  margin: 0 5px;
+}
+
+.leer{
+  width:25px;
+  height: 25px;
+  border-radius: 5px;
+  margin-right: auto;
 }

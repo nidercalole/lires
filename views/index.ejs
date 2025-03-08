@@ -209,20 +209,21 @@
 </div>
 
 <!-- begin of Search filter-->
-<div class="darkBg">
-    <div id="filOptionPage" class="filter stapeln zentrieren">
-      <div class="stapeln zentrieren widthNeunzig">
+<div class="darkBg" id="darkBg">
+    <div id="filOptionPage" class="filter stapeln zentrieren ">
+      <div class="kumpeln filterHeader spaceBetween">
+        <div class="leer"></div>
         <filterTitle>Filter</filterTitle>
-        <hr class="filterLine">
+        <img class="closeFilter" src="/img/x.png" alt="Schließen" onclick="filBut()">
       </div>
-
-      <div class="stapeln zentrieren marginZehn" id="zubDauer">
+      <hr class="filterLine widthNeunzig">
+      <div class="stapeln zentrieren marginZehn widthNeunzig" id="zubDauer">
         Zubereitungsdauer
         <input class="marginZehn" type="range" min="14" max="180" value="14" id="maxDauer" oninput="maxDauerInput()">
         <span class="sliderText" id="maxMin"></span>
       </div>
 
-      <div class="kumpeln">
+      <div class="kumpeln widthNeunzig">
         <div class="stapeln zentrieren marginZehn ">
           In Suchergebnisse inkludieren
           <div class="kumpeln">
