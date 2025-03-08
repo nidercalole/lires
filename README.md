@@ -4,10 +4,10 @@ Der Start von Kombi aus Rezepten und Einfaufsliste <br> Mal gucken obs was wird 
 
 
 
-# 🍽️ RezeptPlaner - Deine smarte Kochhilfe
+# 🍽️ Lires - Die Zwiebel für alle Lebenslagen. 
 
 ## 🚀 Beschreibung
-**RezeptPlaner** ist eine moderne Web-App, mit der du mühelos Rezepte entdecken, filtern und verwalten kannst. Erstelle personalisierte Einkaufslisten und plane deinen Kochplan mit einer einfachen Kalenderfunktion. Perfekt für alle, die ihre Mahlzeiten effizient organisieren möchten! 🍲🛒📅
+**Lires** ist eine moderne Web-App, mit der du mühelos Rezepte entdecken, filtern und verwalten kannst. Erstelle personalisierte Einkaufslisten und plane deinen Kochplan mit einer einfachen Kalenderfunktion. Perfekt für alle, die ihre Mahlzeiten effizient organisieren möchten! 
 
 
 ## ✨ Features
@@ -32,7 +32,7 @@ Der Start von Kombi aus Rezepten und Einfaufsliste <br> Mal gucken obs was wird 
 - **UNTERSTÜTZER** Pauli Paul
 
 
-
+### Dieses Readme wurde von ChatGPT geschrieben, weil ich zu faul war es selbst zu tun :B
 
 
 # Ein Beispiel:
