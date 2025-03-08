@@ -1,76 +1,76 @@
 function getUserCredentials() {
-    const queryString = window.location.search; 
+    const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    return [urlParams.get('usrnm'), urlParams.get('usrid')]
+    return [urlParams.get("usrnm"), urlParams.get("usrid")];
 }
 
 function openDropdown(id, button) {
     const dropdownContent = document.getElementById(id);
-    dropdownContent.classList.toggle('open'); 
+    dropdownContent.classList.toggle("open");
 }
 
 function loadAndDisplayLists() {
     user = getUserCredentials();
-    fetch('/addToList/getLists', {
-        method: 'POST',
+    fetch("/addToList/getLists", {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            user: user
-        })
-    }).then(response => response.json())
-    .then(lists => {
-        const listContainer = document.getElementById('dropdownsLists');
-        let itemsStacked = '';
-        lists.forEach(list => {
-            itemsStacked = '';
-            var i = 0
-            list.list.forEach(ing => {
-                var checked = '';
-                if(ing[3] === true){
-                    checked = 'checked';
-                }
-                let ingamountshow = '';
-                let ingunitshow = '';
-                if(ing[1] === 0){
-                    ingamountshow = '';
-                    ingunitshow = '';
-                }else{
-                    ingamountshow = ing[1];
-                    ingunitshow = ing[2];
-                }
-                itemsStacked += 
-                `<div class="divRowListElement">
-                    <input type="checkbox" class="checkboxLists" id="${list.listid + i}" ${checked}> <label for="${list.listid + i}">${ingamountshow} ${ingunitshow} ${ing[0]}</label>
+            user: user,
+        }),
+    })
+        .then((response) => response.json())
+        .then((lists) => {
+            const listContainer = document.getElementById("dropdownsLists");
+            let itemsStacked = "";
+            lists.forEach((list) => {
+                itemsStacked = "";
+                var i = 0;
+                list.list.forEach((ing) => {
+                    var checked = "";
+                    if (ing[3] === true) {
+                        checked = "checked";
+                    }
+                    let ingamountshow = "";
+                    let ingunitshow = "";
+                    if (ing[1] === 0) {
+                        ingamountshow = "";
+                        ingunitshow = "";
+                    } else {
+                        ingamountshow = ing[1];
+                        ingunitshow = ing[2];
+                    }
+                    itemsStacked += `<div class="divRowListElement kumpeln spaceBetween">
+                    <div class="kumpeln">
+                       <input type="checkbox" class="checkboxbox" id="${list.listid + i}" ${checked}><label for="${list.listid + i}">${ingamountshow} ${ingunitshow} ${ing[0]}</label></div>
                     <div class="listsBtnsListElement">
                         <button class="editLists">
-                            <img src="/img/edit.png" width="15px" height="15px" alt="Bearbeite diese Liste" onclick="irgendwas()">
-                        </button>
-                        <button class="editLists">
-                            <img src="/img/x.png" width="15px" height="15px alt="Lösche diese Liste" onclick="irgendwas2()">
+                            <img src="/img/x.png" width="15px" height="15px" alt="Lösche diese Liste" onclick="irgendwas2()">
                         </button>
                     </div>
                 </div>`;
-                i++
-            });
-            let item = document.createElement('div');
-            item.classList.add('dropdown');
-            item.id = list.listid;
-            item.innerHTML = `
-            <div class="divRow" onclick="openDropdown('${list.listid}', this)">
-                <div class="dropdown-button" ><listName>${list.listname}</listName></div>
-                <div class="listsBtns">
-                    <button class="editLists">
-                        <img src="/img/x.png" width="20px" height="20px alt="Lösche diese Liste" onclick="irgendwas2(event)">
-                    </button>
+                    i++;
+                });
+                let item = document.createElement("div");
+                item.classList.add("dropdown");
+                item.id = list.listid;
+                item.innerHTML = `
+            <div class="listComplete">
+                <div class="lists kumpeln spaceBetween" onclick="openDropdown('${list.listid}', this)">
+                    <div class="dropdown-button" ><listName>${list.listname}</listName></div>
+                    <div>
+                        <button class="editLists">
+                            <img src="/img/x.png" width="20px" height="20px" alt="Lösche diese Liste" onclick="irgendwas2(event)">
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="dropdown-content">${itemsStacked}</div>`;
-            listContainer.appendChild(item);
-
+                <hr class="listTitleLine">
+                <div class="dropdown-content">${itemsStacked}</div>
+            </div>`;
+                listContainer.appendChild(item);
+            });
         });
-    });
 }
 loadAndDisplayLists();
 

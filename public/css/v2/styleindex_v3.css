@@ -2,7 +2,7 @@
   width: auto;
   height: var(--fullHeight);
   margin: auto;
-  padding: 10px; 
+  padding: 10px;
   --fullHeight: 85.5vh;
 }
 
@@ -28,13 +28,13 @@
 .filterBalken::-webkit-scrollbar-corner {
   background-color: transparent;
 }
-.res{
+.res {
   display: flex;
   background-color: red;
   height: var(--fullHeight);
 }
 
-.resOben{
+.resOben {
   padding: 10px;
   border-radius: var(--borderRadius);
 }
@@ -50,11 +50,9 @@
 }
 
 .calenderVision {
-  
 }
 
 .detailedVision {
-  
 }
 
 .resUnten {
@@ -68,14 +66,16 @@
   width: 22vw;
   background-color: var(--special);
   border-radius: var(--borderRadius);
-  height: var(--fullHeight);
+  height: calc( var(--fullHeight) - 20px);
+  overflow-y: auto;
 }
 
-.li hr{
-  border: 2px solid var(--light);
+.listLine {
+  margin-bottom: 20px;
+  border: 1.5px solid var(--light);
   border-radius: var(--borderRadius);
 }
-.schnellFilter{
+.schnellFilter {
   background-color: var(--contrastBuddy);
   border-radius: var(--borderRadius);
   margin: 0 10px 10px 0;
@@ -85,9 +85,99 @@
   color: var(--light);
   width: 10vw;
 }
-.schnellFilter:hover{
+.schnellFilter:hover {
   background-color: var(--special);
 }
-.schnellFilterImg{
+.schnellFilterImg {
   width: 4vw;
+}
+
+listName {
+  font-weight: bold;
+  font-size: 18px;
+}
+.lists:hover {
+  outline: 5px solid var(--contrastMain);
+  border-radius: var(--borderRadius);
+  background-color: var(--contrastMain);
+}
+
+.listTitleLine {
+  border: 1.5px solid var(--light);
+  border-radius: var(--borderRadius);
+}
+
+.lists button{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: var(--borderRadius);
+}
+.lists button:hover{
+  background-color: var(--special);
+}
+.editLists{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: var(--borderRadius);
+}
+.editLists:hover{
+  background-color: var(--contrastMain);
+}
+
+/* Dropdown style grob mit minianimation */
+.dropdown-content {
+  /* Animation-Einstellungen */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease-out, opacity 0.3s ease-out;
+}
+
+.dropdown.open .dropdown-content {
+  max-height: 1000px;
+  opacity: 1;
+}
+.listComplete{
+  margin: 10px 5px;
+}
+
+.checkboxbox + label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+ 
+.checkboxbox {
+  display: none;
+}
+ 
+.checkboxbox + label::before {
+  content: '';
+  position: relative;
+  margin: 0 5px 0 0;
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: var(--borderRadius);
+  background-color: var(--contrastMain);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkboxbox:checked + label::before {
+  background-color: var(--contrastBuddy);
+}
+
+.checkboxbox:checked + label::after {
+  content: ':D';
+  position: relative;
+  color: var(--light);
+}
+
+/* Hover-Effekt für das Label */
+.checkboxbox + label:hover {
+  color: var(--contrastMain);
+  transform: translateX(2px);
 }
