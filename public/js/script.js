@@ -45,9 +45,9 @@ function buttaddrec(){
 
 //gridstyle
 function filBut(){
-    const filOptionPage = document.getElementById('filOptionPage');
+    const filOptionPage = document.getElementById('darkBg');
     if (filOptionPage.style.display === 'none' || filOptionPage.style.display === '') {
-        filOptionPage.style.display = 'grid';
+        filOptionPage.style.display = 'block';
     } else{
         filOptionPage.style.display = 'none';
     }
