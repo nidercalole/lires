@@ -1,10 +1,6 @@
-# lires
-Der Start von Kombi aus Rezepten und Einfaufsliste <br> Mal gucken obs was wird :D
-****
-
-
 
 # 🍽️ Lires - Die Zwiebel für alle Lebenslagen. 
+Mal gucken obs was wird :D
 
 ## 🚀 Beschreibung
 **Lires** ist eine moderne Web-App, mit der du mühelos Rezepte entdecken, filtern und verwalten kannst. Erstelle personalisierte Einkaufslisten und plane deinen Kochplan mit einer einfachen Kalenderfunktion. Perfekt für alle, die ihre Mahlzeiten effizient organisieren möchten! 
