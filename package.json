@@ -18,6 +18,7 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.1",
     "express-useragent": "^1.0.15",
     "jssoup": "^0.0.15",
     "mongoose": "^8.4.0",

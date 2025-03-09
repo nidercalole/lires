@@ -1,6 +1,8 @@
 
 
 //test
+
+
 //growing list
 let ended = false;
 function getUserCredetials(){
@@ -98,7 +100,7 @@ async function getCurrentSearchConfig() {
     const zutIn = document.getElementById('zutFilterMainin').value;
     const prEx = document.getElementById('prFilterMainex').value;
     const prIn = document.getElementById('prFilterMainin').value;
-    const zubEx = document.getElementById('zubFilternMainEx').value;
+    //const zubEx = document.getElementById('zubFilternMainEx').value;
     const recTitle = document.getElementById('suchleiste').value;
     await fetch('/search', {
         method: 'POST',
@@ -111,18 +113,15 @@ async function getCurrentSearchConfig() {
             zutIn: zutIn,
             prEx: prEx,
             prIn: prIn,
-            zubEx: zubEx,
+            //zubEx: zubEx,
             recTitle: recTitle
         }),
     }).then(response => response.json())
-    .then(filtertRecs => {
-        const queryParams = new URLSearchParams({
-            filtertRecs: JSON.stringify(filtertRecs)
-        }).toString();
-        
-        window.location.href = `/?${queryParams}&usrnm=${user[0]}&usrid=${user[1]}`;
+    .then(data => {
+        if(data.sucess){
+            window.location.href = `/?usrnm=${user[0]}&usrid=${user[1]}`;
+        }
     });
-    //console.log(kindOfDish, zubDauer, zutEx, zutIn, prEx, prIn, zubEx, recTitle);
 }
 async function getAndShowAllRecs(){
     const user = getUserCredetials();
@@ -149,9 +148,23 @@ function scrollButtons(dir) {
 }
 
 
-function openRecList(filter, showText){
+async function openRecList(filter, showText) {
     const user = getUserCredetials();
-    window.location.href = '/recList/?usrnm=' + user[0] + '&usrid=' + user[1] + '&recfilter=' + filter + '&showText=' + showText;
+    console.log(filter, showText);
+
+    await fetch('/recList', {
+        method: 'POST',  // Ändern von GET auf POST
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ recfilter: filter, showText: showText }) // JSON-Body statt Query-Parameter
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.sucess){
+        window.location.href = `/?usrnm=${user[0]}&usrid=${user[1]}`;
+        }
+    });
 }
 function reportAny(){
     const user = getUserCredetials();

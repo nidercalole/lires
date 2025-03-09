@@ -3,6 +3,7 @@ const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
 const useragent = require('express-useragent');
 const path = require('path');
+const session = require('express-session');
 
 const connectDB = require('./server/config/db')
 
@@ -27,6 +28,12 @@ app.use((req, res, next) => {
   next();
 });
 
+
+app.use(session({
+    secret: 'geheim',  // Ändere das in etwas Sicheres
+    resave: false,
+    saveUninitialized: true
+}));
 app.use('/', require('./server/routes/main'))
 app.use('/addrec', require('./server/routes/addrecrouter'))
 app.use('/mobile', require('./server/routes/mobile'))

@@ -9,6 +9,15 @@ const usrnm = require('../models/usrnm');
 const userCreds = require('../models/usercreds');
 const nodemailer = require('nodemailer');
 
+const emptyRecDeafult = {
+    recid: '0',
+    recname: 'Rezept nicht gefunden',
+    kindodish: ['Unbekannt'],
+    ingredients: ['Unbekannt'],
+    instructions: ['Unbekannt'],
+    ts: new Date().toISOString
+};
+
 function insertUsr(data) {
     const usrnm = new Usrnm(data);
     usrnm.save()
@@ -71,8 +80,16 @@ router.get('/', async(req, res) => {
             return res.redirect('/login');
         }else{
             try{
+                var filterText = "Neuste Rezepte";
                 const query = { usrid: req.query.usrid };
-                const searchRecs = req.query.filtertRecs;
+                var searchRecs = req.query.filtertRecs;
+                if (req.session.filteredRecs) {
+                    filterText = req.session.filterText;
+                    searchRecs = req.session.filteredRecs;
+                    req.session.filteredRecs = null;
+                    req.session.filterText = null;
+                }
+
                 const existingUser = await Usrnm.findOne(query).exec();
                 const userCredits = await userCreds.findOne({user: req.query.usrid}).exec();
                 var calRecs = userCredits.recmarked[1];
@@ -85,11 +102,11 @@ router.get('/', async(req, res) => {
                 if(searchRecs === undefined || searchRecs === null || searchRecs === 'undefined' || searchRecs === 'null'){
                     recrToSend = newestRecs;
                 }else{
-                    recrToSend = [JSON.parse(searchRecs)];
+                    recrToSend = searchRecs;
                 }
                 if(existingUser){
                     const username = existingUser.usrnm;
-                    return res.render('index', { title: 'Lires', usrnm: username, recs: recrToSend, dataDays: getNextThreeDatesWithEntries(calRecs, allRecs)});
+                    return res.render('index', { title: 'Lires', usrnm: username, recs: recrToSend, dataDays: getNextThreeDatesWithEntries(calRecs, allRecs), filterText: filterText });
                 }else{
                     return res.redirect('/login');
                 }
@@ -99,9 +116,6 @@ router.get('/', async(req, res) => {
             }
         }
     }
-
-
-
 });
 
 router.get('/login', (req, res) => {
@@ -212,8 +226,14 @@ router.post('/search', async (req, res) => {
     if (recTitle) {
         recsPrefer = recs.find(rec => rec.recname.toLowerCase().includes(recTitle.toLowerCase())) || null;
     }
-
-    return res.json(recsPrefer);
+    if (recsPrefer === null) {
+        recsPrefer = emptyRecDeafult;
+    }
+    req.session.filteredRecs = [recsPrefer];
+    req.session.filterText = 'Suchergebnisse für ' + recTitle;
+    return res.json({
+        sucess: true,
+    });  
 
 });
 router.get('/allrecs', async (req, res) => {
@@ -230,17 +250,20 @@ router.get('/testapi', (req, res) => {
 });
 */
 
-router.get('/recList', async (req, res) => {
-    const { recfilter, showText } = req.query;
+router.post('/recList', async (req, res) => {
+    const { recfilter, showText } = req.body; 
+
     const recs = await Rec.find({}).exec();
     const filteredRecs = recs.filter(rec => 
         Array.isArray(rec.kindodish) &&
         rec.kindodish.some(dish => dish.toLowerCase() === recfilter?.toLowerCase())
     );
-
-    res.render('recList', { title: 'Lires', usrnm: req.query.usrnm, recs: filteredRecs, showText: showText });
+    req.session.filteredRecs = filteredRecs;
+    req.session.filterText = showText;
+    return res.json({
+        sucess: true,
+    });
 });
-
 router.get('/reportAny', (req, res) => {
     res.render('report', { title: 'Lires', usrnm: req.query.usrnm });
 });
@@ -312,9 +335,9 @@ router.post('/sendReport', async (req, res) => {
             console.log(error);
             return res.render('report', { title: 'Lires', usrnm: req.body.user, message: false });
         }
-        console.log('Message sent: %s', info.messageId);
+        //console.log('Message sent: %s', info.messageId);
         const parts  = req.body.user.split(' ');
-        console.log('/?usrnm=' + parts[0] + '&usrid=' + parts[1] + '&message=true');
+        //console.log('/?usrnm=' + parts[0] + '&usrid=' + parts[1] + '&message=true');
         return res.redirect('/?usrnm=' + parts[0] + '&usrid=' + parts[1] + '&message=true');
     });
 
