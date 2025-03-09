@@ -101,23 +101,24 @@
         <div class="calenderVision stapeln">
           <kalenderTitel>Geplante Rezepte</kalenderTitel>
           <div class="kumpeln spaceBetween">
+            <div style="display: none;" id="dataDaysMain"><%= JSON.stringify(dataDays) %></div>
             <div class="nextRecipes stapeln zentrieren" id="firstNextRec">
-              <calDatum>DD.MM.YYYY</calDatum>
+              <calDatum id="firstNextReccalDatum">DD.MM.YYYY</calDatum>
               <hr class="listTitleLine">
-              <calRecNumber>X</calRecNumber>
-              Rezepte
+              <calRecNumber id="firstNextReccalRecNumber">X</calRecNumber>
+              <div id="firstNextRecDiv">Rezepte</div>
             </div>
             <div class="nextRecipes stapeln zentrieren" id="secondNextRec">
-              <calDatum>DD.MM.YYYY</calDatum>
+              <calDatum id="secondNextReccalDatum">DD.MM.YYYY</calDatum>
               <hr class="listTitleLine">
-              <calRecNumber>X</calRecNumber>
-              Rezepte
+              <calRecNumber id="secondNextReccalRecNumber">X</calRecNumber>
+              <div id="secondNextRecDiv">Rezepte</div>
             </div>
             <div class="nextRecipes stapeln zentrieren" id="thirdNextRec">
-              <calDatum>DD.MM.YYYY</calDatum>
+              <calDatum id="thirdNextReccalDatum">DD.MM.YYYY</calDatum>
               <hr class="listTitleLine">
-              <calRecNumber>X</calRecNumber>
-              Rezepte
+              <calRecNumber id="thirdNextReccalRecNumber">X</calRecNumber>
+              <div id="thirdNextRecDiv">Rezepte</div>
             </div>
           </div>
         </div>
@@ -125,24 +126,6 @@
          <calDatum>Detailansicht DD.MM.YYYY</calDatum>
           <hr class="detailRecLineTitle">
           <div class="paddingZehn">
-            <div class="detailRec">
-              <detailRecName>Rezeptname</detailRecName>
-              <br>
-              <detailRecDauer>Dauer: XX min</detailRecDauer>
-              <hr class="detailRecLine">
-            </div>
-            <div class="detailRec">
-              <detailRecName>Rezeptname</detailRecName>
-              <br>
-              <detailRecDauer>Dauer: XX min</detailRecDauer>
-              <hr class="detailRecLine">
-            </div>
-            <div class="detailRec">
-              <detailRecName>Rezeptname</detailRecName>
-              <br>
-              <detailRecDauer>Dauer: XX min</detailRecDauer>
-              <hr class="detailRecLine">
-            </div>
             <div class="detailRec">
               <detailRecName>Rezeptname</detailRecName>
               <br>
@@ -278,3 +261,4 @@
 <script src="/js/loadAndDisplayLists.js"></script>
 <script src="/js/listCheckboxes.js"></script>
 <script src="/js/collectDataFilter.js"></script>
+<script src="/js/scriptIndex.js"></script>

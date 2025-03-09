@@ -293,6 +293,7 @@ kalenderTitel{
   width: 7vw;
   border-radius: var(--borderRadius);
   background-color: var(--contrastBuddy);
+  display: none;
 }
 
 .nextRecipes:hover{

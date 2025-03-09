@@ -34,6 +34,31 @@ function insertUsr(data) {
         });
 }
 
+const getNextThreeDatesWithEntries = (records, recipes) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); 
+    const uniqueFutureDates = [...new Set(
+      records
+        .map(([_, date]) => new Date(date))
+        .filter(date => date >= today)
+        .map(date => date.toISOString().split('T')[0])
+    )].sort();
+
+    const nextThreeDates = uniqueFutureDates.slice(0, 3);
+    const recipeMap = Object.fromEntries(recipes.map(({ recid, recname }) => [recid, recname]));
+
+    return nextThreeDates.map(date => {
+      const formattedDate = new Date(date);
+      const displayDate = `${(formattedDate.getDate() + 1).toString().padStart(2, '0')}.${(formattedDate.getMonth() + 1).toString().padStart(2, '0')}`;
+  
+      const entriesForDate = records
+        .filter(([_, recDate]) => recDate.startsWith(date))
+        .map(([recid]) => [recid, recipeMap[recid] || 'Unbekanntes Rezept']); // Falls ID fehlt, Standardwert setzen
+  
+      return [displayDate, entriesForDate];
+    });
+  };
+
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
@@ -49,9 +74,12 @@ router.get('/', async(req, res) => {
                 const query = { usrid: req.query.usrid };
                 const searchRecs = req.query.filtertRecs;
                 const existingUser = await Usrnm.findOne(query).exec();
+                const userCredits = await userCreds.findOne({user: req.query.usrid}).exec();
+                var calRecs = userCredits.recmarked[1];
                 var recs = [];
                 recs = await Rec.find({}).exec();
                 recs.sort((a, b) => new Date(b.ts) - new Date(a.ts));
+                allRecs = recs; 
                 var newestRecs = recs.slice(0, 7);
                 let recrToSend = [];
                 if(searchRecs === undefined || searchRecs === null || searchRecs === 'undefined' || searchRecs === 'null'){
@@ -61,7 +89,7 @@ router.get('/', async(req, res) => {
                 }
                 if(existingUser){
                     const username = existingUser.usrnm;
-                    return res.render('index', { title: 'Lires', usrnm: username, recs: recrToSend});
+                    return res.render('index', { title: 'Lires', usrnm: username, recs: recrToSend, dataDays: getNextThreeDatesWithEntries(calRecs, allRecs)});
                 }else{
                     return res.redirect('/login');
                 }
