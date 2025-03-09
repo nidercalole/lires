@@ -144,6 +144,7 @@ listName {
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.6s ease-out, opacity 0.3s ease-out;
+  margin: 7.5px 0 0 0;
 }
 
 .dropdown.open .dropdown-content {
@@ -300,6 +301,11 @@ kalenderTitel{
   background-color: var(--special);
   cursor: pointer;
 }
+.nextTwoRecs{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
 
 .detailRecLineTitle{
   width: 99%;
@@ -396,7 +402,7 @@ detailRecDauer{
 #filOptionPage{
   width: 50vw;
   position: absolute;
-  top: calc(50vh - 12.5vh);
+  top: calc(50vh - 25vh);
   left: calc(50vw - 25vw);
   z-index: 1;
   background-color: var(--special);

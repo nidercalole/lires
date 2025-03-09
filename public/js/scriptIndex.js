@@ -18,6 +18,11 @@ switch (dataDays.length) {
             document.getElementById('thirdNextRecDiv').textContent = 'Rezept'
         }
     case 2:
+        if(dataDays.length == 2){
+            document.getElementById('nextRecs').classList.remove('spaceBetween');
+            document.getElementById('nextRecs').classList.add('nextTwoRecs');
+            document.getElementById('secondNextRec').style.margin = '0px 20px';
+        }
         document.getElementById('secondNextRec').style.display = 'flex';
         document.getElementById('secondNextRec').onclick = function() {
             detViewforDay(dataDays[1][1]);

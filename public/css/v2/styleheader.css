@@ -1,24 +1,69 @@
 header {
-    background-color: var(--contrastBuddy);
-    color: var(--light);
-    margin: 0;
-    padding: 1vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
+  background-color: var(--contrastBuddy);
+  color: var(--light);
+  margin: 0;
+  padding: 1vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo{
-    height: 10vh;
-    margin-right: 10px;
+.logo {
+  height: 10vh;
+  margin-right: 10px;
 }
 
-.leftSide{
-    margin-right: auto;
+.leftSide {
+  margin-right: auto;
 }
-
 
 .navigation {
-    height: 8vh;
-    margin: 10px 0 10px 40px;
+  height: 8vh;
+  margin: 10px 0 10px 40px;
+}
+
+.filbut {
+  background-color: transparent;
+  border: none;
+  border-radius: var(--borderRadius);
+  margin: 0 10px;
+  padding: 5px;
+  color: var(--light);
+  font-size: 15px;
+}
+
+.filbut:hover {
+  background-color: var(--special);
+}
+
+#suchleiste {
+  background-color: transparent;
+  border: none;
+  margin: 10px;
+  padding: 5px;
+  border-radius: var(--borderRadius);
+  color: var(--light);
+  font-size: 20px;
+  font-weight: bold;
+  width: 250px; 
+  max-width: 700px;
+  transition: width 0.1s ease;
+}
+
+#suchleiste::placeholder {
+  color: var(--light);
+  font-size: 20px;
+  font-weight: bold;
+}
+#suchleiste:focus {
+  background-color: var(--special);
+  outline: none;
+  border: none;
+}
+
+#suchleiste:focus::placeholder {
+  color: transparent;
+}
+.weiter {
+  height: 30px;
 }

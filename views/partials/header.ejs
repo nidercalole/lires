@@ -12,8 +12,11 @@
     />
 
     <div class="kumpeln horizont">
-      <input id="suchleiste"  class="transparent">
-      <img class="pfeil" src="/img/weiter.png" alt="weiter" height="30px" onclick="getCurrentSearchConfig()">
+      <input id="suchleiste"  class="transparent" placeholder="Suche nach Rezepten...">
+      <button class="filbut stapeln zentrieren" alt="weiter" onclick="getCurrentSearchConfig()">
+        <img class="weiter" height="30px" alt="weiter" src="/img/weiter.png">
+        Suchen
+      </button>
       <button id="filbut" class="filbut" onclick="filBut(); maxDauerInput()">
           <img src="/img/fil.png" alt="Filter" width="55px" />
       </button>
