@@ -12,6 +12,15 @@ const stemmer = natural.PorterStemmer;
 
 router.use(bodyParser.json());
 
+const emptyRecDeafult = {
+  recid: '0',
+  recname: 'Kein Rezept nicht gefunden',
+  kindodish: ['Unbekannt'],
+  ingredients: ['Unbekannt'],
+  instructions: ['Unbekannt'],
+  ts: new Date().toISOString
+};
+
 router.get('/', (req, res) => {
     res.render('addrec', { title: 'Lires', usrnm: req.query.usrnm });
 });
@@ -119,12 +128,14 @@ router.post('/filterRequest', async(req, res) => {
             return res.json({ success: true, message: 'tooManyFilterRequest' });
         }else if(zutEx.length === 0 && zutIn.length === 0 && prEx.length === 0 && prIn.length === 0 && maxDauer != 0){
           await Rec.find({ duration: { $lte: maxDauer } }).exec().then((recs) => {
-            res.json({ success: true, recs: recs, message: 'validFilterRequest' });
+            req.session.filteredRecs = recs;
+            req.session.filterText = 'Filterergebnisse';
+            res.json({ success: true, message: 'validFilterRequest' });
           });
           return;
         }else {
           if(zutIn.length === 0){
-            console.log('zutEx: ' + JSON.stringify(zutEx));
+            //console.log('zutEx: ' + JSON.stringify(zutEx));
             await Rec.find({
               ingredients: {
                 $not: {
@@ -138,16 +149,29 @@ router.post('/filterRequest', async(req, res) => {
               duration: { $lte: maxDauer }
             }).exec().then((recs) => {
               const recsFinal = filterRecsbyProcess(recs, prEx, prIn);
-              res.json({ success: true, recs: recsFinal, message: 'validFilterRequest' });
+              req.session.filteredRecs = recsFinal;
+              req.session.filterText = 'Filterergebnisse';
+              if(recsFinal.length === 0){
+                req.session.filteredRecs = [emptyRecDeafult];
+                return res.json({ success: true, message: 'noResults' });
+              }
+              res.json({ success: true, message: 'validFilterRequest' });
             });
           }else {
-            console.log('zutIn: ' + JSON.stringify(zutIn)); 
+            //console.log('zutIn: ' + JSON.stringify(zutIn)); 
             await Rec.find({
               ingredients: { $elemMatch: { ing: {  $in: zutIn.map(zut => new RegExp(zut, 'i')) } } },
               duration: { $lte: maxDauer }
             }).exec().then((recs) => {
               const recsFinal = filterRecsbyProcess(recs, prEx, prIn);
-              res.json({ success: true, recs: recsFinal, message: 'validFilterRequest' });
+
+              req.session.filteredRecs = recsFinal;
+              req.session.filterText = 'Filterergebnisse';
+              if(recsFinal.length === 0){
+                req.session.filteredRecs = [emptyRecDeafult];
+                return res.json({ success: true, message: 'noResults' });
+              }
+              res.json({ success: true, message: 'validFilterRequest' });
             });
           }
         }

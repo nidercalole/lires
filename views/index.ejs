@@ -122,28 +122,11 @@
             </div>
           </div>
         </div>
-        <div class="detailedVision">
-         <calDatum>Detailansicht DD.MM.YYYY</calDatum>
+        <div class="detailedVision hidden" id="detViewforToday">
+         <calDatum><div id="detViewCalDatum">Detailansicht DD.MM.YYYY</div> <div id="detViewCalDuration"></div></calDatum>
           <hr class="detailRecLineTitle">
-          <div class="paddingZehn">
-            <div class="detailRec">
-              <detailRecName>Rezeptname</detailRecName>
-              <br>
-              <detailRecDauer>Dauer: XX min</detailRecDauer>
-              <hr class="detailRecLine">
-            </div>
-            <div class="detailRec">
-              <detailRecName>Rezeptname</detailRecName>
-              <br>
-              <detailRecDauer>Dauer: XX min</detailRecDauer>
-              <hr class="detailRecLine">
-            </div>
-            <div class="detailRec">
-              <detailRecName>Rezeptname</detailRecName>
-              <br>
-              <detailRecDauer>Dauer: XX min</detailRecDauer>
-              <hr class="detailRecLine">
-            </div>
+          <div class="paddingZehn" id="detViewRecHolderMain">
+
           </div>
         </div>
       </div>
@@ -193,7 +176,7 @@
 
 <!-- begin of Search filter-->
 <div class="darkBg" id="darkBg">
-    <div id="filOptionPage" class="filter stapeln zentrieren ">
+    <div id="filOptionPage" class="filter stapeln zentrieren z-index-high">
       <div class="kumpeln filterHeader spaceBetween">
         <div class="leer"></div>
         <filterTitle>Filter</filterTitle>

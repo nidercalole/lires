@@ -32,26 +32,35 @@ function listButclick(){
     ended = !ended; 
  };
 
-//inputRecTitle
+
 function inputRecTitle(){
     const recTitle = document.getElementById('recTitle');
     const inputWidth = recTitle.scrollWidth; 
     recTitle.style.width = inputWidth + "px"; 
 };
 
-//buttaddrec
+
 function buttaddrec(){
     const user = getUserCredetials();
     window.location.href = '/addrec/?usrnm=' + user[0] + '&usrid=' + user[1];
 };
 
-//gridstyle
+
 function filBut(){
     const filOptionPage = document.getElementById('darkBg');
     if (filOptionPage.style.display === 'none' || filOptionPage.style.display === '') {
         filOptionPage.style.display = 'block';
+        document.addEventListener('keydown', closeOnEvent);
+        gebId('darkBg').addEventListener('click', closeOnEvent);
     } else{
         filOptionPage.style.display = 'none';
+        document.removeEventListener('keydown', closeOnEvent);
+    }
+}
+function closeOnEvent(event) {
+    if (event.key === 'Escape' || (event.type === 'click' && event.target === gebId('darkBg'))) {
+        document.getElementById('darkBg').style.display = 'none';
+        document.removeEventListener('keydown', closeOnEvent);
     }
 }
 
@@ -95,24 +104,27 @@ options.forEach(option => {
 async function getCurrentSearchConfig() {
     const user = getUserCredetials();
 
-    const zubDauer = document.getElementById('maxDauer').value;
-    const zutEx = document.getElementById('zutFilterMainex').value;
-    const zutIn = document.getElementById('zutFilterMainin').value;
-    const prEx = document.getElementById('prFilterMainex').value;
-    const prIn = document.getElementById('prFilterMainin').value;
+    //const zubDauer = document.getElementById('maxDauer').value;
+    //const zutEx = document.getElementById('zutFilterMainex').value;
+    //const zutIn = document.getElementById('zutFilterMainin').value;
+    //const prEx = document.getElementById('prFilterMainex').value;
+    //const prIn = document.getElementById('prFilterMainin').value;
     //const zubEx = document.getElementById('zubFilternMainEx').value;
     const recTitle = document.getElementById('suchleiste').value;
+    if (recTitle == '') {
+        return;
+    }
     await fetch('/search', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
-            zubDauer: zubDauer,
-            zutEx: zutEx,
-            zutIn: zutIn,
-            prEx: prEx,
-            prIn: prIn,
+            //zubDauer: zubDauer,
+            //zutEx: zutEx,
+            //zutIn: zutIn,
+            //prEx: prEx,
+            //prIn: prIn,
             //zubEx: zubEx,
             recTitle: recTitle
         }),

@@ -1,3 +1,5 @@
+
+
 function gebId(id){
     return document.getElementById(id);
 }
@@ -27,13 +29,12 @@ async function collectDataForSearch() {
         }),
     }).then(async response => {
         if (response.ok) {
-            const data = await response.json();
-            console.log('Success:', data);
-            loadFilterdRecs(data); //loadFilterdRecs muss man noch machen !!!!!!!!
+            data = await response.json();
+            window.location.href = '/?usrnm=' + getUserCredetials()[0] + '&usrid=' + getUserCredetials()[1] + '&filterMessage=' + data.message;
         }
     }).catch(error => {
         console.error('Error:', error);
     });
-
+    filBut(); //closes the filter menu
 
 }

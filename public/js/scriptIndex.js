@@ -1,54 +1,71 @@
 const dataDays = JSON.parse(document.getElementById('dataDaysMain').textContent);
 
-console.log(dataDays);
+function gebId(string){
+    return document.getElementById(string);
+}
 
 switch (dataDays.length) {
     case 0:
         break;
     case 3:
-        document.getElementById('thirdNextRec').style.display = 'flex';
-        document.getElementById('thirdNextRec').onclick = function() {
-            detViewforDay(dataDays[2][1]);
+        gebId('thirdNextRec').style.display = 'flex';
+        gebId('thirdNextRec').onclick = function() {
+            detViewforDay(dataDays[2][1], dataDays[2][0]);
         }
-        document.getElementById('thirdNextReccalDatum').textContent = dataDays[2][0]
-        document.getElementById('thirdNextReccalRecNumber').textContent = dataDays[2][1].length
+        gebId('thirdNextReccalDatum').textContent = dataDays[2][0]
+        gebId('thirdNextReccalRecNumber').textContent = dataDays[2][1].length
         if (dataDays[2][1].length > 1) {
-            document.getElementById('thirdNextRecDiv').textContent = 'Rezepte'
+            gebId('thirdNextRecDiv').textContent = 'Rezepte'
         }else{
-            document.getElementById('thirdNextRecDiv').textContent = 'Rezept'
+            gebId('thirdNextRecDiv').textContent = 'Rezept'
         }
     case 2:
         if(dataDays.length == 2){
-            document.getElementById('nextRecs').classList.remove('spaceBetween');
-            document.getElementById('nextRecs').classList.add('nextTwoRecs');
-            document.getElementById('secondNextRec').style.margin = '0px 20px';
+            gebId('nextRecs').classList.remove('spaceBetween');
+            gebId('nextRecs').classList.add('nextTwoRecs');
+            gebId('secondNextRec').style.margin = '0px 20px';
         }
-        document.getElementById('secondNextRec').style.display = 'flex';
-        document.getElementById('secondNextRec').onclick = function() {
-            detViewforDay(dataDays[1][1]);
+        gebId('secondNextRec').style.display = 'flex';
+        gebId('secondNextRec').onclick = function() {
+            detViewforDay(dataDays[1][1], dataDays[1][0]);
         }
-        document.getElementById('secondNextReccalDatum').textContent = dataDays[1][0]
-        document.getElementById('secondNextReccalRecNumber').textContent = dataDays[1][1].length
+        gebId('secondNextReccalDatum').textContent = dataDays[1][0]
+        gebId('secondNextReccalRecNumber').textContent = dataDays[1][1].length
         if (dataDays[1][1].length > 1) {
-            document.getElementById('secondNextRecDiv').textContent = 'Rezepte'
+            gebId('secondNextRecDiv').textContent = 'Rezepte'
         }else{
-            document.getElementById('secondNextRecDiv').textContent = 'Rezept'
+            gebId('secondNextRecDiv').textContent = 'Rezept'
         }
     case 1:
-        document.getElementById('firstNextRec').style.display = 'flex';
-        document.getElementById('firstNextRec').onclick = function() {
-            detViewforDay(dataDays[0][1]);
+        gebId('firstNextRec').style.display = 'flex';
+        gebId('firstNextRec').onclick = function() {
+            detViewforDay(dataDays[0][1], dataDays[0][0]);
         };
-        document.getElementById('firstNextReccalDatum').textContent = dataDays[0][0]
-        document.getElementById('firstNextReccalRecNumber').textContent = dataDays[0][1].length
+        gebId('firstNextReccalDatum').textContent = dataDays[0][0]
+        gebId('firstNextReccalRecNumber').textContent = dataDays[0][1].length
         if (dataDays[0][1].length > 1) {
-            document.getElementById('firstNextRecDiv').textContent = 'Rezepte'
+            gebId('firstNextRecDiv').textContent = 'Rezepte'
         }else{
-            document.getElementById('firstNextRecDiv').textContent = 'Rezept'
+            gebId('firstNextRecDiv').textContent = 'Rezept'
         }
         break;
 }
 
-function detViewforDay(day){
-    console.log(day);
+function detViewforDay(dayData, day){
+    var dur = 0;
+    dayData.forEach(rec => dur += rec.duration);
+    gebId('detViewRecHolderMain').innerHTML = '';
+    gebId('detViewforToday').classList.remove('hidden');
+    gebId('detViewCalDatum').textContent = 'Detailansicht '+ day;
+    gebId('detViewCalDuration').textContent = 'Gesamtzeit: ' + dur + ' min';
+    dayData.forEach(rec => {
+        gebId('detViewRecHolderMain').innerHTML += `
+             <div class="detailRec" onclick = "openRec('${rec.recid}')">
+              <detailRecName>${rec.recname}</detailRecName>
+              <br>
+              <detailRecDauer>${rec.duration} min</detailRecDauer>
+              <hr class="detailRecLine">
+            </div>
+        `;
+    });
 }

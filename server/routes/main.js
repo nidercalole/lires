@@ -45,6 +45,7 @@ function insertUsr(data) {
 
 const getNextThreeDatesWithEntries = (records, recipes) => {
     const today = new Date();
+    today.setDate(today.getDate() - 1);
     today.setHours(0, 0, 0, 0); 
     const uniqueFutureDates = [...new Set(
       records
@@ -54,7 +55,7 @@ const getNextThreeDatesWithEntries = (records, recipes) => {
     )].sort();
 
     const nextThreeDates = uniqueFutureDates.slice(0, 3);
-    const recipeMap = Object.fromEntries(recipes.map(({ recid, recname }) => [recid, recname]));
+    const recipeMap = Object.fromEntries(recipes.map(recipe => [recipe.recid, recipe]));
 
     return nextThreeDates.map(date => {
       const formattedDate = new Date(date);
@@ -62,7 +63,7 @@ const getNextThreeDatesWithEntries = (records, recipes) => {
   
       const entriesForDate = records
         .filter(([_, recDate]) => recDate.startsWith(date))
-        .map(([recid]) => [recid, recipeMap[recid] || 'Unbekanntes Rezept']); // Falls ID fehlt, Standardwert setzen
+        .map(([recid]) => recipeMap[recid] || 'Unbekanntes Rezept'); // Falls ID fehlt, Standardwert setzen
   
       return [displayDate, entriesForDate];
     });
@@ -82,7 +83,8 @@ router.get('/', async(req, res) => {
             try{
                 var filterText = "Neuste Rezepte";
                 const query = { usrid: req.query.usrid };
-                var searchRecs = req.query.filtertRecs;
+                var searchRecs //= req.query.filtertRecs;
+                //console.log(req.session.filteredRecs);
                 if (req.session.filteredRecs) {
                     filterText = req.session.filterText;
                     searchRecs = req.session.filteredRecs;
@@ -96,7 +98,7 @@ router.get('/', async(req, res) => {
                 var recs = [];
                 recs = await Rec.find({}).exec();
                 recs.sort((a, b) => new Date(b.ts) - new Date(a.ts));
-                allRecs = recs; 
+                allRecs = recs;
                 var newestRecs = recs.slice(0, 7);
                 let recrToSend = [];
                 if(searchRecs === undefined || searchRecs === null || searchRecs === 'undefined' || searchRecs === 'null'){
@@ -220,7 +222,7 @@ router.get('/getRecChefkoch', (req, res) => {
     });
 }); 
 router.post('/search', async (req, res) => {
-    const { zubDauer, zutEx, zutIn, prEx, prIn, zubEx, recTitle } = req.body
+    const { recTitle } = req.body
     var recs = await Rec.find({}).exec();
     var recsPrefer 
     if (recTitle) {
