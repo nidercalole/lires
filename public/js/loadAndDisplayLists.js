@@ -53,6 +53,19 @@ function loadAndDisplayLists() {
                 </div>`;
                 i++
             });
+            let inputing = document.createElement('div');
+            inputing.classList.add('divRowListElement');
+            inputing.innerHTML = `
+            <div>
+                <input type="text" class="inputListsAmount" id="inputListsAmount_${list.listid}" placeholder="Menge">
+                <input type="text" class="inputListsIng" id="inputListsIng_${list.listid}" placeholder="Zutat">
+                
+                <button class="editLists" onclick="addListItem('${list.listid}')">
+                    <img src="/img/plus.png" width="15px" height="15px" alt="Füge neuen Eintrag hinzu">
+                </button>
+            </div>`;
+            
+            itemsStacked += inputing.outerHTML;
             let item = document.createElement('div');
             item.classList.add('dropdown');
             item.id = list.listid;

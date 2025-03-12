@@ -1,9 +1,4 @@
 
-
-//test
-
-
-//growing list
 let ended = false;
 function getUserCredetials(){
     const queryString = window.location.search; 
