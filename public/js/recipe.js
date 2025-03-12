@@ -28,7 +28,7 @@ async function achtungDieseFunktionHatSchonEineFunktionInRECIPEJSAberhierFehltno
         body: JSON.stringify({ recid: recData.recid, usrid: getUserCredetials()[1], markedAfter: markedAfter }),
     }).then(response => response.json())
     .then(data => {
-        console.log(data);
+        console.log('');
     });
 }
 

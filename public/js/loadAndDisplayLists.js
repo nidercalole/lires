@@ -4,7 +4,7 @@ function getUserCredentials() {
     return [urlParams.get('usrnm'), urlParams.get('usrid')]
 }
 
-function openDropdown(id, button) {
+function openDropdown(id) {
     const dropdownContent = document.getElementById(id);
     dropdownContent.classList.toggle('open'); 
 }
@@ -47,7 +47,7 @@ function loadAndDisplayLists() {
                     </div>
                     <div class="listsBtnsListElement">
                         <button class="editLists">
-                            <img src="/img/x.png" width="15px" height="15px" alt="Lösche diese Liste" onclick="irgendwas2()">
+                            <img src="/img/x.png" width="15px" height="15px" alt="Lösche diese Liste" onclick="deleteListItem('${list.listid}', ${i})">
                         </button>
                     </div>
                 </div>`;
@@ -58,11 +58,11 @@ function loadAndDisplayLists() {
             item.id = list.listid;
             item.innerHTML = `
             <div class="listComplete">
-                <div class="lists kumpeln spaceBetween" onclick="openDropdown('${list.listid}', this)">
+                <div class="lists kumpeln spaceBetween" onclick="openDropdown('${list.listid}')">
                     <div class="dropdown-button" ><listName>${list.listname}</listName></div>
                     <div>
                         <button class="editLists">
-                            <img src="/img/x.png" width="20px" height="20px" alt="Lösche diese Liste" onclick="irgendwas2(event)">
+                            <img src="/img/x.png" width="20px" height="20px" alt="Lösche diese Liste" onclick="deletList('${list.listid}')">
                         </button>
                     </div>
                 </div>
@@ -77,9 +77,51 @@ function loadAndDisplayLists() {
 }
 loadAndDisplayLists();
 
-/*<button class="editLists">
-     <img src="/img/edit.png" width="20px" height="20px" alt="Bearbeite diese Liste" onclick="irgendwas()">
-</button>
-<button class="editLists">
-    <img src="/img/x.png" width="20px" height="20px alt="Lösche diese Liste" onclick="irgendwas2()">
-</button>*/
+async function deleteListItem(id, ingIndex) {
+    //console.log(id, ingIndex);
+    const listid = id
+    const user = getUserCredentials();
+    await fetch('/addToList/deleteListItem', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            user: user,
+            listid: listid,
+            ingIndex: ingIndex
+        })
+    }).then(response => response.json())
+    .then(data => {
+        if(data.success === true){
+            sessionStorage.setItem("openDropdownAfterReload", listid);
+            location.reload();
+        }
+    });
+}
+async function deletList(listid) {
+    const user = getUserCredentials();
+    //console.log(listid);
+    await fetch('/addToList/deleteList', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            user: user,
+            listid: listid
+        })
+    }).then(response => response.json())
+    .then(data => {
+        if(data.success === true){
+            location.reload();
+        }
+    });
+}
+window.addEventListener("DOMContentLoaded", () => {
+    const listid = sessionStorage.getItem("openDropdownAfterReload");
+    if (listid) {
+        openDropdown(listid); // Dropdown nach dem Reload öffnen
+        sessionStorage.removeItem("openDropdownAfterReload"); // Wert wieder entfernen
+    }
+});

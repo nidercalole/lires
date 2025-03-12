@@ -80,7 +80,7 @@ router.post('/verifyIngredient', async(req, res) => {
               return;
             }
             res.redirect('/addrec/verify?usrid=' + req.body.usrid + '&usrnm=' + req.body.usrnm);
-            console.log('done');
+            //console.log('done');
         } catch (error) {
             console.error('Error updating ingredient:', error);
         }
@@ -138,7 +138,7 @@ router.post('/verifyRecipe', async (req, res) => {
             await unverifyDoc.save();
 
             res.redirect('/addrec/verify?usrid=' + req.body.usrid + '&usrnm=' + req.body.usrnm);
-            console.log('done');
+            //console.log('done');
           } catch (error) {
             console.error('Error updating ingredient:', error);
         }

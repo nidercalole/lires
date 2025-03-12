@@ -15,7 +15,7 @@ router.post('/', async(req, res) => {
     let defaultList = false;
     try {
         const { ingList, selectedLists, user, newlistName } = req.body;
-        console.log(ingList, selectedLists, user, newlistName);
+        //console.log(ingList, selectedLists, user, newlistName);
         if(selectedLists.length === 0){
             return res.json({ success: true});
         }else if(selectedLists[0] === 'defaultListNew'){
@@ -117,5 +117,35 @@ router.post('/listItemCheckUpdate', async(req, res) => {
         res.json({ success: false });
     }
 });
-
+router.post('/deleteListItem', async(req, res) => {
+    try {
+        const { listid, ingIndex } = req.body;
+        const query = { listid: listid };
+        const existingList = await List.findOne(query).exec();
+        if (existingList) {
+            existingList.list.splice(ingIndex, 1);
+            existingList.markModified("list");
+            await existingList.save();
+        } else {
+            return res.json({ success: false });
+        }
+        res.json({ success: true });
+    } catch (error) {
+        console.error(error);
+        res.json({ success: false });
+    }
+});
+router.post('/deleteList', async(req, res) => {
+    try {
+        const { listid } = req.body;
+        const query = { listid: listid };
+        await List
+            .findOneAndDelete(query)
+            .exec();
+        res.json({ success: true });
+    } catch (error) {
+        console.error(error);
+        res.json({ success: false });
+    }
+});
 module.exports = router;

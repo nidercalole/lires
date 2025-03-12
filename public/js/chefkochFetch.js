@@ -74,7 +74,7 @@ function addChefkochRec(){
     fetch('/getRecChefkoch?link=' + link)
     .then(response => data = response.json())
     .then(data => {
-        console.log(data)
+        //console.log(data)
         gebId("recTitle").value = data.name  
         gebId("krzDesc").textContent = data.name
         if(gebId("chooseBtn").textContent == "Schrittweise beschreiben"){

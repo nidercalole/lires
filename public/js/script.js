@@ -83,7 +83,6 @@ function redirectProfil(){
 
 function openRec(recid){
     const user = getUserCredetials();
-    console.log(user);
     window.location.href = '/recipe/?usrnm=' + user[0] + '&usrid=' + user[1] + '&recid=' + recid;
 }
 function openCalView(){
@@ -162,7 +161,7 @@ function scrollButtons(dir) {
 
 async function openRecList(filter, showText) {
     const user = getUserCredetials();
-    console.log(filter, showText);
+    //console.log(filter, showText);
 
     await fetch('/recList', {
         method: 'POST',  // Ändern von GET auf POST
