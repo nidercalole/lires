@@ -36,7 +36,7 @@
 }
 
 .resOben {
-  padding: 10px;
+  /*padding: 10px;*/
   border-radius: var(--borderRadius);
 }
 
@@ -45,9 +45,8 @@
 }
 
 .calender {
-  width: 27vw;
+  width: 26.5vw;
   display: flex;
-  padding: 10px;
   border-radius: var(--borderRadius);
 }
 
@@ -55,10 +54,32 @@
   margin: 0 0 10px 0;
 }
 
+calDauer{
+  font-style: italic;
+  margin-right: 5px;
+}
+
+.detailRecLineTitle{
+  width: 99%;
+  border-top: solid 1.5px var(--light);
+  border-radius: var(--borderRadius);
+}
+
+calDatum{
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+calRecNumber{
+  font-weight: bold;
+  font-size: 50px;
+}
+
 .detailedVision {
   background-color: var(--contrastBuddy);
   border-radius: var(--borderRadius);
-  padding: 10px 5px 0 5px;
+  padding: 10px ;
   max-height: 43.7vh;
   overflow-y: auto;
 }
@@ -227,7 +248,7 @@ tableTitle{
 table{
 table-layout: auto;
 border-collapse:collapse;
-width: 33vw;
+width: 32.5vw;
 border-radius: var(--borderRadius);
 }
 td {
@@ -307,20 +328,7 @@ kalenderTitel{
   justify-content: start;
 }
 
-.detailRecLineTitle{
-  width: 99%;
-  border-top: solid 1.5px var(--light);
-  border-radius: var(--borderRadius);
-}
 
-calDatum{
-  font-weight: bold;
-}
-
-calRecNumber{
-  font-weight: bold;
-  font-size: 50px;
-}
 
 .li::-webkit-scrollbar {
   width: 5px;
