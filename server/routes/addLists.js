@@ -42,6 +42,8 @@ router.post('/', async(req, res) => {
                             entry => entry[0] === ingList[i][0]
                         );
                         if (index > -1) {
+                            console.log(existingList.list[index][2]);
+                            console.log(ingList[i][2]);
                             // Zutat existiert bereits
                             if (existingList.list[index][2] === ingList[i][2]) {
                                 // Einheit gleich -> Mengen addieren          
@@ -56,7 +58,7 @@ router.post('/', async(req, res) => {
                                 await existingList.save();
                             } else {
                                 // Einheiten unterschiedlich -> Neuer Eintrag
-                                existingList.list.push([ingList[i][0], ingList[i][1], ingList[i][2]]);
+                                existingList.list.push([ingList[i][0], ingList[i][1], ingList[i][2], false]);
                             }
                         } else {
                             existingList.list.push(ingList[i]);

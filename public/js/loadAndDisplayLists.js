@@ -60,7 +60,7 @@ function loadAndDisplayLists() {
                 <input type="text" class="inputListsAmount" id="inputListsAmount_${list.listid}" placeholder="Menge">
                 <input type="text" class="inputListsIng" id="inputListsIng_${list.listid}" placeholder="Zutat">
                 
-                <button class="editLists" onclick="addListItem('${list.listid}')">
+                <button class="editLists" onclick="addListItemExtern('${list.listid}')">
                     <img src="/img/plus.png" width="15px" height="15px" alt="Füge neuen Eintrag hinzu">
                 </button>
             </div>`;
@@ -91,7 +91,7 @@ function loadAndDisplayLists() {
 loadAndDisplayLists();
 
 async function deleteListItem(id, ingIndex) {
-    //console.log(id, ingIndex);
+    console.log(id);
     const listid = id
     const user = getUserCredentials();
     await fetch('/addToList/deleteListItem', {
@@ -138,3 +138,39 @@ window.addEventListener("DOMContentLoaded", () => {
         sessionStorage.removeItem("openDropdownAfterReload"); // Wert wieder entfernen
     }
 });
+
+async function addListItemExtern(listid) {
+
+    const user = getUserCredentials();
+    const amount = document.getElementById('inputListsAmount_' + listid).value;
+
+    const ing = document.getElementById('inputListsIng_' + listid).value;
+    const match = amount.match(/^(\d+)([a-zA-Z]*)$/);
+    match[1] = parseInt(match[1]);
+    let ingFinal = [];
+    if (match) {
+        
+        ingFinal = [ing, match[1], match[2], false];
+    } else {
+        ingFinal = [ing, 0, '', false];
+    }
+
+    //console.log(listid, amount, ing,ingFinal);
+    await fetch('/addToList', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            user: user,
+            selectedLists: [listid],
+            ingList: [ingFinal]
+        })
+    }).then(response => response.json())
+    .then(data => {
+        if(data.success === true){
+            sessionStorage.setItem("openDropdownAfterReload", listid);
+            location.reload();
+        }
+    });
+}

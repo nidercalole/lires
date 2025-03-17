@@ -193,3 +193,36 @@ function irgendwas2(event) {
     event.stopPropagation(); 
 }
 showMessageIf();
+/*
+function adjustVH_VW() {
+    const scaleFactor = 100 / (window.devicePixelRatio * 100); // Skaliert auf 100% um
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isFirefox = userAgent.includes("firefox");
+
+    // Zoom oder Transform nur setzen, wenn die Skalierung nicht 100% ist
+    if (scaleFactor < 1) {
+        if (isFirefox) {
+            document.body.style.transform = `scale(${scaleFactor})`;
+            document.body.style.transformOrigin = "top left";
+            document.body.style.width = `${100 / scaleFactor}%`;
+            document.body.style.height = `${100 / scaleFactor}%`;
+        } else {
+            document.body.style.zoom = scaleFactor;
+        }
+
+        // Skalierte vh und vw setzen
+        document.documentElement.style.setProperty("--vh", `${window.innerHeight * scaleFactor}px`);
+        document.documentElement.style.setProperty("--vw", `${window.innerWidth * scaleFactor}px`);
+    } else {
+        // Falls keine Skalierung nötig, zurücksetzen
+        document.body.style.transform = "";
+        document.body.style.zoom = "";
+        document.documentElement.style.removeProperty("--vh");
+        document.documentElement.style.removeProperty("--vw");
+    }
+}
+
+// Funktion bei Fenstergröße-Änderung und Seitenladen ausführen
+window.addEventListener("resize", adjustVH_VW);
+window.addEventListener("load", adjustVH_VW);
+*/
