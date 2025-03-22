@@ -25,6 +25,7 @@ Mal gucken obs was wird :D
 
 ## 🤝 Mitwirken
 - **Hauptentwickler** derlole, Nica
+- **Technical Engineer and Supporter** Konrad aka. Creepy Einhorn mit Messer.
 - **UNTERSTÜTZER** Pauli Paul
 
 
