@@ -38,7 +38,7 @@ function loadAndDisplayLists() {
                 }
                 itemsStacked += 
                 `<div class="divRowListElement kumpeln spaceBetween">
-                    <div class="kumpeln">
+                    <div class="kumpeln noMargin noPadding">
                         <input type="checkbox" class="checkboxLists" id="${list.listid + i}" ${checked}> <label for="${list.listid + i}">${ingamountshow} ${ingunitshow} ${ing[0]}</label>
                     </div>
                     <div class="listsBtnsListElement">
@@ -52,12 +52,13 @@ function loadAndDisplayLists() {
             let inputing = document.createElement('div');
             inputing.classList.add('divRowListElement');
             inputing.innerHTML = `
-            <div>
-                <input type="text" class="inputListsAmount" id="inputListsAmount_${list.listid}" placeholder="Menge">
-                <input type="text" class="inputListsIng" id="inputListsIng_${list.listid}" placeholder="Zutat">
-                
+            <div class="kumpeln spaceBetween">
+                <div class="kumpeln">
+                    <input type="text" class="inputLists nomargin widthDreiSiebenFuenf" id="inputListsAmount_${list.listid}" placeholder="Menge">
+                    <input type="text" class="inputLists nomargin" id="inputListsIng_${list.listid}" placeholder="Zutat">
+                </div>
                 <button class="editLists" onclick="addListItemExtern('${list.listid}')">
-                    <img src="/img/plus.png" width="15px" height="15px" alt="Füge neuen Eintrag hinzu">
+                    Hinzufügen
                 </button>
             </div>`;
             

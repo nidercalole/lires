@@ -584,6 +584,17 @@ option:checked {
   border-radius: 5px;
   margin-right: auto;
 }
+
 .paddingOther{
   padding: 0 10px 10px 10px;
+}
+
+.inputLists{
+  width: calc(var(--vw) * 7.5 / 100);
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.widthDreiSiebenFuenf{
+  width: calc(var(--vw) * 3.75 / 100);
 }

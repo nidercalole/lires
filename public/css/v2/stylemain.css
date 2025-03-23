@@ -36,9 +36,6 @@ body {
     justify-content: center;
 }
 
-.nomargin {
-    margin: 0;
-}
 
 .zentrieren {
     align-items: center;
@@ -70,15 +67,15 @@ input[type="text"], input[type="password"]{
     background-color: var(--contrastMain);
     border-radius: var(--borderRadius);
     padding: 5px 10px;
-    margin: 10px;
     border: var(--borderBuddy);
 }
+
 input[type="text"]:focus, input[type="password"]:focus{
     outline: none;
     border: var(--borderFocus);
 }
 input[type="text"]::placeholder, input[type="password"]::placeholder{
-    color: var(--contrastBuddy);
+    color: var(--light);
 }
 
 ::selection {
@@ -94,4 +91,13 @@ input[type="text"]::placeholder, input[type="password"]::placeholder{
 }
 .widthNeunzig{
     width: 90%;
+}
+
+.nomargin {
+    margin: 0;
+}
+
+button{
+    color: var(--light);
+    font-size: 16px;
 }
