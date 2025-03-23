@@ -584,3 +584,6 @@ option:checked {
   border-radius: 5px;
   margin-right: auto;
 }
+.paddingOther{
+  padding: 0 10px 10px 10px;
+}
