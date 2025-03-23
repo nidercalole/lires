@@ -3,7 +3,7 @@
   height: var(--fullHeight);
   margin: auto;
   padding: 10px;
-  --fullHeight: 85.5vh;
+  --fullHeight: calc(var(--vh) * 85.5 / 100);
 }
 
 .filterBalken {
@@ -45,7 +45,7 @@
 }
 
 .calender {
-  width: 26.5vw;
+  width: calc(var(--vw) * 26.5 / 100); 
   display: flex;
   border-radius: var(--borderRadius);
 }
@@ -80,7 +80,7 @@ calRecNumber{
   background-color: var(--contrastBuddy);
   border-radius: var(--borderRadius);
   padding: 10px ;
-  max-height: 43.7vh;
+  max-height: calc(var(--vh) * 43.7 / 100);
   overflow-y: auto;
 }
 
@@ -94,7 +94,7 @@ calRecNumber{
 /* Styling für den unteren Bereich der Seite */
 .li {
   padding: 10px;
-  width: 22vw;
+  width: calc(var(--vw) * 22 / 100); 
   background-color: var(--special);
   border-radius: var(--borderRadius);
   height: calc( var(--fullHeight) - 20px);
@@ -114,13 +114,13 @@ calRecNumber{
   border: none;
   cursor: pointer;
   color: var(--light);
-  width: 10vw;
+  width: calc(var(--vw) * 10 / 100); 
 }
 .schnellFilter:hover {
   background-color: var(--special);
 }
 .schnellFilterImg {
-  width: 4vw;
+  width: calc(var(--vw) * 4 / 100); 
 }
 
 listName {
@@ -234,7 +234,7 @@ listName {
 }
 
 .stars{
-  width: 8vw;
+  width: calc(var(--vw) * 8 / 100); 
 }
 recUser{
   font-style: italic;
@@ -248,7 +248,7 @@ tableTitle{
 table{
 table-layout: auto;
 border-collapse:collapse;
-width: 32.5vw;
+width: calc(var(--vw) * 32.5 / 100); 
 border-radius: var(--borderRadius);
 }
 td {
@@ -286,13 +286,13 @@ tr:hover {
 }
 
 .actionImg{
-  width: 6vw;
+  width: calc(var(--vw) * 6 / 100); 
   outline:none;
 }
 .action{
   background-color:var(--contrastMain);
   border:none;
-  width: 10vw;
+  width: calc(var(--vw) * 10 / 100); 
   border-radius: var(--borderRadius);
   color: var(--light);
   bottom: 0;
@@ -312,7 +312,7 @@ kalenderTitel{
 }
 .nextRecipes{
   padding: 10px;
-  width: 7vw;
+  width: calc(var(--vw) * 7 / 100); 
   border-radius: var(--borderRadius);
   background-color: var(--contrastBuddy);
   display: none;
@@ -384,7 +384,7 @@ detailRecDauer{
   background-color: transparent;
 }
 .tableDiv{
-  max-height: 63vh;
+  max-height: calc(var(--vh) * 63 / 100);
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -408,10 +408,10 @@ detailRecDauer{
 }
 
 #filOptionPage{
-  width: 50vw;
+  width: calc(var(--vw) * 50 / 100); 
   position: absolute;
-  top: calc(50vh - 25vh);
-  left: calc(50vw - 25vw);
+  top: calc(var(--vh) * 25 / 100);
+  left: calc(var(--vw) * 25 / 100);
   z-index: 1;
   background-color: var(--special);
   border-radius: var(--borderRadius);
@@ -434,8 +434,8 @@ filterTitle{
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 100vw;
-  height: 100vh;
+  width: calc(var(--vw) * 100 / 100); 
+  height: calc(var(--vh) * 100 / 100);
 }
 
 .responseAddListOk{
@@ -478,7 +478,7 @@ input[type="range"]::-webkit-slider-thumb {
 select {
   -webkit-appearance: none;  
   appearance: none;  
-  width: 10vw;
+  width: calc(var(--vw) * 10 / 100); 
   padding: 5px 10px;  
   border-radius: var(--borderRadius);
   border: var(--borderMain);  
@@ -512,7 +512,7 @@ option:hover {
 
 select[multiple] {
   height: 200px;
-  width: 10vw;
+  width: calc(var(--vw) * 10 / 100); 
   overflow-y: none;
 }
 

@@ -14,7 +14,7 @@ header{
     outline: var(--borderBuddy);
 }
 .logoLogin{
-    height: 40vh;
+    height: calc(var(--vh) * 40 / 100);
     margin: 10px;
     }
 liresTitelLogin{

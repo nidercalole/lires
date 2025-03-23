@@ -4,10 +4,6 @@ function getUserCredentials() {
     return [urlParams.get('usrnm'), urlParams.get('usrid')]
 }
 
-function openDropdown(id) {
-    const dropdownContent = document.getElementById(id);
-    dropdownContent.classList.toggle('open'); 
-}
 
 function loadAndDisplayLists() {
     user = getUserCredentials();
@@ -131,11 +127,12 @@ async function deletList(listid) {
         }
     });
 }
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
     const listid = sessionStorage.getItem("openDropdownAfterReload");
     if (listid) {
-        openDropdown(listid); // Dropdown nach dem Reload öffnen
-        sessionStorage.removeItem("openDropdownAfterReload"); // Wert wieder entfernen
+        await new Promise(resolve => setTimeout(resolve, 500)); // Warte kurz, bis DOM aktualisiert ist
+        openDropdown(listid); 
+        sessionStorage.removeItem("openDropdownAfterReload"); 
     }
 });
 
@@ -173,4 +170,11 @@ async function addListItemExtern(listid) {
             location.reload();
         }
     });
+}
+
+
+function openDropdown(id) {
+    console.log(id);
+    const dropdownContent = document.getElementById(id);
+    dropdownContent.classList.toggle('open'); 
 }

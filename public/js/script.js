@@ -193,13 +193,13 @@ function irgendwas2(event) {
     event.stopPropagation(); 
 }
 showMessageIf();
-/*
+
 function adjustVH_VW() {
-    const scaleFactor = 100 / (window.devicePixelRatio * 100); // Skaliert auf 100% um
+    const scaleFactor = 100 / (window.devicePixelRatio * 100); 
+    const correctedScale = 1 / scaleFactor; // Umkehrung der Skalierung
     const userAgent = navigator.userAgent.toLowerCase();
     const isFirefox = userAgent.includes("firefox");
 
-    // Zoom oder Transform nur setzen, wenn die Skalierung nicht 100% ist
     if (scaleFactor < 1) {
         if (isFirefox) {
             document.body.style.transform = `scale(${scaleFactor})`;
@@ -210,19 +210,17 @@ function adjustVH_VW() {
             document.body.style.zoom = scaleFactor;
         }
 
-        // Skalierte vh und vw setzen
-        document.documentElement.style.setProperty("--vh", `${window.innerHeight * scaleFactor}px`);
-        document.documentElement.style.setProperty("--vw", `${window.innerWidth * scaleFactor}px`);
+        // Korrigierte vh und vw setzen
+        document.documentElement.style.setProperty("--vh", `${window.innerHeight * correctedScale}px`);
+        document.documentElement.style.setProperty("--vw", `${window.innerWidth * correctedScale}px`);
     } else {
-        // Falls keine Skalierung nötig, zurücksetzen
         document.body.style.transform = "";
         document.body.style.zoom = "";
-        document.documentElement.style.removeProperty("--vh");
-        document.documentElement.style.removeProperty("--vw");
+        document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+        document.documentElement.style.setProperty("--vw", `${window.innerWidth}px`);
     }
 }
 
 // Funktion bei Fenstergröße-Änderung und Seitenladen ausführen
 window.addEventListener("resize", adjustVH_VW);
 window.addEventListener("load", adjustVH_VW);
-*/
