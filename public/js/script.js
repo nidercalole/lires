@@ -47,6 +47,7 @@ function filBut(){
         filOptionPage.style.display = 'block';
         document.addEventListener('keydown', closeOnEvent);
         gebId('darkBg').addEventListener('click', closeOnEvent);
+        gebId('filbut').blur();
     } else{
         filOptionPage.style.display = 'none';
         document.removeEventListener('keydown', closeOnEvent);
@@ -77,6 +78,9 @@ function redirectProfil(){
 }
 
 function openRec(recid){
+    if(recid === undefined || recid === null || recid === "" || recid === '0' || recid === 0){
+        return;
+    }
     const user = getUserCredetials();
     window.location.href = '/recipe/?usrnm=' + user[0] + '&usrid=' + user[1] + '&recid=' + recid;
 }

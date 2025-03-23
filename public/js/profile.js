@@ -21,6 +21,9 @@ function loadAllRecources() {
 loadAllRecources();
 
 function openRec(recid) {
+    if(recid === undefined || recid === null || recid === "" || recid === '0' || recid === 0){
+        return;
+    }
     const user = getUserCredetials();
     window.location.href = '/recipe/?usrnm=' + user[0] + '&usrid=' + user[1] + "&recid=" + recid;
 }
