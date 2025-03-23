@@ -7,7 +7,7 @@ Mal gucken obs was wird :D
 
 
 ## ✨ Features
-✅ **Rezepte filtern** nach Zutaten, Kategorien oder Ernährungsweisen  
+✅ **Rezepte filtern** nach Zutaten, Kategorien oder Ernährungsweisen
 ✅ **Dynamische Einkaufslisten** basierend auf ausgewählten Rezepten  
 ✅ **Kochplan erstellen** mit intuitivem Kalender-Feature  
 ✅ **Modernes & responsives Design** für Desktop und Mobil  
@@ -19,7 +19,7 @@ Mal gucken obs was wird :D
 🔗 **Besuche die App hier:** [Lires](https://lires.de)  
 
 ## 🔧 Technologien
-- **Frontend:** EJS, HTML
+- **Frontend:** EJS, CSS, JS
 - **Backend:** Node.js, Express
 - **Datenbank:** MongoDB 
 
