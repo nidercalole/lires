@@ -1,53 +1,38 @@
-<!--<link rel="stylesheet" href="/css/addresdesktop.css" />-->
+<link rel="stylesheet" href="/css/v2/styleaddrec.css" />
 
-<textarea
-  id="krzDesc"
-  class="krzDesc"
-  placeholder="Kurzbeschreibung (maximal 250 Zeichen)"
-  maxlength="250"
-  oninput="countChars()"
-></textarea>
-<p id="charCount" class="charCount"></p>
-<div class="row">
-  <div class="addRecSplitLeft">
-    <div class="mittelfeldGrid">
-      <div class="mitGridEinheiten">
-        <zutAn
-          >Zutatenangabe für
-          <input
-            type="number"
-            min="1"
-            max="100"
-            placeholder="Anzahl (bspw. '2')"
-            class="anzEinhInp"
-            id="anzInp"
-          />
-          <input
-            type="text"
-            placeholder="Einheit (bspw. 'Portionen')"
-            class="anzEinhInp"
-            id="anzEinhInp"
-          />.
-        </zutAn>
-      </div>
-      <div class="mitGridTags"><%- include('./partials/vieletags.ejs')%></div>
-      <div class="mitGridShoInf">
+<div class="kumpeln all spaceBetween">
+  <div class="left stapeln alignLeft">
+  
+    <input
+      type="text"
+      id="recTitle"
+      class="recTitle"
+      placeholder="Name des Rezepts"
+    />
+
+    <div class="kumpeln horizont">
+      <miniTitle>Arbeitsaufwand:</miniTitle>
+      gering
         <input
-          class="shoInfInp"
-          placeholder="Kurzinformationen (bspw. Backtemperatur)"
-          id="shoInfInp"
+          class="aufwRange"
+          type="range"
+          min="1"
+          max="5"
+          value="2.5"
+          id="aufwRange"
         />
-        <div class="hidden" id="lbls">
-
-        </div>
+        hoch
+    </div>
+    
+    <div class="stapeln">
+      <div class="kumpeln horizont">
+        <miniTitle>Zubereitungsdauer:</miniTitle>
+        <input class="dauer" type="number" min="1" id="zubDauInp"/>
+        Minuten
       </div>
     </div>
-    <div class="mitGridChoose">
-      <button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Im Fließtext beschreiben</button>
-      <button class="stepaddbtn hidden" id="stepaddbtn" onclick="addstepp()">Schritt hinzufügen</button>
-    </div>
-  </div>
-  <div class="addRecSplitRight">
+
+    <hr class="line">
     <div class="mitGridZutaten">
       <table class="beinhTable" id="table1">
         <tr>
@@ -63,15 +48,45 @@
       </table>
     </div>
   </div>
+
+  <div class="mid stapeln">
+    <textarea
+      id="krzDesc"
+      class="krzDesc"
+      placeholder="Kurzbeschreibung (maximal 250 Zeichen)"
+      maxlength="250"
+      oninput="countChars()"
+    ></textarea>
+    <p id="charCount" class="charCount"></p>
+
+    <div class="recSchritte stapeln">
+      <button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Im Fließtext beschreiben</button>
+      <button class="stepaddbtn hidden" id="stepaddbtn" onclick="addstepp()">Schritt hinzufügen</button>
+    </div>
+  </div>
+
+  <div class="right stapeln">
+    <div class="recInfos stapeln">
+        <input
+          class="shoInfInp"
+          placeholder="Kurzinformationen (bspw. Backtemperatur)"
+          id="shoInfInp"
+        />
+        <div class="hidden" id="lbls">
+        </div>
+    </div>
+    <div class="recTags">
+    <div class="mitGridTags"><%- include('./partials/vieletags.ejs')%></div>
+    </div>
+    <div class="chefkoch" id="chefkoch-add-but">
+      <button class="chefkoch-add-but" id="chefkoch-add-but" onclick="addChefkochRec()">Rezept von chefkoch.de importieren</button>
+      <input type="text" name="chefkochLink" id="chefkoch-link" class="chefkoch-link" placeholder="Füge hier die URL eines chefkoch-Rezeptes ab '/rezepte/...' ein.">
+    </div>
+    <button class="recSave" onclick="collectAndSend()">Speichern</button>
+  </div>
 </div>
-<textarea class="vorgehen" placeholder="Vorgehen" id="explanation"></textarea>
-<div id="stepwise" class="stepwise hidden">
-  <textarea class="stepvorgehen" placeholder="Schritt 1" id="step_1"></textarea>
-</div>
-<div class="chefkoch" id="chefkoch-add-but">
-  <button class="chefkoch-add-but" id="chefkoch-add-but" onclick="addChefkochRec()">Rezept von chefkoch.de importieren</button>
-  <input type="text" name="chefkochLink" id="chefkoch-link" class="chefkoch-link" placeholder="Füge hier die URL eines chefkoch-Rezeptes ab '/rezepte/...' ein.">
-</div>
+
+
 <script src="/js/chefkochFetch.js"></script>
 <script src="/js/addrec.js"></script>
 <script src="/js/collectrecinfo.js"></script>

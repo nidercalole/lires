@@ -1,6 +1,10 @@
 //ich bin ganz :B
-function zaehleZeichen(string) {return string.length;}
-function gebId(str){return document.getElementById(str);}
+function zaehleZeichen(string) {
+  return string.length;
+}
+function gebId(str) {
+  return document.getElementById(str);
+}
 
 let counter = 0;
 function addTableRow() {
@@ -14,7 +18,7 @@ function addTableRow() {
   const cells = [
     { value: gebId("tableInp11").value, idPrefix: "resing_" },
     { value: gebId("tableInp12").value, idPrefix: "resingamount_" },
-    { value: gebId("tableInp13").value, idPrefix: "resingunit_" }
+    { value: gebId("tableInp13").value, idPrefix: "resingunit_" },
   ];
 
   cells.forEach((cellData, index) => {
@@ -25,13 +29,12 @@ function addTableRow() {
   });
 
   counter++;
-  ["tableInp11", "tableInp12", "tableInp13"].forEach(id => {
+  ["tableInp11", "tableInp12", "tableInp13"].forEach((id) => {
     gebId(id).value = "";
   });
 
   gebId("tableInp11").select();
 }
-
 
 var input = document.getElementById("backfisch");
 input.addEventListener("keypress", function (event) {
@@ -41,28 +44,28 @@ input.addEventListener("keypress", function (event) {
   }
 });
 
-function chooseBtn(){
-  const btn = gebId('chooseBtn');
-  const stepwise = gebId('stepwise');
-  const stepaddbtn = gebId('stepaddbtn')
-  const explanation = gebId('explanation');
+function chooseBtn() {
+  const btn = gebId("chooseBtn");
+  const stepwise = gebId("stepwise");
+  const stepaddbtn = gebId("stepaddbtn");
+  const explanation = gebId("explanation");
   if (btn.textContent === "Im Fließtext beschreiben") {
     btn.textContent = "Schrittweise beschreiben";
-    stepaddbtn.classList.remove('hidden');
-    stepwise.classList.remove('hidden');
-    explanation.classList.add('hidden');
+    stepaddbtn.classList.remove("hidden");
+    stepwise.classList.remove("hidden");
+    explanation.classList.add("hidden");
   } else {
     btn.textContent = "Im Fließtext beschreiben";
-    stepaddbtn.classList.add('hidden')
-    stepwise.classList.add('hidden');
-    explanation.classList.remove('hidden');
+    stepaddbtn.classList.add("hidden");
+    stepwise.classList.add("hidden");
+    explanation.classList.remove("hidden");
   }
 }
 
-function countChars(){
-  const krzDesc = gebId('krzDesc');
-  const charCount = gebId('charCount');
-  charCount.textContent = `${zaehleZeichen(krzDesc.value)}/250`
+function countChars() {
+  const krzDesc = gebId("krzDesc");
+  const charCount = gebId("charCount");
+  charCount.textContent = `${zaehleZeichen(krzDesc.value)}/250`;
 }
 //label
 let lblcounter = 0;
@@ -80,8 +83,8 @@ function addlabl() {
   gebId("shoInfInp").value = "";
 }
 
-const shoInfInp = gebId('shoInfInp');
-shoInfInp.addEventListener('keypress', function(event){
+const shoInfInp = gebId("shoInfInp");
+shoInfInp.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     addlabl();
@@ -98,3 +101,9 @@ function addstepp() {
   steps.appendChild(step);
   stepid++;
 }
+
+const krzDesc = document.getElementById("krzDesc");
+krzDesc.addEventListener("input", function () {
+  this.style.height = "auto";
+  this.style.height = this.scrollHeight + "px";
+});

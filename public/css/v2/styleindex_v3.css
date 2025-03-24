@@ -449,10 +449,7 @@ filterTitle{
   padding: 5px 10px;
   width: 50%;
 }
-.sliderText{
-  font-style: italic;
-  font-size: 10px;
-}
+
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none; 
@@ -529,8 +526,9 @@ select[multiple]::-webkit-scrollbar {
 .sliderText{
   font-family: "Be Vietnam Pro", serif;
   font-weight: 400;
-  font-size: 14px;
   color: var(--light);
+  font-style: italic;
+  font-size: 10px;
 }
 option:checked {
   background-color: var(--contrastBuddy);

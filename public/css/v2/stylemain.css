@@ -101,3 +101,12 @@ button{
     color: var(--light);
     font-size: 16px;
 }
+
+.redBg{
+    background-color: red;
+}
+
+.alignLeft{
+    text-align: left;
+    align-items: flex-start;
+}
