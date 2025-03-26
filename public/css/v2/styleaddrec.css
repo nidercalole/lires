@@ -20,12 +20,24 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .all{
   padding: 10px;
-  width: calc((var(--vw) * 100 / 100) - 35px);
+  width: calc((var(--vw) * 100 / 100) - 20px);
+  height: calc((var(--vh)* 85 / 100));
 }
 
 .left {
   text-align: left;
   width: calc(var(--vw) * 35 / 100);
+}
+.mid{
+  text-align: center;
+  width: calc(var(--vw) * 35 / 100);
+}
+.right{
+  width: calc(var(--vw) * 25 / 100);
+  height: calc(var(--vh) * 84/ 100);
+  background-color: var(--contrastBuddy);
+  border-radius: var(--borderRadius);
+  padding: 10px;
 }
 
 .recTitle {
@@ -33,6 +45,7 @@ input[type="range"]::-webkit-slider-thumb {
   font-size: 20px;
   font-weight: bolder;
   width: 95%;
+  margin: 0 0 10px 0;
 }
 
 miniTitle {
@@ -71,7 +84,7 @@ textarea {
   font-size: 16px;
   border: solid 2px var(--contrastBuddy);
   border-radius: var(--borderRadius);
-  width: calc(var(--vw) * 35 / 100);
+  width: 99%;
   font-family: "Be Vietnam Pro", serif;
   overflow-y: auto;
 }
@@ -88,11 +101,176 @@ textarea::placeholder {
   left: calc(var(--vw) * 60 / 100);
 }
 .line{
-  width: 100%;
+  width: 99%;
   color: var(--light);
   border-radius: var(--borderRadius);
   border: 1px solid;
 }
-.right{
-  width: calc(var(--vw) * 20 / 100);
+
+button{
+  background-color: var(--contrastBuddy);
+  color: var(--light);
+  border: none;
+  border-radius: var(--borderRadius);
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover{
+  background-color: var(--special);
+}
+
+.vorgehen{
+  max-height: calc(var(--vh) * 76 / 100);
+}
+
+.vorgehen::-webkit-scrollbar {
+  width: 5px;
+}
+
+.vorgehen::-webkit-scrollbar-track {
+  background-color: var(--contrastBuddy);
+  border-radius: 5px;
+}
+
+.vorgehen::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.vorgehen::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.stepvorgehen{
+  max-height: calc(var(--vh) * 6 / 100);
+}
+.stepvorgehen::-webkit-scrollbar {
+  width: 5px;
+}
+
+.stepvorgehen::-webkit-scrollbar-track {
+  background-color: var(--contrastBuddy);
+  border-radius: 5px;
+}
+
+.stepvorgehen::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.stepvorgehen::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.stepwise{
+  /*background-color: red;*/
+  max-height: calc(var(--vh) * 76 / 100);
+  overflow-x: visible;
+}
+.verticalLine{
+  border-left: 2px solid var(--contrastBuddy);
+  height: calc(var(--vh) * 86 / 100);
+}
+#lbls{
+  max-height: calc(var(--vh) * 13.5 / 100);
+  overflow: auto;
+}
+#lbls::-webkit-scrollbar {
+  width: 5px;
+}
+
+#lbls::-webkit-scrollbar-track {
+  background-color: var(--contrastMain);
+  border-radius: 5px;
+}
+
+#lbls::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+#lbls::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.typeOfDish{
+  max-height: calc(var(--vh) * 69.5 / 100);
+  overflow: auto; 
+}
+.typeOfDish::-webkit-scrollbar {
+  width: 5px;
+}
+
+.typeOfDish::-webkit-scrollbar-track {
+  background-color: var(--contrastMain);
+  border-radius: 5px;
+}
+
+.typeOfDish::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.typeOfDish::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.chefkoch-link{
+  width: 100%;
+  font-size: 16px;
+  height: 20px;
+}
+
+.chckbxbx {
+  display: none; 
+}
+
+
+.chckbxbx + label {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding-left: 30px; 
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.chckbxbx + label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--contrastMain);
+  background-color: var(--contrastMain);
+  border-radius: var(--borderRadius);
+  transition: background-color 0.2s, border-color 0.2s;
+}
+ 
+.chckbxbx:checked + label::before {
+  background-color: var(--special);
+  border-color: var(--special);
+}
+ 
+.chckbxbx:checked + label::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 3px; 
+  width: 10px; 
+  height: 6px; 
+  border-left: 2px solid var(--light);
+  border-bottom: 2px solid var(--light);
+  transform: rotate(-45deg); 
+  transition: background-color 0.2s;
+}
+
+.chckbxbx + label:hover {
+  color: var(--contrastBuddy);
+}
+
+.chckbxbx:focus + label::before {
+  outline: 2px solid var(--light);
 }

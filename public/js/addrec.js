@@ -49,13 +49,13 @@ function chooseBtn() {
   const stepwise = gebId("stepwise");
   const stepaddbtn = gebId("stepaddbtn");
   const explanation = gebId("explanation");
-  if (btn.textContent === "Im Fließtext beschreiben") {
-    btn.textContent = "Schrittweise beschreiben";
+  if (btn.textContent === "Beschreibung als Fließtext") {
+    btn.textContent = "Beschreibung schrittweise";
     stepaddbtn.classList.remove("hidden");
     stepwise.classList.remove("hidden");
     explanation.classList.add("hidden");
   } else {
-    btn.textContent = "Im Fließtext beschreiben";
+    btn.textContent = "Beschreibung als Fließtext";
     stepaddbtn.classList.add("hidden");
     stepwise.classList.add("hidden");
     explanation.classList.remove("hidden");
@@ -74,7 +74,7 @@ function addlabl() {
   const lbls = gebId("lbls");
   lbls.className = "lbls";
   let lbl = document.createElement("p");
-  lbl.textContent = shoInfInp;
+  lbl.textContent = "● " + shoInfInp;
   lbl.id = "lbl_" + lblcounter;
   lbl.classList.add("lbl");
   lbls.appendChild(lbl);
@@ -102,8 +102,18 @@ function addstepp() {
   stepid++;
 }
 
-const krzDesc = document.getElementById("krzDesc");
-krzDesc.addEventListener("input", function () {
+growTextarea("krzDesc");
+growTextarea("explanation");
+
+const textareas = document.getElementById("stepwise").querySelectorAll("textarea");
+textareas.forEach((textarea) => {
+  growTextarea(textarea.id);
+});
+
+function growTextarea(elementId) {
+  const element = document.getElementById(elementId);
+  element.addEventListener("input", function () {
   this.style.height = "auto";
   this.style.height = this.scrollHeight + "px";
 });
+}

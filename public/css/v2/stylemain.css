@@ -36,7 +36,6 @@ body {
     justify-content: center;
 }
 
-
 .zentrieren {
     align-items: center;
 }
@@ -106,6 +105,7 @@ button{
 .alignLeft{
     text-align: left;
     align-items: flex-start;
+    justify-content: flex-start;
 }
 .loadingScreen{
     width: calc(var(--vw) * 99 / 100);

@@ -2,7 +2,7 @@
 
 <div class="kumpeln all spaceBetween">
   <div class="left stapeln alignLeft">
-  
+    
     <input
       type="text"
       id="recTitle"
@@ -31,7 +31,6 @@
         Minuten
       </div>
     </div>
-
     <hr class="line">
     <div class="mitGridZutaten">
       <table class="beinhTable" id="table1">
@@ -41,13 +40,15 @@
           <th>Einheit</th>
         </tr>
         <tr id="backfisch">
-          <td><input id="tableInp11" class="tableInp"></input></td>
-          <td><input id="tableInp12" class="tableInp" type="number"></input></td>
-          <td><input id="tableInp13" class="tableInp"></input></td>
+          <td><input id="tableInp11" class="tableInp" type="text"></td>
+          <td><input id="tableInp12" class="tableInp" type="number"></td>
+          <td><input id="tableInp13" class="tableInp" type="text"></td>
         </tr>
       </table>
     </div>
   </div>
+
+  <div class="verticalLine"></div>
 
   <div class="mid stapeln">
     <textarea
@@ -59,15 +60,23 @@
     ></textarea>
     <p id="charCount" class="charCount"></p>
 
-    <div class="recSchritte stapeln">
-      <button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Im Fließtext beschreiben</button>
-      <button class="stepaddbtn hidden" id="stepaddbtn" onclick="addstepp()">Schritt hinzufügen</button>
+    <div class="recSchritte kumpeln">
+      <button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Beschreibung schrittweise</button>
+      <button class="stepaddbtn" id="stepaddbtn" onclick="addstepp()">Schritt hinzufügen</button>
+    </div>
+
+    <textarea class="vorgehen hidden" placeholder="Vorgehen" id="explanation"></textarea>
+    <div id="stepwise" class="stepwise">
+      <textarea class="stepvorgehen" placeholder="Schritt 1" id="step_1"></textarea>
     </div>
   </div>
+
+  <!--<div class="verticalLine"></div>-->
 
   <div class="right stapeln">
     <div class="recInfos stapeln">
         <input
+          type="text"
           class="shoInfInp"
           placeholder="Kurzinformationen (bspw. Backtemperatur)"
           id="shoInfInp"
@@ -78,11 +87,11 @@
     <div class="recTags">
     <div class="mitGridTags"><%- include('./partials/vieletags.ejs')%></div>
     </div>
-    <div class="chefkoch" id="chefkoch-add-but">
-      <button class="chefkoch-add-but" id="chefkoch-add-but" onclick="addChefkochRec()">Rezept von chefkoch.de importieren</button>
-      <input type="text" name="chefkochLink" id="chefkoch-link" class="chefkoch-link" placeholder="Füge hier die URL eines chefkoch-Rezeptes ab '/rezepte/...' ein.">
+    <div class="chefkoch kumpeln horizont" id="chefkoch-add-but">
+      <input type="text" name="chefkochLink" id="chefkoch-link" class="chefkoch-link" placeholder="URL eines chefkoch-Rezeptes ab '/rezepte/...'">
+      <button class="chefkoch-add-but" id="chefkoch-add-but" onclick="addChefkochRec()">Import von chefkoch.de</button>
     </div>
-    <button class="recSave" onclick="collectAndSend()">Speichern</button>
+    <button class="recSave" onclick="collectAndSend()">Alles Speichern</button>
   </div>
 </div>
 
