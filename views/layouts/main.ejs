@@ -25,10 +25,25 @@
 </head>
 <script src="/js/preLoad.js"></script>
 <body>
-    <%- include('../partials/header.ejs') %>
-    <%- body %>
+    <div class="loadingScreen" id="loadingScreen">
+        <img src="/img/oni_v2.png" alt="eine kleine Süße Zwiebel" style="position: absolute; top: 20%; left: 35%; width: 30%; ">
+    </div>
+
+    <div class="nonLoadingScreen" id="contentsMainEverything">  
+        <%- include('../partials/header.ejs') %>
+        <%- body %>
+    </div>
+
 </body>
     <script src="/js/script.js"></script>
     <script src="/js/redirecthome.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", async () => {
+            const listid = sessionStorage.getItem("openDropdownAfterReload");
+            await new Promise(resolve => setTimeout(resolve, 500)); // Warte kurz, bis DOM aktualisiert ist
+            document.getElementById('contentsMainEverything').classList.remove('nonLoadingScreen')
+            document.getElementById('loadingScreen').classList.add('hidden');
 
+        });
+    </script>
 </html>

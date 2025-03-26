@@ -48,9 +48,17 @@ function filBut(){
         document.addEventListener('keydown', closeOnEvent);
         gebId('darkBg').addEventListener('click', closeOnEvent);
         gebId('filbut').blur();
+        document.addEventListener('keydown', searchOnEnter)
     } else{
         filOptionPage.style.display = 'none';
         document.removeEventListener('keydown', closeOnEvent);
+        document.removeEventListener('keydown', searchOnEnter)
+    }
+}
+function searchOnEnter(event){
+    if (event.key === 'Enter'){
+        
+        filBut()
     }
 }
 function closeOnEvent(event) {
@@ -224,7 +232,15 @@ function adjustVH_VW() {
         document.documentElement.style.setProperty("--vw", `${window.innerWidth}px`);
     }
 }
-
-// Funktion bei Fenstergröße-Änderung und Seitenladen ausführen
 window.addEventListener("resize", adjustVH_VW);
 window.addEventListener("load", adjustVH_VW);
+
+
+const searchInput = document.getElementById("suchleiste");
+
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && document.activeElement === searchInput) {
+    event.preventDefault(); // Verhindert das Standardverhalten (z. B. Formular-Absenden)
+    getCurrentSearchConfig();
+  }
+});

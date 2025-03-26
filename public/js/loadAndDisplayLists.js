@@ -130,8 +130,11 @@ async function deletList(listid) {
 }
 window.addEventListener("DOMContentLoaded", async () => {
     const listid = sessionStorage.getItem("openDropdownAfterReload");
+    await new Promise(resolve => setTimeout(resolve, 500)); // Warte kurz, bis DOM aktualisiert ist
+    gebId('contentsMainEverything').classList.remove('nonLoadingScreen')
+    gebId('loadingScreen').classList.add('hidden');
     if (listid) {
-        await new Promise(resolve => setTimeout(resolve, 500)); // Warte kurz, bis DOM aktualisiert ist
+
         openDropdown(listid); 
         sessionStorage.removeItem("openDropdownAfterReload"); 
     }
@@ -143,7 +146,13 @@ async function addListItemExtern(listid) {
     const amount = document.getElementById('inputListsAmount_' + listid).value;
 
     const ing = document.getElementById('inputListsIng_' + listid).value;
-    const match = amount.match(/^(\d+)([a-zA-Z]*)$/);
+    console.log(amount);
+    const match = amount.trim().match(/^(\d+)\s*([a-zA-Z]*)$/);
+    console.log(match);
+    if (match) {
+        console.log(match[1]);
+        match[1] = parseInt(match[1]);
+    }
     match[1] = parseInt(match[1]);
     let ingFinal = [];
     if (match) {

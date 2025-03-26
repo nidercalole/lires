@@ -150,7 +150,7 @@ router.post('/verifyRecipe', async (req, res) => {
             console.error(err);
             return res.status(500).send('Fehler bei der Verarbeitung der Anfrage.');
         }
-        res.render('verifyrecs', { title: 'Lires', usrnm: req.body.usrnm, usrid: req.body.usrid, data:{recid:recid}, rec: JSON.stringify(rec)});
+        res.render('verifyrecs', { title: 'Lires', usrnm: req.body.usrnm, usrid: req.body.usrid, data:{recid:recid}, rec: JSON.stringify(rec), marked:JSON.stringify(false)});
     }
 });
 router.post('/rejectRecipe', async(req, res) => {
