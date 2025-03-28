@@ -69,11 +69,19 @@ function checkTags(value){
 
 function addChefkochRec(){
     const link = gebId("chefkoch-link").value
-    let data
+
+    if (!link.trim()) {
+        alert("Please provide a valid link.");
+        return;
+    }
+
 
     fetch('/getRecChefkoch?link=' + link)
     .then(response => data = response.json())
     .then(data => {
+        if (data.error) {
+            return;
+        }
         //console.log(data)
         gebId("recTitle").value = data.name  
         gebId("krzDesc").textContent = data.name

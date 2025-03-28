@@ -216,11 +216,26 @@ router.get('/profile', async (req, res) => {
 });
 
 router.get('/getRecChefkoch', (req, res) => {
-    chefkoch.chefkochAPI.getRecipe(req.query.link)
-    .then(function(data){
-        res.json(data);
+    fetch('https://www.chefkoch.de/' + req.query.link, { method: 'HEAD' })
+    .then(response => {
+        if (!response.ok || response.status !== 200) {
+            res.json({ error: 'Invalid link' }).end();
+        } else {
+            chefkoch.chefkochAPI.getRecipe(req.query.link)
+                .then(data => {
+                    res.json(data);
+                })
+                .catch(error => {
+                    console.error(error);
+                    res.status(500).json({ error: 'Error fetching data' });
+                });
+        }
+    })
+    .catch(error => {
+        console.error(error);
+        res.status(500).json({ error: 'Error fetching data' });
     });
-}); 
+});
 router.post('/search', async (req, res) => {
     const { recTitle } = req.body
     var recs = await Rec.find({}).exec();
