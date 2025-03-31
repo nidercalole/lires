@@ -7,7 +7,7 @@ Mal gucken obs was wird :D
 
 
 ## ✨ Features  
-✅ **Rezepte filtern** nach Zutaten, Kategorien oder Ernährungsweisen \n
+✅ **Rezepte filtern** nach Zutaten, Kategorien oder Ernährungsweisen  
 ✅ **Dynamische Einkaufslisten** basierend auf ausgewählten Rezepten  
 ✅ **Kochplan erstellen** mit intuitivem Kalender-Feature  
 ✅ **Modernes & responsives Design** für Desktop und Mobil  
