@@ -43,8 +43,29 @@
           <td><input id="tableInp11" class="tableInp" type="text"></td>
           <td><input id="tableInp12" class="tableInp" type="number"></td>
           <td><input id="tableInp13" class="tableInp" type="text"></td>
+          <td><button class="deleteBtn" onclick="addTableRow()">Hinzufügen</button></td>
         </tr>
       </table>
+    </div>
+    <!--random hier reingepackt ich brauchs gerade nur-->
+    <div >
+      <zutAn
+          >Zutatenangabe für
+          <input
+            type="number"
+            min="1"
+            max="100"
+            placeholder="Anzahl (bspw. '2')"
+            class="anzEinhInp"
+            id="anzInp"
+          />
+          <input
+            type="text"
+            placeholder="Einheit (bspw. 'Portionen')"
+            class="anzEinhInp"
+            id="anzEinhInp"
+          />.
+        </zutAn>
     </div>
   </div>
 
@@ -61,7 +82,7 @@
     <p id="charCount" class="charCount"></p>
 
     <div class="recSchritte kumpeln">
-      <button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Beschreibung schrittweise</button>
+      <button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Beschreibung als Fließtext</button>
       <button class="stepaddbtn" id="stepaddbtn" onclick="addstepp()">Schritt hinzufügen</button>
     </div>
 

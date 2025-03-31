@@ -144,8 +144,11 @@ button:hover{
 }
 
 .stepvorgehen{
-  max-height: calc(var(--vh) * 6 / 100);
+  max-height: calc(var(--vh) * 20 / 100);
 }
+/*
+  das heir sorgt dafür, dass die scrollbars nicht gescheit rezised werden können, man kann zwar nemaxheigth setzten, aber 6 war etwas wenig ig
+*/
 .stepvorgehen::-webkit-scrollbar {
   width: 5px;
 }

@@ -23,10 +23,24 @@ function addTableRow() {
 
   cells.forEach((cellData, index) => {
     const cell = row.insertCell(index);
-    cell.textContent = cellData.value;
-    cell.id = cellData.idPrefix + counter;
-    cell.classList.add("tableInp");
+    const input = document.createElement("input");
+    input.type = "text";
+    input.value = cellData.value;
+    input.id = cellData.idPrefix + counter;
+    input.classList.add("tableInp");
+    cell.appendChild(input);
   });
+
+  // Add delete button
+  const deleteCell = row.insertCell(cells.length);
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Löschen";
+  deleteButton.classList.add("deleteBtn");
+  deleteButton.addEventListener("click", function () {
+    const table = gebId("table1");
+    table.deleteRow(row.rowIndex);
+  });
+  deleteCell.appendChild(deleteButton);
 
   counter++;
   ["tableInp11", "tableInp12", "tableInp13"].forEach((id) => {
@@ -51,14 +65,14 @@ function chooseBtn() {
   const explanation = gebId("explanation");
   if (btn.textContent === "Beschreibung als Fließtext") {
     btn.textContent = "Beschreibung schrittweise";
-    stepaddbtn.classList.remove("hidden");
-    stepwise.classList.remove("hidden");
-    explanation.classList.add("hidden");
-  } else {
-    btn.textContent = "Beschreibung als Fließtext";
     stepaddbtn.classList.add("hidden");
     stepwise.classList.add("hidden");
     explanation.classList.remove("hidden");
+  } else {
+    btn.textContent = "Beschreibung als Fließtext";
+    stepaddbtn.classList.remove("hidden");
+    stepwise.classList.remove("hidden");
+    explanation.classList.add("hidden");
   }
 }
 
@@ -99,7 +113,34 @@ function addstepp() {
   step.placeholder = "Schritt " + stepid;
   step.classList.add("stepvorgehen");
   steps.appendChild(step);
+  let delBut  = document.createElement("button");
+  delBut.textContent = "Löschen";
+  delBut.classList.add("deleteBtnVorgehen");
+  const currentStepId = stepid; // Capture the current stepid
+  delBut.addEventListener("click", function () {
+    const step = document.getElementById("step_" + currentStepId);
+    if (step) {
+      steps.removeChild(delBut.previousElementSibling);
+      steps.removeChild(delBut);
+      updateStepNums();
+    }
+  });
+  function updateStepNums() {
+    const allSteps = steps.querySelectorAll(".stepvorgehen");
+    allSteps.forEach((step, index) => {
+      step.placeholder = "Schritt " + (index + 1);
+     // step.id = "step_" + (index + 1);
+    });
+  }
+  steps.appendChild(delBut);
+  step.addEventListener("input", function () {
+    this.style.height = "auto";
+    this.style.height = this.scrollHeight + "px";
+  });
+  step.style.height = "auto";
+  step.style.height = step.scrollHeight + "px";
   stepid++;
+  updateStepNums();
 }
 
 growTextarea("krzDesc");

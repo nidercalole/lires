@@ -101,17 +101,25 @@ function collectAndSend(){
         directions.push({steppwise:false})
         directions.push(extval("explanation"));
     }else{
-        var stepwise = document.getElementById("stepwise").getElementsByTagName('*').length;
+        var stepwise = document.getElementById("stepwise").getElementsByTagName('textarea').length;
+        console.log("stepwise: " + stepwise);
         directions.push({steppwise:true})
-        for (let i = 1; i < stepwise+1; i++) {
-            const step = extval("step_" + i)
-            directions.push({i, step});
+        let counterreal = 0;
+        for (let i = 1; counterreal < stepwise; i++) {
+            const stepprob = document.getElementById("step_" + i);
+            if (stepprob === null) {
+                continue;
+            }else{
+                counterreal++;
+                const step = extval("step_" + i)
+                directions.push({counterreal, step});
+            }
         }
     }
     for (let i = 0; i < ingtabl-2; i++) {
-        const ing = exttxt("resing_" + i);
-        const ingamount = parseInt(exttxt("resingamount_" + i));
-        const ingunit = exttxt("resingunit_" + i);
+        const ing = extval("resing_" + i);
+        const ingamount = parseInt(extval("resingamount_" + i));
+        const ingunit = extval("resingunit_" + i);
         const ingextra = ''
         ingredients.push({ing, ingextra, ingamount, ingunit});
     }
@@ -119,6 +127,7 @@ function collectAndSend(){
         const lbl = exttxt("lbl_" + i);
         labels.push(lbl);
     }
+
     sendData(
         extval("recTitle"),
         usrnm,
