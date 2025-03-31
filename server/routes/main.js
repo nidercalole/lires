@@ -59,11 +59,11 @@ const getNextThreeDatesWithEntries = (records, recipes) => {
 
     return nextThreeDates.map(date => {
       const formattedDate = new Date(date);
-      const displayDate = `${(formattedDate.getDate() + 1).toString().padStart(2, '0')}.${(formattedDate.getMonth() + 1).toString().padStart(2, '0')}`;
+      const displayDate = `${(formattedDate.getDate()).toString().padStart(2, '0')}.${(formattedDate.getMonth() + 1).toString().padStart(2, '0')}`;
   
       const entriesForDate = records
-        .filter(([_, recDate]) => recDate.startsWith(date))
-        .map(([recid]) => recipeMap[recid] || 'Unbekanntes Rezept'); // Falls ID fehlt, Standardwert setzen
+        .filter(([recid, recDate]) => new Date(recDate).toISOString().split('T')[0] === date)
+        .map(([recid]) => recipeMap[recid] || emptyRecDeafult); // Falls ID fehlt, Standardwert setzen
   
       return [displayDate, entriesForDate];
     });

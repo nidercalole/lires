@@ -1,9 +1,10 @@
 function parseCustomDate(dateString) {
+    console.log(dateString);
     let datePart = dateString.split(", ")[1]; 
     let currentYear = new Date().getFullYear();
     let [day, month] = datePart.split(".").map(num => parseInt(num, 10));
-    let parsedDate = new Date(currentYear, month - 1, day ); // Monat ist 0-basiert in JS
-
+    let parsedDate = new Date(currentYear, month - 1, day + 1); // Adjust day to align correctly
+    console.log(parsedDate);
     return parsedDate;
 }
 function shortenRecTextInSpan(span) {
@@ -46,8 +47,10 @@ function fillTableWithDates() {
         cell.textContent = `${weekday}, ${formattedDate}`;
         //usedRecs.filter(rec => rec)
         const usedRecepiesForToday = recsmarkedOne.filter(rec => {
+
             const entryDate = new Date(rec[1]);
-            return entryDate.getDate() === date.getDate() && entryDate.getMonth() === date.getMonth();
+            entryDate.setDate(entryDate.getDate() - 1);
+            return entryDate.getDate()  === date.getDate()   && entryDate.getMonth() === date.getMonth();
         })
         const recipeNamesForToday = usedRecepiesForToday.map(rec => {
             const recs = usedRecs.filter(usedRec => usedRec.recid === rec[0]);
