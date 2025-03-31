@@ -134,16 +134,6 @@ dropZones.forEach(dropZone => {
         const cloneId = Math.random().toString(36).substring(7);
         let span = clone.querySelector(".tooltip-container"); 
         if (span) {
-            /*
-            let originalText = span.textContent.trim();
-            span.textContent = originalText.length > 13 ? originalText.substring(0, 13) + "..." : originalText;
-            
-            // Erstelle ein neues div für den Tooltip und füge es dem span hinzu
-            let tooltip = document.createElement("div");
-            tooltip.className = "tooltip";
-            tooltip.textContent = originalText;
-            span.appendChild(tooltip);
-            */
             shortenRecTextInSpan(span);
         }
         
