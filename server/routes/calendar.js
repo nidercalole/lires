@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
 router.post('/addRecToCollection', async (req, res) => {
     const { recid, usrid, date, cloneId } = req.body;
     const newDate = new Date(date);
-    newDate.setDate(newDate.getDate() + 1);
+    newDate.setDate(newDate.getDate() );
     query2 = { user: usrid };
     const existingUserCreds = await userCreds.findOne(query2).exec();
     if(existingUserCreds == null) return res.json({ success: false, message: 'Benutzer nicht gefunden.' });
