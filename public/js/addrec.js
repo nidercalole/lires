@@ -91,7 +91,7 @@ function addlabl() {
   lbl.textContent = "● " + shoInfInp;
   lbl.id = "lbl_" + lblcounter;
   lbl.classList.add("lbl");
-  lbls.appendChild(lbl);
+  lbls.insertBefore(lbl, lbls.firstChild);
   lblcounter++;
 
   gebId("shoInfInp").value = "";
