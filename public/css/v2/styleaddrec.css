@@ -55,23 +55,24 @@ miniTitle {
 }
 
 input[type="number"] {
-  -moz-appearance: textfield;
-  width: calc(var(--vw) * 2 / 100);
-  background: transparent;
-  border: solid 2px var(--contrastBuddy);
-  border-radius: var(--borderRadius);
-  outline: none;
-  cursor: pointer;
   color: var(--light);
-  font-size: 16px;
+  background-color: var(--contrastMain);
+  border-radius: var(--borderRadius);
+  padding: 5px 10px;
+  border: var(--borderBuddy);
 }
 input[type="number"]:focus {
   border: solid 2px var(--special);
+  outline: none;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+input[type="number"]::placeholder {
+  color: var(--light);
+  font-size: 16px;
 }
 .dauer {
   margin: 0 5px 0 0;
@@ -218,9 +219,13 @@ button:hover{
   background-color: transparent;
 }
 .chefkoch-link{
-  width: 100%;
+  width: calc(var(--vw) * 24 / 100);
   font-size: 16px;
   height: 20px;
+}
+.chefkoch{
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .chckbxbx {
@@ -276,4 +281,14 @@ button:hover{
 
 .chckbxbx:focus + label::before {
   outline: 2px solid var(--light);
+}
+.chefkoch-add-but{
+  width: calc(var(--vw) * 10 / 100);
+  padding: 7.5px;
+}
+#anzEinhInp{
+  width: calc(var(--vw) * 10 / 100);
+}
+#anzInp{
+  width: calc(var(--vw) * 7 / 100);
 }

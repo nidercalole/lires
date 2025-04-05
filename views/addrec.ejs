@@ -32,6 +32,27 @@
       </div>
     </div>
     <hr class="line">
+    <div class="chefkoch kumpeln spaceBetween horizont" id="chefkoch-add-but">
+      <input type="text" name="chefkochLink" id="chefkoch-link" class="chefkoch-link" placeholder="URL eines chefkoch-Rezeptes ab '/rezepte/...'">
+      <button class="chefkoch-add-but" id="chefkoch-add-but" onclick="addChefkochRec()">Import von chefkoch.de</button>
+    </div>
+    <div >
+      Zutatenangabe für
+      <input
+        type="number"
+        min="1"
+        max="100"
+        placeholder="Anzahl (bspw. '2')"
+        class="anzEinhInp"
+        id="anzInp"
+      />
+      <input
+        type="text"
+        placeholder="Einheit (bspw. 'Portionen')"
+        class="anzEinhInp"
+        id="anzEinhInp"
+      />.
+    </div>
     <div class="mitGridZutaten">
       <table class="beinhTable" id="table1">
         <tr>
@@ -47,26 +68,17 @@
         </tr>
       </table>
     </div>
-    <!--random hier reingepackt ich brauchs gerade nur-->
-    <div >
-      <zutAn
-          >Zutatenangabe für
-          <input
-            type="number"
-            min="1"
-            max="100"
-            placeholder="Anzahl (bspw. '2')"
-            class="anzEinhInp"
-            id="anzInp"
-          />
-          <input
-            type="text"
-            placeholder="Einheit (bspw. 'Portionen')"
-            class="anzEinhInp"
-            id="anzEinhInp"
-          />.
-        </zutAn>
+    <div class="recInfos stapeln">
+        <input
+          type="text"
+          class="shoInfInp"
+          placeholder="Kurzinformationen (bspw. Backtemperatur)"
+          id="shoInfInp"
+        />
+        <div class="hidden" id="lbls">
+        </div>
     </div>
+    <!--random hier reingepackt ich brauchs gerade nur-->
   </div>
 
   <div class="verticalLine"></div>
@@ -95,22 +107,8 @@
   <!--<div class="verticalLine"></div>-->
 
   <div class="right stapeln">
-    <div class="recInfos stapeln">
-        <input
-          type="text"
-          class="shoInfInp"
-          placeholder="Kurzinformationen (bspw. Backtemperatur)"
-          id="shoInfInp"
-        />
-        <div class="hidden" id="lbls">
-        </div>
-    </div>
     <div class="recTags">
     <div class="mitGridTags"><%- include('./partials/vieletags.ejs')%></div>
-    </div>
-    <div class="chefkoch kumpeln horizont" id="chefkoch-add-but">
-      <input type="text" name="chefkochLink" id="chefkoch-link" class="chefkoch-link" placeholder="URL eines chefkoch-Rezeptes ab '/rezepte/...'">
-      <button class="chefkoch-add-but" id="chefkoch-add-but" onclick="addChefkochRec()">Import von chefkoch.de</button>
     </div>
     <button class="recSave" onclick="collectAndSend()">Alles Speichern</button>
   </div>
