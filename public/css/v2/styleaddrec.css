@@ -48,6 +48,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 miniTitle {
+  width: 200px;
   font-size: 16px;
   font-weight: bold;
   margin: 5px 5px 5px 0;
