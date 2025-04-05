@@ -160,5 +160,5 @@ function growTextarea(elementId) {
 }
 
 function chooseImport() {
-  
+  gebId("darkBgChefkoch").style.display = "block";
 }
