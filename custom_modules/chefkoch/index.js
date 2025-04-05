@@ -296,12 +296,20 @@ class ChefkochAPI {
         let recipeName = soup.find("h1").text;
         let tags = [];
         let ingredient_list = [];
-        const ingredientTable = soup.find("table", {"class": "ingredients"});
-        if(ingredientTable != null) {
-            ingredientTable.findAll("tr").forEach(ingredient_row => {
-                let ingredient_name = this.beautifyText(ingredient_row.find("td", {"class": "td-right"}).text);
-                let ingredient_amount = this.beautifyText(ingredient_row.find("td", {"class": "td-left"}).text);
-                ingredient_list.push(new Ingredient(ingredient_name, ingredient_amount));
+        const ingredientTables = soup.findAll("table", { "class": "ingredients" });
+
+        if (ingredientTables.length > 0) {
+            ingredientTables.forEach(table => {
+                table.findAll("tr").forEach(ingredient_row => {
+                    const nameCell = ingredient_row.find("td", { "class": "td-right" });
+                    const amountCell = ingredient_row.find("td", { "class": "td-left" });
+        
+                    if (nameCell && amountCell) {
+                        let ingredient_name = this.beautifyText(nameCell.text);
+                        let ingredient_amount = this.beautifyText(amountCell.text);
+                        ingredient_list.push(new Ingredient(ingredient_name, ingredient_amount));
+                    }
+                });
             });
         }
         

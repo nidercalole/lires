@@ -50,7 +50,7 @@
     <script>
         window.addEventListener("DOMContentLoaded", async () => {
             const listid = sessionStorage.getItem("openDropdownAfterReload");
-            await new Promise(resolve => setTimeout(resolve, 500)); // Warte kurz, bis DOM aktualisiert ist
+            await new Promise(resolve => setTimeout(resolve, 200)); // Warte kurz, bis DOM aktualisiert ist
             document.getElementById('contentsMainEverything').classList.remove('nonLoadingScreen')
             document.getElementById('loadingScreen').classList.add('hidden');
 

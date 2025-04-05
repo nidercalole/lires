@@ -1,3 +1,4 @@
+
 function gebId(str){
     return document.getElementById(str);
 }
@@ -85,10 +86,13 @@ function addChefkochRec(){
         //console.log(data)
         gebId("recTitle").value = data.name  
         gebId("krzDesc").textContent = data.name
-        if(gebId("chooseBtn").textContent == "Schrittweise beschreiben"){
+        if(gebId("chooseBtn").textContent == "Beschreibung schrittweise"){
             chooseBtn()
         }
-        gebId("explanation").textContent = data.description
+        const stepInp = gebId("step_1")
+        stepInp.value = data.description
+        stepInp.dispatchEvent(new Event("input", { bubbles: true })); //trigger input event for resizing the textcontent
+
         data.tags.forEach(tag => {
             tag = tag.name.trim()
             checkTags(tag)
