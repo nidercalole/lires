@@ -87,7 +87,7 @@
   justify-content: space-between;
   flex: 1;
 }
-.blk1 .blk2{
+.blk1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

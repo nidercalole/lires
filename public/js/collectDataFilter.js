@@ -3,11 +3,7 @@
 function gebId(id){
     return document.getElementById(id);
 }
-function getUserCredetials(){
-    const queryString = window.location.search; 
-    const urlParams = new URLSearchParams(queryString);
-    return [urlParams.get('usrnm'), urlParams.get('usrid')]
-}
+
 async function collectDataForSearch() {
     const zutFilterMainin = Array.from(gebId('zutFilterMainin').selectedOptions).map(option => option.value); // Array of ings to include into a responded search query
     const prFilterMainin = Array.from(gebId('prFilterMainin').selectedOptions).map(option => option.value); // Array of processes to include from a responded search query

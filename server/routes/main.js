@@ -258,14 +258,7 @@ router.get('/allrecs', async (req, res) => {
     
     res.render('allrecs', { title: 'Lires', usrnm: req.query.usrnm, recs: recs});
 })
-/*
-router.get('/testapi', (req, res) => {
-    chefkoch.chefkochAPI.getRecipe('/rezepte/923031197646622/Quarkbaellchen.html')
-    .then(function(data){
-        res.render('testapi', { title: 'Lires', data: JSON.stringify(data), usrnm: req.query.usrnm }); 
-    });
-});
-*/
+
 
 router.post('/recList', async (req, res) => {
     const { recfilter, showText } = req.body; 

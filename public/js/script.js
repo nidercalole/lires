@@ -5,6 +5,11 @@ function getUserCredetials(){
     const urlParams = new URLSearchParams(queryString);
     return [urlParams.get('usrnm'), urlParams.get('usrid')]
 }
+function redirectHome() {
+    const username = document.getElementById('usrnm').textContent
+    console.log(username);
+    window.location.href = '/verify/?usrnm=' + username;
+}
 function showMessageIf(){
     const queryString = window.location.search; 
     const urlParams = new URLSearchParams(queryString);

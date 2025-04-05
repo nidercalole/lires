@@ -12,10 +12,5 @@
     <button type="submit">Absenden</button>
 </form>
 <script>
-    function getUserCredetials(){
-        const queryString = window.location.search; 
-        const urlParams = new URLSearchParams(queryString);
-        return [urlParams.get('usrnm'), urlParams.get('usrid')]
-    }
     document.getElementById('user').value = getUserCredetials()[0] + ' ' + getUserCredetials()[1];
 </script>
