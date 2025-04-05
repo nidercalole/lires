@@ -67,3 +67,7 @@ header {
 .weiter {
   height: 30px;
 }
+button{
+  color: var(--light);
+  font-size: 16px;
+}

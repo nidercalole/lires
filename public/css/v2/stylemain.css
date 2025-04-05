@@ -1,123 +1,141 @@
 :root {
-    font-family: "Be Vietnam Pro", serif;
-    font-weight: 400;
-    font-style: normal;
-    /*farben*/
-    --contrastMain: #782F8E;
-    --contrastBuddy: #4C0B4C; 
-    --light: #caffee;
-    --special: #4F7FB0;
-    /*design*/
-    --borderRadius: 5px;
-    --borderBuddy: 2px solid var(--contrastBuddy);
-    --borderLight: 2px solid var(--light);
-    --borderFocus: 2px solid var(--special);
-    /*font*/
-    --bigTitle:2em;
-    --fatFont: 575;
+  font-family: "Be Vietnam Pro", serif;
+  font-weight: 400;
+  font-style: normal;
+  /*farben*/
+  --contrastMain: #782f8e;
+  --contrastBuddy: #4c0b4c;
+  --light: #caffee;
+  --special: #4f7fb0;
+  /*design*/
+  --borderRadius: 5px;
+  --borderBuddy: 2px solid var(--contrastBuddy);
+  --borderLight: 2px solid var(--light);
+  --borderFocus: 2px solid var(--special);
+  /*font*/
+  --bigTitle: 2em;
+  --fatFont: 575;
 }
 
 body {
-    background-color: var(--contrastMain);
-    color: var(--light);
-    margin: 0;
+  background-color: var(--contrastMain);
+  color: var(--light);
+  margin: 0;
 }
-.noPadding{
-    padding: 0;
+.noPadding {
+  padding: 0;
 }
 
 .stapeln {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .kumpeln {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .zentrieren {
-    align-items: center;
+  align-items: center;
 }
 
-.noBg{
-    background-color: none;
+.noBg {
+  background-color: none;
 }
-.horizont{
-    display: flex;
-    align-items: center;
+.horizont {
+  display: flex;
+  align-items: center;
 }
-.spaceEvenly{
-    justify-content: space-evenly;
-    width: 100%;
+.spaceEvenly {
+  justify-content: space-evenly;
+  width: 100%;
 }
-.spaceBetween{
-    justify-content: space-between;
-    width: 100%;
+.spaceBetween {
+  justify-content: space-between;
+  width: 100%;
 }
-.marginZehn{
-    margin: 10px;
+.marginZehn {
+  margin: 10px;
 }
-input[type="text"], input[type="password"]{
-    color: var(--light);
-    background-color: var(--contrastMain);
-    border-radius: var(--borderRadius);
-    padding: 5px 10px;
-    border: var(--borderBuddy);
+input[type="text"],
+input[type="password"] {
+  color: var(--light);
+  background-color: var(--contrastMain);
+  border-radius: var(--borderRadius);
+  padding: 5px 10px;
+  border: var(--borderBuddy);
 }
 
-input[type="text"]:focus, input[type="password"]:focus{
-    outline: none;
-    border: var(--borderFocus);
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border: var(--borderFocus);
 }
-input[type="text"]::placeholder, input[type="password"]::placeholder{
-    color: var(--light);
-    font-size: 16px;
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: var(--light);
+  font-size: 16px;
 }
 
 ::selection {
-    background-color: var(--contrastBuddy);
-    color: var(--contrastMain);
+  background-color: var(--contrastBuddy);
+  color: var(--contrastMain);
 }
 
-.paddingZehn{
-    padding: 10px;
+.paddingZehn {
+  padding: 10px;
 }
-.width100vw{
-    width: calc(var(--vw) * 100 / 100);
+.width100vw {
+  width: calc(var(--vw) * 100 / 100);
 }
-.widthNeunzig{
-    width: 90%;
+.widthNeunzig {
+  width: 90%;
 }
 
 .nomargin {
-    margin: 0;
+  margin: 0;
 }
 
-button{
-    color: var(--light);
-    font-size: 16px;
+.redBg {
+  background-color: red;
 }
 
-.redBg{
-    background-color: red;
+.alignLeft {
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.loadingScreen {
+  width: calc(var(--vw) * 99 / 100);
+  height: calc(var(--vh) * 100 / 100);
+  background-color: var(--contrastMain);
 }
 
-.alignLeft{
-    text-align: left;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-.loadingScreen{
-    width: calc(var(--vw) * 99 / 100);
-    height: calc(var(--vh) * 100 / 100);
-    background-color: var(--contrastMain);
-    
+.nonLoadingScreen {
+  display: none;
 }
 
-.nonLoadingScreen{
-    display: none;
+.space20 {
+  margin: 10px 0;
 }
-.hidden{
-    display: none;
+.buddyBg {
+  background-color: var(--contrastBuddy);
+  border-radius: var(--borderRadius);
+  padding: 10px;
+}
+
+.darkBg {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: calc(var(--vw) * 100 / 100);
+  height: calc(var(--vh) * 100 / 100);
+}
+
+.hidden {
+  display: none;
 }

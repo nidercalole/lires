@@ -34,3 +34,7 @@ liresTitelLogin{
 .buttonLogin:hover{
     border: var(--borderFocus);
 }
+button{
+    color: var(--light);
+    font-size: 16px;
+}

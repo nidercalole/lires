@@ -427,16 +427,7 @@ filterTitle{
   margin: 10px 0;
   width: 100%;
 }
-.darkBg{
-  display:none;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: calc(var(--vw) * 100 / 100); 
-  height: calc(var(--vh) * 100 / 100);
-}
+
 
 .responseAddListOk{
   background-color: var(--special);
@@ -595,4 +586,8 @@ option:checked {
 
 .widthDreiSiebenFuenf{
   width: calc(var(--vw) * 3.75 / 100);
+}
+button{
+  color: var(--light);
+  font-size: 16px;
 }

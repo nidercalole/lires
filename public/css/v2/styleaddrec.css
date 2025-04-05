@@ -45,7 +45,6 @@ input[type="range"]::-webkit-slider-thumb {
   font-size: 20px;
   font-weight: bolder;
   width: 95%;
-  margin: 0 0 10px 0;
 }
 
 miniTitle {
@@ -291,4 +290,7 @@ button:hover{
 }
 #anzInp{
   width: calc(var(--vw) * 7 / 100);
+}
+.chooseImport{
+  font-size: small;
 }

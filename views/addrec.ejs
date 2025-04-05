@@ -2,14 +2,18 @@
 
 <div class="kumpeln all spaceBetween">
   <div class="left stapeln alignLeft">
+    <div class="kumpeln spaceBetween horizont">
+      <input
+        type="text"
+        id="recTitle"
+        class="recTitle"
+        placeholder="Name des Rezepts"
+      />
+      <button id="chooseImport"class="chooseImport">Rezept von Chefkoch importieren</button>
+    </div>
+      
     
-    <input
-      type="text"
-      id="recTitle"
-      class="recTitle"
-      placeholder="Name des Rezepts"
-    />
-
+    <div class="space20"></div>
     <div class="kumpeln horizont">
       <miniTitle>Arbeitsaufwand:</miniTitle>
       gering
@@ -32,10 +36,7 @@
       </div>
     </div>
     <hr class="line">
-    <div class="chefkoch kumpeln spaceBetween horizont" id="chefkoch-add-but">
-      <input type="text" name="chefkochLink" id="chefkoch-link" class="chefkoch-link" placeholder="URL eines chefkoch-Rezeptes ab '/rezepte/...'">
-      <button class="chefkoch-add-but" id="chefkoch-add-but" onclick="addChefkochRec()">Import von chefkoch.de</button>
-    </div>
+    
     <div >
       Zutatenangabe für
       <input
@@ -111,6 +112,15 @@
     <div class="mitGridTags"><%- include('./partials/vieletags.ejs')%></div>
     </div>
     <button class="recSave" onclick="collectAndSend()">Alles Speichern</button>
+  </div>
+</div>
+
+<div class="darkBg" id="darkBgChefkoch">
+  <div class="stapeln buddyBg zentrieren" id="chefkoch-add-but">
+      <miniTitle>Importiere ein Rezept von chefkoch.de</miniTitle>
+      <div><i>Kopiere dazu die URL eines chefkoch-Rezeptes ab '/rezepte/...'</i></div>
+      <input type="text" name="chefkochLink" id="chefkoch-link" class="chefkoch-link" placeholder="URL">
+      <button class="chefkoch-add-but" id="chefkoch-add-but" onclick="addChefkochRec()">Import</button>
   </div>
 </div>
 
