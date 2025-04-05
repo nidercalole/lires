@@ -72,7 +72,7 @@ function addChefkochRec(){
     const link = gebId("chefkoch-link").value
     gebId("darkBgChefkoch").style.display = "none";
     if (!link.trim()) {
-        alert("Please provide a valid link.");
+        alert("Bitte gib einen gültigen Link an.");
         return;
     }
 

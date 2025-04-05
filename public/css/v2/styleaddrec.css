@@ -18,23 +18,23 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   cursor: pointer;
 }
-.all{
+.all {
   padding: 10px;
   width: calc((var(--vw) * 100 / 100) - 20px);
-  height: calc((var(--vh)* 85 / 100));
+  height: calc((var(--vh) * 85 / 100));
 }
 
 .left {
   text-align: left;
   width: calc(var(--vw) * 35 / 100);
 }
-.mid{
+.mid {
   text-align: center;
   width: calc(var(--vw) * 35 / 100);
 }
-.right{
+.right {
   width: calc(var(--vw) * 25 / 100);
-  height: calc(var(--vh) * 84/ 100);
+  height: calc(var(--vh) * 84 / 100);
   background-color: var(--contrastBuddy);
   border-radius: var(--borderRadius);
   padding: 10px;
@@ -52,6 +52,14 @@ miniTitle {
   font-size: 16px;
   font-weight: bold;
   margin: 5px 5px 5px 0;
+}
+chefkochTitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 5px 5px 0;
+}
+.widthSchliessen {
+  width: calc(var(--vw) * 5 / 100);
 }
 
 input[type="number"] {
@@ -97,18 +105,19 @@ textarea::placeholder {
   font-family: "Be Vietnam Pro", serif;
   color: var(--contrastBuddy);
 }
-.charCount{
+.charCount {
   position: absolute;
-  left: calc(var(--vw) * 60 / 100);
+  left: calc(var(--vw) * 69 / 100);
+  top: calc(var(--vh) * 18.5 / 100);
 }
-.line{
+.line {
   width: 99%;
-  color: var(--light);
+  color: var(--contrastBuddy);
   border-radius: var(--borderRadius);
   border: 1px solid;
 }
 
-button{
+button {
   background-color: var(--contrastBuddy);
   color: var(--light);
   border: none;
@@ -118,11 +127,11 @@ button{
   margin: 5px;
 }
 
-button:hover{
+button:hover {
   background-color: var(--special);
 }
 
-.vorgehen{
+.vorgehen {
   max-height: calc(var(--vh) * 76 / 100);
 }
 
@@ -144,12 +153,14 @@ button:hover{
   background-color: transparent;
 }
 
-.stepvorgehen{
-  max-height: calc(var(--vh) * 20 / 100);
+.stepvorgehen {
+  max-height: calc(var(--vh) * 8/ 100);
+  width:98%;
 }
 /*
   das heir sorgt dafür, dass die scrollbars nicht gescheit rezised werden können, man kann zwar nemaxheigth setzten, aber 6 war etwas wenig ig
 */
+
 .stepvorgehen::-webkit-scrollbar {
   width: 5px;
 }
@@ -167,16 +178,28 @@ button:hover{
 .stepvorgehen::-webkit-scrollbar-corner {
   background-color: transparent;
 }
-.stepwise{
-  /*background-color: red;*/
+.stepwise {
   max-height: calc(var(--vh) * 76 / 100);
-  overflow-x: visible;
+  overflow-y: auto;
 }
-.verticalLine{
+.stepwise::-webkit-scrollbar {
+  width: 5px;
+}
+
+.stepwise::-webkit-scrollbar-track {
+  background-color: var(--contrastBuddy);
+  border-radius: 5px;
+}
+
+.stepwise::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+.verticalLine {
   border-left: 2px solid var(--contrastBuddy);
   height: calc(var(--vh) * 86 / 100);
 }
-#lbls{
+#lbls {
   max-height: calc(var(--vh) * 13.5 / 100);
   overflow: auto;
 }
@@ -197,9 +220,9 @@ button:hover{
 #lbls::-webkit-scrollbar-corner {
   background-color: transparent;
 }
-.typeOfDish{
-  max-height: calc(var(--vh) * 69.5 / 100);
-  overflow: auto; 
+.typeOfDish {
+  max-height: calc(var(--vh) * 76/ 100);
+  overflow: auto;
 }
 .typeOfDish::-webkit-scrollbar {
   width: 5px;
@@ -218,26 +241,25 @@ button:hover{
 .typeOfDish::-webkit-scrollbar-corner {
   background-color: transparent;
 }
-.chefkoch-link{
+.chefkoch-link {
   width: calc(var(--vw) * 24 / 100);
   font-size: 16px;
   height: 20px;
 }
-.chefkoch{
+.chefkoch {
   width: 100%;
   margin-bottom: 20px;
 }
 
 .chckbxbx {
-  display: none; 
+  display: none;
 }
-
 
 .chckbxbx + label {
   display: inline-flex;
   align-items: center;
   position: relative;
-  padding-left: 30px; 
+  padding-left: 30px;
   font-size: 16px;
   cursor: pointer;
   user-select: none;
@@ -245,7 +267,7 @@ button:hover{
 }
 
 .chckbxbx + label::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -256,22 +278,22 @@ button:hover{
   border-radius: var(--borderRadius);
   transition: background-color 0.2s, border-color 0.2s;
 }
- 
+
 .chckbxbx:checked + label::before {
   background-color: var(--special);
   border-color: var(--special);
 }
- 
+
 .chckbxbx:checked + label::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 4px;
-  top: 3px; 
-  width: 10px; 
-  height: 6px; 
+  top: 3px;
+  width: 10px;
+  height: 6px;
   border-left: 2px solid var(--light);
   border-bottom: 2px solid var(--light);
-  transform: rotate(-45deg); 
+  transform: rotate(-45deg);
   transition: background-color 0.2s;
 }
 
@@ -282,16 +304,96 @@ button:hover{
 .chckbxbx:focus + label::before {
   outline: 2px solid var(--light);
 }
-.chefkoch-add-but{
+.chefkoch-add-but {
   width: calc(var(--vw) * 10 / 100);
   padding: 7.5px;
 }
-#anzEinhInp{
+#anzEinhInp {
   width: calc(var(--vw) * 10 / 100);
 }
-#anzInp{
+#anzInp {
   width: calc(var(--vw) * 7 / 100);
 }
-.chooseImport{
+.chooseImport {
   font-size: small;
+}
+input[type="text"].tableInp,
+input[type="number"].tableInp {
+  width: calc(var(--vw) * 8 / 100);
+  background-color: transparent;
+  border: 2px solid transparent;
+}
+input[type="text"].tableInp:hover,
+input[type="number"].tableInp:hover {
+  border: 2px solid var(--special);
+}
+input[type="text"].tableInp:focus,
+input[type="number"].tableInp:focus {
+  border: 2px solid var(--special);
+}
+input[type="number"].tableInp {
+  width: calc(var(--vw) * 3 / 100);
+}
+.beinhTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+
+.beinhTable td,
+.beinhTable th {
+  padding: 0 10px;
+  border: none;
+}
+
+/* Abrundung: linke und rechte Zelle jeder Zeile */
+.beinhTable tr td:first-child {
+  border-top-left-radius: calc(var(--borderRadius) * 3);
+  border-bottom-left-radius: calc(var(--borderRadius) * 3);
+}
+
+.beinhTable tr td:last-child {
+  border-top-right-radius: calc(var(--borderRadius) * 3);
+  border-bottom-right-radius: calc(var(--borderRadius) * 3);
+}
+input[type="text"].einheitInp {
+  width: calc(var(--vw) * 5 / 100);
+}
+input[type="text"].zutatInp {
+  width: calc(var(--vw) * 14 / 100);
+}
+input[type="text"].shoInfInp {
+  width: 100%;
+}
+
+.recInfos{
+  margin-top: auto;
+}
+
+.mitGridZutaten{
+  max-height: calc(var(--vh) * 55 / 100);
+  overflow: auto;
+}
+.mitGridZutaten::-webkit-scrollbar {
+  width: 5px;
+}
+
+.mitGridZutaten::-webkit-scrollbar-track {
+  background-color: var(--contrastMain);
+  border-radius: 5px;
+}
+
+.mitGridZutaten::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.mitGridZutaten::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.recSave{
+  padding: 10px 20px;
+  font-size: large;
+  font-weight: bold;
+  margin: 10px;
 }

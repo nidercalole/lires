@@ -119,6 +119,28 @@ input[type="password"]::placeholder {
 .space20 {
   margin: 10px 0;
 }
+.width30vw {
+  width: calc(var(--vw) * 30 / 100);
+}
+
+.floatMid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+.contrastBg {
+  background-color: var(--contrastMain);
+  border-radius: var(--borderRadius);
+  padding: 10px;
+}
+
+.widthAchtUndNeunzig{
+    width: 98%;
+}
+
 .buddyBg {
   background-color: var(--contrastBuddy);
   border-radius: var(--borderRadius);

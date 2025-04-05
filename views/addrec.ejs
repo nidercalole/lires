@@ -34,7 +34,10 @@
         Minuten
       </div>
     </div>
+
+    <div class="space20"></div>
     <hr class="line">
+    <div class="space20"></div>
     
     <div >
       Zutatenangabe für
@@ -53,6 +56,10 @@
         id="anzEinhInp"
       />.
     </div>
+
+    <div class="space20"></div>
+
+
     <div class="mitGridZutaten">
       <table class="beinhTable" id="table1">
         <tr>
@@ -60,25 +67,30 @@
           <th>Menge</th>
           <th>Einheit</th>
         </tr>
-        <tr id="backfisch">
-          <td><input id="tableInp11" class="tableInp" type="text"></td>
+        <tr class="buddyBg" id="backfisch">
+          <td><input id="tableInp11" class="tableInp zutatInp" type="text"></td>
           <td><input id="tableInp12" class="tableInp" type="number"></td>
-          <td><input id="tableInp13" class="tableInp" type="text"></td>
+          <td><input id="tableInp13" class="tableInp einheitInp" type="text"></td>
           <td><button class="deleteBtn" onclick="addTableRow()">Hinzufügen</button></td>
         </tr>
       </table>
     </div>
-    <div class="recInfos stapeln">
-        <input
-          type="text"
-          class="shoInfInp"
-          placeholder="Kurzinformationen (bspw. Backtemperatur)"
-          id="shoInfInp"
-        />
+
+    <div class="space20"></div>
+
+    <div class="recInfos stapeln widthAchtUndNeunzig">
+        <div class="kumpeln horizont spaceBetween">
+          <input
+            type="text"
+            class="shoInfInp"
+            placeholder="Kurzinformationen (bspw. Backtemperatur)"
+            id="shoInfInp"
+          />
+          <button class="addBtn" id="addInfoBtn" onclick="addInfo()">Hinzufügen</button>
+        </div>
         <div class="hidden" id="lbls">
         </div>
     </div>
-    <!--random hier reingepackt ich brauchs gerade nur-->
   </div>
 
   <div class="space20"></div>
@@ -93,7 +105,12 @@
       maxlength="250"
       oninput="countChars()"
     ></textarea>
-    <p id="charCount" class="charCount"></p>
+
+    
+  <div class="space20">
+      <p id="charCount" class="charCount"></p>
+  </div>
+    
 
     <div class="recSchritte kumpeln">
       <button class="chooseBtn" id="chooseBtn" onclick="chooseBtn()">Beschreibung als Fließtext</button>
@@ -117,11 +134,16 @@
 </div>
 
 <div class="darkBg" id="darkBgChefkoch">
-  <div class="stapeln buddyBg zentrieren" id="chefkoch-add-but">
-      <miniTitle>Importiere ein Rezept von chefkoch.de</miniTitle>
-      <div><i>Kopiere dazu die URL eines chefkoch-Rezeptes ab '/rezepte/...'</i></div>
+  <div class="stapeln contrastBg zentrieren width30vw floatMid" id="chefkoch-add-but">
+      <div class="kumpeln horizont spaceBetween">
+        <div class="widthSchliessen"></div
+        <chefkochTitle>Importiere ein Rezept von chefkoch.de</chefkochTitle>
+        <button class="closeChooseChefkoch" id="closeChooseChefkoch">Schließen</button>
+      </div>
+      <div><i>Kopiere dazu die URL eines chefkoch-Rezeptes ab '/rezepte/...' hier hinein:</i></div>
+      <div class="space20"></div>
       <input type="text" name="chefkochLink" id="chefkoch-link" class="chefkoch-link" placeholder="URL">
-      <button class="chefkoch-add-but" id="chefkoch-add-but" onclick="addChefkochRec()">Import</button>
+      <button class="chefkoch-add-but" id="chefkoch-add-but" onclick="addChefkochRec()">Importieren</button>
   </div>
 </div>
 

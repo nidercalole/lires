@@ -15,6 +15,7 @@ function addTableRow() {
   }
 
   const row = table.insertRow(-1);
+  row.classList.add("buddyBg");
   const cells = [
     { value: gebId("tableInp11").value, idPrefix: "resing_" },
     { value: gebId("tableInp12").value, idPrefix: "resingamount_" },
@@ -24,10 +25,19 @@ function addTableRow() {
   cells.forEach((cellData, index) => {
     const cell = row.insertCell(index);
     const input = document.createElement("input");
-    input.type = "text";
+
+    input.type = index === 1 ? "number" : "text";
+
     input.value = cellData.value;
     input.id = cellData.idPrefix + counter;
     input.classList.add("tableInp");
+
+    if (index === 2) {
+      input.classList.add("einheitInp");
+    } else if (index === 0) {
+      input.classList.add("zutatInp");
+    }
+
     cell.appendChild(input);
   });
 
