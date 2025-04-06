@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="/css/v2/stylefilter.css">
+<!-- begin of Search filter-->
+<div class="darkBg" id="darkBg">
+    <div id="filOptionPage" class="filter stapeln zentrieren z-index-high">
+      <div class="kumpeln filterHeader spaceBetween">
+        <div class="leer"></div>
+        <filterTitle>Filter</filterTitle>
+        <img class="closeFilter" src="/img/x.png" alt="Schließen" onclick="filBut()">
+      </div>
+      <hr class="filterLine widthNeunzig">
+      <div class="stapeln zentrieren marginZehn widthNeunzig" id="zubDauer">
+        Zubereitungsdauer
+        <input class="marginZehn" type="range" min="14" max="180" value="14" id="maxDauer" oninput="maxDauerInput()">
+        <span class="sliderText" id="maxMin"></span>
+      </div>
+
+      <div class="kumpeln widthNeunzig">
+        <div class="stapeln zentrieren marginZehn ">
+          In Suchergebnisse inkludieren
+          <div class="kumpeln">
+            <div class="zentrieren stapeln marginZehn">
+              <select class="filDropdown" name="zutFilterMainin" id="zutFilterMainin" multiple>
+                <!-- hier Optionen für Dropdown Filter für Zutaten -->
+                <%- include('ingsInclude.ejs') %>
+              </select>
+            </div>
+
+            <div class="zentrieren stapeln marginZehn">
+              <select class="filDropdown" name="prFilterMainin" id="prFilterMainin" multiple>
+                <option value="none">Nichts</option>
+                <!-- hier Optionen für Dropdown Filter für Prozesse -->
+                <%- include('process.ejs') %>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="verticalLine2"></div>
+        <div id="exclude" class="stapeln zentrieren marginZehn">
+          Aus Suchergebnissen ausschließen
+
+          <div class="kumpeln">
+            <div class="zentrieren stapeln marginZehn">
+              <select class="filDropdown" name="zutFilterMainex" id="zutFilterMainex" multiple>
+                <!-- hier Optionen für Dropdown Filter für Zutaten -->
+                <%- include('ingsExclude.ejs') %>
+              </select>
+            </div>
+
+            <div class="stapeln zentrieren marginZehn">
+              <select class="filDropdown" name="prFilterMainex" id="prFilterMainex" multiple>
+                <option value="none">Nichts</option>
+                <!-- hier Optionen für Dropdown Filter für Prozesse -->
+                <%- include('process.ejs') %>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="stapeln marginZehn zentrieren">
+        <button id="filButSearchFinal" onclick="collectDataForSearch()">Irgendein Senden button</button>
+      </div>
+    </div>
+  </div>

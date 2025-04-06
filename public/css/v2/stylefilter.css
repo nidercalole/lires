@@ -1,0 +1,156 @@
+.filter{
+    background-color: var(--contrastBuddy);
+    border-radius: var(--borderRadius);
+    padding: 5px 10px;
+    width: 50%;
+}
+.filterHeader{
+    width: 100%;
+    margin: 0 5px;
+}
+.leer{
+    width:25px;
+    height: 25px;
+    border-radius: 5px;
+    margin-right: auto;
+}
+.closeFilter{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    margin-left: auto;
+    padding: 5px;
+    cursor: pointer;
+}
+.closeFilter:hover{
+    background-color: var(--contrastMain);
+}
+.filterLine{
+    border: 1.5px solid var(--light);
+    border-radius: var(--borderRadius);
+    margin: 10px 0;
+    width: 100%;
+}
+filterTitle{
+    font-weight: bold;
+    font-size: 20px;
+}
+.sliderText{
+    font-family: "Be Vietnam Pro", serif;
+    font-weight: 400;
+    color: var(--light);
+    font-style: italic;
+    font-size: 10px;
+}
+select[multiple] {
+    height: 200px;
+    width: calc(var(--vw) * 10 / 100); 
+    overflow-y: none;
+}
+
+select[multiple] option {
+    padding: 5px;
+}
+
+select[multiple]:focus {
+    border-color: var(--contrastBuddy);  
+}
+select[multiple]::-webkit-scrollbar {
+    display: none;  
+}
+select {
+    -webkit-appearance: none;  
+    appearance: none;  
+    width: calc(var(--vw) * 10 / 100); 
+    padding: 5px 10px;  
+    border-radius: var(--borderRadius);
+    border: var(--borderMain);  
+    background-color: var(--contrastMain);
+    color: var(--light); 
+    cursor: pointer; 
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+select:focus {
+    border-color: var(--special); ;  
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;  
+}
+.verticalLine2{
+    border-left: 2px solid var(--contrastMain);
+    border-radius: var(--borderRadius);
+    margin-right:2%;
+}
+#filButSearchFinal{
+    background-color: var(--contrastMain);
+    border-radius: var(--borderRadius);
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    color: var(--light);
+    font-family: "Be Vietnam Pro", serif;
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+#filButSearchFinal:hover{
+    background-color: var(--contrastBuddy);
+}
+option {
+    font-family: "Be Vietnam Pro", serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+  
+option:hover {
+    background-color: var(--light); 
+    color: var(--contrastMain);
+    border-radius: var(--borderRadius);
+}
+option:checked {
+    background-color: var(--contrastBuddy);
+    color: var(--light);
+    border-radius: var(--borderRadius);
+}
+#filOptionPage{
+    width: calc(var(--vw) * 50 / 100); 
+    position: absolute;
+    top: calc(var(--vh) * 25 / 100);
+    left: calc(var(--vw) * 25 / 100);
+    z-index: 1;
+    background-color: var(--special);
+    border-radius: var(--borderRadius);
+}
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none; 
+    width: 70%;
+    height: 8px;  
+    background: var(--contrastMain);
+    border-radius: var(--borderRadius);
+    outline: none;  
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;  
+    appearance: none; 
+    width: 20px;
+    height: 20px;
+    background: var(--contrastBuddy);
+    border-radius: 50%;  
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;  
+    appearance: none; 
+    width: 20px;
+    height: 20px;
+    background: var(--contrastBuddy);
+    border-radius: 50%;  
+    cursor: pointer;
+}

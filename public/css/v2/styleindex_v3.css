@@ -417,49 +417,12 @@ detailRecDauer{
   border-radius: var(--borderRadius);
 }
 
-filterTitle{
-  font-weight: bold;
-  font-size: 20px;
-  }
-.filterLine{
-  border: 1.5px solid var(--light);
-  border-radius: var(--borderRadius);
-  margin: 10px 0;
-  width: 100%;
-}
-
-
 .responseAddListOk{
   background-color: var(--special);
   border-radius: var(--borderRadius);
   padding: 10px;
 }
-.filter{
-  background-color: var(--contrastBuddy);
-  border-radius: var(--borderRadius);
-  padding: 5px 10px;
-  width: 50%;
-}
 
-input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none; 
-  width: 70%;
-  height: 8px;  
-  background: var(--contrastMain);
-  border-radius: var(--borderRadius);
-  outline: none;  
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;  
-  appearance: none; 
-  width: 20px;
-  height: 20px;
-  background: var(--contrastBuddy);
-  border-radius: 50%;  
-  cursor: pointer;
-}
 
 
 /* Container für das Dropdown */
@@ -514,13 +477,7 @@ select[multiple]:focus {
 select[multiple]::-webkit-scrollbar {
   display: none;  
 }
-.sliderText{
-  font-family: "Be Vietnam Pro", serif;
-  font-weight: 400;
-  color: var(--light);
-  font-style: italic;
-  font-size: 10px;
-}
+
 option:checked {
   background-color: var(--contrastBuddy);
   color: var(--light);
@@ -530,48 +487,6 @@ option:checked {
   border-left: 2px solid var(--contrastMain);
   border-radius: var(--borderRadius);
   margin-right:2%;
-}
-
-#filButSearchFinal{
-  background-color: var(--contrastMain);
-  border-radius: var(--borderRadius);
-  border: none;
-  outline: none;
-  padding: 5px 10px;
-  color: var(--light);
-  font-family: "Be Vietnam Pro", serif;
-  font-weight: 400;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#filButSearchFinal:hover{
-  background-color: var(--contrastBuddy);
-}
-.closeFilter{
-  width: 25px;
-  height: 25px;
-  border-radius: 5px;
-  margin-left: auto;
-  padding: 5px;
-  cursor: pointer;
-}
-.closeFilter:hover{
-  background-color: var(--contrastMain);
-}
-
-
-.filterHeader{
-  width: 100%;
-  margin: 0 5px;
-}
-
-.leer{
-  width:25px;
-  height: 25px;
-  border-radius: 5px;
-  margin-right: auto;
 }
 
 .paddingOther{
