@@ -93,6 +93,10 @@ input[type="password"]::placeholder {
   width: 90%;
 }
 
+.fullWidth {
+  width: calc(var(--vw) * 98.98 / 100);
+}	
+
 .nomargin {
   margin: 0;
 }
@@ -118,6 +122,9 @@ input[type="password"]::placeholder {
 
 .space20 {
   margin: 10px 0;
+}
+.space10 {
+  margin: 5px 0;
 }
 .width30vw {
   width: calc(var(--vw) * 30 / 100);

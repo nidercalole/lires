@@ -46,6 +46,27 @@ function addTableRow() {
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Löschen";
   deleteButton.classList.add("deleteBtn");
+
+  deleteButton.addEventListener("mouseenter", () => {
+    row.style.backgroundColor = "var(--contrastMain)";
+
+    const inputs = row.querySelectorAll("input");
+    inputs.forEach((input) => {
+      input.style.fontWeight = "bold";
+      input.style.color = "var(--contrastBuddy)";
+    });
+  });
+
+  deleteButton.addEventListener("mouseleave", () => {
+    row.style.backgroundColor = "";
+    
+    const inputs = row.querySelectorAll("input");
+    inputs.forEach((input) => {
+      input.style.fontWeight = "400";
+      input.style.color = "var(--light)";
+    });
+  });
+
   deleteButton.addEventListener("click", function () {
     const table = gebId("table1");
     table.deleteRow(row.rowIndex);
@@ -123,7 +144,7 @@ function addstepp() {
   step.placeholder = "Schritt " + stepid;
   step.classList.add("stepvorgehen");
   steps.appendChild(step);
-  let delBut  = document.createElement("button");
+  let delBut = document.createElement("button");
   delBut.textContent = "Löschen";
   delBut.classList.add("deleteBtnVorgehen");
   const currentStepId = stepid; // Capture the current stepid
@@ -139,7 +160,7 @@ function addstepp() {
     const allSteps = steps.querySelectorAll(".stepvorgehen");
     allSteps.forEach((step, index) => {
       step.placeholder = "Schritt " + (index + 1);
-     // step.id = "step_" + (index + 1);
+      // step.id = "step_" + (index + 1);
     });
   }
   steps.appendChild(delBut);
@@ -156,7 +177,9 @@ function addstepp() {
 growTextarea("krzDesc");
 growTextarea("explanation");
 
-const textareas = document.getElementById("stepwise").querySelectorAll("textarea");
+const textareas = document
+  .getElementById("stepwise")
+  .querySelectorAll("textarea");
 textareas.forEach((textarea) => {
   growTextarea(textarea.id);
 });
@@ -164,9 +187,9 @@ textareas.forEach((textarea) => {
 function growTextarea(elementId) {
   const element = document.getElementById(elementId);
   element.addEventListener("input", function () {
-  this.style.height = "auto";
-  this.style.height = this.scrollHeight + "px";
-});
+    this.style.height = "auto";
+    this.style.height = this.scrollHeight + "px";
+  });
 }
 
 function chooseImport() {

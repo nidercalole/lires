@@ -1,57 +1,13 @@
-<!--<link rel="stylesheet" href="/css/recipedesktop.css">-->
-<div id="recipeData" style="display: none;">
-    <%= rec %>
-</div>
-<div id="recmarked" style="display: none;">
-    <%= marked %>
-</div>
-<div class="responseAddListOk" id="responseAddListOk">
-    Hier steht ein toller text, der sagt, dass alles funktioniert hat
-</div>
-<div class="responseAddListNotOk" id="responseAddListNotOk">
-    Hier steht ein toller text, der sagt, dass es nicht funktioneirt hat
-</div>
-<!-- begin Ingridient add page-->
-<div class="filIngPage" id="filIngPage">
-    <addToListTitle>Wähle die Menge und die Zutaten aus, die du zu Listen hinzufügen möchtest
-    </addToListTitle>
-    <table class="fixTable1" id="fixTable1"></table>
-
-    <div class="NextToings" id="nextToingsoverall">
-        <verfList>Verfügbare Listen:</verfList>
-        <div id="defaultListNew" class="listsNextToings selected" onclick="toggleSelectionLists(this)">
-            <listeErstellenBut>Neue Liste erstellen</listeErstellenBut>
-        </div>
-        <div><input type="text" placeholder="Liste benennen" class="inputListNameNew" id="inputListNameNew"></div>
+<link rel="stylesheet" href="/css/v2/stylerec.css">
+<div class="kumpeln spaceBetween paddingZehn fullWidth">
+    <div class="">
     </div>
-    <div class="closeDiv"><button class="closeButton" onclick="addToAnyListClose()">
-        <img width="30px" src="/img/x.png" alt="Listenbearbeitung schließen">
-    </button></div>
-    <div class="addIngToListUR"><button class="addToListFinal" onclick="addToListFinal()">
-        <img width="30px" src="/img/weiter.png" alt="Bestätige die Änderungen">
-    </button></div>
-</div>
-<!-- end ingredient add page-->
+    <div class="stapeln">
+        <div class="stapeln buddyBg">
+            <p class="rightTitles">Kurzbeschreibung:</p>
+            <p class="noMarginTop blocksatz" id="description"></p>
 
-<div class="body">
-    <div class="top">
-    
-        <div class="frstLine">
-            <recName id="recName"></recName>
-            <usr id="userAndDate"></usr>
-        </div>
-        <div class="scndLine">
-            <p class="scndLinTxt marginRight">Zubereitungsdauer: <span id="duration"></span> Minuten</p>
-            <p class="scndLinTxt">Schwierigkeitsgrad:</p>
-            <img class="stars" src="/img/3star.png" alt="3 von 5" id="difficulty" />
-        </div>
-    </div>
-    <hr class="hr">
-    <div>
-        <div class="deskleft">
-            <p class="menge" id="countforenh"></p>
-            <table class="fixTable" id="fixTable"></table>
-            <div class="miniLblsColumn">
+            <div class="kumpeln">
                 <div class="miniLblsRow">
                     <lblMinis class="hidden" id="miniLbl1"></lblMinis>
                     <lblMinis class="hidden" id="miniLbl2"></lblMinis>
@@ -69,30 +25,22 @@
                     <lblMinis class="hidden" id="miniLbl12"></lblMinis>
                 </div>
             </div>
-            <button id="addRecToList" class="recActionBtns" onclick="addToAnyList()">
-                <img src="/img/plus.png" alt="Füge Rezepte hinzu" width="55px">
-            </button>
-            <button id="saveRec" class="recActionBtns" onclick="achtungDieseFunktionHatSchonEineFunktionInRECIPEJSAberhierFehltnochwas()">
-                <img src="/img/nadel.png" alt="Speichere das Rezept" width="55px">
-            </button>
-        </div>
-        <div class="deskright">
-            <div class="krzInfoRow">
-                <krzInfo class="hidden" id="krzInf1"></krzInfo>
-                <krzInfo class="hidden" id="krzInf2"></krzInfo>
-                <krzInfo class="hidden" id="krzInf3"></krzInfo>
-                <krzInfo class="hidden" id="krzInf4"></krzInfo>
-                <krzInfo class="hidden" id="krzInf5"></krzInfo>
+
+            <div class="kumpeln">
+                <button id="addRecToCal" class="recActionBtns" onclick="">
+                    Zu Kalender hinzufügen
+                </button>
+                <button id="addRecToList" class="recActionBtns" onclick="addToAnyList()">
+                    Zu Liste hinzufügen
+                </button>
+                <button id="saveRec" class="recActionBtns" onclick="achtungDieseFunktionHatSchonEineFunktionInRECIPEJSAberhierFehltnochwas()">
+                    <img src="/img/nadel.png" alt="Speichere das Rezept" width="55px">
+                </button>
             </div>
-            <p class="rightTitles">Kurzbeschreibung:</p>
-            <p class="noMarginTop blocksatz" id="description"></p>
-            <p class="rightTitles">Vorgehen:</p>
-            <p class="noMarginTop blocksatz" id="directions"></p>
+            
         </div>
+        
     </div>
-
 </div>
-
-
 <script src="/js/recipe.js"></script>
 <script src="/js/addRecToList.js"></script>

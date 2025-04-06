@@ -397,3 +397,7 @@ input[type="text"].shoInfInp {
   font-weight: bold;
   margin: 10px;
 }
+tagTitle{
+  font-size: 16px;
+  font-weight: bold;
+}
