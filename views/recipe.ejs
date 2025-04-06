@@ -1,43 +1,69 @@
 <link rel="stylesheet" href="/css/v2/stylerec.css">
 <div class="kumpeln spaceBetween paddingZehn fullWidth">
-    <div class="">
-    </div>
     <div class="stapeln">
-        <div class="stapeln buddyBg">
-            <p class="rightTitles">Kurzbeschreibung:</p>
-            <p class="noMarginTop blocksatz" id="description"></p>
-
+        <recName id="recName"></recName>
+        <div class="kumpeln">
+            <p class="scndLinTxt marginRight">Zubereitungsdauer: <span id="duration"></span> Minuten</p>
+            <p class="scndLinTxt">Schwierigkeitsgrad:</p>
+            <img class="stars" src="/img/3star.png" alt="3 von 5" id="difficulty" />
+        </div>
+        <div class="kumpeln spaceBetween">
             <div class="kumpeln">
-                <div class="miniLblsRow">
-                    <lblMinis class="hidden" id="miniLbl1"></lblMinis>
-                    <lblMinis class="hidden" id="miniLbl2"></lblMinis>
-                    <lblMinis class="hidden" id="miniLbl3"></lblMinis>
-                    <lblMinis class="hidden" id="miniLbl4"></lblMinis>
-                    <lblMinis class="hidden" id="miniLbl5"></lblMinis>
-                    <lblMinis class="hidden" id="miniLbl6"></lblMinis>
-                </div>
-                <div class="miniLblsRow">
-                    <lblMinis class="hidden" id="miniLbl7"></lblMinis>
-                    <lblMinis class="hidden" id="miniLbl8"></lblMinis>
-                    <lblMinis class="hidden" id="miniLbl9"></lblMinis>
-                    <lblMinis class="hidden" id="miniLbl10"></lblMinis>
-                    <lblMinis class="hidden" id="miniLbl11"></lblMinis>
-                    <lblMinis class="hidden" id="miniLbl12"></lblMinis>
-                </div>
+                <krzInfo class="hidden" id="krzInf1"></krzInfo>
+                <krzInfo class="hidden" id="krzInf2"></krzInfo>
+                <krzInfo class="hidden" id="krzInf3"></krzInfo>
+                <krzInfo class="hidden" id="krzInf4"></krzInfo>
+                <krzInfo class="hidden" id="krzInf5"></krzInfo>
             </div>
+            <usr id="userAndDate"></usr>
+        </div>
 
-            <div class="kumpeln">
-                <button id="addRecToCal" class="recActionBtns" onclick="">
-                    Zu Kalender hinzufügen
-                </button>
-                <button id="addRecToList" class="recActionBtns" onclick="addToAnyList()">
-                    Zu Liste hinzufügen
-                </button>
-                <button id="saveRec" class="recActionBtns" onclick="achtungDieseFunktionHatSchonEineFunktionInRECIPEJSAberhierFehltnochwas()">
-                    <img src="/img/nadel.png" alt="Speichere das Rezept" width="55px">
-                </button>
+        <hr>
+
+        <div class="kumpeln">
+            <div class="stapeln">
+                <p class="menge" id="countforenh"></p>
+                <table class="fixTable" id="fixTable"></table>
             </div>
-            
+            <div class="stapeln">
+                <p class="rightTitles">Vorgehen:</p>
+                <p class="noMarginTop blocksatz" id="directions"></p>
+            </div>
+        </div>
+    </div>
+    <div class="stapeln buddyBg">
+        <p class="rightTitles">Kurzbeschreibung:</p>
+        <p class="noMarginTop blocksatz" id="description"></p>
+
+        <div class="kumpeln">
+            <div class="miniLblsRow">
+                <lblMinis class="hidden" id="miniLbl1"></lblMinis>
+                <lblMinis class="hidden" id="miniLbl2"></lblMinis>
+                <lblMinis class="hidden" id="miniLbl3"></lblMinis>
+                <lblMinis class="hidden" id="miniLbl4"></lblMinis>
+                <lblMinis class="hidden" id="miniLbl5"></lblMinis>
+                <lblMinis class="hidden" id="miniLbl6"></lblMinis>
+            </div>
+            <div class="miniLblsRow">
+                <lblMinis class="hidden" id="miniLbl7"></lblMinis>
+                <lblMinis class="hidden" id="miniLbl8"></lblMinis>
+                <lblMinis class="hidden" id="miniLbl9"></lblMinis>
+                <lblMinis class="hidden" id="miniLbl10"></lblMinis>
+                <lblMinis class="hidden" id="miniLbl11"></lblMinis>
+                <lblMinis class="hidden" id="miniLbl12"></lblMinis>
+            </div>
+        </div>
+
+        <div class="kumpeln">
+            <button id="addRecToCal" class="recActionBtns" onclick="">
+                Zu Kalender hinzufügen
+            </button>
+            <button id="addRecToList" class="recActionBtns" onclick="addToAnyList()">
+                Zu Liste hinzufügen
+            </button>
+            <button id="saveRec" class="recActionBtns" onclick="achtungDieseFunktionHatSchonEineFunktionInRECIPEJSAberhierFehltnochwas()">
+                <img src="/img/nadel.png" alt="Speichere das Rezept" width="55px">
+            </button>
         </div>
         
     </div>
