@@ -1,3 +1,113 @@
-#difficulty{
-    width: 200px;/*verzerrt!*/
+#difficulty {
+  width: 200px; /*verzerrt!*/
+}
+
+recName {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+krzInfo {
+  background-color: var(--contrastBuddy);
+  margin: 5px 10px 5px 0;
+  padding: 5px;
+  border-radius: var(--borderRadius);
+}
+usr {
+  margin-right: 10px;
+  font-style: italic;
+}
+.line {
+  width: 98%;
+  border: var(--contrastBuddy) 2px solid;
+  border-radius: var(--borderRadius);
+}
+.ings {
+  width: calc(var(--vw) * 60 / 100);
+}
+.mengeInp {
+  background-color: transparent;
+  border: 2px solid var(--contrastBuddy);
+  border-radius: var(--borderRadius);
+  padding: 5px;
+  width: 50px;
+  color: var(--light);
+}
+.mengeInp::placeholder {
+  color: var(--light);
+}
+
+.mengeInp::-webkit-inner-spin-button,
+.mengeInp::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.mengeInp[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.mengeInp:focus {
+  border: 2px solid var(--special);
+  outline: none;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  margin-right: 10px;
+  width: 98%;
+}
+
+td {
+  background-color: var(--contrastBuddy);
+  padding: 7.5px 0 7.5px 5px;
+  border-radius: 0;
+}
+
+tr:first-child td {
+  background-color: transparent;
+}
+
+td:first-child {
+  border-top-left-radius: var(--borderRadius);
+  border-bottom-left-radius: var(--borderRadius);
+  text-align: right;
+  padding-right: 20px;
+}
+
+td:nth-child(2) {
+  border-top-right-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+}
+.scrollIngTable {
+  width: calc(var(--vw) * 35 / 100);
+  overflow-y: auto;
+  max-height: calc(var(--vh) * 63 / 100);
+}
+
+.scrollIngTable::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollIngTable::-webkit-scrollbar-track {
+  background-color: var(--contrastBuddy);
+  border-radius: 5px;
+}
+
+.scrollIngTable::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.scrollIngTable::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.mid{
+    width: calc(var(--vw) * 40 / 100);
+    background-color: red;
+}
+#countforenh{
+    width: 500px;
 }

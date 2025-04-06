@@ -55,8 +55,8 @@ function updatelist(){
     let list = gebId('fixTable');
     list.innerHTML = `
     <tr>
-        <td class="moreWidth bold">Zutaten</td>
-        <td class="bold">Menge</td>
+        <td class="lessWidth"><b>Menge</b></td>
+        <td class=""><b>Zutaten</b></td>
     </tr>`;
     recData.ingredients.forEach(ing => {
         let ingamountshow = '';
@@ -70,8 +70,8 @@ function updatelist(){
         }
         let item = document.createElement('tr');
         item.innerHTML = `
-        <td>${ing.ing} ${ing.ingextra}</td>
-        <td>${(ingamountshow) + ' ' + ingunitshow}</td>`;
+        <td>${(ingamountshow) + ' ' + ingunitshow}</td>
+        <td>${ing.ing} ${ing.ingextra}</td>`;
         list.appendChild(item);
     });
     let listAdd = gebId('fixTable1');

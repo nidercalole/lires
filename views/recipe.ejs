@@ -7,15 +7,19 @@
     <%= marked %>
 </div>
 <!--pls dooond delete me :B-->
+<!-- oke <3-->
+
 <div class="kumpeln spaceBetween paddingZehn fullWidth">
     <div class="stapeln">
         <recName id="recName"></recName>
-        <div class="kumpeln">
-            <p class="scndLinTxt marginRight">Zubereitungsdauer: <span id="duration"></span> Minuten</p>
-            <p class="scndLinTxt">Schwierigkeitsgrad:</p>
-            <img class="stars" src="/img/3star.png" alt="3 von 5" id="difficulty" />
+        <div class="kumpeln alignLeft horizont ">
+            <p class="scndLinTxt marginRight"><b>Zubereitungsdauer: </b><span id="duration"></span> Minuten</p>
+            <div class="horizont">
+                <p class="scndLinTxt"><b>&emsp;&emsp;&emsp;&emsp;Schwierigkeitsgrad:&emsp;</b></p>
+                <img class="stars" src="/img/3star.png" alt="3 von 5" id="difficulty" />
+            </div>
         </div>
-        <div class="kumpeln spaceBetween">
+        <div class="kumpeln spaceBetween horizont">
             <div class="kumpeln">
                 <krzInfo class="hidden" id="krzInf1"></krzInfo>
                 <krzInfo class="hidden" id="krzInf2"></krzInfo>
@@ -26,19 +30,22 @@
             <usr id="userAndDate"></usr>
         </div>
 
-        <hr>
+        <hr class="line">
 
         <div class="kumpeln">
-            <div class="stapeln">
+            <div class="ings stapeln">
                 <p class="menge" id="countforenh"></p>
-                <table class="fixTable" id="fixTable"></table>
+                <div class="scrollIngTable">
+                    <table class="fixTable" id="fixTable"></table>
+                </div>
             </div>
-            <div class="stapeln">
-                <p class="rightTitles">Vorgehen:</p>
+            <div class="stapeln mid">
+                <p class="rightTitles"><b>Vorgehen:</b></p>
                 <p class="noMarginTop blocksatz" id="directions"></p>
             </div>
         </div>
     </div>
+
     <div class="stapeln buddyBg">
         <p class="rightTitles">Kurzbeschreibung:</p>
         <p class="noMarginTop blocksatz" id="description"></p>
@@ -75,6 +82,25 @@
         </div>
         
     </div>
+</div>
+<div class=" hidden filIngPage" id="filIngPage">
+    <addToListTitle>Wähle die Menge und die Zutaten aus, die du zu Listen hinzufügen möchtest
+    </addToListTitle>
+    <table class="fixTable1" id="fixTable1"></table>
+
+    <div class="NextToings" id="nextToingsoverall">
+        <verfList>Verfügbare Listen:</verfList>
+        <div id="defaultListNew" class="listsNextToings selected" onclick="toggleSelectionLists(this)">
+            <listeErstellenBut>Neue Liste erstellen</listeErstellenBut>
+        </div>
+        <div><input type="text" placeholder="Liste benennen" class="inputListNameNew" id="inputListNameNew"></div>
+    </div>
+    <div class="closeDiv"><button class="closeButton" onclick="addToAnyListClose()">
+        <img width="30px" src="/img/x.png" alt="Listenbearbeitung schließen">
+    </button></div>
+    <div class="addIngToListUR"><button class="addToListFinal" onclick="addToListFinal()">
+        <img width="30px" src="/img/weiter.png" alt="Bestätige die Änderungen">
+    </button></div>
 </div>
 <script src="/js/recipe.js"></script>
 <script src="/js/addRecToList.js"></script>

@@ -123,20 +123,20 @@ input[type="password"]::placeholder {
 .space20 {
   margin: 10px 0;
 }
-.space10 {
-  margin: 5px 0;
+.horSpace10 {
+  margin: 0 5px;
 }
 .width30vw {
   width: calc(var(--vw) * 30 / 100);
 }
 
 .floatMid {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
   
 .contrastBg {
   background-color: var(--contrastMain);
