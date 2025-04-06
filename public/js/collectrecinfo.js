@@ -28,6 +28,9 @@ function sendData(
     }else if(directions[1] === ""||directions[1] === undefined){
         alert("Bitte fügen Sie mindestens eine Zubereitungshinweis hinzu.");
         return;
+    }else if(coutfor[0] === "" || coutfor[1] === ""){
+        alert("Bitte füllen Sie die Anzahl und die Einheit der Portionen aus.");
+        return;
     }
     fetch('/addrec/add', {
         method: 'POST',

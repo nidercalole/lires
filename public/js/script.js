@@ -62,7 +62,7 @@ function filBut(){
 }
 function searchOnEnter(event){
     if (event.key === 'Enter'){
-        
+        collectDataForSearch()
         filBut()
     }
 }
@@ -100,6 +100,15 @@ function openRec(recid){
 function openCalView(){
     const user = getUserCredetials();
     window.location.href = '/calendar/?usrnm=' + user[0] + '&usrid=' + user[1];
+    fetch('/calendar/cleanUpOldEntries', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            usrid: getUserCredetials()[1],
+        })
+    })
 }
 
 const options = document.querySelectorAll('option');

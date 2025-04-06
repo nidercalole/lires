@@ -53,4 +53,25 @@ router.post('/removeRecFromCollection', async (req, res) => {
     res.json({ success: true });
     
 });
+router.post("/cleanUpOldEntries", async (req, res) => {
+  const { usrid } = req.body;
+  const query2 = { user: usrid };
+  const existingUserCreds = await userCreds.findOne(query2).exec();
+  const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+
+  if (!existingUserCreds) {
+    return res.json({ success: false, message: "Benutzer nicht gefunden." });
+  }
+  existingUserCreds.recmarked[1] = existingUserCreds.recmarked[1].filter(
+    (rec) => {
+      const date = new Date(rec[1]);
+      return date >= oneWeekAgo;
+    }
+  );
+  
+  existingUserCreds.markModified("recmarked");
+  await existingUserCreds.save();
+
+  res.json({ success: true });
+});
 module.exports = router;
