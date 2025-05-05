@@ -75,7 +75,10 @@ function addChefkochRec(){
         alert("Bitte gib einen gültigen Link an.");
         return;
     }
-
+    document.getElementById('darkBgChefkoch').style.display = 'none';
+    document.removeEventListener('keydown', closeOnEventChefkochView);
+    document.removeEventListener('keydown', searchOnEnterChefkochView)
+    console.log("close")
 
     fetch('/getRecChefkoch?link=' + link)
     .then(response => data = response.json())

@@ -199,27 +199,36 @@ function chooseImport() {
 
 function importView(){
   const chefkochInputPage = document.getElementById('darkBgChefkoch');
-  if (chefkochInputPage.style.display === 'none' || chefkochInputPage.style.display === '') {
+  console.log(chefkochInputPage.style.display)
+  if (chefkochInputPage.style.display === "none" || chefkochInputPage.style.display === '') {
       chefkochInputPage.style.display = 'block';
       document.addEventListener('keydown', closeOnEventChefkochView);
       gebId('darkBg').addEventListener('click', closeOnEventChefkochView);
       gebId('filbut').blur();
       document.addEventListener('keydown', searchOnEnterChefkochView)
+      console.log("open")
   } else{
       chefkochInputPage.style.display = 'none';
       document.removeEventListener('keydown', closeOnEventChefkochView);
       document.removeEventListener('keydown', searchOnEnterChefkochView)
+      console.log("close")
   }
 }
 function searchOnEnterChefkochView(event){
   if (event.key === 'Enter'){
       addChefkochRec()
       importView()
+      document.getElementById('darkBgChefkoch').style.display = 'none';
+      document.removeEventListener('keydown', closeOnEventChefkochView);
+      document.removeEventListener('keydown', searchOnEnterChefkochView)
+      console.log("close")
   }
 }
 function closeOnEventChefkochView(event) {
   if (event.key === 'Escape' || (event.type === 'click' && event.target === gebId('darkBgChefkoch'))) {
       document.getElementById('darkBgChefkoch').style.display = 'none';
       document.removeEventListener('keydown', closeOnEventChefkochView);
+      document.removeEventListener('keydown', searchOnEnterChefkochView)
+      console.log("close")
   }
 }
