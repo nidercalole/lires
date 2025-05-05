@@ -13,11 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
         "Manche Rezepte muss man rühren - andere gehen direkt ins Herz.",//3%
         "Iss lieber was richtiges.",                                    //2%
         "Wo Geschmack in Schichten kommt.",                             //2%
+        "Die Betreiber der Webseite verfolgen mit ihrer Betreibung keinerlei kommerzielle Ziele. eine Register- und eine Umsatzsteuerindentifikationsnummer sind somit nicht vorhanden.", //1%
         "Regenwurmsalat!"                                               //1%
     ]
     const rLQ = document.getElementById('randomLoginQot'); 
     function getRandomQuote(quotes) {
-        const percentages = [49, 8, 5, 5, 5, 5, 4, 4, 4, 3, 3, 2, 2, 1];
+        const percentages = [49, 8, 5, 5, 5, 5, 4, 4, 3, 3, 3, 2, 2, 1,1];
         const total = percentages.reduce((sum, p) => sum + p, 0);
         const random = Math.random() * total;
         

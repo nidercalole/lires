@@ -126,10 +126,11 @@ function collectAndSend(){
         const ingextra = ''
         ingredients.push({ing, ingextra, ingamount, ingunit});
     }
-    for (let i = 0; i < lbls; i++) {
-        const lbl = exttxt("lbl_" + i);
+    for (let i = 0; i < lblcounter; i++) {
+        const lbl = exttxt("lbl_" + i).replace(/^●\s*/, ""); 
         labels.push(lbl);
     }
+    
 
     sendData(
         extval("recTitle"),

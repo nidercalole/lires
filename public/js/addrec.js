@@ -136,6 +136,10 @@ shoInfInp.addEventListener("keypress", function (event) {
   }
 });
 
+function addInfo() {
+  addlabl();
+}
+
 let stepid = 2;
 function addstepp() {
   const steps = document.getElementById("stepwise");
@@ -147,7 +151,7 @@ function addstepp() {
   let delBut = document.createElement("button");
   delBut.textContent = "Löschen";
   delBut.classList.add("deleteBtnVorgehen");
-  const currentStepId = stepid; // Capture the current stepid
+  const currentStepId = stepid; 
   delBut.addEventListener("click", function () {
     const step = document.getElementById("step_" + currentStepId);
     if (step) {
@@ -199,19 +203,16 @@ function chooseImport() {
 
 function importView(){
   const chefkochInputPage = document.getElementById('darkBgChefkoch');
-  console.log(chefkochInputPage.style.display)
   if (chefkochInputPage.style.display === "none" || chefkochInputPage.style.display === '') {
       chefkochInputPage.style.display = 'block';
       document.addEventListener('keydown', closeOnEventChefkochView);
       gebId('darkBg').addEventListener('click', closeOnEventChefkochView);
       gebId('filbut').blur();
       document.addEventListener('keydown', searchOnEnterChefkochView)
-      console.log("open")
   } else{
       chefkochInputPage.style.display = 'none';
       document.removeEventListener('keydown', closeOnEventChefkochView);
       document.removeEventListener('keydown', searchOnEnterChefkochView)
-      console.log("close")
   }
 }
 function searchOnEnterChefkochView(event){
@@ -221,7 +222,6 @@ function searchOnEnterChefkochView(event){
       document.getElementById('darkBgChefkoch').style.display = 'none';
       document.removeEventListener('keydown', closeOnEventChefkochView);
       document.removeEventListener('keydown', searchOnEnterChefkochView)
-      console.log("close")
   }
 }
 function closeOnEventChefkochView(event) {
@@ -229,6 +229,5 @@ function closeOnEventChefkochView(event) {
       document.getElementById('darkBgChefkoch').style.display = 'none';
       document.removeEventListener('keydown', closeOnEventChefkochView);
       document.removeEventListener('keydown', searchOnEnterChefkochView)
-      console.log("close")
   }
 }
