@@ -215,6 +215,12 @@ router.get('/profile', async (req, res) => {
     res.render('profile', { title: 'Lires', usrnm: req.query.usrnm, selfRecs: JSON.stringify(selfRecs)});
 });
 
+router.get('/impressum', (req, res) => {
+    res.render('impressum', { title: 'Lires', usrnm: req.query.usrnm });
+});
+router.get('/dsgvo', (req, res) => {
+    res.render('dsgvo', { title: 'Lires', usrnm: req.query.usrnm });
+});
 router.get('/getRecChefkoch', (req, res) => {
     fetch('https://www.chefkoch.de/' + req.query.link, { method: 'HEAD' })
     .then(response => {
