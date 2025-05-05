@@ -115,7 +115,7 @@ function collectAndSend(){
             }else{
                 counterreal++;
                 const step = extval("step_" + i)
-                directions.push({counterreal, step});
+                directions.push({i: counterreal, step: step});
             }
         }
     }
