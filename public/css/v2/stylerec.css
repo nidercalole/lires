@@ -22,9 +22,6 @@ usr {
   border: var(--contrastBuddy) 2px solid;
   border-radius: var(--borderRadius);
 }
-.ings {
-  width: calc(var(--vw) * 60 / 100);
-}
 .mengeInp {
   background-color: transparent;
   border: 2px solid var(--contrastBuddy);
@@ -81,7 +78,7 @@ td:nth-child(2) {
   border-bottom-right-radius: var(--borderRadius);
 }
 .scrollIngTable {
-  width: calc(var(--vw) * 35 / 100);
+  width: calc(var(--vw) * 30 / 100);
   overflow-y: auto;
   max-height: calc(var(--vh) * 63 / 100);
 }
@@ -104,10 +101,46 @@ td:nth-child(2) {
   background-color: transparent;
 }
 
+
 .mid{
-    width: calc(var(--vw) * 40 / 100);
-    background-color: red;
+  width: calc(var(--vw) * 50 / 100);
+  padding: 0 0 0 50px;
+}
+.recRight{
+  width: calc(var(--vw) * 25 / 100);
+  padding: 20px;
+}
+.recLeft{
+  width: calc(var(--vw) * 70 / 100);
 }
 #countforenh{
-    width: 500px;
+  width: 500px;
+}
+.paddingZwanzig{
+  padding: 10px 20px;
+}
+.fullWidthZwanzig {
+  width: calc(var(--vw) * 97.94 / 100);
+}	
+.lineContrast {
+  width: 98%;
+  border: var(--contrastMain) 2px solid;
+  border-radius: var(--borderRadius);
+}
+lblMinis{
+  margin: 5px 10px 
+}
+.useractions{
+  margin-top: auto;
+}
+.recActionBtns{
+  padding: 10px;
+  background-color: var(--contrastMain);
+  border-radius: var(--borderRadius);
+  border: 2px solid var(--contrastMain);
+}
+.recActionBtns:hover{
+  background-color: var(--special);
+  border-radius: var(--borderRadius);
+  border: 2px solid var(--special);
 }
