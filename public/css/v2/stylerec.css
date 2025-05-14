@@ -17,6 +17,9 @@ usr {
   margin-right: 10px;
   font-style: italic;
 }
+.recBody{
+  max-height: calc(var(--vh)*85 /100);
+}
 .line {
   width: 98%;
   border: var(--contrastBuddy) 2px solid;
@@ -120,7 +123,7 @@ td:nth-child(2) {
   padding: 10px 20px;
 }
 .fullWidthZwanzig {
-  width: calc(var(--vw) * 97.94 / 100);
+  width: calc(var(--vw) * 97.5 / 100);
 }	
 .lineContrast {
   width: 98%;
@@ -144,3 +147,14 @@ lblMinis{
   border-radius: var(--borderRadius);
   border: 2px solid var(--special);
 }
+.ingPage{
+  width: calc(var(--vw) * 50 / 100); 
+  position: absolute;
+  top: calc(var(--vh) * 10 / 100);
+  left: calc(var(--vw) * 25 / 100);
+  z-index: 1;
+  background-color: var(--special);
+  padding: 10px;
+  border-radius: var(--borderRadius);
+}
+

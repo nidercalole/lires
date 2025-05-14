@@ -9,7 +9,7 @@
 <!--pls dooond delete me :B-->
 <!-- oke <3-->
 
-<div class="kumpeln spaceBetween paddingZwanzig fullWidthZwanzig">
+<div class="kumpeln spaceBetween paddingZwanzig fullWidthZwanzig recBody">
     <div class="recLeft stapeln">
         <recName id="recName"></recName>
         <div class="kumpeln alignLeft horizont ">
@@ -86,24 +86,37 @@
         
     </div>
 </div>
-<div class=" hidden filIngPage" id="filIngPage">
-    <addToListTitle>Wähle die Menge und die Zutaten aus, die du zu Listen hinzufügen möchtest
-    </addToListTitle>
-    <table class="fixTable1" id="fixTable1"></table>
 
-    <div class="NextToings" id="nextToingsoverall">
-        <verfList>Verfügbare Listen:</verfList>
-        <div id="defaultListNew" class="listsNextToings selected" onclick="toggleSelectionLists(this)">
-            <listeErstellenBut>Neue Liste erstellen</listeErstellenBut>
+<div class=" hidden ingPage stapeln" id="filIngPage">
+    <div class="kumpeln horizont spaceBetween">
+        <div> </div>
+        <addToListTitle>Wähle die Menge und die Zutaten aus, die du zu Listen hinzufügen möchtest</addToListTitle>
+        <div class="closeDiv">
+            <button class="closeButton" onclick="addToAnyListClose()">
+                <img width="30px" src="/img/x.png" alt="Listenbearbeitung schließen">
+            </button>
         </div>
-        <div><input type="text" placeholder="Liste benennen" class="inputListNameNew" id="inputListNameNew"></div>
     </div>
-    <div class="closeDiv"><button class="closeButton" onclick="addToAnyListClose()">
-        <img width="30px" src="/img/x.png" alt="Listenbearbeitung schließen">
-    </button></div>
-    <div class="addIngToListUR"><button class="addToListFinal" onclick="addToListFinal()">
-        <img width="30px" src="/img/weiter.png" alt="Bestätige die Änderungen">
-    </button></div>
+    
+    <div class="kumpeln">
+        <table class="fixTable1" id="fixTable1"></table>
+
+        <div class="stapeln">
+            <div class="NextToings" id="nextToingsoverall">
+                <verfList>Verfügbare Listen:</verfList>
+                <div id="defaultListNew" class="listsNextToings selected" onclick="toggleSelectionLists(this)">
+                    <listeErstellenBut>Neue Liste erstellen</listeErstellenBut>
+                </div>
+                <div><input type="text" placeholder="Liste benennen" class="inputListNameNew" id="inputListNameNew"></div>
+            </div>
+
+            <div class="addIngToListUR">
+                <button class="addToListFinal" onclick="addToListFinal()">
+                    <img width="30px" src="/img/weiter.png" alt="Bestätige die Änderungen">
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="/js/recipe.js"></script>
 <script src="/js/addRecToList.js"></script>
