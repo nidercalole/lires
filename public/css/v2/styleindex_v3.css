@@ -421,6 +421,7 @@ detailRecDauer{
   background-color: var(--special);
   border-radius: var(--borderRadius);
   padding: 10px;
+  display: none;
 }
 
 

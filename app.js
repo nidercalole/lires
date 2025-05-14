@@ -41,12 +41,11 @@ app.use('/addToList', require('./server/routes/addLists'))
 app.use('/api', require('./server/routes/api'))
 app.use('/calendar', require('./server/routes/calendar'))
 
+/*
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 });
-
-/*
+*/
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Example app listening at http://0.0.0.0:${PORT}`);
 }); 
-*/

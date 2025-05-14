@@ -46,13 +46,16 @@
 
 </body>
     <script src="/js/script.js"></script>
-    <script>
-        window.addEventListener("DOMContentLoaded", async () => {
-            const listid = sessionStorage.getItem("openDropdownAfterReload");
-            await new Promise(resolve => setTimeout(resolve, 200)); // Warte kurz, bis DOM aktualisiert ist
-            document.getElementById('contentsMainEverything').classList.remove('nonLoadingScreen')
-            document.getElementById('loadingScreen').classList.add('hidden');
-
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        // Warte darauf, dass der Browser alles gerendert hat
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                const listid = sessionStorage.getItem("openDropdownAfterReload");
+                document.getElementById('contentsMainEverything').classList.remove('nonLoadingScreen');
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 70); // 0ms Timeout gibt dem Browser Zeit für den finalen Paint
         });
-    </script>
+    });
+</script>
 </html>

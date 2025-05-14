@@ -54,6 +54,9 @@ function fillTableWithDates() {
         })
         const recipeNamesForToday = usedRecepiesForToday.map(rec => {
             const recs = usedRecs.filter(usedRec => usedRec.recid === rec[0]);
+            if(!recs[0].recname){
+                return null
+            }
             recs ? recs[0].recname : null;
             return  [recs[0].recname, rec[2]];
         })
