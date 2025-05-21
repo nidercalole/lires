@@ -158,3 +158,80 @@ lblMinis{
   border-radius: var(--borderRadius);
 }
 
+addToListTitle{
+  font-size: 20px;
+}
+.closeButton {
+  background-color: var(--contrastBuddy);
+  border: none;
+  border-radius: var(--borderRadius);
+  background-image: url("../../img/x.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: calc(var(--vh)*4/100);
+  height:calc(var(--vh)*5/100);
+  width: calc(var(--vh)*5/100);
+}
+.closeButton:hover{
+  background-color: var(--contrastMain);
+}
+.marginBottom{
+  margin-bottom: calc(var(--vh)*3/100)
+}
+.fixTable1 {
+  margin-top: 0;
+  padding-top: 0;
+  border-collapse: separate;
+  margin-right: 10px;
+  max-width: calc(var(--vw) * 30 / 100);
+  table-layout: auto;
+}
+
+.fixTable1 td {
+  background-color: var(--contrastMain);
+  padding: 0;
+  vertical-align: middle;
+}
+
+.fixTable1 tr:first-child td {
+  font-weight: bold;
+  background-color: transparent;
+}
+
+
+.fixTable1 td:first-child {
+  border-top-left-radius: var(--borderRadius);
+  border-bottom-left-radius: var(--borderRadius);
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+.fixTable1 td:first-child input {
+  text-align: right;
+  width: auto;
+  min-width: 40px;
+  padding: 5px 10px;
+  border: 2px solid var(--contrastMain);
+  border-radius: var(--borderRadius);
+  background-color: var(--contrastMain);
+  color: var(--light);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+
+.fixTable1 td:first-child input:focus {
+  border-color: var(--special);
+  background-color: var(--contrastBuddy);
+}
+
+.fixTable1 td:nth-child(2) {
+  border-radius: 0;
+}
+
+.fixTable1 td:nth-child(3) {
+  border-top-right-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+}

@@ -77,8 +77,8 @@ function updatelist(){
     let listAdd = gebId('fixTable1');
     listAdd.innerHTML = `
     <tr>
-        <td class="moreWidth bold">Zutaten</td>
         <td class="bold">Menge</td>
+        <td class="moreWidth bold">Zutaten</td>
     </tr>`;
     ingAddCount = 0;
     recData.ingredients.forEach(ing => {
@@ -94,11 +94,11 @@ function updatelist(){
         let item = document.createElement('tr');
         item.id = "posIngsToAdd" + ingAddCount;
         item.innerHTML = `
-        <td class="ingsListShowNotNotGreyed" id="posIngsToAdd${ingAddCount}greyable">${ing.ing}</td>
-        <td><input type="text" class="ingamountinput" id="ingamount${ingAddCount}" value="${ingamountshow + ' ' + ingunitshow}"></td>
-        <td class="ingredientstablenotableview" onclick="dontAdd(${`posIngsToAdd${ingAddCount}`})">
-            <img width="20px" src="/img/wegbut.png" alt="Zutat verwerfen">
-        </td>`;
+            <td><input type="text" class="ingamountinput" id="ingamount${ingAddCount}" value="${ingamountshow + ' ' + ingunitshow}"></td>
+            <td class="ingsListShowNotNotGreyed" id="posIngsToAdd${ingAddCount}greyable">${ing.ing}</td>
+            <td class="ingredientstablenotableview" onclick="dontAdd(${`posIngsToAdd${ingAddCount}`})">
+                <img width="20px" src="/img/wegbut.png" alt="Zutat verwerfen">
+            </td>`;
         listAdd.appendChild(item);
         ingAddCount++;
     });
