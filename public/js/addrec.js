@@ -124,8 +124,22 @@ function addlabl() {
   lbl.classList.add("lbl");
   lbls.insertBefore(lbl, lbls.firstChild);
   lblcounter++;
-
+  let delBut = document.createElement("button");
+  delBut.textContent = "Löschen";
+  delBut.classList.add("deleteBtn");
+  lbl.appendChild(delBut);
+  delBut.addEventListener("click", function () {
+    removelbl(lbl.id);
+  });
   gebId("shoInfInp").value = "";
+}
+
+function removelbl(lbl) {
+  const lbls = gebId("lbls");
+  const labelToRemove = document.getElementById(lbl);
+  if (labelToRemove) {
+    lbls.removeChild(labelToRemove);
+  }
 }
 
 const shoInfInp = gebId("shoInfInp");

@@ -235,3 +235,9 @@ addToListTitle{
   border-top-right-radius: var(--borderRadius);
   border-bottom-right-radius: var(--borderRadius);
 }
+.dontAdd{
+  color: #858585; /* Textfarbe auf Grau setzen */
+  background-color: #f0f0f0; /* Heller grauer Hintergrund */
+  filter: grayscale(100%); /* Filter für Grau-Skalierung */
+  opacity: 0.8; /* Leicht transparente Darstellung */
+}
