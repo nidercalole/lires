@@ -100,18 +100,18 @@
     <div class="kumpeln alignLeft">
         <table class="fixTable1" id="fixTable1"></table>
 
-        <div class="stapeln">
-            <div class="NextToings" id="nextToingsoverall">
-                <verfList>Verfügbare Listen:</verfList>
-                <div id="defaultListNew" class="listsNextToings selected" onclick="toggleSelectionLists(this)">
-                    <listeErstellenBut>Neue Liste erstellen</listeErstellenBut>
+        <div class="stapeln marginLeft height100percent">
+            <div class="NextToings stapeln" id="nextToingsoverall">
+                <div id="defaultListNew" class="">
+                    <verfList>Neue Liste erstellen</verfList>
                 </div>
-                <div><input type="text" placeholder="Liste benennen" class="inputListNameNew" id="inputListNameNew"></div>
+                
+                <input type="text" placeholder="Liste benennen" class="inputListNameNew" id="inputListNameNew">
+                <verfList>Verfügbare Listen:</verfList>
             </div>
-
+            
             <div class="addIngToListUR">
                 <button class="addToListFinal" onclick="addToListFinal()">
-                    <img width="30px" src="/img/weiter.png" alt="Bestätige die Änderungen">
                 </button>
             </div>
         </div>

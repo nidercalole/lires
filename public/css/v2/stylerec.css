@@ -236,8 +236,59 @@ addToListTitle{
   border-bottom-right-radius: var(--borderRadius);
 }
 .dontAdd{
-  color: #858585; /* Textfarbe auf Grau setzen */
-  background-color: #f0f0f0; /* Heller grauer Hintergrund */
-  filter: grayscale(100%); /* Filter für Grau-Skalierung */
-  opacity: 0.8; /* Leicht transparente Darstellung */
+  color: var(--light);
+  filter: brightness(60%);
+  text-decoration: line-through;
+}
+
+.dontAdd input{
+  text-decoration: line-through;
+}
+
+.dontAddIng{
+  padding:calc(var(--vw)*0.25/100);
+}
+verfList{
+  font-weight: bold;
+}
+.inputListNameNew{
+  margin:10px 0;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  border: 2px solid var(--contrastMain) !important;
+}
+.inputListNameNew:focus{
+  border: 2px solid var(--contrastBuddy) !important;
+}
+.listsNextToings{
+  margin:5px;
+  padding:calc(var(--vh)*0.5/100) calc(var(--vw)*1/100);
+  border-radius: var(--borderRadius);
+}
+.listsNextToings:hover{
+  background-color: var(--contrastBuddy);
+}
+.selected{
+  background-color: var(--contrastBuddy);
+}
+.addToListFinal{
+  background-color: var(--contrastBuddy);
+  border: none;
+  border-radius: var(--borderRadius);
+  background-image: url("../../img/weiter.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: calc(var(--vh)*3/100);
+  height:calc(var(--vh)*7/100);
+  width: calc(var(--vh)*6/100);
+}
+.addIngToListUR{
+  margin-top: auto;
+  margin-left: auto;
+}
+.marginLeft{
+  margin-left: calc(var(--vh)*1/100);
+}
+.height100percent{
+  height:100%;
 }
