@@ -1,18 +1,26 @@
-<form action="/sendReport" method="POST">
+<link rel="stylesheet" href="/css/v2/stylefeedback.css">
 
-    <label for="email">E-Mail:</label>
-    <input type="email" id="email" name="email" required><br><br>
+<div class="report-container stapeln">
+    <p>Sende uns gerne ein Feedback :)</p>
+    <form action="/sendReport" method="POST">
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
 
-    <label for="message">Nachricht:</label><br>
-    <textarea id="message" name="message" required></textarea><br><br>
+        <label for="message">Nachricht:</label>
+        <textarea id="message" name="message" required></textarea><br><br>
 
-    <label for="user" class="hidden">User:</label>
-    <input type="text" id="user" name="user" class="hidden"><br><br>
+        <label for="user" class="hidden">User:</label>
+        <input type="text" id="user" name="user" class="hidden"><br><br>
 
-    <button type="submit">Absenden</button>
-</form>
-<button onclick="openImpressum()">Impressum</button>
-<button onclick="openDSGVO()">DSVGO</button>
+        <button type="submit">Absenden</button>
+    </form>
+      
+</div>
+<div class="rechtlich kumpeln"> 
+    <button onclick="openImpressum()">Impressum</button>
+    <button onclick="openDSGVO()">DSVGO</button>
+</div>
+    
 <script src="/js/reportScript.js"></script>
 <script>
     document.getElementById('user').value = getUserCredetials()[0] + ' ' + getUserCredetials()[1];

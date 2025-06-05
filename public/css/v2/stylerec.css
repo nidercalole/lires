@@ -131,7 +131,10 @@ td:nth-child(2) {
   border-radius: var(--borderRadius);
 }
 lblMinis{
-  margin: 5px 10px 
+  margin: 5px 10px;
+  background-color: var(--special);
+  padding: 7.5px;
+  border-radius: 50px;
 }
 .useractions{
   margin-top: auto;
