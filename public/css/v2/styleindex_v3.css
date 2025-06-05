@@ -424,7 +424,19 @@ detailRecDauer{
   display: none;
 }
 
-
+.responseAddListNotOk{
+    display: none;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    width: 30%;
+    height: 5%;
+    transform: translate(-50%, -50%);
+    background-color: #ff0000;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
 
 /* Container für das Dropdown */
 select {

@@ -7,7 +7,8 @@ const listSchema = new mongoose.Schema({
     },
     listname: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     ts: {
         type: Date,

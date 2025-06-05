@@ -16,16 +16,20 @@ router.post('/', async(req, res) => {
     try {
         const { ingList, selectedLists, user, newlistName } = req.body;
         //console.log(ingList, selectedLists, user, newlistName);
+        const rand2 = [...Array(2)].map(() => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.charAt(Math.floor(Math.random() * 62))).join('');
+        listName = newlistName + ' (' + rand2 + ')';
+        console.log(listName);
         if(selectedLists.length === 0){
             return res.json({ success: true});
         }else if(selectedLists[0] === 'defaultListNew'){
             defaultList = true;
             selectedLists.splice(0, 1);
         }
+
         if(selectedLists.length === 0){
             newlist = new List({
                 user: user,
-                listname: newlistName,
+                listname: listName,
                 list: ingList,
                 listid: Math.random().toString(36).substring(2, 12)
             });
@@ -72,7 +76,7 @@ router.post('/', async(req, res) => {
             if(defaultList){
                 newlist1 = new List({
                     user: user,
-                    listname: newlistName,
+                    listname: listName,
                     list: ingList,
                     listid: Math.random().toString(36).substring(2, 12)
                 });

@@ -62,10 +62,15 @@ async function addToListFinal(){
     let selectedLists = document.querySelectorAll('.selected');
     let finalLists = [];
     let newlistName = '';
+    let newListValidAdd = false;
     if(document.getElementById('inputListNameNew').value === ''){
         newlistName = 'Neue Liste';
     }else{
         newlistName = document.getElementById('inputListNameNew').value;
+        newListValidAdd = true;
+    }
+    if(newListValidAdd){
+        finalLists.push('defaultListNew');
     }
     selectedLists.forEach(list => {
         finalLists.push(list.id);
