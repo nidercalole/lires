@@ -7,6 +7,7 @@
   --contrastBuddy: #4c0b4c;
   --light: #caffee;
   --special: #4f7fb0;
+  --error: #f03a47;
   /*design*/
   --borderRadius: 5px;
   --borderBuddy: 2px solid var(--contrastBuddy);

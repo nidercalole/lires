@@ -1,3 +1,4 @@
+
 header{
     display: none;
 }
@@ -37,4 +38,41 @@ liresTitelLogin{
 button{
     color: var(--light);
     font-size: 16px;
+}
+.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999; /* Sicher über allem */
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  text-align: center;
+}
+
+.error {
+  background-color: var(--error);
+  border: 2px solid var(--error);
+  color: var(--light);
+  padding: 1.5em 1.5em;
+  border-radius: var(--borderRadius);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  font-size: 1rem;
+  min-width: 300px;
+  max-width: 90vw;
+  animation: popIn 0.3s ease-out;
+}
+
+/*frag mich nich was chatgpt hier gemacht hat, aber es sieht cool aus*/
+@keyframes popIn {
+  0% {
+    transform: scale(0.95) translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
 }

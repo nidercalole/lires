@@ -1,7 +1,53 @@
+<head>
+    <link rel="stylesheet" href="/css/v2/styleallrecs.css">
+</head>
 <h1>Hier kommt die liste aller rezepte von a-z sortiert</h1>
 
 <div>
-    <table class="recsindex">
+    <div class="letter-bar">
+    <span data-letter="A">A</span>
+    <span data-letter="B">B</span>
+    <span data-letter="C">C</span>
+    <span data-letter="D">D</span>
+    <span data-letter="E">E</span>
+    <span data-letter="F">F</span>
+    <span data-letter="G">G</span>
+    <span data-letter="H">H</span>
+    <span data-letter="I">I</span>
+    <span data-letter="J">J</span>
+    <span data-letter="K">K</span>
+    <span data-letter="L">L</span>
+    <span data-letter="M">M</span>
+    <span data-letter="N">N</span>
+    <span data-letter="O">O</span>
+    <span data-letter="P">P</span>
+    <span data-letter="Q">Q</span>
+    <span data-letter="R">R</span>
+    <span data-letter="S">S</span>
+    <span data-letter="T">T</span>
+    <span data-letter="U">U</span>
+    <span data-letter="V">V</span>
+    <span data-letter="W">W</span>
+    <span data-letter="X">X</span>
+    <span data-letter="Y">Y</span>
+    <span data-letter="Z">Z</span>
+    <span data-letter="0-9">0-9</span>
+    <span data-letter="other">Other</span>
+</div>
+
+<div class="item-list">
+  <h2 id="letter-A">A</h2>
+  <p>Apfel</p>
+  <p>Avocado</p>
+
+  <h2 id="letter-B">B</h2>
+  <p>Banane</p>
+  <p>Birne</p>
+
+  ...
+</div>
+
+    <table class="recsindex item-list">
 
         <% recs.forEach(rec => { %>
             <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">

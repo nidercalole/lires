@@ -2,7 +2,7 @@ input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   height: 8px;
-  background: var(--contrastBuddy);
+  background: var(--contrastBuddy) !important;
   border-radius: var(--borderRadius);
   outline: none;
   width: calc(var(--vw) * 10 / 100);
@@ -14,7 +14,7 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 20px;
   height: 20px;
-  background: var(--special);
+  background: var(--special)!important;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -156,11 +156,12 @@ button:hover {
 .stepvorgehen {
   max-height: calc(var(--vh) * 8/ 100);
   width:98%;
+  margin: 0;
 }
-/*
-  das heir sorgt dafür, dass die scrollbars nicht gescheit rezised werden können, man kann zwar nemaxheigth setzten, aber 6 war etwas wenig ig
-*/
-
+.deleteBtnVorgehen{
+  margin: 0;
+  align-self: right;
+}
 .stepvorgehen::-webkit-scrollbar {
   width: 5px;
 }
