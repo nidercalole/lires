@@ -3,24 +3,23 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
-  margin: 1rem 0;
-  font-family: "Be Vietnam Pro", sans-serif;
+  margin: 1em;
 }
 
 .letter-bar span {
   cursor: pointer;
-  padding: 0.4rem 0.6rem;
-  background-color: var(--contrastMain);
+  padding: 0.4em 0.6em;
+  background-color: var(--contrastBuddy);
   color: var(--light);
   border-radius: var(--borderRadius);
   transition: 0.2s ease;
-  font-weight: 500;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-weight: var(--fatFont);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .letter-bar span:hover {
-  background-color: var(--accent);
-  transform: scale(1.05);
+  background-color: var(--special);
+  transform: scale(1.1);
 }
 
 .item-list {
@@ -29,7 +28,7 @@
 
 .item-list h2 {
   margin-top: 2rem;
-  color: var(--contrastMain);
-  font-size: 1.5rem;
+  color: var(--contrastBuddy);
+  font-size: 3rem;
   border-bottom: 1px solid var(--contrastBuddy);
 }
