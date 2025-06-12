@@ -5,6 +5,19 @@
   justify-content: center;
   margin: 1em;
 }
+h1{
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 1em 0; 
+}
+
+.letter-bar{
+  position: sticky;
+  top: 0;
+  background-color: var(--contrastMain);
+  padding: 1em;
+  z-index: 1000;
+}
 
 .letter-bar span {
   cursor: pointer;
@@ -16,19 +29,71 @@
   font-weight: var(--fatFont);
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
-
+.tablePos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .letter-bar span:hover {
   background-color: var(--special);
   transform: scale(1.1);
 }
 
-.item-list {
-  padding: 1rem;
-}
-
 .item-list h2 {
+  width:65%;
   margin-top: 2rem;
   color: var(--contrastBuddy);
   font-size: 3rem;
   border-bottom: 1px solid var(--contrastBuddy);
+}
+
+.recsindex {
+  width: 60%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  color: var(--light);
+}
+
+.recsrow {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  border-radius: var(--borderRadius);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.recsrow:hover {
+  background-color: var(--contrastBuddy);
+  transform: scale(1.01);
+}
+
+.recsindex td {
+  padding: 16px 20px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.recname {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.duration,
+.expense,
+.recuser {
+  opacity: 0.9;
+}
+
+.recuser {
+  text-align: right;
+  font-style: italic;
+}
+
+.recsrow td:first-child {
+  border-top-left-radius: var(--borderRadius);
+  border-bottom-left-radius: var(--borderRadius);
+}
+
+.recsrow td:last-child {
+  border-top-right-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
 }

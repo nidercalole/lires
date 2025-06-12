@@ -106,9 +106,11 @@ textarea::placeholder {
   color: var(--contrastBuddy);
 }
 .charCount {
-  position: absolute;
-  left: calc(var(--vw) * 69 / 100);
-  top: calc(var(--vh) * 18.5 / 100);
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  color: var(--light);
+  margin-bottom: 1em;
 }
 .line {
   width: 99%;

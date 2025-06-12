@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="/css/v2/styleallrecs.css">
 
-<h1>Hier kommt die liste aller rezepte von a-z sortiert</h1>
+<h1>Liste aller Rezepte</h1>
 
 <div>
-    <div class="letter-bar">
+<div class="letter-bar">
     <span data-letter="A">A</span>
     <span data-letter="B">B</span>
     <span data-letter="C">C</span>
@@ -30,24 +30,14 @@
     <span data-letter="X">X</span>
     <span data-letter="Y">Y</span>
     <span data-letter="Z">Z</span>
-    <span data-letter="0-9">0-9</span>
     <span data-letter="other">Andere</span>
 </div>
 
 <div class="item-list">
-  <h2 id="letter-A">A</h2>
-  <p>Apfel</p>
-  <p>Avocado</p>
 
-  <h2 id="letter-B">B</h2>
-  <p>Banane</p>
-  <p>Birne</p>
-
-  ...
-</div>
-
+  <div class="tablePos">  
+    <h2 id="letter-A">A</h2>
     <table class="recsindex item-list">
-
         <% recs.forEach(rec => { %>
             <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
                 <td class="recname"><%= rec.recname %></td>
@@ -57,5 +47,20 @@
             </tr>
         <% }); %>
     </table>
+
+    <h2 id="letter-B">B</h2>
+        <table class="recsindex item-list">
+
+            <% recs.forEach(rec => { %>
+                <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+                    <td class="recname"><%= rec.recname %></td>
+                    <td class="duration">Dauer: <%= rec.duration %>min</td>
+                    <td class="expense"><%= rec.expense %></td>
+                    <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+                </tr>
+            <% }); %>
+        </table>
   </div>
+</div>
+    
   <%- include('./partials/darkBgWithFilter.ejs')%>
