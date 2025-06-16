@@ -1,150 +1,179 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 .mainCal {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 87.7vh;
+    height: 100vh;
+    overflow: hidden;
 }
+
 .left {
-    width: 18%;
-    height: 100%;
-
-}
-.calMin {
-    width: 64%;
-    height: 100%;
-
-}
-.right {
-    width: 18%;
-    height: 100%;
-
-}
-.tabs {
-    list-style: none;
-    padding: 0;
-}
-
-.tab {
-    background-color: var(--contrastMain);
-    margin: 5px 0;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: var(--borderRadius);
-}
-.tab-content {
-    display: none;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: var(--contrastBuddy);
-    border-radius: 5px;
-    color: var(--light);
-}
-.tab-content:hover{
-    background-color: var(--special);
-}
-
-.tab.active .tab-content {
-    display: block;
-}
-.left-lower {
+    width: 16%;
     height: 100%;
     overflow-y: auto;
-}
-table {
-    width: 94%; /* Nimmt die gesamte Breite ein */
-    height: 80%; /* Nimmt die gesamte Höhe ein */
-    border-collapse: collapse; /* Entfernt Abstände zwischen den Zellen */
-    margin: 0 auto; /* Zentriert die Tabelle */
+    padding: 0.5em;
+    box-sizing: border-box;
 }
 
-td {
-    width: 14.28%; /* Jede Zelle nimmt 1/7 der Breite ein */
-    height: 100px; /* Höhe der Zellen */
-    padding: 0;
-    text-align: center;
-    vertical-align: middle;
-    border: 1px solid black; /* Dünner schwarzer Rand um jede Zelle */
+.calMin {
+    width: 58%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    }
+
+.right {
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;;
+    margin: 1em;
+    border-radius: var(--borderRadius);
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    position: relative;
+    padding: 10px;
+    width: calc(var(--vw) * 25 / 100);
+    background-color: var(--special);
+    height: calc(var(--fullHeight));
+    overflow-y: auto;
+}
+
+.right.collapsed {
+  width: 0;
+  min-width: 0;
+}
+
+.right .content {
+  overflow-y: auto;
+  height: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  color: var(--light);
+}
+
+.toggle-button {
+    background-color: var(--contrastBuddy);
+    color: var(--light);
+    border: none;
+    padding: 1em;
+    height:fit-content;
+    border-radius: var(--borderRadius);
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+.toggle-button:hover {
+    background-color: var(--special);
+    transform: scale(1.02);
+}
+.overCal {
+  height: 8%;
+  width: 100%;
+  padding-left: 1em;
+  box-sizing: border-box;
+}
+
+.underCalMain {
+  height: 12%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.underCal button {
+  background-color: var(--contrastMain);
+  color: var(--light);
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--borderRadius);
+  margin-right: 1em;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.underCal button:hover {
+  background-color: var(--special);
+}
+
+.calendar {
+  flex: 1;
+  border-collapse: separate;
+  border-spacing: 8px;
+  width: 100%;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+
+.calendar td {
+  width: 14.28%;
+  height: 100px;
+  border-radius: var(--borderRadius);
+  background-color: var(--light);
+  outline: 2px solid var(--contrastBuddy);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  vertical-align: top;
+  padding: 0.5em;
+  transition: transform 0.2s ease, background-color 0.2s;
+  overflow: hidden;
+}
+
+.calendar td:hover {
+  transform: scale(1.02);
+  background-color: var(--special);
+  color: var(--light);
+  cursor: pointer;
 }
 
 .cell {
-    width: 100%;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.overCal {
-    height: 8%;
-    width: 100%;
-    width: 94%;
-    margin: 0 auto;
-}
-.underCal {
-    height: 12%;
-    width: 100%;
-
-}
-.head{
-    height: 20%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-sizing: border-box;
-
-}
-.dropped {
-    width: 100%;
-    height: 20%;
-    display: flex;
-    flex-direction: row;
-}
 .draggable {
-    cursor: pointer;
-}
-.draggable[draggable="false"] {
-cursor: not-allowed;
-}
-.dragging {
-    opacity: 0.5;
-}
-.tooltip-container {
-position: relative;
-cursor: pointer;
-}
-
-.tooltip-container .tooltip {
-    visibility: hidden;
-    background-color: black;
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0s 0.3s;
+  background-color: var(--contrastBuddy);
+  padding: 8px;
+  margin: 4px 0;
+  border-radius: var(--borderRadius);
+  color: var(--light);
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  max-width: 100%;
+  text-align: center;
+  word-wrap: break-word;
 }
 
-.tooltip-container:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.3s;
+.draggable:hover {
+  background-color: var(--special);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
-.underCalMain {
-    display: flex;
-    flex-direction: row;
-    height: 12%;
-    width: 94%;
-    margin: 0 auto;
+.cell > .draggable {
+  max-height: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-h1{
-    margin: 0;
+#rightPanel.collapsed {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  width: 0;
+  padding: 0;
 }

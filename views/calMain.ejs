@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/v2/stylecal.css"/>
+<link rel="stylesheet" href="/css/v2/styleindex_v3.css">
 
 <div class="mainCal">
     <div class="left">
@@ -41,15 +42,18 @@
         </div>
     </div>
     <div class="calMin">
-        <div class="overCal">
-            <h1>Sie sehen eine tolle Monatsansicht</h1>
+        <div class="overCal spaceBetween kumpeln horizont">
+            <h1>Monatsansicht</h1>
+            <button class="toggle-button" onclick="toggleRight()">Zeige Listen</button>
         </div>
-        <table>
-            <div class="week"><%- include('partials/calendarTabPart.ejs') %></div>
-            <div class="week"><%- include('partials/calendarTabPart.ejs') %></div>
-            <div class="week"><%- include('partials/calendarTabPart.ejs') %></div>
-            <div class="week"><%- include('partials/calendarTabPart.ejs') %></div>
+        
+        <table class="calendar">
+            <%- include('partials/calendarTabPart.ejs') %>
+            <%- include('partials/calendarTabPart.ejs') %>
+            <%- include('partials/calendarTabPart.ejs') %>
+            <%- include('partials/calendarTabPart.ejs') %>
         </table>
+
         <div class="underCalMain">
             <div class="underCal">
                 <button>
@@ -66,11 +70,24 @@
         </div>
 
     </div>
-    <div class="right">
-        <%- include('partials/list.ejs') %>
+    
+    <div class="li" id="rightPanel">
+        <h2>Deine Listen</h2>
+        <hr class="listLine">
+        <div class="dropdownsLists" id="dropdownsLists">
+        </div>
     </div>
+</div>
+
 </div>
 <%- include('./partials/darkBgWithFilter.ejs')%>
 <script src="/js/calendarMain.js"></script>
 <script src="/js/loadAndDisplayLists.js"></script>
 <script src="/js/listCheckboxes.js"></script>
+<script>
+  function toggleRight() {
+    const panel = document.getElementById('rightPanel');
+    panel.classList.toggle('collapsed');
+  }
+</script>
+
