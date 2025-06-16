@@ -28,23 +28,23 @@ html, body {
     }
 
 .right {
-    position:absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 10;;
-    margin: 1em;
-    border-radius: var(--borderRadius);
-    display: flex;
-    flex-direction: column;
-    transition: width 0.3s ease;
-    overflow: hidden;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    position: relative;
-    padding: 10px;
-    width: calc(var(--vw) * 25 / 100);
-    background-color: var(--special);
-    height: calc(var(--fullHeight));
-    overflow-y: auto;
+  position:absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 10;;
+  margin: 1em;
+  border-radius: var(--borderRadius);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  position: relative;
+  padding: 10px;
+  width: calc(var(--vw) * 25 / 100);
+  background-color: var(--special);
+  height: calc(var(--fullHeight));
+  overflow-y: auto;
 }
 
 .right.collapsed {
@@ -61,15 +61,15 @@ html, body {
 }
 
 .toggle-button {
-    background-color: var(--contrastBuddy);
-    color: var(--light);
-    border: none;
-    padding: 1em;
-    height:fit-content;
-    border-radius: var(--borderRadius);
-    cursor: pointer;
-    z-index: 10;
-    transition: transform 0.2s ease;
+  background-color: var(--contrastBuddy);
+  color: var(--light);
+  border: none;
+  padding: 1em;
+  height:fit-content;
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease;
 }
 .toggle-button:hover {
     background-color: var(--special);
@@ -119,7 +119,6 @@ html, body {
   width: 14.28%;
   height: 100px;
   border-radius: var(--borderRadius);
-  background-color: var(--light);
   outline: 2px solid var(--contrastBuddy);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   text-align: center;
@@ -176,4 +175,10 @@ html, body {
   opacity: 0;
   width: 0;
   padding: 0;
+}
+.tab{
+  list-style-type: none;
+}
+.tab:hover{
+  scale: 1.02;
 }
