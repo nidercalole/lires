@@ -38,29 +38,369 @@
   <div class="tablePos">  
     <h2 id="letter-A">A</h2>
     <table class="recsindex item-list">
-        <% recs.forEach(rec => { %>
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'a')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
             <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
-                <td class="recname"><%= rec.recname %></td>
-                <td class="duration">Dauer: <%= rec.duration %>min</td>
-                <td class="expense"><%= rec.expense %></td>
-                <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
             </tr>
         <% }); %>
     </table>
 
     <h2 id="letter-B">B</h2>
-        <table class="recsindex item-list">
-
-            <% recs.forEach(rec => { %>
-                <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
-                    <td class="recname"><%= rec.recname %></td>
-                    <td class="duration">Dauer: <%= rec.duration %>min</td>
-                    <td class="expense"><%= rec.expense %></td>
-                    <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
-                </tr>
-            <% }); %>
-        </table>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'b')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-C">C</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'c')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-D">D</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'd')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-E">E</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'e')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-F">F</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'f')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-G">G</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'g')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-H">H</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'h')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-I">I</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'i')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-J">J</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'j')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-K">K</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'k')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-L">L</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'l')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-M">M</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'm')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-N">N</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'n')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-O">O</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'o')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-P">P</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'p')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-Q">Q</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'q')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-R">R</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'r')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-S">S</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 's')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-U">U</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'u')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-V">V</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'v')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-W">W</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'w')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-X">X</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'x')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-Y">Y</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'y')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table><h2 id="letter-Z">Z</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && rec.recname[0].toLowerCase() === 'z')
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2 id="letter-other">Andere</h2>
+    <table class="recsindex item-list">
+        <% recs
+            .filter(rec => rec.recname && !rec.recname[0].match(/[a-z]/i))
+            .sort((a, b) => a.recname.localeCompare(b.recname, 'de'))
+            .forEach(rec => { %>
+            <tr class="recsrow" onclick="openRec('<%= rec.recid %>')">
+            <td class="recname"><%= rec.recname %></td>
+            <td class="duration">Dauer: <%= rec.duration %>min</td>
+            <td class="expense"><%= rec.expense %></td>
+            <td class="recuser"><%= rec.user && rec.user.length > 0 ? rec.user[0] : 'N/A' %></td>
+            </tr>
+        <% }); %>
+    </table>
   </div>
 </div>
-    
-  <%- include('./partials/darkBgWithFilter.ejs')%>
+<script src="/js/scroll_allrecs.js"></script>
+<%- include('./partials/darkBgWithFilter.ejs')%>
