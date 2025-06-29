@@ -70,7 +70,7 @@ function fillTableWithDates() {
             shortenRecTextInSpan(spanForRecText);
             clone.appendChild(spanForRecText);
             let removeBtn = document.createElement("button");
-            removeBtn.innerHTML = "X";
+            removeBtn.innerHTML = "<img src='/img/x.png' width='30px' alt='X' />";
             removeBtn.classList.add("remove-btn");
             removeBtn.onclick = () => {
                 fetch('/calendar/removeRecFromCollection', {
@@ -166,7 +166,7 @@ dropZones.forEach(dropZone => {
                 return alert("Fehler beim Hinzufügen des Rezepts zum Kalender");
             }
             const removeBtn = document.createElement("button");
-            removeBtn.innerHTML = "X";
+            removeBtn.innerHTML = "<img src='/img/x.png' width='30px' alt='X' />";
             removeBtn.classList.add("remove-btn");
             removeBtn.onclick = () => {
                 fetch('/calendar/removeRecFromCollection', {

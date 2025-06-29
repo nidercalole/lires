@@ -44,7 +44,9 @@
     <div class="calMin">
         <div class="overCal spaceBetween kumpeln horizont">
             <h1>Monatsansicht</h1>
-            <button class="toggle-button" onclick="toggleRight()"><img src="/img/zurueck.png" width="15px"></button>
+            <button class="toggle-button" onclick="toggleRight()">
+                <img src="/img/weiter.png" width="17.5px" class="toggle-icon">
+            </button>
         </div>
         
         <table class="calendar">
@@ -88,6 +90,9 @@
   function toggleRight() {
     const panel = document.getElementById('rightPanel');
     panel.classList.toggle('collapsed');
+
+    const icon = document.querySelector('.toggle-icon');
+    icon.classList.toggle('rotated');
   }
 </script>
 
