@@ -19,13 +19,13 @@ html, body {
 }
 
 .calMin {
-    width: 58%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-    }
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  }
 
 .right {
   position:absolute;
@@ -78,10 +78,41 @@ html, body {
 .overCal {
   height: 8%;
   width: 100%;
-  padding-left: 1em;
+  padding: 1em;
   box-sizing: border-box;
 }
+.dropped {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+}
+.tooltip-container {
+  position: relative;
+  cursor: pointer;
+}
 
+.tooltip-container .tooltip {
+  visibility: hidden;
+  background-color: var(--special);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0s 0.3s;
+}
+
+.tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
 .underCalMain {
   height: 12%;
   width: 100%;
@@ -128,7 +159,7 @@ html, body {
   overflow: hidden;
 }
 
-.calendar td:hover {
+.calendar .cell:hover {
   transform: scale(1.02);
   background-color: var(--special);
   color: var(--light);
@@ -181,4 +212,7 @@ html, body {
 }
 .tab:hover{
   scale: 1.02;
+}
+.li{
+  margin: 1em;
 }
