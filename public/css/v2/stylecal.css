@@ -9,7 +9,9 @@ html, body {
     height: calc(var(--vh)*87/100);
     overflow: hidden;
 }
-
+ul.tabs {
+    padding-inline-start: 0em !important;
+}
 .left {
     width: 16%;
     height: calc(var(--vh)*87/100);
