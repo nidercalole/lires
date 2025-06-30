@@ -1,3 +1,7 @@
+* {
+  outline: 1px solid rgba(255, 0, 0, 0.3);
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -12,20 +16,39 @@ html, body {
 
 .left {
     width: 16%;
-    height: 100%;
+    height: calc(var(--vh)*87/100);
     overflow-y: auto;
     padding: 0.5em;
     box-sizing: border-box;
 }
 
+.left::-webkit-scrollbar {
+  width: 5px;
+}
+
+.left::-webkit-scrollbar-track {
+  background-color: var(--contrastBuddy);
+  border-radius: 5px;
+}
+
+.left::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.left::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
 .calMin {
   width: 80%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
+  max-height: calc(var(--vh) * 83 / 100);
+  height: calc(var(--vh) * 83 / 100);
   box-sizing: border-box;
-  }
+}
 
 .right {
   position:absolute;
@@ -83,10 +106,10 @@ html, body {
 }
 
 .overCal {
-  height: 8%;
-  width: 100%;
-  padding: 1em;
+  height: auto;
+  padding: 0.5em 1em;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 .dropped {
   width: 100%;
@@ -123,7 +146,6 @@ html, body {
 .underCalMain {
   height: 12%;
   width: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -152,6 +174,16 @@ html, body {
   padding: 0 1em;
   box-sizing: border-box;
 }
+.calendar {
+  flex-grow: 1;
+  border-collapse: separate;
+  border-spacing: 8px;
+  width: 100%;
+  padding: 0 1em;
+  margin: 0; /* Entfernt mögliche Abstände nach oben/unten */
+  box-sizing: border-box;
+  overflow-y: auto;
+}
 
 .calendar td {
   width: 14.28%;
@@ -164,13 +196,7 @@ html, body {
   padding: 0.5em;
   transition: transform 0.2s ease, background-color 0.2s;
   overflow: hidden;
-}
-
-.calendar .cell:hover {
-  transform: scale(1.02);
-  background-color: var(--special);
-  color: var(--light);
-  cursor: pointer;
+  background-color: var(--background);
 }
 
 .cell {
@@ -181,7 +207,15 @@ html, body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
+
+.cell:hover {
+  transform: scale(1.02);
+  color: var(--light);
+  cursor: pointer;
+}
+
 
 .draggable {
   background-color: var(--contrastBuddy);
@@ -222,6 +256,7 @@ html, body {
 }
 .li{
   margin: 1em;
+  height: calc(var(--vh) *83 / 100) !important;
 }
 
 .remove-btn{
