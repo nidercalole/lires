@@ -127,8 +127,11 @@ function collectAndSend(){
         ingredients.push({ing, ingextra, ingamount, ingunit});
     }
     for (let i = 0; i < lblcounter; i++) {
-        const lbl = exttxt("lbl_" + i).replace(/^●\s*/, ""); 
+        let lbl = exttxt("lbl_" + i).replace(/^●\s*/, ""); 
+        lbl = lbl.slice(0, -7); // Entfernt die letzten 7 Zeichen
+        console.log(lbl)
         labels.push(lbl);
+        
     }
     
 
