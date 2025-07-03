@@ -155,7 +155,7 @@ router.get('/verify', async (req, res) => {
         const username = req.query.usrnm;
         const query = { usrnm: username };
         const existingUser = await Usrnm.findOne(query).exec();
-        if (existingUser) {
+        if (existingUser && existingUser.usrid) {
             const id = existingUser.usrid;
             return res.redirect('/?usrid=' + id + '&usrnm=' + username);
         } else {

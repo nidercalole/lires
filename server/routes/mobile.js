@@ -87,7 +87,7 @@ router.post('/register', async (req, res) => {
             if (existingUser) {
                 return res.redirect('/mobile/login?message=Benutzername bereits vergeben.&islogin=false');
             } else {
-                await insertUsr({ usrnm: username });
+                await insertUsr({ usrnm: username, usrid: (Math.random().toString(36).substring(2)) });
                 return res.redirect('/mobile/verify/?usrnm=' + username);
             }
         } catch (err) {
