@@ -1,22 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;575&display=swap");
-* {
+:root {
   font-family: "Be Vietnam Pro", serif;
   font-weight: 400;
   font-style: normal;
-}
-*::-moz-selection {
-  background-color: #4f7fb0;
-}
-*::selection {
-  background-color: #4f7fb0;
+  /*farben*/
+  --contrastMain: #782f8e;
+  --contrastBuddy: #4c0b4c;
+  --light: #caffee;
+  --special: #4f7fb0;
+  --error: #f03a47;
+  /*design*/
+  --borderRadius: 5px;
+  --borderBuddy: 2px solid var(--contrastBuddy);
+  --borderLight: 2px solid var(--light);
+  --borderFocus: 2px solid var(--special);
+  /*font*/
+  --bigTitle: 2em;
+  --fatFont: 575;
 }
 
 body {
-  background-color: #782f8e;
-  color: #caffee;
+  background-color: var(--contrastMain);
+  color: var(--light);
   margin: 0;
 }
-
 .noPadding {
   padding: 0;
 }
@@ -28,7 +34,7 @@ body {
 
 .kumpeln {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
 }
 
 .zentrieren {
@@ -38,61 +44,59 @@ body {
 .noBg {
   background-color: none;
 }
-
 .horizont {
   display: flex;
   align-items: center;
 }
-
 .spaceEvenly {
   justify-content: space-evenly;
   width: 100%;
 }
-
 .spaceBetween {
   justify-content: space-between;
   width: 100%;
 }
-
 .marginZehn {
   margin: 10px;
 }
+input[type="text"],
+input[type="password"] {
+  color: var(--light);
+  background-color: var(--contrastMain);
+  border-radius: var(--borderRadius);
+  padding: 5px 10px;
+  border: var(--borderBuddy);
+}
 
-input {
-  color: #caffee;
-  background-color: #782f8e;
-  border-radius: 5px;
-  padding: 0.5em 1em;
-  border: 2px solid #4c0b4c;
-}
-input:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
   outline: none;
-  border: 2px solid #4f7fb0;
+  border: var(--borderFocus);
 }
-input::-moz-placeholder {
-  color: #caffee;
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: var(--light);
   font-size: 16px;
 }
-input::placeholder {
-  color: #caffee;
-  font-size: 16px;
+
+::selection {
+  background-color: var(--contrastBuddy);
+  color: var(--contrastMain);
 }
 
 .paddingZehn {
-  padding: 1em;
+  padding: 10px;
 }
-
 .width100vw {
   width: calc(var(--vw) * 100 / 100);
 }
-
 .widthNeunzig {
   width: 90%;
 }
 
 .fullWidth {
   width: calc(var(--vw) * 98.98 / 100);
-}
+}	
 
 .nomargin {
   margin: 0;
@@ -107,11 +111,10 @@ input::placeholder {
   align-items: flex-start;
   justify-content: flex-start;
 }
-
 .loadingScreen {
   width: calc(var(--vw) * 99 / 100);
   height: calc(var(--vh) * 100 / 100);
-  background-color: #782f8e;
+  background-color: var(--contrastMain);
 }
 
 .nonLoadingScreen {
@@ -121,11 +124,9 @@ input::placeholder {
 .space20 {
   margin: 10px 0;
 }
-
 .horSpace10 {
   margin: 0 5px;
 }
-
 .width30vw {
   width: calc(var(--vw) * 30 / 100);
 }
@@ -137,15 +138,15 @@ input::placeholder {
   transform: translate(-50%, -50%);
   z-index: 1;
 }
-
+  
 .contrastBg {
-  background-color: #782f8e;
-  border-radius: 5px;
-  padding: 1em;
+  background-color: var(--contrastMain);
+  border-radius: var(--borderRadius);
+  padding: 10px;
 }
 
-.widthAchtUndNeunzig {
-  width: 98%;
+.widthAchtUndNeunzig{
+    width: 98%;
 }
 
 .buddyBg {
@@ -167,4 +168,4 @@ input::placeholder {
 
 .hidden {
   display: none;
-}/*# sourceMappingURL=stylemain.css.map */
+}

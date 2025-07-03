@@ -1,22 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;575&display=swap");
-* {
-  font-family: "Be Vietnam Pro", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-*::-moz-selection {
-  background-color: #4f7fb0;
-}
-*::selection {
-  background-color: #4f7fb0;
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;575&display=swap');
+@import "../variables.scss";
+
+*{
+    font-family: "Be Vietnam Pro", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    &::selection {
+        background-color: $special;
+    }
 }
 
 body {
-  background-color: #782f8e;
-  color: #caffee;
+  background-color: $contrastMain;
+  color: $light;
   margin: 0;
 }
-
 .noPadding {
   padding: 0;
 }
@@ -38,61 +37,53 @@ body {
 .noBg {
   background-color: none;
 }
-
 .horizont {
   display: flex;
   align-items: center;
 }
-
 .spaceEvenly {
   justify-content: space-evenly;
   width: 100%;
 }
-
 .spaceBetween {
   justify-content: space-between;
   width: 100%;
 }
-
 .marginZehn {
   margin: 10px;
 }
 
 input {
-  color: #caffee;
-  background-color: #782f8e;
-  border-radius: 5px;
+  color: $light;
+  background-color: $contrastMain;
+  border-radius: $borderRadius;
   padding: 0.5em 1em;
-  border: 2px solid #4c0b4c;
-}
-input:focus {
-  outline: none;
-  border: 2px solid #4f7fb0;
-}
-input::-moz-placeholder {
-  color: #caffee;
-  font-size: 16px;
-}
-input::placeholder {
-  color: #caffee;
-  font-size: 16px;
+  border: $borderBuddy;
+
+  &:focus {
+    outline: none;
+    border: $borderFocus;
+  }
+  
+  &::placeholder {
+    color: $light;
+    font-size: 16px;
+  }
 }
 
 .paddingZehn {
   padding: 1em;
 }
-
 .width100vw {
   width: calc(var(--vw) * 100 / 100);
 }
-
 .widthNeunzig {
   width: 90%;
 }
 
 .fullWidth {
   width: calc(var(--vw) * 98.98 / 100);
-}
+}	
 
 .nomargin {
   margin: 0;
@@ -107,11 +98,10 @@ input::placeholder {
   align-items: flex-start;
   justify-content: flex-start;
 }
-
 .loadingScreen {
   width: calc(var(--vw) * 99 / 100);
   height: calc(var(--vh) * 100 / 100);
-  background-color: #782f8e;
+  background-color: $contrastMain;
 }
 
 .nonLoadingScreen {
@@ -121,11 +111,9 @@ input::placeholder {
 .space20 {
   margin: 10px 0;
 }
-
 .horSpace10 {
   margin: 0 5px;
 }
-
 .width30vw {
   width: calc(var(--vw) * 30 / 100);
 }
@@ -137,15 +125,15 @@ input::placeholder {
   transform: translate(-50%, -50%);
   z-index: 1;
 }
-
+  
 .contrastBg {
-  background-color: #782f8e;
-  border-radius: 5px;
+  background-color: $contrastMain;
+  border-radius: $borderRadius;
   padding: 1em;
 }
 
-.widthAchtUndNeunzig {
-  width: 98%;
+.widthAchtUndNeunzig{
+    width: 98%;
 }
 
 .buddyBg {
@@ -167,4 +155,4 @@ input::placeholder {
 
 .hidden {
   display: none;
-}/*# sourceMappingURL=stylemain.css.map */
+}
