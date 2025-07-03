@@ -1,4 +1,3 @@
-@charset "UTF-8";
 header {
   display: none;
 }
@@ -15,44 +14,36 @@ header {
 .loginField {
   background-color: #4c0b4c;
   border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
-  outline: transparent;
-  transition: outline 0.1s ease-in-out;
+  padding: 1em;
+  margin: 1em;
+  transition: transform 0.1s ease-in-out;
 }
-
-.loginFields:hover {
-  outline: 2px solid #4c0b4c;
+.loginField:hover {
+  transform: scale(1.05);
 }
 
 .logoLogin {
-  height: calc(var(--vh) * 40 / 100);
-  margin: 10px;
+  height: 40%;
+  margin: 1em;
 }
 
 liresTitelLogin {
-  font-weight: var(--fatFont);
-  font-size: var(--bigTitle);
-  margin: 10px;
+  font-weight: bold;
+  font-size: 2em;
+  margin: 1em;
 }
 
 .buttonLogin {
-  background-color: var(--light);
-  color: var(--contrastBuddy);
-  border: var(--borderLight);
-  border-radius: var(--borderRadius);
-  padding: 5px;
-  margin: 10px;
+  background-color: #caffee;
+  color: #4c0b4c;
+  border: 2px solid #caffee;
+  border-radius: 5px;
+  padding: 0.5em;
+  margin: 1em;
   cursor: pointer;
 }
-
 .buttonLogin:hover {
-  border: var(--borderFocus);
-}
-
-button {
-  color: var(--light);
-  font-size: 16px;
+  border: 2px solid #4f7fb0;
 }
 
 .center {
@@ -60,7 +51,7 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999; /* Sicher über allem */
+  z-index: 999;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -69,14 +60,12 @@ button {
 }
 
 .error {
-  background-color: var(--error);
-  border: 2px solid var(--error);
-  color: var(--light);
+  background-color: #f03a47;
+  border: 2px solid #f03a47;
+  color: #caffee;
   padding: 1.5em 1.5em;
-  border-radius: var(--borderRadius);
+  border-radius: 5px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  font-size: 1rem;
-  min-width: 300px;
   max-width: 90vw;
   animation: popIn 0.3s ease-out;
 }
@@ -90,5 +79,37 @@ button {
   100% {
     transform: scale(1) translateY(0);
     opacity: 1;
+  }
+}
+@media screen and (max-width: 600px) {
+  .loginField {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .loginField:hover {
+    transform: scale(1);
+  }
+  .logoLogin {
+    height: 20%;
+  }
+  .formlogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  #randomLoginQot {
+    text-align: center;
+  }
+  .buttonLogin {
+    font-size: 1em;
+  }
+  .error {
+    padding: 1em;
+  }
+  .inputsreg, .inputusrnm {
+    margin: 0.5em 0 0 0;
   }
 }/*# sourceMappingURL=stylelogin.css.map */

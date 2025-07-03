@@ -5,9 +5,14 @@ $special: #4f7fb0;
 $error: #f03a47;
 
 $borderRadius: 5px;
+$roundBorder: 15px;
+
 $borderBuddy: 2px solid $contrastBuddy;
 $borderLight: 2px solid $light;
 $borderFocus: 2px solid $special;
+$borderMain: 2px solid $contrastMain;
+$borderError: 2px solid $error;
+$borderTransparent: 2px solid transparent;
 
 $bigTitle: 2em;
-$fatFont: 575;
+$h3:1.25em;

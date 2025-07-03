@@ -1,0 +1,539 @@
+@charset "UTF-8";
+#contentsMainEverything {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.index {
+  width: auto;
+  margin: auto;
+  padding: 1em;
+  padding-left: 0.5em;
+  --fullHeight: calc(var(--vh) * 85.5 / 100);
+}
+
+.filterBalken {
+  max-height: var(--fullHeight);
+  overflow-y: scroll;
+}
+.filterBalken::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: #4c0b4c;
+  border-radius: 5px;
+}
+.filterBalken::-webkit-scrollbar-thumb {
+  background-color: #4f7fb0;
+  border-radius: 5px;
+}
+
+.res {
+  display: flex;
+  flex-direction: column;
+}
+
+.indexTitle {
+  margin: 0 0 1em 0;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.calender {
+  width: 100%;
+  display: flex;
+}
+
+.calenderVision {
+  padding: 0em 1em;
+}
+
+calDauer {
+  font-style: italic;
+  margin-right: 0.5em;
+}
+
+.detailRecLineTitle {
+  border-top: 1px solid #caffee;
+  border-radius: 5px;
+}
+
+calDatum {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+calRecNumber {
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.detailedVision {
+  background-color: #4c0b4c;
+  border-radius: 5px;
+  padding: 1em;
+  max-height: calc(var(--vh) * 43.7 / 100);
+  overflow-y: auto;
+}
+
+.resUnten {
+  display: flex;
+  padding: 1em;
+  border-radius: 5px;
+  margin-top: auto;
+}
+
+.li {
+  padding: 10px;
+  width: 22%;
+  background-color: #4f7fb0;
+  border-radius: 5px;
+  height: calc(var(--fullHeight) - 20px);
+}
+
+.listLine {
+  margin-bottom: 1.5em;
+  border: 1.5px solid #caffee;
+  border-radius: 5px;
+}
+
+#buttonWrapper {
+  margin-right: 1em;
+}
+
+.schnellFilter {
+  background-color: #4c0b4c;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #caffee;
+  width: 100%;
+  transition: 0.3s ease;
+  width: 10vw;
+  padding: 0.5em;
+}
+.schnellFilter:hover {
+  z-index: 1;
+  background-color: #4f7fb0;
+  transform: scale(1.05);
+}
+.schnellFilter img {
+  width: 40%;
+}
+
+listName {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.lists {
+  transition: background-color 0.3s ease, outline 0.2s ease;
+}
+
+.lists:hover {
+  outline: 5px solid #782f8e;
+  border-radius: 5px;
+  background-color: #782f8e;
+}
+
+.listTitleLine {
+  border: 1.5px solid #caffee;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.lists button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+.lists button:hover {
+  transform: scale(1.5);
+}
+
+.editLists {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: var(--borderRadius);
+}
+.editLists:hover {
+  background-color: var(--contrastMain);
+}
+
+/* Dropdown style grob mit minianimation */
+.dropdown-content {
+  /* Animation-Einstellungen */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease-out, opacity 0.3s ease-out;
+  margin: 7.5px 0 0 0;
+}
+
+.dropdown.open .dropdown-content {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.listComplete {
+  margin: 10px 5px;
+}
+
+.checkboxLists {
+  display: none;
+}
+
+.checkboxLists + label {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding-left: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: color 0.2s;
+}
+
+.checkboxLists + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #782f8e;
+  background-color: #782f8e;
+  border-radius: 5px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.checkboxLists:checked + label::before {
+  background-color: #4c0b4c;
+  border-color: #4c0b4c;
+}
+
+.checkboxLists:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid #caffee;
+  border-bottom: 2px solid #caffee;
+  transform: rotate(-45deg);
+  transition: background-color 0.2s;
+}
+
+/* Hover-Effekt für das Label */
+.checkboxLists + label:hover {
+  color: #4c0b4c;
+}
+
+/* Fokus-Effekt für Barrierefreiheit */
+.checkboxLists:focus + label::before {
+  outline: 2px solid #caffee;
+}
+
+.stars {
+  width: 80%;
+}
+
+recUser {
+  font-style: italic;
+}
+
+tableTitle {
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+}
+
+table {
+  table-layout: auto;
+  border-collapse: collapse;
+  width: 30vw;
+}
+
+td {
+  padding: 1em;
+  text-align: left;
+  vertical-align: middle;
+}
+
+recname {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+tr {
+  transition: 0.3s ease;
+  margin-left: 1em;
+}
+
+tr:nth-child(even) {
+  background-color: #782f8e;
+}
+
+tr:nth-child(odd) {
+  background-color: #4c0b4c;
+}
+
+th:first-child, td:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+th:last-child, td:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+tr:hover {
+  background-color: #4f7fb0;
+  cursor: pointer;
+}
+
+.actionImg {
+  width: 6vw;
+  outline: none;
+}
+
+.action {
+  background-color: #782f8e;
+  border: none;
+  width: 10vw;
+  border-radius: 5px;
+  bottom: 0;
+}
+.action:hover {
+  background-color: #4f7fb0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  outline: none;
+}
+
+.nextRecipes {
+  padding: 10px;
+  width: calc(var(--vw) * 7 / 100);
+  border-radius: 5px;
+  background-color: #4c0b4c;
+  display: none;
+}
+.nextRecipes:hover {
+  background-color: #4f7fb0;
+  cursor: pointer;
+}
+
+/**hier weita @einsAcin*/
+.nextRecipes .nextTwoRecs {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.li::-webkit-scrollbar {
+  width: 5px;
+}
+
+.li::-webkit-scrollbar-track {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.li::-webkit-scrollbar-thumb {
+  background-color: var(--contrastBuddy);
+  border-radius: 5px;
+}
+
+.li::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+detailRecName {
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+detailRecDauer {
+  font-style: italic;
+  font-size: 16px;
+}
+
+.detailRec {
+  padding: 5px 5px;
+  border-radius: var(--borderRadius);
+}
+
+.detailRec:hover {
+  background-color: var(--special);
+  border-radius: var(--borderRadius);
+}
+
+.detailedVision::-webkit-scrollbar {
+  width: 5px;
+}
+
+.detailedVision::-webkit-scrollbar-track {
+  background-color: var(--contrastBuddy);
+  border-radius: 5px;
+}
+
+.detailedVision::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.detailedVision::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.tableDiv {
+  max-height: calc(var(--vh) * 63 / 100);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.tableDiv::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tableDiv::-webkit-scrollbar-track {
+  background-color: var(--contrastMain);
+  border-radius: 5px;
+}
+
+.tableDiv::-webkit-scrollbar-thumb {
+  background-color: var(--special);
+  border-radius: 5px;
+}
+
+.tableDiv::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+#filOptionPage {
+  width: calc(var(--vw) * 50 / 100);
+  position: absolute;
+  top: calc(var(--vh) * 25 / 100);
+  left: calc(var(--vw) * 25 / 100);
+  z-index: 1;
+  background-color: var(--special);
+  border-radius: var(--borderRadius);
+}
+
+.responseAddListOk {
+  background-color: var(--special);
+  border-radius: var(--borderRadius);
+  padding: 10px;
+  display: none;
+}
+
+.responseAddListNotOk {
+  display: none;
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  width: 30%;
+  height: 5%;
+  transform: translate(-50%, -50%);
+  background-color: #ff0000;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+/* Container für das Dropdown */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: calc(var(--vw) * 10 / 100);
+  padding: 5px 10px;
+  border-radius: var(--borderRadius);
+  border: var(--borderMain);
+  background-color: var(--contrastMain);
+  color: var(--light);
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+select:focus {
+  border-color: var(--special);
+  outline: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+option {
+  font-family: "Be Vietnam Pro", serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+option:hover {
+  background-color: var(--light);
+  color: var(--contrastMain);
+  border-radius: var(--borderRadius);
+}
+
+select[multiple] {
+  height: 200px;
+  width: calc(var(--vw) * 10 / 100);
+  overflow-y: none;
+}
+
+select[multiple] option {
+  padding: 5px;
+}
+
+select[multiple]:focus {
+  border-color: var(--contrastBuddy);
+}
+
+select[multiple]::-webkit-scrollbar {
+  display: none;
+}
+
+option:checked {
+  background-color: var(--contrastBuddy);
+  color: var(--light);
+  border-radius: var(--borderRadius);
+}
+
+.verticalLine {
+  border-left: 2px solid var(--contrastMain);
+  border-radius: var(--borderRadius);
+  margin-right: 2%;
+}
+
+.paddingOther {
+  padding: 0 10px 10px 10px;
+}
+
+.inputLists {
+  width: calc(var(--vw) * 7.5 / 100);
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.widthDreiSiebenFuenf {
+  width: calc(var(--vw) * 3.75 / 100);
+}
+
+button {
+  color: var(--light);
+  font-size: 16px;
+}/*# sourceMappingURL=styleindex_v4.css.map */

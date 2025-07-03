@@ -4,55 +4,54 @@ header{
   display: none;
 }
 .content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
 }
 .loginField{
-    background-color: $contrastBuddy;
-    border-radius: $borderRadius;
-    padding: 10px;
-    margin: 10px;
-    outline: transparent;
-    transition: outline 0.1s ease-in-out;
+  background-color: $contrastBuddy;
+  border-radius: $borderRadius;
+  padding: 1em;
+  margin: 1em;
+  transition: transform 0.1s ease-in-out;
+
+  &:hover{
+    transform: scale(1.05);
 }
-.loginFields:hover{
-    outline: $borderBuddy;
 }
+
 .logoLogin{
-    height: calc(var(--vh) * 40 / 100);
-    margin: 10px;
+  height: 40%;
+  margin: 1em;
 }
+
 liresTitelLogin{
-    font-weight: var(--fatFont);
-    font-size: var(--bigTitle);
-    margin: 10px;
+    font-weight: bold;
+    font-size: $bigTitle;
+    margin: 1em;
 }
 .buttonLogin{
-    background-color: var(--light);
-    color: var(--contrastBuddy);
-    border: var(--borderLight);
-    border-radius: var(--borderRadius);
-    padding: 5px;
-    margin: 10px;
+    background-color: $light;
+    color: $contrastBuddy;
+    border: $borderLight;
+    border-radius: $borderRadius;
+    padding: 0.5em;
+    margin: 1em;
     cursor: pointer;
-}
-.buttonLogin:hover{
-    border: var(--borderFocus);
-}
-button{
-    color: var(--light);
-    font-size: 16px;
+
+    &:hover{
+      border: $borderFocus;
+    }
 }
 .center {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999; /* Sicher über allem */
+  z-index: 999;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -61,14 +60,12 @@ button{
 }
 
 .error {
-  background-color: var(--error);
-  border: 2px solid var(--error);
-  color: var(--light);
+  background-color: $error;
+  border: $borderError;
+  color: $light;
   padding: 1.5em 1.5em;
-  border-radius: var(--borderRadius);
+  border-radius: $borderRadius;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  font-size: 1rem;
-  min-width: 300px;
   max-width: 90vw;
   animation: popIn 0.3s ease-out;
 }
@@ -82,5 +79,44 @@ button{
   100% {
     transform: scale(1) translateY(0);
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  
+  .loginField {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover{
+      transform: scale(1);
+    }
+  }
+  .logoLogin {
+    height: 20%;
+  }
+  
+  .formlogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  #randomLoginQot{
+    text-align: center;
+  }
+  
+  .buttonLogin {
+    font-size: 1em;
+  }
+  
+  .error {
+    padding: 1em;
+  }
+  
+  .inputsreg, .inputusrnm{
+    margin: 0.5em 0 0 0;
   }
 }

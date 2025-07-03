@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/v2/variables.css">
-<link rel="stylesheet" href="/css/v2/styleindex_v3.css">
+<link rel="stylesheet" href="/css/v2/styleindex_v4.css">
 
 
 <div class="responseAddListOk stapeln zentrieren marginZehn" id="responseAddListOk">
@@ -85,7 +85,7 @@
   <div class="res stapeln paddingOther">
     <div class="resOben kumpeln spaceBetween">
       <div class="recipes stapeln">
-      <tableTitle><%= filterText %></tableTitle>
+      <h2 class="indexTitle"><%= filterText %></h2>
         <div class="kumpeln spaceBetween tableDiv">
             <table class="noMargin">
               <% recs.forEach(rec => { %>
@@ -107,7 +107,7 @@
       </div>
       <div class= "calender stapeln">
         <div class="calenderVision stapeln">
-          <kalenderTitel>Geplante Rezepte</kalenderTitel>
+          <h2 class="indexTitle">Geplante Rezepte</h2>
           <div  id="nextRecs" class="kumpeln spaceBetween">
             <div style="display: none;" id="dataDaysMain"><%= JSON.stringify(dataDays) %></div>
             <div class="nextRecipes stapeln zentrieren" id="firstNextRec">
