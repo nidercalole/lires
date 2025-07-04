@@ -74,13 +74,15 @@ calRecNumber{
     background-color: $contrastBuddy;
     border-radius: $borderRadius;
     padding: 1em;
-    max-height: calc(var(--vh) * 43.7 / 100);
+    margin: 1em;
+    margin-bottom: 0;
+    max-height: calc(var(--vh) * 41.5 / 100);
     overflow-y: auto;
 }
 
 .resUnten {
     display:flex;
-    padding:1em;
+    padding:0.5em;
     border-radius: $borderRadius;
     margin-top: auto;
 }
@@ -93,6 +95,31 @@ calRecNumber{
     height: calc( var(--fullHeight) - 20px);
 }
 
+.dropdownsLists{
+  max-height: 87.5%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 0.5em;
+        margin-left: 0.5em;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $special;
+        border-radius: $borderRadius;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $contrastBuddy;
+        border-radius: $borderRadius;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
+}
 .listLine {
     margin-bottom: 1.5em;
     border: 1.5px solid $light;
@@ -272,8 +299,8 @@ td {
 }
 
 recname {
-  font-weight: bold;
-  font-size: 18px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 tr{
@@ -336,50 +363,26 @@ tr:hover {
     }
 }
 
-/**hier weita @einsAcin*/
-.nextRecipes
-.nextTwoRecs{
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-}
-
-
-
-.li::-webkit-scrollbar {
-  width: 5px;
-}
-
-.li::-webkit-scrollbar-track {
-  background-color: var(--special);
-  border-radius: 5px;
-}
-
-.li::-webkit-scrollbar-thumb {
-  background-color: var(--contrastBuddy);
-  border-radius: 5px;
-}
-
-.li::-webkit-scrollbar-corner {
-  background-color: transparent;
-}
 detailRecName{
-  margin: 5px 0;
+  margin: 0.5em 0;
   font-weight: bold;
-  font-size: 16px;
+  font-size: $h4;
 }
 detailRecDauer{
   font-style: italic;
   font-size: 16px;
 }
+#detViewCalDatum{
+  font-weight: bold;
+  font-size: $h3;
+}
 .detailRec{
-  padding: 5px 5px;
-  border-radius: var(--borderRadius);
+  padding: 0.5em;
 }
 
 .detailRec:hover{
-  background-color: var(--special);
-  border-radius: var(--borderRadius);
+  background-color: $special;
+  border-radius: $borderRadius;
 }
 
 .detailedVision::-webkit-scrollbar {

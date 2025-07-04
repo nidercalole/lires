@@ -1,0 +1,132 @@
+$contrastMain: #782f8e;
+$contrastBuddy: #4c0b4c;
+$light: #caffee;
+$special: #4f7fb0;
+$error: #f03a47;
+
+$borderRadius: 5px;
+
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;575&display=swap");
+* {
+  font-family: "Be Vietnam Pro", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2{
+    margin: 0;
+    font-weight: bold;
+}
+header{
+    display:none;
+}
+
+body {
+    background-color: $contrastBuddy;
+    color: $light;
+    margin: 0;
+}
+
+button{
+    background-color: $light;
+    color: $contrastBuddy;
+    border-radius: $borderRadius;
+    border:none;
+    transition: .3s ease;
+
+    &:focus{
+        background-color: $error;
+        color: $light;
+        transform: scale(1.05);
+    }
+}
+
+p{
+    text-align: justify;
+    font-size: 1em;
+}
+
+.kumpeln{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.stapeln{
+    padding: 1em;
+}
+#mobileIntro{
+    h2{
+        font-weight: bold;
+        font-style: italic;
+        font-size: 1.25em;
+    }
+}
+#mobileWarning{
+    position: absolute;
+    background-color: $error;
+    padding: 1em;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+
+
+    p{
+        font-size: 0.8em;;
+    }
+}
+#content{
+    height: 100vh;
+}
+
+#link{
+    width: 100px;
+    background-color: $contrastMain;
+    height: max-content;
+    a{
+        color: $light;
+    }
+}
+
+#intro{
+    padding-right: 1em;
+}
+
+#mobileFeatures{
+    background-color: $contrastMain;
+
+    h2{
+        text-decoration: underline;
+    }
+}
+
+#mobileUmgang{
+    ol{
+        padding-left: 1em;
+    }
+    h2{
+        text-decoration: underline;
+    }
+}
+
+#mobileHinweis{
+    background-color: $contrastMain;
+    padding: 1em;
+
+    h2{
+        text-decoration: underline;
+        text-align: right;
+    }
+
+    img{
+        width: 120px;
+        height: 120px;
+        margin: 0.5em;
+    }
+
+    &>div>p{
+        margin: 0;
+        padding-left: 1em;
+    }
+}

@@ -1,26 +1,77 @@
-<!--<link rel="stylesheet" href="/css/mobile/mobilelogin.css">-->
-    <div class="toplogin">
-        <div class="filOptionPagelogin">
-            <filHeader class="filGridHeader">Login</filHeader>
-            <form action="/mobile/anmld" method="post" class="formlogin">
+<link rel="stylesheet" href="/css/mobile/mobilelogin.css">
 
-                <input type="text" name="username" placeholder="Nutzername" id="usrnmlogin" required class="inputusrnm">
-                <input type="submit" value="Login" class="submitloginreg">
-            </form>
+<div id="content">
+    <div id="mobileWarning">
+        <div class="kumpeln">
+            <h2>Achtung</h2>
+            <button onclick="hide('mobileWarning')">Schließen</button>
         </div>
-        <div class="filOptionPagelogin filOptionPageloginBottom">
-            <filHeader class="filGridHeader">Registrieren</filHeader>
-            <form action="/mobile/register" method="post" class="formlogin">
+        <p>
+            Es sieht so aus, als würdest du die Seite auf einem Handy oä. besuchen. 
+            Um sie fehlerfrei anzeigen und nutzen zu können, wurde Lires für mobile Geräte gesperrt.<br>
+            Langfristig werden wir sie natürlich auch hier machen, aber aktuell ist das noch nicht der Fall.
+            Jeder Nutzer wird informiert, sobald wir so weit sind. :)
+        </p>
+    </div>
 
-                <input type="text" name="username" placeholder="Nutzername" id="usrnmregister" required class="inputregis">
-                <input type="password" name="permstring" placeholder="Berechtigungs-ID" id="permstring" required
-                    class="inputregis">
-                <input type="submit" value="Register" class="submitloginreg">
-            </form>
+    <div id="mobileIntro" class="stapeln">
+        <div class="kumpeln">
+            <div id="intro">
+                <h2>Heo, ihr Menschen!</h2>
+                <p>
+                    Vor etwas mehr als einem Jahr dachten sich zwei Ausziehende, dass sie, um den Geschmack ihres vorherigen Zuhauses zu behalten, eine Rezepte-Website mit den liebsten Rezepten ihrer Familie und Freunde bräuchten.
+                    <br>
+                    Jetzt ist Lires in einem Zustant, wo man es an Menschen herantragen kann, und wir wollen euch einladen, es zu nutzen. :)
+                </p>  
+            </div>
+            <div id="link" class="stapeln">
+                <a href="https://lires.de/">lires.de</a>
+                <img src="/img/qr.png" width="100px"/>
+            </div>
+        </div>      
+    </div>
+
+
+    <div id="mobileFeatures" class="stapeln">
+        <h2>Features</h2>
+        <ul>
+            <li>Rezepte erstellen und einsehen</li>
+            <li>Einkaufslisten aus Rezepten erstellen</li>
+            <li>Kochen planen</li>
+            <li>Benötigst du bestimmte Features, ergänzen wir diese gerne!</li>
+        </ul>
+    </div>
+
+    <div id="mobileUmgang" class="stapeln">
+        <h2>Wie gehe ich mit Lires um?</h2>
+        <ol>
+            <li>Website auf einem Desktop-Gerät (Laptop, PC) besuchen</li>
+            <li>Trage unter >Registrieren< einen beliebigen Nutzernamen und die Berechtigungs-ID ein, die auf dem Flyer steht, der herumgeschickt wurde</li>
+            <li>Zukünftig kannst du dich mit dem gewählten Nutzernamen über >Login< anmelden</li>
+            <li>Wenn du Menschen kennst, die zu der Idee hinter Lires passen, lade sie gern ebenfalls ein :)</li>
+        </ol>
+    </div>
+
+    <div id="mobileHinweis" class="stapeln">
+        <div>
+            <h2>Hinweis</h2>
+            <p>
+                Es werden mutmaßlich noch einige Bugs auftreten. Sowohl Design als auch Funktionalitäten sind noch nicht komplett ausgereift und noch gar nicht getestet. 
+                Damit treten wir jetzt an euch heran.<br>
+                Wenn ihr solche Fehler bemerkt, meldet sie gerne über den >Feedback< Button unten auf der Startseite.<br>
+            </p>
+        </div>
+        <div class="kumpeln">
+            <img src="/img/oni.png" alt="Lires-Zwiebel" width="80px"/>
+            <p>Am Handy funktioniert die Website bisher noch nicht, allerdings gibt es eine App, über die man sich die Listen auf dem Handy ansehen kann. Wenn ihr daran Interesse habt, schreibt uns gerne!</p>
+    
         </div>
     </div>
-    <div class="center" id="centerDiv">
-        <p id='regerror' class='error'></p>
-        <p id="loginerror" class="error"></p>
-    </div>
-<script src="/js/loginerr.js"></script>
+    
+</div>
+
+<script>
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>

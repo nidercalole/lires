@@ -71,13 +71,15 @@ calRecNumber {
   background-color: #4c0b4c;
   border-radius: 5px;
   padding: 1em;
-  max-height: calc(var(--vh) * 43.7 / 100);
+  margin: 1em;
+  margin-bottom: 0;
+  max-height: calc(var(--vh) * 41.5 / 100);
   overflow-y: auto;
 }
 
 .resUnten {
   display: flex;
-  padding: 1em;
+  padding: 0.5em;
   border-radius: 5px;
   margin-top: auto;
 }
@@ -88,6 +90,28 @@ calRecNumber {
   background-color: #4f7fb0;
   border-radius: 5px;
   height: calc(var(--fullHeight) - 20px);
+}
+
+.dropdownsLists {
+  max-height: 87.5%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.dropdownsLists::-webkit-scrollbar {
+  width: 0.5em;
+  margin-left: 0.5em;
+}
+.dropdownsLists::-webkit-scrollbar-track {
+  background-color: #4f7fb0;
+  border-radius: 5px;
+}
+.dropdownsLists::-webkit-scrollbar-thumb {
+  background-color: #4c0b4c;
+  border-radius: 5px;
+}
+.dropdownsLists::-webkit-scrollbar-corner {
+  background-color: transparent;
 }
 
 .listLine {
@@ -334,35 +358,10 @@ tr:hover {
   cursor: pointer;
 }
 
-/**hier weita @einsAcin*/
-.nextRecipes .nextTwoRecs {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-}
-
-.li::-webkit-scrollbar {
-  width: 5px;
-}
-
-.li::-webkit-scrollbar-track {
-  background-color: var(--special);
-  border-radius: 5px;
-}
-
-.li::-webkit-scrollbar-thumb {
-  background-color: var(--contrastBuddy);
-  border-radius: 5px;
-}
-
-.li::-webkit-scrollbar-corner {
-  background-color: transparent;
-}
-
 detailRecName {
-  margin: 5px 0;
+  margin: 0.5em 0;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.1em;
 }
 
 detailRecDauer {
@@ -370,14 +369,18 @@ detailRecDauer {
   font-size: 16px;
 }
 
+#detViewCalDatum {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
 .detailRec {
-  padding: 5px 5px;
-  border-radius: var(--borderRadius);
+  padding: 0.5em;
 }
 
 .detailRec:hover {
-  background-color: var(--special);
-  border-radius: var(--borderRadius);
+  background-color: #4f7fb0;
+  border-radius: 5px;
 }
 
 .detailedVision::-webkit-scrollbar {

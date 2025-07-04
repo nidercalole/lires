@@ -1,74 +1,118 @@
-.filbut{
-    display: none;
-}
-.toplogin{
-    margin-top: 5%;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
-}
-.inputusrnm{
-    width: 70%;
-    padding: 0.6vw;
-    display: inline-block;
-    background-color: rgba(71, 59, 123, 0.5);
-    border-radius: 2vw;
-    border:#473B7B 0.6vw solid;
-    color: #caffee;
-    font-size: 5vw;
-    margin-top:1.2vw;
-    margin-bottom:1.2vw;
-}
-.inputusrnm:focus{
-    background-color: rgba(71, 59, 123, 0.75);
-    outline: 0.6vw solid rgba(7, 136, 129, 1);
-}
-.filGridHeader{
-    font-size: 7vw;
-    color: #caffee;
-    text-align: center;
-}
-.submitloginreg{
-    border-color:#473B7B;
-    padding: 0.6vw;
-    display: inline-block;
-    background-color: #6353ac;
-    border-radius: 2vw;
-    color: #caffee;
-    font-size: 4vw;
-    margin-left: 1.2vw;
-}
-.submitloginreg:focus{
-    background-color: rgba(71, 59, 123, 0.75);
-    outline: 0.6vw solid rgba(7, 136, 129, 1);
-}
-.inputregis{
-    width: 70%;
-    padding: 0.6vw;
-    display: inline-block;
-    background-color: rgba(71, 59, 123, 0.5);
-    border-radius: 2vw;
-    border:#473B7B 0.6vw solid;
-    color: #caffee;
-    font-size: 5vw;
-    margin-top:1.2vw;
-}
-.inputregis:focus{
-    background-color: rgba(71, 59, 123, 0.75);
-    outline: 0.6vw solid rgba(7, 136, 129, 1);
-}
-.addRec{
-    position: absolute;
-    background-color: transparent;
-    border-radius: 100%;
-    padding: 0;
-    width:20%;
-    height: 20%;
-    margin:1%;
-    display: block;
-    z-index: 1001;
-}
-.suchleiste{
-    display: none;
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;575&display=swap");
+* {
+  font-family: "Be Vietnam Pro", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-/*Style füßr Mobile Login*/
+h2 {
+  margin: 0;
+  font-weight: bold;
+}
+
+header {
+  display: none;
+}
+
+body {
+  background-color: #4c0b4c;
+  color: #caffee;
+  margin: 0;
+}
+
+button {
+  background-color: #caffee;
+  color: #4c0b4c;
+  border-radius: 5px;
+  border: none;
+  transition: 0.3s ease;
+}
+button:focus {
+  background-color: #f03a47;
+  color: #caffee;
+  transform: scale(1.05);
+}
+
+p {
+  text-align: justify;
+  font-size: 1em;
+}
+
+.kumpeln {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.stapeln {
+  padding: 1em;
+}
+
+#mobileIntro h2 {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.25em;
+}
+
+#mobileWarning {
+  position: absolute;
+  background-color: #f03a47;
+  padding: 1em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+#mobileWarning p {
+  font-size: 0.8em;
+}
+
+#content {
+  height: 100vh;
+}
+
+#link {
+  width: 100px;
+  background-color: #782f8e;
+  height: -moz-max-content;
+  height: max-content;
+}
+#link a {
+  color: #caffee;
+}
+
+#intro {
+  padding-right: 1em;
+}
+
+#mobileFeatures {
+  background-color: #782f8e;
+}
+#mobileFeatures h2 {
+  text-decoration: underline;
+}
+
+#mobileUmgang ol {
+  padding-left: 1em;
+}
+#mobileUmgang h2 {
+  text-decoration: underline;
+}
+
+#mobileHinweis {
+  background-color: #782f8e;
+  padding: 1em;
+}
+#mobileHinweis h2 {
+  text-decoration: underline;
+  text-align: right;
+}
+#mobileHinweis img {
+  width: 120px;
+  height: 120px;
+  margin: 0.5em;
+}
+#mobileHinweis > div > p {
+  margin: 0;
+  padding-left: 1em;
+}/*# sourceMappingURL=mobilelogin.css.map */
