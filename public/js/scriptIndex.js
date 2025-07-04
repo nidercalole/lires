@@ -64,8 +64,8 @@ function detViewforDay(dayData, day){
               <detailRecName>${rec.recname}</detailRecName>
               <br>
               <detailRecDauer>${rec.duration} min</detailRecDauer>
-              <hr class="detailRecLine">
             </div>
+            <hr class="detailRecLine">
         `;
     });
 }

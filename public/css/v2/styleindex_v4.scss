@@ -78,6 +78,24 @@ calRecNumber{
     margin-bottom: 0;
     max-height: calc(var(--vh) * 41.5 / 100);
     overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--contrastBuddy);
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--special);
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
 }
 
 .resUnten {
@@ -364,48 +382,32 @@ tr:hover {
 }
 
 detailRecName{
-  margin: 0.5em 0;
-  font-weight: bold;
-  font-size: $h4;
+    margin: 0.5em 0;
+    font-size: $h4;
 }
 detailRecDauer{
-  font-style: italic;
-  font-size: 16px;
+    font-style: italic;
+    font-size: $h4;
 }
 #detViewCalDatum{
-  font-weight: bold;
-  font-size: $h3;
+    font-weight: bold;
+    font-size: $h3;
 }
 .detailRec{
-  padding: 0.5em;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover{
+        background-color: $special;
+        border-radius: $borderRadius;
+    }
 }
 
-.detailRec:hover{
-  background-color: $special;
-  border-radius: $borderRadius;
-}
-
-.detailedVision::-webkit-scrollbar {
-  width: 5px;
-}
-
-.detailedVision::-webkit-scrollbar-track {
-  background-color: var(--contrastBuddy);
-  border-radius: 5px;
-}
-
-.detailedVision::-webkit-scrollbar-thumb {
-  background-color: var(--special);
-  border-radius: 5px;
-}
-
-.detailedVision::-webkit-scrollbar-corner {
-  background-color: transparent;
-}
 .tableDiv{
-  max-height: calc(var(--vh) * 63 / 100);
-  overflow-y: auto;
-  overflow-x: hidden;
+  max-height: 50%;
 }
 .tableDiv::-webkit-scrollbar {
   width: 5px;
